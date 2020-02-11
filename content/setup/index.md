@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "FinBIF R Workshop Software Setup"
+title: "Software Setup"
 subtitle: ""
 summary: ""
 authors: []
