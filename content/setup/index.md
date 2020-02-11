@@ -95,4 +95,4 @@ token. To obtain an access token follow these instructions.
 1. Click on the "Console" pane and type `library(finbif)` followed by the return key.
 2. Still in the "Console" pane, type `finbif_request_token("YOUR_EMAIL")`
    replacing YOUR_EMAIL with your own email address (retaining the quotes).
-3. Check your email for an access token sent from "noreply@laji.fi".
+3. Check your email for an access token sent from __laji.fi__.
