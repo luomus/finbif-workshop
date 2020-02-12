@@ -2,3 +2,41 @@
   name = "Setup"
   url = "setup/"
   weight = 1
+  identifier = "setup"
+
+[[main]]
+  name = "R"
+  url = "setup/r/"
+  weight = 1
+  parent = "setup"
+
+[[main]]
+  name = "RStudio"
+  url = "setup/RStudio/"
+  weight = 2
+  parent = "setup"
+  
+[[main]]
+  name = "FinBIF R package"
+  url = "setup/finbif/"
+  weight = 3
+  parent = "setup"
+  
+[[main]]
+  name = "Access Token"
+  url = "setup/access-token/"
+  weight = 4
+  parent = "setup"
+
+[[main]]
+  name = "Tutorials"
+  url = "tutorials/"
+  weight = 2
+  identifier = "tutorials"
+
+[[main]]
+  name = "Using the FinBIF R package"
+  url = "tutorials/finbif/"
+  weight = 1
+  parent = "tutorials"
+
