@@ -6,7 +6,7 @@ copyright = "LUOMUS - Finnish Museum of Natural History"
 
 theme = "hugo-academic"
 
-enableGitInfo = false
+enableGitInfo = true
 
 defaultContentLanguage = "en"
 hasCJKLanguage = false
