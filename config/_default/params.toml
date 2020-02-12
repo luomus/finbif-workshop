@@ -44,7 +44,7 @@ time_format = "3:04 PM"
 
 address_format = "en-us"
 
-main_menu = {align = "l", show_logo = true}
+main_menu = {align = "r", show_logo = true}
 
 reading_time = false
 
