@@ -1,0 +1,27 @@
+---
+title: Installation
+date: "2020-02-12"
+draft: false
+toc: true
+type: docs
+weight: 2
+
+menu:
+  finbif:
+    name: Installation
+    weight: 2
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Stable version
+```{r install-cran, eval = FALSE}
+install.packages("finbif")
+```
+
+## Development version
+```{r install-github, eval = FALSE}
+if (require(remotes)) install.packages("remotes")
+remotes::install.packages("luomus/finbif@dev")
+```
