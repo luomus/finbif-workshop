@@ -40,3 +40,28 @@
   weight = 1
   parent = "tutorials"
 
+[[main]]
+  pre = "<i class=\"fab fa-github fa-lg\"></i>"
+  name = ""
+  url = "https://github.com/luomus/finbif/"
+  weight = 3
+  identifier = "github"
+
+[[main]]
+  pre = "<i class=\"fas fa-book-open fa-lg\"></i>"
+  name = ""
+  weight = 4
+  identifier = "docs"
+
+[[main]]
+  name = "Current"
+  url = "https://luomus.github.io/finbif/"
+  weight = 1
+  parent = "docs"
+
+[[main]]
+  name = "Development"
+  url = "https://finbif-docs-dev.netlify.com/"
+  weight = 2
+  parent = "docs"
+  
