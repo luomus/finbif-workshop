@@ -2,7 +2,7 @@ title = "FinBIF R Workshop"
 
 baseurl = "https://finbif-workshop.netlify.com/"
 
-copyright = "LUOMUS - Finnish Museum of Natural History"
+copyright = "&copy; {year} LUOMUS - Finnish Museum of Natural History"
 
 theme = "hugo-academic"
 
