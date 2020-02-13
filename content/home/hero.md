@@ -23,7 +23,7 @@ hero_media = "finbif-logo.png"
 
 [cta_alt]
   url = "/tutorials/"
-  label = "Start a tutorial"
+  label = "Begin the tutorials"
 +++
 
 A workshop on using the FinBIF R package for accessing and analysing
