@@ -1,5 +1,4 @@
 ---
-date: "2020-02-12"
 linktitle: Step 1. R
 menu:
   setup:

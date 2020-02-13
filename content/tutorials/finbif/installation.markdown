@@ -1,6 +1,5 @@
 ---
 title: Installation
-date: "2020-02-12"
 draft: false
 toc: true
 type: docs

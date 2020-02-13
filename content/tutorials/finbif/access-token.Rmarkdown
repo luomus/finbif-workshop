@@ -1,11 +1,9 @@
 ---
 title: Access Token
-date: "2020-02-12"
-draft: false
-toc: true
+draft: no
+toc: yes
 type: docs
 weight: 3
-
 menu:
   finbif:
     name: Access Token
