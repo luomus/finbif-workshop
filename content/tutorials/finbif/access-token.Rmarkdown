@@ -13,6 +13,25 @@ menu:
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+To access data from FinBIF via its public [API](https://api.laji.fi) you will
+need to obtain a personal access token. You should only need to request a token
+once but you will need to either set your token each time you start an R
+session, or store the token in an `.Renviron` file so that is loaded each time
+R starts up.
+
+## Loading
+If you have not already done so, load `{finbif}` into your R environment.
+```{r library}
+library(finbif)
+```
+
+## Requesting a token
+First you need to request a token from FinBIF. This can be done using the
+`{finbif}` function `finbif_request_token`. Simply specify your own email in
+place of the address shown below.
+```{r request-token, eval = FALSE}
+finbif_request_token("your@email.com")
+```
 
 ## Setting the token
 ```{r set-token, eval = FALSE}
