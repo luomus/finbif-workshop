@@ -3,14 +3,33 @@ linktitle: Using the FinBIF R package
 summary: Learn how to access and analyse FinBIF data using r and the finbif package
 weight: 1
 
-title: Overview
-date: "2020-02-12"
+title: Introduction
 draft: false
 toc: true
 type: docs
 
 menu:
   finbif:
-    name: Overview
+    name: Introduction
     weight: 1
 ---
+
+Welcome to the `finbif` workshop. The Finnish Biodiversity Information Facility,
+FinBIF, aggregates Finnish biodiversity data from multiple sources in a single
+open access database for researchers, citizen scientists, industry and
+government. FinBIF allows users of biodiversity information to find, access,
+combine and visualise data on Finnish plants, animals and microorganisms.
+
+The `finbif` R package makes the publicly available data in FinBIF easily
+accessible to researchers and programmers. Biodiversity information is
+available on taxonomy and taxon occurrence. Occurrence data can be filtered by
+taxon, time, location and other variables. The data accessed are conveniently
+preformatted for subsequent analyses.
+
+In this workshop attendees will learn how to access FinBIF using the `finbif` R
+package. Topics covered include: installing the package, accessing the
+documentation and getting help, working with taxomomic information, accessing
+collection information, getting and filtering occurrence records, creating
+graphics from FinBIF data and fitting models to FinBIF data.
+
+
