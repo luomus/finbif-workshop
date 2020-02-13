@@ -14,6 +14,16 @@ hero_media = "finbif-logo.png"
 
 [design.spacing]
   padding = ["100px", "0", "100px", "0"]
+
+[cta]
+  url = "/setup/"
+  label = "Software Setup"
+  icon_pack = ""
+  icon = ""
+
+[cta_alt]
+  url = "/tutorials/"
+  label = "Start a tutorial"
 +++
 
 A workshop on using the FinBIF R package for accessing and analysing

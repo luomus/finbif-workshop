@@ -28,6 +28,6 @@ preformatted for subsequent analyses.
 
 In this workshop attendees will learn how to access FinBIF using the `finbif` R
 package. Topics covered include: installing the package, accessing the
-documentation and getting help, working with taxomomic information, accessing
+documentation and getting help, working with taxonomic information, accessing
 collection information, getting and filtering occurrence records, creating
 graphics from FinBIF data and fitting models to FinBIF data.
