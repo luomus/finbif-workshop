@@ -32,7 +32,7 @@ place of the address shown below.
 ```{r request-token, eval = FALSE}
 finbif_request_token("your@email.com")
 ```
-You should soon recieve and email from __laji.fi__ which contains your access
+You should soon recieve an email from __laji.fi__ which contains your access
 key. The key is a random series of letters and numbers. Save the email or key
 somewhere securely where you can easily access it again later.
 
@@ -46,7 +46,7 @@ Sys.setenv(
 )
 # Note: the above is not a real access token. Do not try using it.
 ```
-or to have the key automatically set every time you start an R session you can
+or, to have the key automatically set every time you start an R session you can
 save it in an [`Renviron`](https://rviews.rstudio.com/2017/04/19/r-for-enterprise-understanding-r-s-startup/)
 file. To add the key you to your user `Renviron` file run the following:
 
