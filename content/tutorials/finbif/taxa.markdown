@@ -15,7 +15,7 @@ menu:
 The `{finbif}` package has two functions for querying the taxonomic information
 in the FinBIF database.
 
-## Checking taxa
+## Taxa checking
 You can use the function `finbif_check_taxa` to check whether taxa are in
 the FinBIF database.
 
