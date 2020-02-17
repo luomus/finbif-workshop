@@ -23,7 +23,7 @@ the FinBIF database.
 (taxa <- finbif_check_taxa(c("Ursus arctos", "Moomin")))
 ```
 
-```
+```{.language-r}
 #> [Ursus arctos] ID: MX.47348
 #> [Moomin      ] Not found
 ```
@@ -35,7 +35,7 @@ will return `NA`
 taxa[[1]]
 ```
 
-```
+```{.language-r}
 #> Ursus arctos 
 #>   "MX.47348"
 ```
@@ -44,7 +44,7 @@ taxa[[1]]
 taxa[[2]]
 ```
 
-```
+```{.language-r}
 #> Moomin 
 #>     NA
 ```
@@ -56,7 +56,7 @@ rank will have valid IDs returned.
 finbif_check_taxa(list(species = c("Ursus arctos", "Ursus"), genus = "Ursus"))
 ```
 
-```
+```{.language-r}
 #> [species: Ursus arctos] ID: MX.47348
 #> [species: Ursus       ] Not found
 #> [genus:   Ursus       ] ID: MX.51311
@@ -72,7 +72,7 @@ taxa_list <- readLines("taxa.csv")
 finbif_check_taxa(taxa_list)
 ```
 
-```
+```{.language-r}
 #> [Bombina variegata     ] ID: MX.200974
 #> [Bufo bufo             ] ID: MX.37626
 #> [Rana arvalis          ] ID: MX.37621
@@ -97,7 +97,7 @@ finbif_check_taxa(taxa_list)
 finbif_taxa("Capreolus capreolus")
 ```
 
-```
+```{.language-r}
 #> <FinBIF taxa/search>
 #> List of 1
 #>  $ :List of 12
@@ -130,7 +130,7 @@ deer <- finbif_taxa("deer", type = "partial", n = 10)
 sapply(deer$content, getElement, "scientificName")
 ```
 
-```
+```{.language-r}
 #>  [1] "Dama dama"                "Capreolus capreolus"     
 #>  [3] "Odocoileus virginianus"   "Rangifer tarandus"       
 #>  [5] "Hippuriphila modeeri"     "Pseudombrophila merdaria"
