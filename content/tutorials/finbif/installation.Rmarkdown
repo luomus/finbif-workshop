@@ -7,7 +7,7 @@ weight: 2
 
 menu:
   finbif:
-    name: Installation
+    name: 1. Installation
     weight: 2
 ---
 
@@ -51,8 +51,8 @@ remotes::install_version("finbif", "0.2.0")
 ```
 
 ## Loading
-Once you have installed the package you can load it into your R environment with
-the `library` function.
+Once you have installed the package you can load it into your R session with the
+`library` function.
 ```{r library}
 library(finbif)
 ```
