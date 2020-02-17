@@ -11,7 +11,7 @@ menu:
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, comment = "#>")
 ```
 To access data from FinBIF via its public [API](https://api.laji.fi) you will
 need to obtain a personal access token. You should only need to request a token
