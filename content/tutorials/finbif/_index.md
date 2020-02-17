@@ -31,3 +31,5 @@ package. Topics covered include: installing the package, accessing the
 documentation and getting help, working with taxonomic information, accessing
 collection information, getting and filtering occurrence records, creating
 graphics from FinBIF data and fitting models to FinBIF data.
+
+### [Begin the tutorial __>__](/tutorials/finbif/installation/)
