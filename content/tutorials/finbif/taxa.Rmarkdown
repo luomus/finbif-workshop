@@ -1,0 +1,58 @@
+---
+title: Working with taxa
+draft: no
+toc: yes
+type: docs
+weight: 5
+menu:
+  finbif:
+    name: 4. Taxa
+    weight: 5
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = "#>")
+library(finbif)
+```
+
+The `{finbif}` package has two functions for querying the taxonomic information
+in the FinBIF database.
+
+## Checking taxa
+You can use the function `finbif_check_taxa` to check whether taxa are in
+the FinBIF database.
+```{r check-taxa}
+(taxa <- finbif_check_taxa(c("Ursus arctos", "Moomin")))
+```
+
+If the taxa are present then the function returns their FinBIF ID, otherwise it
+will return `NA`
+```{r show-checked-taxa}
+taxa[[1]]
+taxa[[2]]
+```
+
+When checking taxa, you can specify a taxonomic rank and only names with that
+rank will have valid IDs returned.
+```{r check-taxa-specific}
+finbif_check_taxa(list(species = c("Ursus arctos", "Ursus"), genus = "Ursus"))
+```
+
+You can check a number of taxa at a time. For example if you have a list of taxa
+in a file (you can dowload this list of [taxa](../taxa.csv) for instance) you
+can easily check them all at once.
+
+```{r check-taxa-list}
+taxa_list <- readLines("taxa.csv")
+finbif_check_taxa(taxa_list)
+```
+## Taxa search
+
+```{r search-taxa}
+finbif_taxa("Capreolus capreolus")
+```
+
+```{r search-taxa-deer}
+deer <- finbif_taxa("deer", type = "partial", n = 10)
+sapply(deer$content, getElement, "scientificName")
+```
