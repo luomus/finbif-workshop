@@ -1,0 +1,36 @@
+---
+title: Collections
+draft: no
+toc: yes
+type: docs
+weight: 6
+menu:
+  finbif:
+    name: 5. Collections
+    weight: 6
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
+library(finbif)
+```
+
+```{r collections, eval = FALSE}
+finbif_collections()
+```
+
+```{r collections-finland}
+finbif_collections(
+  filter = geographic_coverage == "Finland",
+  select = c(collection_name, taxonomic_coverage, count)
+)
+```
+
+```{r collections-large, eval = FALSE}
+collections <- finbif_collections(supercollections = TRUE, nmin = 10000)
+View(collections)
+```
+
+```{r collections-128}
+finbif_collections(is_part_of == "HR.128", supercollections = TRUE)
+```
