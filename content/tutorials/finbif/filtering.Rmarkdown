@@ -1,0 +1,16 @@
+---
+title: Filtering Occurrence Data
+draft: no
+toc: yes
+type: docs
+weight: 9
+menu:
+  finbif:
+    name: 8. Filtering
+    weight: 9
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
+library(finbif)
+```

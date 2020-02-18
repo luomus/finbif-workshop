@@ -1,0 +1,16 @@
+---
+title: Fitting a model
+draft: no
+toc: yes
+type: docs
+weight: 14
+menu:
+  finbif:
+    name: 13. Modelling
+    weight: 14
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
+library(finbif)
+```

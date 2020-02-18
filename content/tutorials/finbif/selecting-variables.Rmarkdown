@@ -1,0 +1,16 @@
+---
+title: Selecting Variables
+draft: no
+toc: yes
+type: docs
+weight: 8
+menu:
+  finbif:
+    name: 7. Selecting
+    weight: 8
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
+library(finbif)
+```
