@@ -5,7 +5,6 @@ weight: 1
 
 title: Introduction
 draft: false
-toc: true
 type: docs
 
 menu:
