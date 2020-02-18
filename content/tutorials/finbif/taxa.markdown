@@ -62,10 +62,9 @@ finbif_check_taxa(list(species = c("Ursus arctos", "Ursus"), genus = "Ursus"))
 #> [genus:   Ursus       ] ID: MX.51311
 ```
 
-You can check a number of taxa at a time. For example if you have a list of taxa
-in a file (you can dowload this list of [taxa](../taxa.csv) for instance) you
+You can check many taxa at a time. For example, if you have a list of taxa in a
+file (you can dowload this list of [taxa](../taxa.csv) for instance) you
 can easily check them all at once.
-
 
 ```r
 taxa_list <- readLines("taxa.csv")
@@ -90,8 +89,10 @@ finbif_check_taxa(taxa_list)
 #> [Lacerta agilis        ] ID: MX.201133
 #> [Zootoca vivipara      ] ID: MX.37635
 ```
-## Taxa search
 
+## Taxa search
+Detailed taxonomic information for taxa that are in the FinBIF database can be
+accessed with the `finbif_taxa` function.
 
 ```r
 finbif_taxa("Capreolus capreolus")
@@ -124,6 +125,8 @@ finbif_taxa("Capreolus capreolus")
 #>   ..$ type                    : chr "exactMatches"
 ```
 
+Searching for taxonomic information in FinBIF can use "partial" matching. You
+might be interested in taxa that match a particular term.
 
 ```r
 deer <- finbif_taxa("deer", type = "partial", n = 10)

@@ -38,20 +38,23 @@ rank will have valid IDs returned.
 finbif_check_taxa(list(species = c("Ursus arctos", "Ursus"), genus = "Ursus"))
 ```
 
-You can check a number of taxa at a time. For example if you have a list of taxa
-in a file (you can dowload this list of [taxa](../taxa.csv) for instance) you
+You can check many taxa at a time. For example, if you have a list of taxa in a
+file (you can dowload this list of [taxa](../taxa.csv) for instance) you
 can easily check them all at once.
-
 ```{r check-taxa-list}
 taxa_list <- readLines("taxa.csv")
 finbif_check_taxa(taxa_list)
 ```
-## Taxa search
 
+## Taxa search
+Detailed taxonomic information for taxa that are in the FinBIF database can be
+accessed with the `finbif_taxa` function.
 ```{r search-taxa}
 finbif_taxa("Capreolus capreolus")
 ```
 
+Searching for taxonomic information in FinBIF can use "partial" matching. You
+might be interested in taxa that match a particular term.
 ```{r search-taxa-deer}
 deer <- finbif_taxa("deer", type = "partial", n = 10)
 sapply(deer$content, getElement, "scientificName")
