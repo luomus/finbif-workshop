@@ -14,3 +14,106 @@ menu:
 knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
 library(finbif)
 ```
+
+```{r, eval = FALSE}
+?filters
+```
+
+```{r}
+finbif_occurrence(filter = c(country = "Finland"))
+```
+
+```{r}
+finbif_occurrence(
+  filter = list(
+    coordinates = list(lat = c(60, 68), lon = c(20, 30), system = "wgs84")
+  )
+)
+```
+
+```{r}
+finbif_occurrence(filter = list(date_range_ym = c("2019-12")))
+```
+
+```{r}
+finbif_occurrence(
+  filter = list(date_range_ymd = c("2019-06-01", "2019-12-31"))
+)
+```
+
+```{r}
+finbif_occurrence(
+  filter = list(
+    date_range_md = c(begin = "12-21", end = "12-31"),
+    date_range_md = c(begin = "01-01", end = "02-20")
+  )
+)
+```
+
+```{r}
+strict <- c(
+  collection_reliability = 5, coordinates_uncertainty_max = 1,
+  taxon_reliability = "reliable"
+)
+```
+
+```{r}
+permissive <- list(
+  collection_reliability = 1:5, coordinates_uncertainty_max = 10000,
+  quality_issues = "both"
+)
+```
+
+```{r}
+c(
+  strict     = finbif_occurrence(filter = strict,     count_only = TRUE),
+  permissive = finbif_occurrence(filter = permissive, count_only = TRUE)
+)
+```
+
+```{r}
+finbif_occurrence(
+  filter = c(collection = "iNaturalist"), count_only = TRUE
+)
+```
+
+```{r}
+finbif_occurrence(
+  filter = c(collection = "Notebook, general observations"), count_only = TRUE
+)
+```
+
+```{r}
+collections <- finbif_collections(
+  filter = geographic_coverage == "Finland", nmin = 10000
+)
+
+finbif_occurrence(filter = list(collection = collections))
+```
+
+```{r}
+finbif_occurrence(filter = list(informal_group = "Reptiles and amphibians"))
+```
+
+```{r}
+finbif_occurrence(
+  filter = list(informal_group = "Birds", administrative_status = "EU_INVSV")
+)
+```
+
+```{r}
+finbif_occurrence(
+  filter = list(informal_group = "Mammals", red_list_status = "NT")
+)
+```
+
+```{r}
+finbif_occurrence(filter = c(finnish_occurrence_status = "rare"))
+```
+
+```{r}
+finbif_occurrence(
+  "Birds",
+  filter = c(finnish_occurrence_status_neg = "stable", taxon_rank = "species")
+)
+```

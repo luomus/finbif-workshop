@@ -17,7 +17,6 @@ once but you will need to either set your token each time you start an R
 session, or store the token in an `Renviron` file so that is loaded each time
 R starts up.
 
-## Loading
 If you have not already done so, load `{finbif}` into your R session.
 
 ```r

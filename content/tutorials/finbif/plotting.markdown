@@ -3,11 +3,11 @@ title: Plotting
 draft: no
 toc: yes
 type: docs
-weight: 11
+weight: 10
 menu:
   finbif:
-    name: 10. Plotting
-    weight: 11
+    name: 9. Plotting
+    weight: 10
 ---
 
 

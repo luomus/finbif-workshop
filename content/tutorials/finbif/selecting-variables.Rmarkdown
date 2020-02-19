@@ -1,16 +1,49 @@
 ---
-title: Selecting Variables
+title: Selecting and Ordering Variables
 draft: no
 toc: yes
 type: docs
-weight: 8
+weight: 7
 menu:
   finbif:
-    name: 7. Selecting
-    weight: 8
+    name: 6. Select & Order
+    weight: 7
 ---
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
 library(finbif)
+```
+
+```{r, eval = FALSE}
+?variables
+```
+## Selecting Variables
+### Limiting variables
+```{r}
+finbif_occurrence(
+  genus = "Falco",
+  select = c("scientific_name", "life_stage", "sex")
+)
+```
+
+### Extra variables
+```{r}
+finbif_occurrence(select = c("default_vars", "life_stage"))
+```
+
+## Ordering
+### Ascending order
+```{r}
+finbif_occurrence("Cygnus cygnus", order_by = c("abundance"))
+```
+
+## Descending order
+```{r}
+finbif_occurrence("Cygnus cygnus", order_by = c("-abundance"))
+```
+
+## Multiple variables
+```{r}
+finbif_occurrence("Cygnus olor", order_by = c("municipality", "-abundance"))
 ```

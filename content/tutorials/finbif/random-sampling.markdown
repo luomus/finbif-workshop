@@ -3,11 +3,11 @@ title: Random Sampling
 draft: no
 toc: yes
 type: docs
-weight: 12
+weight: 11
 menu:
   finbif:
-    name: 11. Random Samples
-    weight: 12
+    name: 12. Random Samples
+    weight: 11
 ---
 
 
