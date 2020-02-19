@@ -51,19 +51,19 @@ finbif_occurrence(select = c("default_vars", "life_stage"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34449107
+#> Records available: 34449399
 #> A data.frame [10 x 31]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Cortinarius dionysae         1  62.14249  23.46889 2020-02-18 22:00:00
-#> 2  Clitocybe subsinopi…         1  66.11093  26.76504 2020-02-18 22:00:00
-#> 3     Formica (Formica)         1  59.89200  22.51700 2020-02-18 22:00:00
-#> 4      Larus argentatus         2  60.46486  22.35936 2020-02-18 22:00:00
-#> 5     Dendrocopos major         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 6         Turdus merula         2  60.46486  22.35936 2020-02-18 22:00:00
-#> 7     Dryocopus martius         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 8         Corvus corone         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 9             Pica pica         4  60.42794  22.20052 2020-02-18 22:00:00
-#> 10     Larus argentatus        40  60.42794  22.20052 2020-02-18 22:00:00
+#> 1  Sclerencoelia fasci…      1000  60.37497  25.73377 2020-02-18 22:00:00
+#> 2     Formica (Formica)         1  59.89200  22.51700 2020-02-18 22:00:00
+#> 3      Larus argentatus         2  60.46486  22.35936 2020-02-18 22:00:00
+#> 4     Dendrocopos major         1  60.46486  22.35936 2020-02-18 22:00:00
+#> 5         Turdus merula         2  60.46486  22.35936 2020-02-18 22:00:00
+#> 6     Dryocopus martius         1  60.46486  22.35936 2020-02-18 22:00:00
+#> 7         Corvus corone         1  60.46486  22.35936 2020-02-18 22:00:00
+#> 8             Pica pica         4  60.42794  22.20052 2020-02-18 22:00:00
+#> 9      Larus argentatus        40  60.42794  22.20052 2020-02-18 22:00:00
+#> 10          Picus canus         1  60.42794  22.20052 2020-02-18 22:00:00
 #> ...with 0 more records and 26 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -104,7 +104,7 @@ finbif_occurrence("Cygnus cygnus", order_by = c("abundance"))
 #> location_issue, time_issue, duration
 ```
 
-## Descending order
+### Descending order
 
 ```r
 finbif_occurrence("Cygnus cygnus", order_by = c("-abundance"))
@@ -134,7 +134,7 @@ finbif_occurrence("Cygnus cygnus", order_by = c("-abundance"))
 #> location_issue, time_issue, duration
 ```
 
-## Multiple variables
+### Multiple variables
 
 ```r
 finbif_occurrence("Cygnus olor", order_by = c("municipality", "-abundance"))
