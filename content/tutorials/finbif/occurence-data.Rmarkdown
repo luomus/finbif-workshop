@@ -59,7 +59,7 @@ finbif_occurrence("Vulpes vulpes", "Moomin", check_taxa = FALSE)
 finbif_occurrence("Vulpes vulpes", "Moomin", on_check_fail = "error")
 ```
 
-## Time & Duration
+## Time & duration
 
 ```{r, eval = FALSE}
 finbif_occurrence(date_time_method = "accurate")

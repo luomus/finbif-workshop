@@ -19,6 +19,7 @@ library(finbif)
 ?filters
 ```
 
+## Location
 ```{r}
 finbif_occurrence(filter = c(country = "Finland"))
 ```
@@ -31,6 +32,7 @@ finbif_occurrence(
 )
 ```
 
+## Dates & times
 ```{r}
 finbif_occurrence(filter = list(date_range_ym = c("2019-12")))
 ```
@@ -50,6 +52,7 @@ finbif_occurrence(
 )
 ```
 
+## Data quality
 ```{r}
 strict <- c(
   collection_reliability = 5, coordinates_uncertainty_max = 1,
@@ -71,6 +74,7 @@ c(
 )
 ```
 
+## Collections
 ```{r}
 finbif_occurrence(
   filter = c(collection = "iNaturalist"), count_only = TRUE
@@ -88,9 +92,10 @@ collections <- finbif_collections(
   filter = geographic_coverage == "Finland", nmin = 10000
 )
 
-finbif_occurrence(filter = list(collection = collections))
+finbif_occurrence(filter = list(collection = collections), count_only = TRUE)
 ```
 
+## Informal groups
 ```{r}
 finbif_occurrence(filter = list(informal_group = "Reptiles and amphibians"))
 ```
@@ -101,6 +106,7 @@ finbif_occurrence(
 )
 ```
 
+## Taxon status
 ```{r}
 finbif_occurrence(
   filter = list(informal_group = "Mammals", red_list_status = "NT")

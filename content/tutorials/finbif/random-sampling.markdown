@@ -6,7 +6,7 @@ type: docs
 weight: 11
 menu:
   finbif:
-    name: 12. Random Samples
+    name: 10. Sampling
     weight: 11
 ---
 

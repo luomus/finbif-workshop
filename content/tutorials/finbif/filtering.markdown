@@ -17,6 +17,7 @@ menu:
 ?filters
 ```
 
+## Location
 
 ```r
 finbif_occurrence(filter = c(country = "Finland"))
@@ -24,19 +25,19 @@ finbif_occurrence(filter = c(country = "Finland"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 32615090
+#> Records available: 32618230
 #> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Cortinarius dionysae         1  62.14249  23.46889 2020-02-18 22:00:00
-#> 2  Clitocybe subsinopi…         1  66.11093  26.76504 2020-02-18 22:00:00
-#> 3     Formica (Formica)         1  59.89200  22.51700 2020-02-18 22:00:00
-#> 4      Larus argentatus         2  60.46486  22.35936 2020-02-18 22:00:00
-#> 5     Dendrocopos major         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 6         Turdus merula         2  60.46486  22.35936 2020-02-18 22:00:00
-#> 7     Dryocopus martius         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 8         Corvus corone         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 9             Pica pica         4  60.42794  22.20052 2020-02-18 22:00:00
-#> 10     Larus argentatus        40  60.42794  22.20052 2020-02-18 22:00:00
+#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1          Strobilurus         1  61.57393  23.17713 2020-02-19 22:00:00
+#> 2   Phigalia pilosaria         1  60.38352  23.16606 2020-02-18 22:00:00
+#> 3          Strix aluco         1  60.97880  26.09086 2020-02-18 22:00:00
+#> 4        Milvus milvus         1  60.78519  26.07963 2020-02-19 05:00:00
+#> 5          Strix aluco         1  60.98431  26.04420 2020-02-18 22:00:00
+#> 6        Schizophyllum        10  60.18082  25.01560 2020-02-18 22:00:00
+#> 7  Exidia cartilaginea        10  60.37493  25.73387 2020-02-18 22:00:00
+#> 8      Graphis scripta      1000  60.37480  25.73329 2020-02-18 22:00:00
+#> 9    Formica (Formica)         1  59.89200  22.51700 2020-02-18 22:00:00
+#> 10           Culicidae         1  59.89200  22.51700 2020-02-18 22:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -57,19 +58,19 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 26985020
+#> Records available: 26987004
 #> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Cortinarius dionysae         1  62.14249  23.46889 2020-02-18 22:00:00
-#> 2  Clitocybe subsinopi…         1  66.11093  26.76504 2020-02-18 22:00:00
-#> 3      Larus argentatus         2  60.46486  22.35936 2020-02-18 22:00:00
-#> 4     Dendrocopos major         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 5         Turdus merula         2  60.46486  22.35936 2020-02-18 22:00:00
-#> 6     Dryocopus martius         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 7         Corvus corone         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 8             Pica pica         4  60.42794  22.20052 2020-02-18 22:00:00
-#> 9      Larus argentatus        40  60.42794  22.20052 2020-02-18 22:00:00
-#> 10          Picus canus         1  60.42794  22.20052 2020-02-18 22:00:00
+#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1          Strobilurus         1  61.57393  23.17713 2020-02-19 22:00:00
+#> 2   Phigalia pilosaria         1  60.38352  23.16606 2020-02-18 22:00:00
+#> 3          Strix aluco         1  60.97880  26.09086 2020-02-18 22:00:00
+#> 4        Milvus milvus         1  60.78519  26.07963 2020-02-19 05:00:00
+#> 5          Strix aluco         1  60.98431  26.04420 2020-02-18 22:00:00
+#> 6        Schizophyllum        10  60.18082  25.01560 2020-02-18 22:00:00
+#> 7  Exidia cartilaginea        10  60.37493  25.73387 2020-02-18 22:00:00
+#> 8      Graphis scripta      1000  60.37480  25.73329 2020-02-18 22:00:00
+#> 9       Dicranum majus         1  62.25868  25.71230 2020-02-18 22:00:00
+#> 10  Dicranum polysetum         1  62.25868  25.71230 2020-02-18 22:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -79,6 +80,7 @@ finbif_occurrence(
 #> location_issue, time_issue, duration
 ```
 
+## Dates & times
 
 ```r
 finbif_occurrence(filter = list(date_range_ym = c("2019-12")))
@@ -86,7 +88,7 @@ finbif_occurrence(filter = list(date_range_ym = c("2019-12")))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 7546
+#> Records available: 7550
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1             Pica pica        26  61.59566  23.35462 2019-12-31 08:05:00
@@ -117,7 +119,7 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 334575
+#> Records available: 334922
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1             Pica pica        26  61.59566  23.35462 2019-12-31 08:05:00
@@ -151,19 +153,19 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 1483015
+#> Records available: 1483333
 #> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Cortinarius dionysae         1  62.14249  23.46889 2020-02-18 22:00:00
-#> 2  Clitocybe subsinopi…         1  66.11093  26.76504 2020-02-18 22:00:00
-#> 3     Formica (Formica)         1  59.89200  22.51700 2020-02-18 22:00:00
-#> 4      Larus argentatus         2  60.46486  22.35936 2020-02-18 22:00:00
-#> 5     Dendrocopos major         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 6         Turdus merula         2  60.46486  22.35936 2020-02-18 22:00:00
-#> 7     Dryocopus martius         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 8         Corvus corone         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 9             Pica pica         4  60.42794  22.20052 2020-02-18 22:00:00
-#> 10     Larus argentatus        40  60.42794  22.20052 2020-02-18 22:00:00
+#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1          Strobilurus         1  61.57393  23.17713 2020-02-19 22:00:00
+#> 2   Phigalia pilosaria         1  60.38352  23.16606 2020-02-18 22:00:00
+#> 3          Strix aluco         1  60.97880  26.09086 2020-02-18 22:00:00
+#> 4        Milvus milvus         1  60.78519  26.07963 2020-02-19 05:00:00
+#> 5          Strix aluco         1  60.98431  26.04420 2020-02-18 22:00:00
+#> 6        Schizophyllum        10  60.18082  25.01560 2020-02-18 22:00:00
+#> 7  Exidia cartilaginea        10  60.37493  25.73387 2020-02-18 22:00:00
+#> 8      Graphis scripta      1000  60.37480  25.73329 2020-02-18 22:00:00
+#> 9    Formica (Formica)         1  59.89200  22.51700 2020-02-18 22:00:00
+#> 10           Culicidae         1  59.89200  22.51700 2020-02-18 22:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -173,6 +175,7 @@ finbif_occurrence(
 #> location_issue, time_issue, duration
 ```
 
+## Data quality
 
 ```r
 strict <- c(
@@ -199,9 +202,10 @@ c(
 
 ```{.language-r}
 #>     strict permissive 
-#>     302908   31320885
+#>     303248   31323061
 ```
 
+## Collections
 
 ```r
 finbif_occurrence(
@@ -221,7 +225,7 @@ finbif_occurrence(
 ```
 
 ```{.language-r}
-#> [1] 679749
+#> [1] 680642
 ```
 
 
@@ -230,33 +234,14 @@ collections <- finbif_collections(
   filter = geographic_coverage == "Finland", nmin = 10000
 )
 
-finbif_occurrence(filter = list(collection = collections))
+finbif_occurrence(filter = list(collection = collections), count_only = TRUE)
 ```
 
 ```{.language-r}
-#> Records downloaded: 10
-#> Records available: 8142423
-#> A data.frame [10 x 30]
-#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1    Formica (Formica)         1  59.89200   22.5170 2020-02-18 22:00:00
-#> 2            Pica pica         9  62.10863   28.6248 2020-02-18 07:05:00
-#> 3      Regulus regulus         5  62.10863   28.6248 2020-02-18 07:05:00
-#> 4     Poecile montanus         6  62.10863   28.6248 2020-02-18 07:05:00
-#> 5         Corvus corax         7  62.10863   28.6248 2020-02-18 07:05:00
-#> 6    Dendrocopos major         5  62.10863   28.6248 2020-02-18 07:05:00
-#> 7      Corvus monedula        43  62.10863   28.6248 2020-02-18 07:05:00
-#> 8  Garrulus glandarius         3  62.10863   28.6248 2020-02-18 07:05:00
-#> 9    Loxia curvirostra         1  62.10863   28.6248 2020-02-18 07:05:00
-#> 10     Passer montanus         4  62.10863   28.6248 2020-02-18 07:05:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> [1] 8142513
 ```
 
+## Informal groups
 
 ```r
 finbif_occurrence(filter = list(informal_group = "Reptiles and amphibians"))
@@ -264,7 +249,7 @@ finbif_occurrence(filter = list(informal_group = "Reptiles and amphibians"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 30472
+#> Records available: 30475
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1      Zootoca vivipara         1  60.26828  24.89337 2020-02-16 22:00:00
@@ -317,6 +302,7 @@ finbif_occurrence(
 #> location_issue, time_issue, duration
 ```
 
+## Taxon status
 
 ```r
 finbif_occurrence(
@@ -355,19 +341,19 @@ finbif_occurrence(filter = c(finnish_occurrence_status = "rare"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 259580
+#> Records available: 259633
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1    Oenopia conglobata         1  61.71205  29.39218 2020-02-13 13:36:00
-#> 2    Oenopia conglobata         1  61.71378  29.39089 2020-02-12 16:52:00
-#> 3  Nanomimus circumscr…         1  60.41145  26.60956 2020-02-10 22:00:00
-#> 4    Nephus bipunctatus         1  60.41145  26.60956 2020-02-10 22:00:00
-#> 5  Calodromius spilotus         2  60.14807  22.29686 2020-02-01 22:00:00
-#> 6    Stethorus pusillus         1  60.28865  24.86263 2020-01-29 22:00:00
-#> 7  Calodromius spilotus         2  60.11620  24.63514 2020-01-25 22:00:00
-#> 8  Dromius quadrimacul…         1  60.11620  24.63514 2020-01-25 22:00:00
-#> 9    Scymnus ferrugatus         1  60.50135  25.94171 2020-01-25 22:00:00
-#> 10 Subcoccinella vigin…         1  61.05561  26.70590 2020-01-20 22:00:00
+#> 1   Conistra rubiginosa         4  60.45842  22.17823 2020-02-16 22:00:00
+#> 2    Oenopia conglobata         1  61.71205  29.39218 2020-02-13 13:36:00
+#> 3    Oenopia conglobata         1  61.71378  29.39089 2020-02-12 16:52:00
+#> 4  Nanomimus circumscr…         1  60.41145  26.60956 2020-02-10 22:00:00
+#> 5    Nephus bipunctatus         1  60.41145  26.60956 2020-02-10 22:00:00
+#> 6  Calodromius spilotus         2  60.14807  22.29686 2020-02-01 22:00:00
+#> 7    Stethorus pusillus         1  60.28865  24.86263 2020-01-29 22:00:00
+#> 8  Calodromius spilotus         2  60.11620  24.63514 2020-01-25 22:00:00
+#> 9  Dromius quadrimacul…         1  60.11620  24.63514 2020-01-25 22:00:00
+#> 10   Scymnus ferrugatus         1  60.50135  25.94171 2020-01-25 22:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -387,19 +373,19 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 104633
+#> Records available: 104634
 #> A data.frame [10 x 30]
 #>       scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1       Gavia adamsii         1  61.14620  26.72432 2020-02-04 22:00:00
-#> 2    Larus glaucoides         1  63.82952  23.03191 2020-02-04 22:00:00
-#> 3   Larus hyperboreus         1  63.82944  23.03180 2020-02-03 22:00:00
-#> 4    Larus glaucoides         1  63.82939  23.02910 2020-02-02 22:00:00
-#> 5       Milvus milvus         1  60.08416  23.40222 2020-01-06 07:15:00
-#> 6  Cygnus columbianus         1  60.15734  24.87389 2020-01-05 07:10:00
-#> 7       Gavia adamsii         1  61.15926  28.76690 2020-01-01 07:50:00
-#> 8   Larus hyperboreus         1  65.07408  25.40821 2019-12-31 08:05:00
-#> 9       Bubulcus ibis         1  26.15296 -81.53502 2019-12-27 05:00:00
-#> 10      Bubulcus ibis         1  27.56583 -82.51408 2019-12-27 05:00:00
+#> 1       Milvus milvus         1  60.78519  26.07963 2020-02-19 05:00:00
+#> 2       Gavia adamsii         1  61.14620  26.72432 2020-02-04 22:00:00
+#> 3    Larus glaucoides         1  63.82952  23.03191 2020-02-04 22:00:00
+#> 4   Larus hyperboreus         1  63.82944  23.03180 2020-02-03 22:00:00
+#> 5    Larus glaucoides         1  63.82939  23.02910 2020-02-02 22:00:00
+#> 6       Milvus milvus         1  60.08416  23.40222 2020-01-06 07:15:00
+#> 7  Cygnus columbianus         1  60.15734  24.87389 2020-01-05 07:10:00
+#> 8       Gavia adamsii         1  61.15926  28.76690 2020-01-01 07:50:00
+#> 9   Larus hyperboreus         1  65.07408  25.40821 2019-12-31 08:05:00
+#> 10      Bubulcus ibis         1  26.15296 -81.53502 2019-12-27 05:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,

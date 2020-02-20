@@ -16,7 +16,7 @@ menu:
 ```r
 ?variables
 ```
-## Selecting Variables
+## Selecting variables
 ### Limiting variables
 
 ```r
@@ -28,7 +28,7 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 280283
+#> Records available: 280284
 #> A data.frame [10 x 3]
 #>      scientific_name life_stage  sex
 #> 1  Falco tinnunculus       <NA> <NA>
@@ -51,19 +51,19 @@ finbif_occurrence(select = c("default_vars", "life_stage"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34449399
+#> Records available: 34452581
 #> A data.frame [10 x 31]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Sclerencoelia fasci…      1000  60.37497  25.73377 2020-02-18 22:00:00
-#> 2     Formica (Formica)         1  59.89200  22.51700 2020-02-18 22:00:00
-#> 3      Larus argentatus         2  60.46486  22.35936 2020-02-18 22:00:00
-#> 4     Dendrocopos major         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 5         Turdus merula         2  60.46486  22.35936 2020-02-18 22:00:00
-#> 6     Dryocopus martius         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 7         Corvus corone         1  60.46486  22.35936 2020-02-18 22:00:00
-#> 8             Pica pica         4  60.42794  22.20052 2020-02-18 22:00:00
-#> 9      Larus argentatus        40  60.42794  22.20052 2020-02-18 22:00:00
-#> 10          Picus canus         1  60.42794  22.20052 2020-02-18 22:00:00
+#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1          Strobilurus         1  61.57393  23.17713 2020-02-19 22:00:00
+#> 2   Phigalia pilosaria         1  60.38352  23.16606 2020-02-18 22:00:00
+#> 3          Strix aluco         1  60.97880  26.09086 2020-02-18 22:00:00
+#> 4        Milvus milvus         1  60.78519  26.07963 2020-02-19 05:00:00
+#> 5          Strix aluco         1  60.98431  26.04420 2020-02-18 22:00:00
+#> 6        Schizophyllum        10  60.18082  25.01560 2020-02-18 22:00:00
+#> 7  Exidia cartilaginea        10  60.37493  25.73387 2020-02-18 22:00:00
+#> 8      Graphis scripta      1000  60.37480  25.73329 2020-02-18 22:00:00
+#> 9    Formica (Formica)         1  59.89200  22.51700 2020-02-18 22:00:00
+#> 10           Culicidae         1  59.89200  22.51700 2020-02-18 22:00:00
 #> ...with 0 more records and 26 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -82,7 +82,7 @@ finbif_occurrence("Cygnus cygnus", order_by = c("abundance"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 56160
+#> Records available: 56162
 #> A data.frame [10 x 30]
 #>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1    Cygnus cygnus         1  60.41667  16.00000 1997-03-31 22:00:00
@@ -112,7 +112,7 @@ finbif_occurrence("Cygnus cygnus", order_by = c("-abundance"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 56160
+#> Records available: 56162
 #> A data.frame [10 x 30]
 #>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1    Cygnus cygnus      6000  64.40000 -14.54000 1995-07-05 00:00:00
@@ -142,7 +142,7 @@ finbif_occurrence("Cygnus olor", order_by = c("municipality", "-abundance"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 24181
+#> Records available: 24183
 #> A data.frame [10 x 30]
 #>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1      Cygnus olor         4  61.13908  23.93331 2007-11-04 07:00:00

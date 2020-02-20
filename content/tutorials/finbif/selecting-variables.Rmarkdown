@@ -18,7 +18,7 @@ library(finbif)
 ```{r, eval = FALSE}
 ?variables
 ```
-## Selecting Variables
+## Selecting variables
 ### Limiting variables
 ```{r}
 finbif_occurrence(

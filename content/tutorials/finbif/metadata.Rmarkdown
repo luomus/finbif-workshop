@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
 library(finbif)
 ```
 
-
+## General metadata
 ```{r}
 finbif_metadata()
 ```
@@ -32,6 +32,7 @@ finbif_metadata("red_list")
 finbif_metadata("taxon_ranks")
 ```
 
+## Informal groups
 ```{r}
 finbif_informal_groups(limit = 6)
 ```
@@ -40,6 +41,7 @@ finbif_informal_groups(limit = 6)
 finbif_informal_groups("Crustaceans")
 ```
 
+## Collections
 ```{r collections, eval = FALSE}
 finbif_collections()
 ```
