@@ -51,19 +51,19 @@ finbif_occurrence(select = c("default_vars", "life_stage"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34452581
+#> Records available: 34452585
 #> A data.frame [10 x 31]
 #>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1          Strobilurus         1  61.57393  23.17713 2020-02-19 22:00:00
-#> 2   Phigalia pilosaria         1  60.38352  23.16606 2020-02-18 22:00:00
-#> 3          Strix aluco         1  60.97880  26.09086 2020-02-18 22:00:00
-#> 4        Milvus milvus         1  60.78519  26.07963 2020-02-19 05:00:00
-#> 5          Strix aluco         1  60.98431  26.04420 2020-02-18 22:00:00
-#> 6        Schizophyllum        10  60.18082  25.01560 2020-02-18 22:00:00
-#> 7  Exidia cartilaginea        10  60.37493  25.73387 2020-02-18 22:00:00
-#> 8      Graphis scripta      1000  60.37480  25.73329 2020-02-18 22:00:00
-#> 9    Formica (Formica)         1  59.89200  22.51700 2020-02-18 22:00:00
-#> 10           Culicidae         1  59.89200  22.51700 2020-02-18 22:00:00
+#> 1    Galanthus elwesii        20  60.44745  22.27223 2020-02-19 22:00:00
+#> 2          Strobilurus         1  61.57393  23.17713 2020-02-19 22:00:00
+#> 3   Phigalia pilosaria         1  60.38352  23.16606 2020-02-18 22:00:00
+#> 4          Strix aluco         1  60.97880  26.09086 2020-02-18 22:00:00
+#> 5        Milvus milvus         1  60.78519  26.07963 2020-02-19 05:00:00
+#> 6          Strix aluco         1  60.98431  26.04420 2020-02-18 22:00:00
+#> 7        Schizophyllum        10  60.18082  25.01560 2020-02-18 22:00:00
+#> 8  Exidia cartilaginea        10  60.37493  25.73387 2020-02-18 22:00:00
+#> 9      Graphis scripta      1000  60.37480  25.73329 2020-02-18 22:00:00
+#> 10   Formica (Formica)         1  59.89200  22.51700 2020-02-18 22:00:00
 #> ...with 0 more records and 26 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -155,6 +155,36 @@ finbif_occurrence("Cygnus olor", order_by = c("municipality", "-abundance"))
 #> 8      Cygnus olor         3  61.22870  23.92458 2000-12-21 22:00:00
 #> 9      Cygnus olor         1  61.22870  23.92458 2006-03-10 22:00:00
 #> 10     Cygnus olor         1  61.22870  23.92458 2010-05-10 21:00:00
+#> ...with 0 more records and 25 more variables:
+#> taxon_rank, country, province, municipality, date_start, date_end,
+#> hour_start, hour_end, minute_start, minute_end, record_id,
+#> individual_id, event_id, collection_id, any_issues, record_issue,
+#> record_reliable, taxon_reliability, document_issue,
+#> collection_reliability, coordinates_uncertainty, event_issue,
+#> location_issue, time_issue, duration
+```
+
+### Random sample
+
+```r
+finbif_occurrence(sample = TRUE)
+```
+
+```{.language-r}
+#> Records downloaded: 10
+#> Records available: 34452585
+#> A data.frame [10 x 30]
+#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1       Chloris chloris         1  60.13523  23.84799 2014-08-02 21:00:00
+#> 2      Acanthis flammea         1  60.82859  24.25148 1999-12-31 22:00:00
+#> 3   Fumaria officinalis         1  60.88608  25.05381 2010-09-09 21:00:00
+#> 4     Aricia artaxerxes         4  62.91749  27.67557 1997-07-16 21:00:00
+#> 5     Gonepteryx rhamni         5  62.20992  30.36092 2002-12-31 21:00:00
+#> 6       Pheosia tremula         1  60.85337  27.92973 2006-12-31 22:00:00
+#> 7  Ranunculus auricomu…         1  60.05014  21.95920 1932-06-22 22:00:00
+#> 8        Sterna hirundo         1  61.31667  24.16667 1996-06-30 21:00:00
+#> 9    Anas platyrhynchos         1  61.08727  28.27855 2007-05-20 21:00:00
+#> 10        Spinus spinus         1  61.38042  22.36823 2015-05-23 11:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,

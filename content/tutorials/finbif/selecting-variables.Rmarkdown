@@ -47,3 +47,8 @@ finbif_occurrence("Cygnus cygnus", order_by = c("-abundance"))
 ```{r}
 finbif_occurrence("Cygnus olor", order_by = c("municipality", "-abundance"))
 ```
+
+### Random sample
+```{r}
+finbif_occurrence(sample = TRUE)
+```
