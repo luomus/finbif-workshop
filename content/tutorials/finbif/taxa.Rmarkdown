@@ -19,8 +19,8 @@ The `{finbif}` package has two functions for querying the taxonomic information
 in the FinBIF database.
 
 ## Taxa checking
-You can use the function `finbif_check_taxa` to check whether taxa are in
-the FinBIF database.
+You can use the function `finbif_check_taxa` to check whether taxa are in the
+FinBIF database.
 ```{r check-taxa}
 (taxa <- finbif_check_taxa(c("Ursus arctos", "Moomin")))
 ```
@@ -33,14 +33,14 @@ taxa[[2]]
 ```
 
 When checking taxa, you can specify a taxonomic rank and only names with that
-rank will have valid IDs returned.
+rank will have IDs returned if the name and rank combination is valid.
 ```{r check-taxa-specific}
 finbif_check_taxa(list(species = c("Ursus arctos", "Ursus"), genus = "Ursus"))
 ```
 
 You can check many taxa at a time. For example, if you have a list of taxa in a
-file (you can dowload this list of [taxa](../taxa.csv) for instance) you
-can easily check them all at once.
+file (you can dowload this list of [taxa](../taxa.csv) for instance) you can
+check them all at once.
 ```{r check-taxa-list}
 taxa_list <- readLines("taxa.csv")
 finbif_check_taxa(taxa_list)
@@ -48,15 +48,18 @@ finbif_check_taxa(taxa_list)
 
 ## Taxa search
 ### Exact matching
-More detailed taxonomic information for taxa that are in the FinBIF database can be
-accessed with the `finbif_taxa` function.
+More detailed taxonomic information for taxa that are in the FinBIF database can
+be accessed with the `finbif_taxa` function. By default, `finbif_taxa` will use
+exact matching, only returning information on taxa that exactly match the query
+that was made.
 ```{r search-taxa}
 finbif_taxa("Capreolus capreolus")
 ```
 
 ### Partial matching
-Searching for taxonomic information in FinBIF can use "partial" matching. You
-might be interested in taxa that match a particular term.
+Searching for taxonomic information in FinBIF can also use "partial" matching.
+For example, you might be interested in taxa that match a particular term, such
+as 'deer'.
 ```{r search-taxa-deer}
 deer <- finbif_taxa("deer", type = "partial", n = 10)
 sapply(deer$content, getElement, "scientificName")

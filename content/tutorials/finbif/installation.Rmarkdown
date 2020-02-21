@@ -45,7 +45,7 @@ version of the package. It is often a good idea to install a specific version
 if you want to ensure your work is
 [reproducible](https://www.practicereproducibleresearch.org/). Again, the
 `{remotes}` package can be used in this case.
-```{r install-versions, eval = FALSE}
+```{r install-version, eval = FALSE}
 remotes::install_version("finbif", "0.2.0")
 ```
 

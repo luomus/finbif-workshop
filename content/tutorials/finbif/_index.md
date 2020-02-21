@@ -4,6 +4,7 @@ summary: Learn how to access and analyse FinBIF data using r and the finbif pack
 weight: 1
 
 title: Introduction
+toc: false
 draft: false
 type: docs
 

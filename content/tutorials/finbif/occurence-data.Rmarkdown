@@ -15,33 +15,63 @@ knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
 library(finbif)
 ```
 
+The principle purpose of `{finbif}` is accessing occurrence data stored in the FinBIF
+database. Occurrence data can be retrieved from FinBIF with the function
+`finbif_occurrence`. Without any arguments specified `finbif_occurrence` will
+retrieve the latest 10 occurrence records from FinBIF.
 ```{r occurrence}
 finbif_occurrence()
 ```
+The print method for the resulting `finbif_occ` object will display the number
+of records downloaded, the total number of records available, a data summary
+including up to 10 rows of some core record variables (when available), the
+number of remaining records and variables, as well as the names of additional
+variables.
 
 ## Choosing taxa
+You can limit the records to certain taxa by specifying them as an argument.
 ```{r cygnus}
 finbif_occurrence("Cygnus cygnus")
 ```
 
+Multiple taxa can be requested at once.
 ```{r cygnus2}
-finbif_occurrence(c("Cygnus cygnus", "Cygnus olor"))
+finbif_occurrence("Cygnus cygnus", "Cygnus olor")
 ```
 
+You can also chose higher taxonomic groups and use common names (in English,
+Finnish and Swedish)
 ```{r birds}
-finbif_occurrence("Birds")
+birds  <- finbif_occurrence("Birds")
+linnut <- finbif_occurrence("Linnut")
+faglar <- finbif_occurrence("Fåglar")
+
+sapply(list(birds, linnut, faglar), nrow)
 ```
 
 ## Request size
+You can increase the number of records returned by using the `n` argument.
 ```{r occurrences1001, eval = FALSE}
-occurrences<- finbif_occurrence(n = 1001)
-View(occurrences)
+occurrences <- finbif_occurrence(n = 1001)
 ```
 
+You can invoke a spreadsheet-style data browser with the `View` function
+```{r view, eval = FALSE}
+View(occurrences)
+```
+When using the RStudio IDE you can also invoke the browser by clicking on the
+data in the 'Environment' pane.
+
+{{< figure library="true" src="data-viewer.png" lightbox="true" >}}
+
+When there are more than 1000 records to retrieve a progress bar will be
+initiated. You can suppress the progress bar with the `quiet` argument.
 ```{r quiet, eval = FALSE}
 finbif_occurrence(n = 1001, quiet = TRUE)
 ```
 
+You can see how many records are available for a given request, without
+retrieving any records, by setting `count_only = TRUE`.
 ```{r count-only}
 finbif_occurrence(count_only = TRUE)
 ```
