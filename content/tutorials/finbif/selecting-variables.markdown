@@ -16,6 +16,7 @@ menu:
 ```r
 ?variables
 ```
+
 ## Selecting variables
 ### Limiting variables
 
@@ -51,19 +52,19 @@ finbif_occurrence(select = c("default_vars", "life_stage"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34452585
+#> Records available: 34453511
 #> A data.frame [10 x 31]
-#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1    Galanthus elwesii        20  60.44745  22.27223 2020-02-19 22:00:00
-#> 2          Strobilurus         1  61.57393  23.17713 2020-02-19 22:00:00
-#> 3   Phigalia pilosaria         1  60.38352  23.16606 2020-02-18 22:00:00
-#> 4          Strix aluco         1  60.97880  26.09086 2020-02-18 22:00:00
-#> 5        Milvus milvus         1  60.78519  26.07963 2020-02-19 05:00:00
-#> 6          Strix aluco         1  60.98431  26.04420 2020-02-18 22:00:00
-#> 7        Schizophyllum        10  60.18082  25.01560 2020-02-18 22:00:00
-#> 8  Exidia cartilaginea        10  60.37493  25.73387 2020-02-18 22:00:00
-#> 9      Graphis scripta      1000  60.37480  25.73329 2020-02-18 22:00:00
-#> 10   Formica (Formica)         1  59.89200  22.51700 2020-02-18 22:00:00
+#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1       Regulus regulus         1  60.13373  24.93114 2020-02-19 22:00:00
+#> 2         Cygnus cygnus         3  60.13373  24.93114 2020-02-19 22:00:00
+#> 3     Loxia curvirostra         1  60.13373  24.93114 2020-02-19 22:00:00
+#> 4    Attagenus smirnovi         1  60.45229  22.28433 2020-02-19 22:00:00
+#> 5            Peniophora         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 6      Stereum hirsutum         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 7  Basidioradulum radu…         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 8        Phellinus alni         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 9     Trametes ochracea         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 10     Cerrena unicolor         1  65.21097  25.28346 2020-02-19 22:00:00
 #> ...with 0 more records and 26 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -82,7 +83,7 @@ finbif_occurrence("Cygnus cygnus", order_by = c("abundance"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 56162
+#> Records available: 56164
 #> A data.frame [10 x 30]
 #>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1    Cygnus cygnus         1  60.41667  16.00000 1997-03-31 22:00:00
@@ -112,7 +113,7 @@ finbif_occurrence("Cygnus cygnus", order_by = c("-abundance"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 56162
+#> Records available: 56164
 #> A data.frame [10 x 30]
 #>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1    Cygnus cygnus      6000  64.40000 -14.54000 1995-07-05 00:00:00
@@ -142,7 +143,7 @@ finbif_occurrence("Cygnus olor", order_by = c("municipality", "-abundance"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 24183
+#> Records available: 24184
 #> A data.frame [10 x 30]
 #>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1      Cygnus olor         4  61.13908  23.93331 2007-11-04 07:00:00
@@ -172,19 +173,19 @@ finbif_occurrence(sample = TRUE)
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34452585
+#> Records available: 34453512
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1       Chloris chloris         1  60.13523  23.84799 2014-08-02 21:00:00
-#> 2      Acanthis flammea         1  60.82859  24.25148 1999-12-31 22:00:00
-#> 3   Fumaria officinalis         1  60.88608  25.05381 2010-09-09 21:00:00
-#> 4     Aricia artaxerxes         4  62.91749  27.67557 1997-07-16 21:00:00
-#> 5     Gonepteryx rhamni         5  62.20992  30.36092 2002-12-31 21:00:00
-#> 6       Pheosia tremula         1  60.85337  27.92973 2006-12-31 22:00:00
-#> 7  Ranunculus auricomu…         1  60.05014  21.95920 1932-06-22 22:00:00
-#> 8        Sterna hirundo         1  61.31667  24.16667 1996-06-30 21:00:00
-#> 9    Anas platyrhynchos         1  61.08727  28.27855 2007-05-20 21:00:00
-#> 10        Spinus spinus         1  61.38042  22.36823 2015-05-23 11:00:00
+#> 1      Larus argentatus         1  59.93333  24.40000 1988-06-05 20:00:00
+#> 2     Amphipyra perflua         4  60.20207  25.63553 2006-07-17 21:00:00
+#> 3      Ipimorpha retusa         1  60.98525  28.56731 1987-12-31 22:00:00
+#> 4    Epirrhoe alternata         1  60.45584  26.90618 1993-07-25 21:00:00
+#> 5   Armoracia rusticana         1  62.61315  29.79228 2017-06-16 21:00:00
+#> 6           Larus canus         1  59.93218  24.32561 1999-12-31 22:00:00
+#> 7                 Loxia         1  62.28724  24.34886 2013-06-03 00:30:00
+#> 8  Gnorimoschema epith…         1  60.62193  27.06083 2017-06-17 21:00:00
+#> 9  Epirranthis diversa…         2  60.16425  24.56528 1987-05-02 21:00:00
+#> 10 Xanthorhoe montanata         2  66.60747  25.76980 2014-07-12 21:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,

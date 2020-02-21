@@ -47,12 +47,14 @@ finbif_check_taxa(taxa_list)
 ```
 
 ## Taxa search
-Detailed taxonomic information for taxa that are in the FinBIF database can be
+### Exact matching
+More detailed taxonomic information for taxa that are in the FinBIF database can be
 accessed with the `finbif_taxa` function.
 ```{r search-taxa}
 finbif_taxa("Capreolus capreolus")
 ```
 
+### Partial matching
 Searching for taxonomic information in FinBIF can use "partial" matching. You
 might be interested in taxa that match a particular term.
 ```{r search-taxa-deer}

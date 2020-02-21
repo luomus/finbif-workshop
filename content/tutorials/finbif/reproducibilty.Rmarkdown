@@ -15,14 +15,37 @@ knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
 library(finbif)
 ```
 
-```{r, eval = FALSE}
+## Reproducibility
+
+
+## Caching
+### Clear cache
+```{r clear-cache, eval = FALSE}
 finbif_clear_cache()
+```
 
+### Cache on/off
+```{r without-cache, eval = FALSE}
 finbif_occurrence(cache = FALSE)
+```
 
+```{r cache-off, eval = FALSE}
 options(finbif_use_cache = FALSE)
+```
+
+```{r cache-on, eval = FALSE}
 options(finbif_use_cache = TRUE)
+```
+
+### Cache on disk
+```{r cache-temp, eval = FALSE}
 options(finbif_cache_path = tempdir())
+```
+
+```{r create-cache, eval = FALSE}
 dir.create("cache")
+```
+
+```{r set-cache-dir, eval = FALSE}
 options(finbif_cache_path = "cache")
 ```

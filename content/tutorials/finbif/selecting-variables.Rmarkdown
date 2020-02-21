@@ -15,12 +15,13 @@ knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
 library(finbif)
 ```
 
-```{r, eval = FALSE}
+```{r variables-help, eval = FALSE}
 ?variables
 ```
+
 ## Selecting variables
 ### Limiting variables
-```{r}
+```{r limiting}
 finbif_occurrence(
   genus = "Falco",
   select = c("scientific_name", "life_stage", "sex")
@@ -28,27 +29,27 @@ finbif_occurrence(
 ```
 
 ### Extra variables
-```{r}
+```{r extras}
 finbif_occurrence(select = c("default_vars", "life_stage"))
 ```
 
 ## Ordering
 ### Ascending order
-```{r}
+```{r order-ascend}
 finbif_occurrence("Cygnus cygnus", order_by = c("abundance"))
 ```
 
 ### Descending order
-```{r}
+```{r order-descend}
 finbif_occurrence("Cygnus cygnus", order_by = c("-abundance"))
 ```
 
 ### Multiple variables
-```{r}
+```{r order-multiple}
 finbif_occurrence("Cygnus olor", order_by = c("municipality", "-abundance"))
 ```
 
 ### Random sample
-```{r}
+```{r random}
 finbif_occurrence(sample = TRUE)
 ```

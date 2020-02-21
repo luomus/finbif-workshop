@@ -15,70 +15,71 @@ knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
 library(finbif)
 ```
 
-```{r}
+```{r occurrence}
 finbif_occurrence()
 ```
 
 ## Choosing taxa
-```{r}
+```{r cygnus}
 finbif_occurrence("Cygnus cygnus")
 ```
 
-```{r}
+```{r cygnus2}
 finbif_occurrence(c("Cygnus cygnus", "Cygnus olor"))
 ```
 
-```{r}
+```{r birds}
 finbif_occurrence("Birds")
 ```
 
 ## Request size
-```{r, eval = FALSE}
+```{r occurrences1001, eval = FALSE}
 occurrences<- finbif_occurrence(n = 1001)
 View(occurrences)
 ```
 
-```{r, eval = FALSE}
+```{r quiet, eval = FALSE}
 finbif_occurrence(n = 1001, quiet = TRUE)
 ```
 
-```{r}
+```{r count-only}
 finbif_occurrence(count_only = TRUE)
 ```
 
 ## Checking taxa
-```{r}
+```{r moomin}
 finbif_occurrence("Vulpes vulpes", "Moomin")
 ```
 
-```{r, eval = FALSE}
+```{r moomin-check-false, eval = FALSE}
 finbif_occurrence("Vulpes vulpes", "Moomin", check_taxa = FALSE)
 ```
 
-```{r, eval = FALSE}
+```{r moomin-check-error, eval = FALSE}
 finbif_occurrence("Vulpes vulpes", "Moomin", on_check_fail = "error")
 ```
 
 ## Time & duration
+```{r date-time-false, eval = FALSE}
+finbif_occurrence(date_time = FALSE)
+```
 
-```{r, eval = FALSE}
+### Accuracy
+```{r date-time-accurate, eval = FALSE}
 finbif_occurrence(date_time_method = "accurate")
 ```
 
-```{r}
+### Timezone
+```{r tzone}
 finbif_occurrence(tzone = "Etc/UTC")
 finbif_occurrence(tzone = "Europe/Helsinki")
 ```
 
-```{r, eval = FALSE}
+```{r sys-tzone, eval = FALSE}
 Sys.timezone()
 ```
 
-```{r, eval = FALSE}
-finbif_occurrence(date_time = FALSE)
-```
 ## Darwin Core Variables
-```{r}
+```{r dwc}
 finbif_occurrence(dwc = TRUE)
 ```
-

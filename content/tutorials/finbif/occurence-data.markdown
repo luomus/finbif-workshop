@@ -19,19 +19,19 @@ finbif_occurrence()
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34452581
+#> Records available: 34456785
 #> A data.frame [10 x 30]
-#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1          Strobilurus         1  61.57393  23.17713 2020-02-19 22:00:00
-#> 2   Phigalia pilosaria         1  60.38352  23.16606 2020-02-18 22:00:00
-#> 3          Strix aluco         1  60.97880  26.09086 2020-02-18 22:00:00
-#> 4        Milvus milvus         1  60.78519  26.07963 2020-02-19 05:00:00
-#> 5          Strix aluco         1  60.98431  26.04420 2020-02-18 22:00:00
-#> 6        Schizophyllum        10  60.18082  25.01560 2020-02-18 22:00:00
-#> 7  Exidia cartilaginea        10  60.37493  25.73387 2020-02-18 22:00:00
-#> 8      Graphis scripta      1000  60.37480  25.73329 2020-02-18 22:00:00
-#> 9    Formica (Formica)         1  59.89200  22.51700 2020-02-18 22:00:00
-#> 10           Culicidae         1  59.89200  22.51700 2020-02-18 22:00:00
+#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1       Regulus regulus         1  60.13373  24.93114 2020-02-19 22:00:00
+#> 2         Cygnus cygnus         3  60.13373  24.93114 2020-02-19 22:00:00
+#> 3     Loxia curvirostra         1  60.13373  24.93114 2020-02-19 22:00:00
+#> 4    Attagenus smirnovi         1  60.45229  22.28433 2020-02-19 22:00:00
+#> 5            Peniophora         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 6      Stereum hirsutum         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 7  Basidioradulum radu…         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 8        Phellinus alni         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 9     Trametes ochracea         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 10     Cerrena unicolor         1  65.21097  25.28346 2020-02-19 22:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -49,19 +49,19 @@ finbif_occurrence("Cygnus cygnus")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 56162
+#> Records available: 56164
 #> A data.frame [10 x 30]
 #>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1    Cygnus cygnus         1  61.45189  22.85723 2020-02-18 22:00:00
-#> 2    Cygnus cygnus         1  61.99939  22.16288 2020-02-17 22:00:00
-#> 3    Cygnus cygnus         1  60.60605  24.51953 2020-02-17 22:00:00
-#> 4    Cygnus cygnus         1  60.46486  22.35936 2020-02-16 22:00:00
-#> 5    Cygnus cygnus         6  60.98625  26.03254 2020-02-14 22:00:00
-#> 6    Cygnus cygnus         4  60.82640  26.23698 2020-02-12 22:00:00
-#> 7    Cygnus cygnus         1  61.45401  22.11611 2020-02-11 22:00:00
-#> 8    Cygnus cygnus         4  60.76301  26.23474 2020-02-11 22:00:00
-#> 9    Cygnus cygnus         1  61.11695  21.52778 2020-02-12 08:00:00
-#> 10   Cygnus cygnus         5  60.84168  26.18780 2020-02-10 22:00:00
+#> 1    Cygnus cygnus         3  60.13373  24.93114 2020-02-19 22:00:00
+#> 2    Cygnus cygnus         1  62.26738  27.18153 2020-02-18 22:00:00
+#> 3    Cygnus cygnus         1  61.45189  22.85723 2020-02-18 22:00:00
+#> 4    Cygnus cygnus         1  61.99939  22.16288 2020-02-17 22:00:00
+#> 5    Cygnus cygnus         1  60.60605  24.51953 2020-02-17 22:00:00
+#> 6    Cygnus cygnus         1  60.46486  22.35936 2020-02-16 22:00:00
+#> 7    Cygnus cygnus         6  60.98625  26.03254 2020-02-14 22:00:00
+#> 8    Cygnus cygnus         4  60.82640  26.23698 2020-02-12 22:00:00
+#> 9    Cygnus cygnus         1  61.45400  22.11600 2020-02-11 22:00:00
+#> 10   Cygnus cygnus         4  60.76301  26.23474 2020-02-11 22:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -78,19 +78,19 @@ finbif_occurrence(c("Cygnus cygnus", "Cygnus olor"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 80345
+#> Records available: 80348
 #> A data.frame [10 x 30]
 #>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1    Cygnus cygnus         1  61.45189  22.85723 2020-02-18 22:00:00
-#> 2      Cygnus olor         1  60.44731  22.39747 2020-02-18 22:00:00
-#> 3    Cygnus cygnus         1  61.99939  22.16288 2020-02-17 22:00:00
-#> 4      Cygnus olor         2  60.40923  22.20508 2020-02-17 22:00:00
-#> 5    Cygnus cygnus         1  60.60605  24.51953 2020-02-17 22:00:00
-#> 6      Cygnus olor         1  60.46486  22.35936 2020-02-16 22:00:00
-#> 7    Cygnus cygnus         1  60.46486  22.35936 2020-02-16 22:00:00
-#> 8      Cygnus olor         4  60.18776  24.80067 2020-02-15 06:00:00
-#> 9    Cygnus cygnus         6  60.98625  26.03254 2020-02-14 22:00:00
-#> 10   Cygnus cygnus         4  60.82640  26.23698 2020-02-12 22:00:00
+#> 1    Cygnus cygnus         3  60.13373  24.93114 2020-02-19 22:00:00
+#> 2    Cygnus cygnus         1  62.26738  27.18153 2020-02-18 22:00:00
+#> 3    Cygnus cygnus         1  61.45189  22.85723 2020-02-18 22:00:00
+#> 4      Cygnus olor         1  60.44731  22.39747 2020-02-18 22:00:00
+#> 5    Cygnus cygnus         1  61.99939  22.16288 2020-02-17 22:00:00
+#> 6      Cygnus olor         2  60.40923  22.20508 2020-02-17 22:00:00
+#> 7    Cygnus cygnus         1  60.60605  24.51953 2020-02-17 22:00:00
+#> 8      Cygnus olor         1  60.46486  22.35936 2020-02-16 22:00:00
+#> 9    Cygnus cygnus         1  60.46486  22.35936 2020-02-16 22:00:00
+#> 10     Cygnus olor         4  60.18776  24.80067 2020-02-15 06:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -107,19 +107,19 @@ finbif_occurrence("Birds")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 17772117
+#> Records available: 17772164
 #> A data.frame [10 x 30]
-#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1          Strix aluco         1  60.97880  26.09086 2020-02-18 22:00:00
-#> 2        Milvus milvus         1  60.78519  26.07963 2020-02-19 05:00:00
-#> 3          Strix aluco         1  60.98431  26.04420 2020-02-18 22:00:00
-#> 4     Larus argentatus         2  61.17487  28.77918 2020-02-19 09:20:00
-#> 5     Mergus merganser         5  61.17487  28.77918 2020-02-19 09:20:00
-#> 6  Phalacrocorax carbo         1  61.17487  28.77918 2020-02-19 09:20:00
-#> 7   Anas platyrhynchos         6  61.17487  28.77918 2020-02-19 09:20:00
-#> 8   Bucephala clangula         9  61.17487  28.77918 2020-02-19 09:20:00
-#> 9  Phalacrocorax carbo         1  61.17136  28.77579 2020-02-19 09:10:00
-#> 10  Anas platyrhynchos         2  61.12640  21.53612 2020-02-19 14:50:00
+#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1     Dendrocopos major         1  60.73743  26.18389 2020-02-20 22:00:00
+#> 2     Dryocopus martius         1  60.74946  26.20100 2020-02-20 22:00:00
+#> 3        Periparus ater         1  60.89297  26.34142 2020-02-19 22:00:00
+#> 4       Regulus regulus         1  60.13373  24.93114 2020-02-19 22:00:00
+#> 5         Cygnus cygnus         3  60.13373  24.93114 2020-02-19 22:00:00
+#> 6     Loxia curvirostra         1  60.13373  24.93114 2020-02-19 22:00:00
+#> 7         Turdus merula         2  60.26548  25.02600 2020-02-19 22:00:00
+#> 8           Parus major         1  61.09911  21.55513 2020-02-20 08:35:00
+#> 9  Lophophanes cristat…         2  61.09911  21.55513 2020-02-20 08:35:00
+#> 10        Corvus corone         1  61.09911  21.55513 2020-02-20 08:35:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -147,7 +147,7 @@ finbif_occurrence(count_only = TRUE)
 ```
 
 ```{.language-r}
-#> [1] 34452582
+#> [1] 34456785
 ```
 
 ## Checking taxa
@@ -197,11 +197,17 @@ finbif_occurrence("Vulpes vulpes", "Moomin", on_check_fail = "error")
 
 ## Time & duration
 
+```r
+finbif_occurrence(date_time = FALSE)
+```
+
+### Accuracy
 
 ```r
 finbif_occurrence(date_time_method = "accurate")
 ```
 
+### Timezone
 
 ```r
 finbif_occurrence(tzone = "Etc/UTC")
@@ -209,19 +215,19 @@ finbif_occurrence(tzone = "Etc/UTC")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34452581
+#> Records available: 34456785
 #> A data.frame [10 x 30]
-#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1          Strobilurus         1  61.57393  23.17713 2020-02-19 22:00:00
-#> 2   Phigalia pilosaria         1  60.38352  23.16606 2020-02-18 22:00:00
-#> 3          Strix aluco         1  60.97880  26.09086 2020-02-18 22:00:00
-#> 4        Milvus milvus         1  60.78519  26.07963 2020-02-19 05:00:00
-#> 5          Strix aluco         1  60.98431  26.04420 2020-02-18 22:00:00
-#> 6        Schizophyllum        10  60.18082  25.01560 2020-02-18 22:00:00
-#> 7  Exidia cartilaginea        10  60.37493  25.73387 2020-02-18 22:00:00
-#> 8      Graphis scripta      1000  60.37480  25.73329 2020-02-18 22:00:00
-#> 9    Formica (Formica)         1  59.89200  22.51700 2020-02-18 22:00:00
-#> 10           Culicidae         1  59.89200  22.51700 2020-02-18 22:00:00
+#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1       Regulus regulus         1  60.13373  24.93114 2020-02-19 22:00:00
+#> 2         Cygnus cygnus         3  60.13373  24.93114 2020-02-19 22:00:00
+#> 3     Loxia curvirostra         1  60.13373  24.93114 2020-02-19 22:00:00
+#> 4    Attagenus smirnovi         1  60.45229  22.28433 2020-02-19 22:00:00
+#> 5            Peniophora         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 6      Stereum hirsutum         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 7  Basidioradulum radu…         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 8        Phellinus alni         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 9     Trametes ochracea         1  65.21097  25.28346 2020-02-19 22:00:00
+#> 10     Cerrena unicolor         1  65.21097  25.28346 2020-02-19 22:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -237,19 +243,19 @@ finbif_occurrence(tzone = "Europe/Helsinki")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34452581
+#> Records available: 34456785
 #> A data.frame [10 x 30]
-#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1          Strobilurus         1  61.57393  23.17713 2020-02-20 00:00:00
-#> 2   Phigalia pilosaria         1  60.38352  23.16606 2020-02-19 00:00:00
-#> 3          Strix aluco         1  60.97880  26.09086 2020-02-19 00:00:00
-#> 4        Milvus milvus         1  60.78519  26.07963 2020-02-19 07:00:00
-#> 5          Strix aluco         1  60.98431  26.04420 2020-02-19 00:00:00
-#> 6        Schizophyllum        10  60.18082  25.01560 2020-02-19 00:00:00
-#> 7  Exidia cartilaginea        10  60.37493  25.73387 2020-02-19 00:00:00
-#> 8      Graphis scripta      1000  60.37480  25.73329 2020-02-19 00:00:00
-#> 9    Formica (Formica)         1  59.89200  22.51700 2020-02-19 00:00:00
-#> 10           Culicidae         1  59.89200  22.51700 2020-02-19 00:00:00
+#>         scientific_name abundance lat_wgs84 lon_wgs84  date_time
+#> 1       Regulus regulus         1  60.13373  24.93114 2020-02-20
+#> 2         Cygnus cygnus         3  60.13373  24.93114 2020-02-20
+#> 3     Loxia curvirostra         1  60.13373  24.93114 2020-02-20
+#> 4    Attagenus smirnovi         1  60.45229  22.28433 2020-02-20
+#> 5            Peniophora         1  65.21097  25.28346 2020-02-20
+#> 6      Stereum hirsutum         1  65.21097  25.28346 2020-02-20
+#> 7  Basidioradulum radu…         1  65.21097  25.28346 2020-02-20
+#> 8        Phellinus alni         1  65.21097  25.28346 2020-02-20
+#> 9     Trametes ochracea         1  65.21097  25.28346 2020-02-20
+#> 10     Cerrena unicolor         1  65.21097  25.28346 2020-02-20
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -264,10 +270,6 @@ finbif_occurrence(tzone = "Europe/Helsinki")
 Sys.timezone()
 ```
 
-
-```r
-finbif_occurrence(date_time = FALSE)
-```
 ## Darwin Core Variables
 
 ```r
@@ -276,30 +278,30 @@ finbif_occurrence(dwc = TRUE)
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34452581
+#> Records available: 34456785
 #> A data.frame [10 x 30]
-#>         scientificName individualCount decimalLatitude decimalLongitude
-#> 1          Strobilurus               1        61.57393         23.17713
-#> 2   Phigalia pilosaria               1        60.38352         23.16606
-#> 3          Strix aluco               1        60.97880         26.09086
-#> 4        Milvus milvus               1        60.78519         26.07963
-#> 5          Strix aluco               1        60.98431         26.04420
-#> 6        Schizophyllum              10        60.18082         25.01560
-#> 7  Exidia cartilaginea              10        60.37493         25.73387
-#> 8      Graphis scripta            1000        60.37480         25.73329
-#> 9    Formica (Formica)               1        59.89200         22.51700
-#> 10           Culicidae               1        59.89200         22.51700
+#>          scientificName individualCount decimalLatitude decimalLongitude
+#> 1       Regulus regulus               1        60.13373         24.93114
+#> 2         Cygnus cygnus               3        60.13373         24.93114
+#> 3     Loxia curvirostra               1        60.13373         24.93114
+#> 4    Attagenus smirnovi               1        60.45229         22.28433
+#> 5            Peniophora               1        65.21097         25.28346
+#> 6      Stereum hirsutum               1        65.21097         25.28346
+#> 7  Basidioradulum radu…               1        65.21097         25.28346
+#> 8        Phellinus alni               1        65.21097         25.28346
+#> 9     Trametes ochracea               1        65.21097         25.28346
+#> 10     Cerrena unicolor               1        65.21097         25.28346
 #>          eventDateTime
 #> 1  2020-02-19 22:00:00
-#> 2  2020-02-18 22:00:00
-#> 3  2020-02-18 22:00:00
-#> 4  2020-02-19 05:00:00
-#> 5  2020-02-18 22:00:00
-#> 6  2020-02-18 22:00:00
-#> 7  2020-02-18 22:00:00
-#> 8  2020-02-18 22:00:00
-#> 9  2020-02-18 22:00:00
-#> 10 2020-02-18 22:00:00
+#> 2  2020-02-19 22:00:00
+#> 3  2020-02-19 22:00:00
+#> 4  2020-02-19 22:00:00
+#> 5  2020-02-19 22:00:00
+#> 6  2020-02-19 22:00:00
+#> 7  2020-02-19 22:00:00
+#> 8  2020-02-19 22:00:00
+#> 9  2020-02-19 22:00:00
+#> 10 2020-02-19 22:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxonRankID, country, stateProvince, county, eventDateStart,
 #> eventDateEnd, hourStart, hourEnd, minuteStart, minuteEnd,
@@ -308,4 +310,3 @@ finbif_occurrence(dwc = TRUE)
 #> documentIssue, documentReliability, coordinateUncertaintyInMeters,
 #> eventIssue, locationIssue, timeIssue, samplingEffort
 ```
-

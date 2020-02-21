@@ -11,15 +11,23 @@ menu:
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
+knitr::opts_chunk$set(
+  echo = TRUE, comment = "#>", class.output = "language-r", fig.show = "hide",
+  fig.keep = "none"
+)
+knitr::opts_knit$set(global.device = TRUE)
 library(finbif)
 ```
 
-```{r plot-points}
-plot(finbif_occurrence(filter = c(country = "Finland"), n = 1000))
+## Points
+```{r plot-points, fig.show = "hold", fig.keep = "last"}
+recent_obs <- finbif_occurrence(filter = c(country = "Finland"), n = 1000)
+plot(recent_obs)
 ```
 
-```{r, results = "hide", message = FALSE}
+## Density
+### Data
+```{r jays, results = "hide", message = FALSE}
 jays <- finbif_occurrence(
   "Eurasian Jay",
   filter = c(coordinates_uncertainty_max = 100, country = "Finland"),
@@ -28,13 +36,23 @@ jays <- finbif_occurrence(
 )
 ```
 
-```{r}
-jay_density <- hist_xy(jays, breaks_xy(finland_map$bbox, .25))
+### Bounding box
+```{r bbox}
+finland_map$bbox
 ```
 
-```{r plot-jays}
-par(mar = c(5, 5, 1, 1))
+### Breakpoints
+```{r finland-breaks}
+(breaks <- breaks_xy(finland_map$bbox, .25))
+```
 
+### 2d histogram
+```{r jay-density}
+jay_density <- hist_xy(jays, breaks)
+```
+
+### Image
+```{r plot-jays-image}
 image(
   jay_density,
   asp    = 2.4,
@@ -45,7 +63,10 @@ image(
   panel.first = grid(),
   las = 1
 )
+```
 
+### Legend
+```{r plot-jays-legend, fig.show = "hide"}
 legend(
   "topright",
   inset  = c(0, .01),
@@ -57,6 +78,9 @@ legend(
   x.intersp = .2,
   y.intersp = .5
 )
+```
 
+### Border
+```{r plot-finland, fig.show = "hold", fig.keep = "last"}
 polygon(finland_map$vertices, lwd = .2)
 ```

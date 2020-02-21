@@ -4,7 +4,6 @@ draft: false
 toc: true
 type: docs
 weight: 2
-
 menu:
   finbif:
     name: 1. Installation

@@ -16,28 +16,28 @@ library(finbif)
 ```
 
 ## General metadata
-```{r}
+```{r metadata-general}
 finbif_metadata()
 ```
 
-```{r}
+```{r metadata-provinces}
 finbif_metadata("provinces")
 ```
 
-```{r}
+```{r metadata-red-list}
 finbif_metadata("red_list")
 ```
 
-```{r}
+```{r metadata-taxon-ranks}
 finbif_metadata("taxon_ranks")
 ```
 
 ## Informal groups
-```{r}
+```{r informal-groups}
 finbif_informal_groups(limit = 6)
 ```
 
-```{r}
+```{r informal-groups-crustacea}
 finbif_informal_groups("Crustaceans")
 ```
 

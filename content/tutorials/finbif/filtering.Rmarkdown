@@ -15,16 +15,18 @@ knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
 library(finbif)
 ```
 
-```{r, eval = FALSE}
+```{r filters-help, eval = FALSE}
 ?filters
 ```
 
 ## Location
-```{r}
+### Places
+```{r filter-place}
 finbif_occurrence(filter = c(country = "Finland"))
 ```
 
-```{r}
+### Coordinates
+```{r filter-coords}
 finbif_occurrence(
   filter = list(
     coordinates = list(lat = c(60, 68), lon = c(20, 30), system = "wgs84")
@@ -33,17 +35,17 @@ finbif_occurrence(
 ```
 
 ## Dates & times
-```{r}
+```{r single-date}
 finbif_occurrence(filter = list(date_range_ym = c("2019-12")))
 ```
 
-```{r}
+```{r date-range}
 finbif_occurrence(
   filter = list(date_range_ymd = c("2019-06-01", "2019-12-31"))
 )
 ```
 
-```{r}
+```{r every-summer}
 finbif_occurrence(
   filter = list(
     date_range_md = c(begin = "12-21", end = "12-31"),
@@ -53,21 +55,21 @@ finbif_occurrence(
 ```
 
 ## Data quality
-```{r}
+```{r quality-strict}
 strict <- c(
   collection_reliability = 5, coordinates_uncertainty_max = 1,
   taxon_reliability = "reliable"
 )
 ```
 
-```{r}
+```{r quality-permissive}
 permissive <- list(
   collection_reliability = 1:5, coordinates_uncertainty_max = 10000,
   quality_issues = "both"
 )
 ```
 
-```{r}
+```{r show-quality}
 c(
   strict     = finbif_occurrence(filter = strict,     count_only = TRUE),
   permissive = finbif_occurrence(filter = permissive, count_only = TRUE)
@@ -75,49 +77,50 @@ c(
 ```
 
 ## Collections
-```{r}
+```{r filter-inaturalist}
 finbif_occurrence(
   filter = c(collection = "iNaturalist"), count_only = TRUE
 )
 ```
 
-```{r}
+```{r filter-vihko}
 finbif_occurrence(
   filter = c(collection = "Notebook, general observations"), count_only = TRUE
 )
 ```
 
-```{r}
+```{r filter-collection-object}
 collections <- finbif_collections(
-  filter = geographic_coverage == "Finland", nmin = 10000
+  filter = geographic_coverage == "Finland",
+  nmin   = 10000
 )
 
 finbif_occurrence(filter = list(collection = collections), count_only = TRUE)
 ```
 
 ## Informal groups
-```{r}
+```{r filter-informal-group}
 finbif_occurrence(filter = list(informal_group = "Reptiles and amphibians"))
 ```
 
-```{r}
+## Taxon status
+```{r filter-admin-status}
 finbif_occurrence(
   filter = list(informal_group = "Birds", administrative_status = "EU_INVSV")
 )
 ```
 
-## Taxon status
-```{r}
+```{r filter-red-list}
 finbif_occurrence(
   filter = list(informal_group = "Mammals", red_list_status = "NT")
 )
 ```
 
-```{r}
+```{r filter-occ-status}
 finbif_occurrence(filter = c(finnish_occurrence_status = "rare"))
 ```
 
-```{r}
+```{r filter-occ-status-neg}
 finbif_occurrence(
   "Birds",
   filter = c(finnish_occurrence_status_neg = "stable", taxon_rank = "species")

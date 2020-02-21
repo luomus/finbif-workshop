@@ -91,7 +91,8 @@ finbif_check_taxa(taxa_list)
 ```
 
 ## Taxa search
-Detailed taxonomic information for taxa that are in the FinBIF database can be
+### Exact matching
+More detailed taxonomic information for taxa that are in the FinBIF database can be
 accessed with the `finbif_taxa` function.
 
 ```r
@@ -112,9 +113,9 @@ finbif_taxa("Capreolus capreolus")
 #>   ..$ finnish                 : logi TRUE
 #>   ..$ species                 : logi TRUE
 #>   ..$ vernacularName          :List of 3
-#>   .. ..$ fi: chr "metsäkauris"
-#>   .. ..$ en: chr "Roe Deer"
 #>   .. ..$ sv: chr "rådjur"
+#>   .. ..$ en: chr "Roe Deer"
+#>   .. ..$ fi: chr "metsäkauris"
 #>   ..$ informalGroups          :List of 1
 #>   .. ..$ :List of 2
 #>   .. .. ..$ id  : chr "MVL.2"
@@ -125,6 +126,7 @@ finbif_taxa("Capreolus capreolus")
 #>   ..$ type                    : chr "exactMatches"
 ```
 
+### Partial matching
 Searching for taxonomic information in FinBIF can use "partial" matching. You
 might be interested in taxa that match a particular term.
 
