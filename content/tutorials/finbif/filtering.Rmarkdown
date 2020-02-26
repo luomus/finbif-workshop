@@ -13,6 +13,7 @@ menu:
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
 library(finbif)
+options(finbif_tz = "Europe/Helsinki")
 ```
 
 ```{r filters-help, eval = FALSE}

@@ -16,6 +16,7 @@ menu:
 
 ```r
 remotes::install_version("finbif", "0.2.0")
+options(finbif_tz = "Europe/Helsinki")
 ```
 
 ## Caching
