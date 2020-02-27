@@ -12,13 +12,30 @@ menu:
 
 
 
+When getting records from FinBIF it's often a good idea to filter the data at
+request time rather than after you have downloaded the data. Pre-filtering the
+data will save bandwidth and local post-processing time. There are many options
+for filtering occurrence records, for the full list of filtering options refer
+to the package documentation.
 
 ```r
 ?filters
 ```
 
+You can filter occurrence records using the `filter` argument to
+`finbif_occurrence`. The filter argument takes a list (or vector for some simple
+filters), where the element names are the names of the filters and the elements
+themselves are the filter values. The form of the filter varies depending on the
+filter being used and is outlined in the documentation. In many cases the values
+a filter can take can be found using `finbif_metadata()` and associated
+functions (see [section 7. Metadata](tutorials/finbif/metadata/))
+
 ## Location
 ### Places
+
+A number of filters allow you to restrict records geographically by place name.
+These include `country`, `province`, `municipality` and `bird_assoc_area`
+(BirdLife Finland local groups).
 
 ```r
 finbif_occurrence(filter = c(country = "Finland"))
@@ -26,19 +43,19 @@ finbif_occurrence(filter = c(country = "Finland"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 32630398
+#> Records available: 32634070
 #> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Exaeretia ciniflone…         1  61.51447  24.02330 2020-02-26 00:00:00
-#> 2             Pica pica        10  60.45041  25.20184 2020-02-26 07:30:00
-#> 3           Picus canus         2  60.45041  25.20184 2020-02-26 07:30:00
-#> 4       Regulus regulus         3  60.45041  25.20184 2020-02-26 07:30:00
-#> 5          Corvus corax         2  60.45041  25.20184 2020-02-26 07:30:00
-#> 6        Periparus ater         2  60.45041  25.20184 2020-02-26 07:30:00
-#> 7                 Loxia        22  60.45041  25.20184 2020-02-26 07:30:00
-#> 8     Dendrocopos major         8  60.45041  25.20184 2020-02-26 07:30:00
-#> 9         Turdus merula         4  60.45041  25.20184 2020-02-26 07:30:00
-#> 10      Corvus monedula        16  60.45041  25.20184 2020-02-26 07:30:00
+#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1            Pica pica         3  63.72777  29.22527 2020-02-27 07:40:00
+#> 2      Regulus regulus         1  63.72777  29.22527 2020-02-27 07:40:00
+#> 3     Poecile montanus        13  63.72777  29.22527 2020-02-27 07:40:00
+#> 4  Emberiza citrinella        17  63.72777  29.22527 2020-02-27 07:40:00
+#> 5         Corvus corax         2  63.72777  29.22527 2020-02-27 07:40:00
+#> 6      Cinclus cinclus         1  63.72777  29.22527 2020-02-27 07:40:00
+#> 7    Dendrocopos major         1  63.72777  29.22527 2020-02-27 07:40:00
+#> 8  Garrulus glandarius         5  63.72777  29.22527 2020-02-27 07:40:00
+#> 9     Sciurus vulgaris         1  63.72777  29.22527 2020-02-27 07:40:00
+#> 10     Passer montanus         3  63.72777  29.22527 2020-02-27 07:40:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -49,6 +66,9 @@ finbif_occurrence(filter = c(country = "Finland"))
 ```
 
 ### Coordinates
+You can also filter geographically by specifying coordinates. The coordinates
+must be supplied with at least a latitude, longitude and a valid coordinate
+system.
 
 ```r
 finbif_occurrence(
@@ -60,19 +80,19 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 26997644
+#> Records available: 27000935
 #> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Exaeretia ciniflone…         1  61.51447  24.02330 2020-02-26 00:00:00
-#> 2             Pica pica        10  60.45041  25.20184 2020-02-26 07:30:00
-#> 3           Picus canus         2  60.45041  25.20184 2020-02-26 07:30:00
-#> 4       Regulus regulus         3  60.45041  25.20184 2020-02-26 07:30:00
-#> 5          Corvus corax         2  60.45041  25.20184 2020-02-26 07:30:00
-#> 6        Periparus ater         2  60.45041  25.20184 2020-02-26 07:30:00
-#> 7                 Loxia        22  60.45041  25.20184 2020-02-26 07:30:00
-#> 8     Dendrocopos major         8  60.45041  25.20184 2020-02-26 07:30:00
-#> 9         Turdus merula         4  60.45041  25.20184 2020-02-26 07:30:00
-#> 10      Corvus monedula        16  60.45041  25.20184 2020-02-26 07:30:00
+#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1            Pica pica         3  63.72777  29.22527 2020-02-27 07:40:00
+#> 2      Regulus regulus         1  63.72777  29.22527 2020-02-27 07:40:00
+#> 3     Poecile montanus        13  63.72777  29.22527 2020-02-27 07:40:00
+#> 4  Emberiza citrinella        17  63.72777  29.22527 2020-02-27 07:40:00
+#> 5         Corvus corax         2  63.72777  29.22527 2020-02-27 07:40:00
+#> 6      Cinclus cinclus         1  63.72777  29.22527 2020-02-27 07:40:00
+#> 7    Dendrocopos major         1  63.72777  29.22527 2020-02-27 07:40:00
+#> 8  Garrulus glandarius         5  63.72777  29.22527 2020-02-27 07:40:00
+#> 9     Sciurus vulgaris         1  63.72777  29.22527 2020-02-27 07:40:00
+#> 10     Passer montanus         3  63.72777  29.22527 2020-02-27 07:40:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -82,27 +102,30 @@ finbif_occurrence(
 #> location_issue, time_issue, duration
 ```
 
-## Dates & times
+## Dates
+Another common way to filter is by date using the `date_range_ymd` filter.
+Specifying a single date will filter records that fall on the day or within the
+month or year indicated.
 
 ```r
-finbif_occurrence(filter = list(date_range_ym = c("2019-12")))
+finbif_occurrence(filter = list(date_range_ymd = c("2019-12")))
 ```
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 7746
+#> Records available: 7772
 #> A data.frame [10 x 30]
-#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1            Pica pica         3  62.21189  21.66492 2019-12-31 09:54:00
-#> 2     Poecile montanus         4  62.21189  21.66492 2019-12-31 09:54:00
-#> 3  Emberiza citrinella        16  62.21189  21.66492 2019-12-31 09:54:00
-#> 4         Corvus corax         1  62.21189  21.66492 2019-12-31 09:54:00
-#> 5    Dendrocopos major         5  62.21189  21.66492 2019-12-31 09:54:00
-#> 6      Corvus monedula         2  62.21189  21.66492 2019-12-31 09:54:00
-#> 7      Passer montanus        12  62.21189  21.66492 2019-12-31 09:54:00
-#> 8    Pyrrhula pyrrhula         1  62.21189  21.66492 2019-12-31 09:54:00
-#> 9   Certhia familiaris         2  62.21189  21.66492 2019-12-31 09:54:00
-#> 10 Cyanistes caeruleus         6  62.21189  21.66492 2019-12-31 09:54:00
+#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1            Flammulina        10  60.39362  25.67044 2019-12-31 12:00:00
+#> 2      Panellus ringens         1  63.06800  21.69020 2019-12-31 12:00:00
+#> 3  Basidioradulum radu…         1  63.06800  21.69020 2019-12-31 12:00:00
+#> 4    Sarcosoma globosum         1  60.28506  21.98599 2019-12-31 12:00:00
+#> 5             Pica pica         3  62.21189  21.66492 2019-12-31 09:54:00
+#> 6      Poecile montanus         4  62.21189  21.66492 2019-12-31 09:54:00
+#> 7   Emberiza citrinella        16  62.21189  21.66492 2019-12-31 09:54:00
+#> 8          Corvus corax         1  62.21189  21.66492 2019-12-31 09:54:00
+#> 9     Dendrocopos major         5  62.21189  21.66492 2019-12-31 09:54:00
+#> 10      Corvus monedula         2  62.21189  21.66492 2019-12-31 09:54:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -112,6 +135,8 @@ finbif_occurrence(filter = list(date_range_ym = c("2019-12")))
 #> location_issue, time_issue, duration
 ```
 
+You can further customize the date range filter by specifying an end date
+allowing an arbitrary range of dates.
 
 ```r
 finbif_occurrence(
@@ -121,19 +146,19 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 338184
+#> Records available: 340820
 #> A data.frame [10 x 30]
-#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1            Pica pica         3  62.21189  21.66492 2019-12-31 09:54:00
-#> 2     Poecile montanus         4  62.21189  21.66492 2019-12-31 09:54:00
-#> 3  Emberiza citrinella        16  62.21189  21.66492 2019-12-31 09:54:00
-#> 4         Corvus corax         1  62.21189  21.66492 2019-12-31 09:54:00
-#> 5    Dendrocopos major         5  62.21189  21.66492 2019-12-31 09:54:00
-#> 6      Corvus monedula         2  62.21189  21.66492 2019-12-31 09:54:00
-#> 7      Passer montanus        12  62.21189  21.66492 2019-12-31 09:54:00
-#> 8    Pyrrhula pyrrhula         1  62.21189  21.66492 2019-12-31 09:54:00
-#> 9   Certhia familiaris         2  62.21189  21.66492 2019-12-31 09:54:00
-#> 10 Cyanistes caeruleus         6  62.21189  21.66492 2019-12-31 09:54:00
+#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1            Flammulina        10  60.39362  25.67044 2019-12-31 12:00:00
+#> 2      Panellus ringens         1  63.06800  21.69020 2019-12-31 12:00:00
+#> 3  Basidioradulum radu…         1  63.06800  21.69020 2019-12-31 12:00:00
+#> 4    Sarcosoma globosum         1  60.28506  21.98599 2019-12-31 12:00:00
+#> 5             Pica pica         3  62.21189  21.66492 2019-12-31 09:54:00
+#> 6      Poecile montanus         4  62.21189  21.66492 2019-12-31 09:54:00
+#> 7   Emberiza citrinella        16  62.21189  21.66492 2019-12-31 09:54:00
+#> 8          Corvus corax         1  62.21189  21.66492 2019-12-31 09:54:00
+#> 9     Dendrocopos major         5  62.21189  21.66492 2019-12-31 09:54:00
+#> 10      Corvus monedula         2  62.21189  21.66492 2019-12-31 09:54:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -143,6 +168,10 @@ finbif_occurrence(
 #> location_issue, time_issue, duration
 ```
 
+You can also filter by time of year (i.e, a date range across all years) using
+the `date_range_md` filter (note `_md` rather than `_ymd`). To filter a range of
+dates that overlaps with the end of the year (e.g., summer) you'll need to
+supply two date ranges: one for the end of the year and one for the start.
 
 ```r
 finbif_occurrence(
@@ -155,19 +184,19 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 1485628
+#> Records available: 1485782
 #> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84  date_time
-#> 1      Acalypta parvula         1  60.28291  22.40971 2020-02-20
-#> 2    Dolycoris baccarum         1  60.28291  22.40971 2020-02-20
-#> 3    Dolycoris baccarum         4  60.28291  22.40971 2020-02-20
-#> 4       Drymus brunneus         3  60.28291  22.40971 2020-02-20
-#> 5      Elasmucha grisea         1  60.28291  22.40971 2020-02-20
-#> 6  Ischnocoris angustu…         1  60.28291  22.40971 2020-02-20
-#> 7  Macrodema micropter…         1  60.28291  22.40971 2020-02-20
-#> 8  Macrodema micropter…         1  60.28291  22.40971 2020-02-20
-#> 9           Nabis ferus         1  60.28291  22.40971 2020-02-20
-#> 10          Nabis ferus         1  60.28291  22.40971 2020-02-20
+#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1      Acalypta parvula         1  60.28291  22.40971 2020-02-20 12:00:00
+#> 2    Dolycoris baccarum         1  60.28291  22.40971 2020-02-20 12:00:00
+#> 3    Dolycoris baccarum         4  60.28291  22.40971 2020-02-20 12:00:00
+#> 4       Drymus brunneus         3  60.28291  22.40971 2020-02-20 12:00:00
+#> 5      Elasmucha grisea         1  60.28291  22.40971 2020-02-20 12:00:00
+#> 6  Ischnocoris angustu…         1  60.28291  22.40971 2020-02-20 12:00:00
+#> 7  Macrodema micropter…         1  60.28291  22.40971 2020-02-20 12:00:00
+#> 8  Macrodema micropter…         1  60.28291  22.40971 2020-02-20 12:00:00
+#> 9           Nabis ferus         1  60.28291  22.40971 2020-02-20 12:00:00
+#> 10          Nabis ferus         1  60.28291  22.40971 2020-02-20 12:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -178,6 +207,12 @@ finbif_occurrence(
 ```
 
 ## Data quality
+Not all data in FinBIF is created equal. Often it will be desirable to use
+`{finbif}`'s data quality filters. The package documentation outlines each
+quality filter in detail.
+
+To restrict occurrence records to the highest quality level you can use the
+following set of filters.
 
 ```r
 strict <- c(
@@ -185,15 +220,20 @@ strict <- c(
   taxon_reliability = "reliable"
 )
 ```
+These filters will limit the occurrence records to those belonging to the most
+reliable collections, have the least coordinate uncertainty (most precise
+location data), and have reliable taxonomic identifications.
 
+At the other end of the spectrum, you can also allow all records regardless of
+quality with the following filter.
 
 ```r
-permissive <- list(
-  collection_reliability = 1:5, coordinates_uncertainty_max = 10000,
-  quality_issues = "both"
-)
+permissive <- c(quality_issues = "both")
 ```
+This will include all records, both with and without, quality issues.
 
+The highest quality records are only a small fraction of all the records that
+are available.
 
 ```r
 c(
@@ -204,32 +244,23 @@ c(
 
 ```{.language-r}
 #>     strict permissive 
-#>     306824   31337594
+#>     306866   34709247
 ```
 
 ## Collections
+You can filter by collection using the collection ID, the collection name or
+the abbreviated collection name (if available).
 
 ```r
-finbif_occurrence(
-  filter = c(collection = "iNaturalist"), count_only = TRUE
-)
+finbif_occurrence(filter = c(collection = "iNaturalist"), count_only = TRUE)
 ```
 
 ```{.language-r}
 #> [1] 15716
 ```
 
-
-```r
-finbif_occurrence(
-  filter = c(collection = "Notebook, general observations"), count_only = TRUE
-)
-```
-
-```{.language-r}
-#> [1] 684723
-```
-
+You can also use the results of a call to the `finbif_collections` function as
+filter directly.
 
 ```r
 collections <- finbif_collections(
@@ -241,10 +272,13 @@ finbif_occurrence(filter = list(collection = collections), count_only = TRUE)
 ```
 
 ```{.language-r}
-#> [1] 8144995
+#> [1] 8145533
 ```
 
 ## Informal groups
+Many informal taxonomic groups align with formal taxonomic groups (e.g., birds)
+but some, such as "Reptiles & amphibians" do not, making the `informal_group`
+potential useful in some circumstances.
 
 ```r
 finbif_occurrence(filter = list(informal_group = "Reptiles and amphibians"))
@@ -255,16 +289,16 @@ finbif_occurrence(filter = list(informal_group = "Reptiles and amphibians"))
 #> Records available: 30483
 #> A data.frame [10 x 30]
 #>     scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1   Anguis fragilis         1  59.96766  24.39325 2020-02-22 00:00:00
-#> 2   Anguis fragilis         1  62.25426  25.13755 2020-02-21 00:00:00
-#> 3  Zootoca vivipara         1  60.26828  24.89337 2020-02-17 00:00:00
+#> 1   Anguis fragilis         1  59.96766  24.39325 2020-02-22 12:00:00
+#> 2   Anguis fragilis         1  62.25426  25.13755 2020-02-21 12:00:00
+#> 3  Zootoca vivipara         1  60.26828  24.89337 2020-02-17 12:00:00
 #> 4         Bufo bufo         1  60.23152  24.98346 2020-01-15 18:00:00
 #> 5   Anguis fragilis         1  60.23968  25.79487 2020-01-04 18:00:00
 #> 6         Bufo bufo         1  61.08603  26.86767 2020-01-03 14:53:00
 #> 7        Lacertidae         1  28.14624 -16.43370 2019-12-04 13:00:00
 #> 8        Lacertidae         1  28.13532 -16.44389 2019-12-04 13:00:00
 #> 9         Bufo bufo         1  60.89002  24.69797 2019-10-18 10:00:00
-#> 10        Bufo bufo         1  60.82829  24.58493 2019-10-13 00:00:00
+#> 10        Bufo bufo         1  60.82829  24.58493 2019-10-13 12:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -275,11 +309,17 @@ finbif_occurrence(filter = list(informal_group = "Reptiles and amphibians"))
 ```
 
 ## Taxon status
+Other useful filters include those associated with the status of taxa or their
+presence on various checklists. The function `finbif_metadata` can be used to
+see what the allowable values are for these filters.
+
+### Administrative status
+Many taxa appear on various lists such as the EU's invasive species list. The
+`adminstrative_status` filter makes it easy to search for records of birds
+considered invasive in the EU.
 
 ```r
-finbif_occurrence(
-  filter = list(informal_group = "Birds", administrative_status = "EU_INVSV")
-)
+finbif_occurrence("birds", filter = list(administrative_status = "EU_INVSV"))
 ```
 
 ```{.language-r}
@@ -287,7 +327,7 @@ finbif_occurrence(
 #> Records available: 437
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Alopochen aegyptiaca         3  52.16081  4.485534 2019-10-23 01:00:00
+#> 1  Alopochen aegyptiaca         3  52.16081  4.485534 2019-10-23 13:00:00
 #> 2  Alopochen aegyptiaca         4  53.36759  6.191796 2018-10-26 11:15:00
 #> 3  Alopochen aegyptiaca         6  53.37574  6.207861 2018-10-23 08:30:00
 #> 4  Alopochen aegyptiaca        30  52.33990  5.069133 2018-10-22 10:45:00
@@ -306,28 +346,29 @@ finbif_occurrence(
 #> location_issue, time_issue, duration
 ```
 
+### Red list
+Using the `red_list` filter you can search for records of near threatened
+mammals.
 
 ```r
-finbif_occurrence(
-  filter = list(informal_group = "Mammals", red_list_status = "NT")
-)
+finbif_occurrence("mammals", filter = list(red_list_status = "NT"))
 ```
 
 ```{.language-r}
 #> Records downloaded: 10
 #> Records available: 1647
 #> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84  date_time
-#> 1  Rangifer tarandus f…         4  64.42648  29.11431 2019-10-20
-#> 2  Rangifer tarandus f…         1  64.09919  29.40356 2019-09-23
-#> 3  Rangifer tarandus f…         1  63.79309  29.51080 2019-09-13
-#> 4  Rangifer tarandus f…         1  63.93649  29.59252 2019-07-26
-#> 5  Rangifer tarandus f…         2  63.27123  25.35634 2019-06-28
-#> 6  Rangifer tarandus f…         1  63.26554  25.36645 2019-06-28
-#> 7  Rangifer tarandus f…         4  63.03293  24.32905 2019-06-13
-#> 8  Rangifer tarandus f…         1  64.32293  26.69975 2019-05-27
-#> 9  Rangifer tarandus f…         1  63.54897  24.54795 2019-05-18
-#> 10 Rangifer tarandus f…         7  64.43140  29.11998 2019-04-28
+#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1  Rangifer tarandus f…         4  64.42648  29.11431 2019-10-20 12:00:00
+#> 2  Rangifer tarandus f…         1  64.09919  29.40356 2019-09-23 12:00:00
+#> 3  Rangifer tarandus f…         1  63.79309  29.51080 2019-09-13 12:00:00
+#> 4  Rangifer tarandus f…         1  63.93649  29.59252 2019-07-26 12:00:00
+#> 5  Rangifer tarandus f…         2  63.27123  25.35634 2019-06-28 12:00:00
+#> 6  Rangifer tarandus f…         1  63.26554  25.36645 2019-06-28 12:00:00
+#> 7  Rangifer tarandus f…         4  63.03293  24.32905 2019-06-13 12:00:00
+#> 8  Rangifer tarandus f…         1  64.32293  26.69975 2019-05-27 12:00:00
+#> 9  Rangifer tarandus f…         1  63.54897  24.54795 2019-05-18 12:00:00
+#> 10 Rangifer tarandus f…         7  64.43140  29.11998 2019-04-28 12:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -337,6 +378,9 @@ finbif_occurrence(
 #> location_issue, time_issue, duration
 ```
 
+### Finnish occurrence
+Many taxa in the FinBIF database have been given an "Finnish occurrence status"
+and this status can be used to filter records.
 
 ```r
 finbif_occurrence(filter = c(finnish_occurrence_status = "rare"))
@@ -344,19 +388,19 @@ finbif_occurrence(filter = c(finnish_occurrence_status = "rare"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 259711
+#> Records available: 259770
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Dromius quadrimacul…         1  60.29713  22.39969 2020-02-20 00:00:00
-#> 2    Hylesinus crenatus         1  60.29713  22.39969 2020-02-20 00:00:00
-#> 3   Conistra rubiginosa         4  60.45842  22.17823 2020-02-17 00:00:00
-#> 4    Oenopia conglobata         1  61.71205  29.39218 2020-02-13 15:36:00
-#> 5    Oenopia conglobata         1  61.71378  29.39089 2020-02-12 18:52:00
-#> 6  Nanomimus circumscr…         1  60.41145  26.60956 2020-02-11 00:00:00
-#> 7    Nephus bipunctatus         1  60.41145  26.60956 2020-02-11 00:00:00
-#> 8  Calodromius spilotus         2  60.14807  22.29686 2020-02-02 00:00:00
-#> 9    Stethorus pusillus         1  60.28865  24.86263 2020-01-30 00:00:00
-#> 10 Calodromius spilotus         2  60.11620  24.63514 2020-01-26 00:00:00
+#> 1  Dromius quadrimacul…         1  60.29779  22.40343 2020-02-22 12:00:00
+#> 2  Dromius quadrimacul…         1  60.29790  22.39917 2020-02-20 12:00:00
+#> 3  Dromius quadrimacul…         1  60.29713  22.39969 2020-02-20 12:00:00
+#> 4    Hylesinus crenatus         1  60.29713  22.39969 2020-02-20 12:00:00
+#> 5   Conistra rubiginosa         4  60.45842  22.17823 2020-02-17 12:00:00
+#> 6    Oenopia conglobata         1  61.71205  29.39218 2020-02-13 15:36:00
+#> 7    Oenopia conglobata         1  61.71378  29.39089 2020-02-12 18:52:00
+#> 8  Nanomimus circumscr…         1  60.41145  26.60956 2020-02-11 12:00:00
+#> 9    Nephus bipunctatus         1  60.41145  26.60956 2020-02-11 12:00:00
+#> 10 Calodromius spilotus         2  60.14807  22.29686 2020-02-02 12:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -366,6 +410,10 @@ finbif_occurrence(filter = c(finnish_occurrence_status = "rare"))
 #> location_issue, time_issue, duration
 ```
 
+You can also us the negation of the `finnish_occurrence_status` to filter out
+records of that have a given occurrence status. For example, you can get
+records of bird species that are not considered to have stable populations in
+Finland with the following filter.
 
 ```r
 finbif_occurrence(
@@ -380,15 +428,15 @@ finbif_occurrence(
 #> A data.frame [10 x 30]
 #>       scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1       Milvus milvus         1  60.78519  26.07963 2020-02-19 07:00:00
-#> 2       Gavia adamsii         1  61.14620  26.72432 2020-02-05 00:00:00
-#> 3    Larus glaucoides         1  63.82952  23.03191 2020-02-05 00:00:00
-#> 4   Larus hyperboreus         1  63.82944  23.03180 2020-02-04 00:00:00
-#> 5    Larus glaucoides         1  63.82939  23.02910 2020-02-03 00:00:00
+#> 2       Gavia adamsii         1  61.14620  26.72432 2020-02-05 12:00:00
+#> 3    Larus glaucoides         1  63.82952  23.03191 2020-02-05 12:00:00
+#> 4   Larus hyperboreus         1  63.82944  23.03180 2020-02-04 12:00:00
+#> 5    Larus glaucoides         1  63.82939  23.02910 2020-02-03 12:00:00
 #> 6       Milvus milvus         1  60.08416  23.40222 2020-01-06 09:15:00
 #> 7  Cygnus columbianus         1  60.15734  24.87389 2020-01-05 09:10:00
 #> 8       Gavia adamsii         1  61.15926  28.76690 2020-01-01 09:50:00
 #> 9   Larus hyperboreus         1  65.07408  25.40821 2019-12-31 10:05:00
-#> 10      Bubulcus ibis         1  26.15296 -81.53502 2019-12-27 07:00:00
+#> 10      Bubulcus ibis         1  26.15296 -81.53502 2019-12-27 19:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,

@@ -18,7 +18,7 @@ options(finbif_tz = "Europe/Helsinki")
 Much of the information in the FinBIF database consists of metadata that helps
 provide context for occurrence records and other information in FinBIF.
 
-## General etadata
+## General metadata
 You can see some of the metadata available in `{finbif}` by calling the
 `finbif_metadata` function without any arguments.
 ```{r metadata-general}
