@@ -33,22 +33,22 @@
   weight = 5
   parent = "setup"
 
-[[main]]
-  name = "Tutorials"
-  weight = 2
-  identifier = "tutorials"
+#[[main]]
+#  name = "Tutorials"
+#  weight = 2
+# identifier = "tutorials"
 
-[[main]]
-  name = "Tutorials Overview"
-  url = "tutorials/"
-  weight = 1
-  parent = "tutorials"
+#[[main]]
+#  name = "Tutorials Overview"
+#  url = "tutorials/"
+#  weight = 1
+#  parent = "tutorials"
 
-[[main]]
-  name = "Using the FinBIF R package"
-  url = "tutorials/finbif/"
-  weight = 2
-  parent = "tutorials"
+#[[main]]
+#  name = "Using the FinBIF R package"
+#  url = "tutorials/finbif/"
+#  weight = 2
+#  parent = "tutorials"
 
 [[main]]
   pre = "<i class=\"fab fa-github fa-lg\"></i>"
