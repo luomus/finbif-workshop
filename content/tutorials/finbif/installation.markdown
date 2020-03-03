@@ -15,7 +15,7 @@ menu:
 
 
 The `{finbif}` package can be installed from [CRAN] or [GitHub]. You can choose
-either the most recent stable version (recommended), the latest development 
+either the most recent stable version (recommended), the latest development
 version or a previously released version to install.
 
 ## Versions

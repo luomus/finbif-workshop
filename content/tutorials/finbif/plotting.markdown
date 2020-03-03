@@ -12,7 +12,13 @@ menu:
 
 
 
-## Points
+Visualisation is an important part of data exploration and analysis. The
+`{finbif}` package has a few functions and methods that can be used to visualise
+occurrence data from FinBIF.
+
+## Occurrence points
+The default `plot` method for the result of a call to `finbif_occurrence` will
+display (if available) coordinates of the occurrence points in a scatter-plot.
 
 ```r
 recent_obs <- finbif_occurrence(filter = c(country = "Finland"), n = 1000)
@@ -21,8 +27,16 @@ plot(recent_obs)
 
 <img src="/tutorials/finbif/plotting_files/figure-html/plot-points-1.png" width="672" />
 
-## Density
+## Occurrence density
+When you have many points to visualise it may be beneficial to display them in
+a 2-dimensional histogram with the density of points indicated by the shading
+or colour of filled grid-cells. The following outlines how this can be achieved
+using some tools provided by `{finbif}`.
+
 ### Data
+First you'll need to acquire some occurrence records. For example, you can use
+the following to get the latitude and longitude of all the Finnish records of
+Eurasian Jays where the coordinate uncertainty is less then 100m[^1].
 
 ```r
 jays <- finbif_occurrence(
@@ -33,7 +47,11 @@ jays <- finbif_occurrence(
 )
 ```
 
-### Bounding box
+### Breakpoints
+Now you will need to define the break points of the grid cells over which to
+plot the density of occurrence records.
+
+`{finbif}` has an inbuilt Finland map object which includes its bounding box.
 
 ```r
 finland_map$bbox
@@ -43,10 +61,11 @@ finland_map$bbox
 #> [1] 19 59 32 71
 ```
 
-### Breakpoints
+You can use the function `breaks_xy` in combination with map bounding box to
+compute break points that a quarter of a degree in both dimensions.
 
 ```r
-(breaks <- breaks_xy(finland_map$bbox, .25))
+(breaks <- breaks_xy(finland_map$bbox, size = .25))
 ```
 
 ```{.language-r}
@@ -66,12 +85,18 @@ finland_map$bbox
 ```
 
 ### 2d histogram
+The function `hist_xy` can be used compute the density of occurrences in the
+grid-cells defined by a set of break points.
 
 ```r
 jay_density <- hist_xy(jays, breaks)
 ```
 
 ### Image
+The function `image` creates a grid of colored rectangles with colors
+corresponding to the density of occurrence records. You can use its arguments to
+control properties of the plot such as the aspect ratio[^2], the breaks[^3], the
+color palette, the axis labels and grid lines.
 
 ```r
 image(
@@ -81,12 +106,14 @@ image(
   col    = hcl.colors(12, rev = TRUE),
   xlab   = "Longitude",
   ylab   = "Latitude",
-  panel.first = grid(),
-  las = 1
+  las    = 1,
+  panel.first = grid()
 )
 ```
 
 ### Legend
+You can add a plot legend to indicate how the image breakpoints are mapped to
+the image colors.
 
 ```r
 legend(
@@ -103,9 +130,17 @@ legend(
 ```
 
 ### Border
+Finally, you can use `{finbif}`'s internal map to add the border of Finland to
+your plot.
 
 ```r
 polygon(finland_map$vertices, lwd = .2)
 ```
 
 <img src="/tutorials/finbif/plotting_files/figure-html/plot-finland-1.png" width="672" />
+
+[^1]: Or the coordinate uncertainty has not been specified.
+[^2]: An aspect ratio of 2.4 minimizes the distortion of displaying Finland
+      in a unprojected coordinate system.
+[^3]: Note that is different from the break points for the grid cells. This
+      `breaks` argument defines the break points for the grid cell colors.
