@@ -142,5 +142,5 @@ polygon(finland_map$vertices, lwd = .2)
 [^1]: Or the coordinate uncertainty has not been specified.
 [^2]: An aspect ratio of 2.4 minimizes the distortion of displaying Finland
       in a unprojected coordinate system.
-[^3]: Note that is different from the break points for the grid cells. This
+[^3]: Note that this is different from the break points for the grid cells. This
       `breaks` argument defines the break points for the grid cell colors.

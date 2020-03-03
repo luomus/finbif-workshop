@@ -31,7 +31,7 @@ place of the address shown below.
 ```{r request-token, eval = FALSE}
 finbif_request_token("your@email.com")
 ```
-You should soon recieve an email from __laji.fi__ which contains your access
+You should soon receive an email from __laji.fi__ which contains your access
 key. The key is a random series of letters and numbers. Save the email or key
 somewhere securely where you can easily access it again later.
 

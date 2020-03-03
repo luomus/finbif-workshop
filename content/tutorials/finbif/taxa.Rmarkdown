@@ -39,7 +39,7 @@ finbif_check_taxa(list(species = c("Ursus arctos", "Ursus"), genus = "Ursus"))
 ```
 
 You can check many taxa at a time. For example, if you have a list of taxa in a
-file (you can dowload this list of [taxa](../taxa.csv) for instance) you can
+file (you can download this list of [taxa](../taxa.csv) for instance) you can
 check them all at once.
 ```{r check-taxa-list}
 taxa_list <- readLines("taxa.csv")

@@ -17,7 +17,7 @@ within R and online. There are also articles on particular topics such as
 [filtering occurrence data
 ](https://luomus.github.io/finbif/articles/v02_filtering.html).
 
-## Documention in R
+## Documentation in R
 To see the documentation for a particular function use a `?` in front of the
 function name.
 

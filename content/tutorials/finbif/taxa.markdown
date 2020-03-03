@@ -63,7 +63,7 @@ finbif_check_taxa(list(species = c("Ursus arctos", "Ursus"), genus = "Ursus"))
 ```
 
 You can check many taxa at a time. For example, if you have a list of taxa in a
-file (you can dowload this list of [taxa](../taxa.csv) for instance) you can
+file (you can download this list of [taxa](../taxa.csv) for instance) you can
 check them all at once.
 
 ```r
@@ -115,9 +115,9 @@ finbif_taxa("Capreolus capreolus")
 #>   ..$ finnish                 : logi TRUE
 #>   ..$ species                 : logi TRUE
 #>   ..$ vernacularName          :List of 3
-#>   .. ..$ sv: chr "rådjur"
 #>   .. ..$ en: chr "Roe Deer"
 #>   .. ..$ fi: chr "metsäkauris"
+#>   .. ..$ sv: chr "rådjur"
 #>   ..$ informalGroups          :List of 1
 #>   .. ..$ :List of 2
 #>   .. .. ..$ id  : chr "MVL.2"
