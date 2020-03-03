@@ -15,7 +15,7 @@ menu:
 ---
 
 Attendees of the workshop are expected to bring their own computer and be able
-access the internet wirelessly at the workshop venue (e.g., using
+to access the internet wirelessly at the workshop venue (e.g., using
 [eduroam](https://www.eduroam.org/) or the attendees' own mobile internet
 access).
 
@@ -30,13 +30,13 @@ Though not essential, attendees may also find it useful to install [Rtools
 ](https://cran.r-project.org/bin/windows/Rtools/) (for Windows) or the [Xcode
 Command-Line Tools
 ](https://developer.apple.com/library/archive/technotes/tn2339/) (for Mac).
-These tools are neccessary to install some R packages from source.
+These tools can be neccessary to install some R packages.
 
 Follow the instructions in each section in order to get setup[^1].
 
 ### [Begin setup steps __>__](/setup/r/)
 
 [^1]: If you have a university computer and do not have admin rights you can
-install  __R__ and __RStudio__ (and Rtools/Xcode Command Line Tools) using 
-your university _Software Center_ and then skip to step 3 [Install the FinBIF
-R package](/setup/finbif/).
+install __R__ and __RStudio__ (and Rtools/Xcode Command Line Tools) using your
+university _Software Center_ and then skip to step 3 [Install the FinBIF R
+package](/setup/finbif/).
