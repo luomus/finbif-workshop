@@ -1,0 +1,354 @@
+---
+title: FinBIF R Workshop
+slides:
+  theme: black
+  highlight_style: atom-one-dark-reasonable
+---
+
+```{r setup, include = FALSE}
+library(knitr)
+library(finbif)
+
+output_hook  <- knit_hooks$get("output")
+error_hook   <- knit_hooks$get("warning")
+warning_hook <- knit_hooks$get("error")
+
+knit_hooks$set(
+  frag = function(before, options, envir)
+    if (before) "<div class = 'fragment'>" else "</div>",
+  output = function (x, options)
+    paste(
+      "</div>\n<div class = 'fragment output'>",
+      output_hook(x, options)
+    ),
+  error = function (x, options)
+    paste(
+      "</div>\n<div class = 'fragment output'>",
+      error_hook(x, options)
+    ),
+  warning = function (x, options)
+    paste(
+      "</div>\n<div class = 'fragment output'>",
+      warning_hook(x, options)
+    )
+)
+
+opts_chunk$set(
+  echo          = TRUE,
+  comment       = "#>",
+  class.output  = "language-r",
+  class.error   = "language-r",
+  class.warning = "language-r",
+  frag          = TRUE,
+  fig.show      = "hide",
+  fig.keep      = "none"
+)
+
+opts_knit$set(global.device = TRUE)
+
+options(finbif_tz = "Europe/Helsinki")
+```
+
+# FinBIF R Workshop
+
+---
+
+## Installation
+
+---
+
+### Stable version
+```{r install-cran, eval = FALSE}
+install.packages("finbif")
+```
+
+---
+
+### Development version
+```{r install-github, eval = FALSE}
+if (require(remotes)) install.packages("remotes")
+remotes::install_github("luomus/finbif@dev")
+```
+
+---
+
+### Previous versions
+```{r install-version, eval = FALSE}
+remotes::install_version("finbif", "0.2.0")
+```
+
+---
+
+## Loading the package
+```{r library}
+library(finbif)
+```
+
+---
+
+## Access token
+
+---
+
+### Requesting a token
+
+```{r request-token, eval = FALSE}
+finbif_request_token("your@email.com")
+```
+
+---
+
+### Setting the token
+
+```{r set-token, eval = FALSE}
+Sys.setenv(
+  FINBIF_ACCESS_TOKEN = "xtmSOIxjPwq0pOMB1WvcZgFLU9QBkl"
+)
+```
+
+```{r set-token-renviron, eval = FALSE}
+cat(
+  'FINBIF_ACCESS_TOKEN = "xtmSOIxjPwq0pOMB1WvcZgFLU9QBkl"',
+  file = "~/.Renviron",
+  append = TRUE,
+  fill = TRUE
+)
+```
+
+---
+
+## Documentation
+
+---
+
+## Documentation in R
+
+```{r help1, eval = FALSE}
+?finbif_request_token
+```
+
+```{r help2, eval = FALSE}
+help("finbif_request_token")
+```
+
+{{% fragment %}} Some important help files {{% /fragment %}}
+```{r help0-files, eval = FALSE}
+?filters
+?variables
+```
+
+---
+
+### Documentation online
+
+---
+
+{{< slide background-image="stable-docs.png" >}}
+
+---
+
+{{< slide background-image="dev-docs.png" >}}
+
+---
+
+{{< slide background-image="vignettes.png" >}}
+
+---
+
+## Working with taxa
+
+---
+
+### Taxa checking
+```{r check-taxa}
+(taxa <- finbif_check_taxa(c("Ursus arctos", "Moomin")))
+```
+
+```{r show-checked-taxa1}
+taxa[[1]]
+```
+
+```{r show-checked-taxa2}
+taxa[[2]]
+```
+
+---
+
+### Taxa checking
+```{r check-taxa-specific}
+finbif_check_taxa(
+  list(species = c("Ursus arctos", "Ursus"), genus = "Ursus")
+)
+```
+
+---
+
+### Taxa checking
+```{r check-taxa-list, eval = FALSE}
+taxa_list <- readLines("taxa.csv")
+finbif_check_taxa(taxa_list)
+```
+
+---
+
+### Taxa search
+
+---
+
+### Exact matching
+```{r search-taxa}
+finbif_taxa("Capreolus capreolus")
+```
+
+---
+
+### Partial matching
+```{r search-taxa-deer}
+deer <- finbif_taxa("deer", type = "partial", n = 10)
+sapply(deer$content, getElement, "scientificName")
+```
+
+---
+
+## Occurrence data
+
+---
+
+### Requesting occurrence records
+
+```{r occurrence}
+finbif_occurrence()
+```
+
+---
+
+### Darwin Core Variables
+```{r dwc}
+colnames(finbif_occurrence(dwc = TRUE))
+```
+
+---
+
+### Choosing taxa
+```{r cygnus}
+finbif_occurrence("Cygnus cygnus")
+```
+
+---
+
+### Choosing taxa
+```{r cygnus2}
+finbif_occurrence("Cygnus cygnus", "Cygnus olor")
+```
+
+---
+
+### Choosing taxa
+
+```{r birds}
+birds  <- finbif_occurrence("Birds")
+linnut <- finbif_occurrence("Linnut")
+faglar <- finbif_occurrence("Fåglar")
+
+sapply(list(birds, linnut, faglar), nrow)
+```
+
+---
+
+### Request size
+```{r occurrences1001, eval = FALSE}
+occurrences <- finbif_occurrence(n = 1001)
+```
+
+---
+
+## Data viewer
+```{r view, eval = FALSE}
+View(occurrences)
+```
+
+{{< figure library="true" src="data-viewer.png" lightbox="true" class="fragment" >}}
+
+---
+
+{{< slide background-image="viewer-occurrence.png" >}}
+
+---
+
+### Suppress progress bar
+```{r quiet, eval = FALSE}
+finbif_occurrence(n = 1001, quiet = TRUE)
+```
+
+---
+
+### Count records
+```{r count-only}
+finbif_occurrence(count_only = TRUE)
+```
+
+---
+
+### Checking taxa
+```{r moomin}
+finbif_occurrence("Vulpes vulpes", "Moomin")
+```
+
+---
+
+### Without checking
+```{r moomin-check-false, eval = FALSE}
+finbif_occurrence(
+  "Vulpes vulpes", "Moomin", check_taxa = FALSE
+)
+```
+
+---
+
+### Failing with error
+```{r moomin-check-error, error = TRUE}
+finbif_occurrence(
+  "Vulpes vulpes", "Moomin", on_check_fail = "error"
+)
+```
+
+---
+
+## Time & duration
+
+---
+
+### Compute date & time
+```{r date-time-false}
+finbif_occurrence(date_time = FALSE)
+```
+
+---
+
+### Timezone
+
+---
+
+#### Timezone input
+```{r date-time-accurate, eval = FALSE}
+finbif_occurrence(date_time_method = "accurate")
+```
+
+---
+
+#### Timezone output
+
+```{r sys-tzone, eval = FALSE}
+Sys.timezone()
+```
+
+```{r tzone}
+finbif_occurrence(tzone = "Etc/UTC")
+```
+
+---
+
+#### Set timezone
+```{r tzone-global, eval = FALSE}
+options(finbif_tz = "Etc/UTC")
+```
