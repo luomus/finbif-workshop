@@ -136,18 +136,18 @@ finbif_collections(
 #> HR.175  National Finnish butterfl… Lepidoptera                 349461
 #> HR.200  Finnish Insect Database    Insecta                    3728982
 #> HR.2049 Invasive alien species co… Invasive species                93
-#> HR.206  The Finnish Nature League… biota                        82296
+#> HR.206  The Finnish Nature League… biota                        82327
 #> HR.2089 Håkan Lindberg collection  Hymenoptera                   2295
 #> HR.209  Atlas of Finnish Macrolep… Macrolepidoptera           1217383
 #> HR.2209 KUO Arachnida collection   Arachnida                        3
 #> HR.2289 Specimens that lack colle… <NA>                           109
 #> HR.2691 Line transect censuses of… Aves                        588124
 #> HR.2692 Censuses of breeding bird… Aves                         14963
-#> HR.3051 Viekas project invasive s… <NA>                           603
+#> HR.3051 Viekas project invasive s… <NA>                           647
 #> HR.3071 Observing species on milk… <NA>                           160
 #> HR.3211 iNaturalist                <NA>                         15716
-#> HR.39   Winter Bird Census         Aves                       1354203
-#> HR.435  Löydös Open Invasive Spec… Biota                        11667
+#> HR.39   Winter Bird Census         Aves                       1357896
+#> HR.435  Löydös Open Invasive Spec… Biota                        11668
 #> HR.60   Monitoring scheme of bird… Aves, Mammalia              769290
 #> HR.627  Invasive mammal species o… Mammalia                       228
 #> HR.808  E. Sjöholm´s butterfly co… Lepidoptera                   4952
@@ -200,8 +200,8 @@ finbif_collections(is_part_of == "HR.128", supercollections = TRUE)
 #>        geographic_coverage temporal_coverage secure_level count   
 #> HR.129 <NA>                <NA>              <NA>             1512
 #> HR.160 World               1700 to present   MX.secureLe…      957
-#> HR.173 Finland             1950-             <NA>          4129953
-#> HR.203 world               2013-             <NA>            14378
+#> HR.173 Finland             1950-             <NA>          4133646
+#> HR.203 world               2013-             <NA>            14382
 #> HR.447 World               <NA>              <NA>          2012956
-#> HR.48  Ringing data: Finl… 1913-             <NA>         11911188
+#> HR.48  Ringing data: Finl… 1913-             <NA>         11914550
 ```

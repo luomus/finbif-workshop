@@ -30,7 +30,7 @@ Or, use the help function.
 help("finbif_request_token")
 ```
 
-Some important help pages in the `{finbif}` package include `?filters` and 
+Some important help pages in the `{finbif}` package include `?filters` and
 `?variables`
 
 ## Documentation online

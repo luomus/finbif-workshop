@@ -14,8 +14,8 @@ menu:
 To access data from FinBIF via its public [API](https://api.laji.fi) you will
 need to obtain a personal access token. You should only need to request a token
 once but you will need to either set your token each time you start an R
-session, or store the token in an `Renviron` file so that is loaded each time
-R starts up.
+session, or store the token in an `Renviron` file so that is loaded each time R
+starts up.
 
 If you have not already done so, load `{finbif}` into your R session.
 
