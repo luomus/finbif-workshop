@@ -94,7 +94,7 @@ image(
 ### Legend
 You can add a plot legend to indicate how the image breakpoints are mapped to
 the image colors.
-```{r plot-jays-legend, fig.show = "hide"}
+```{r plot-jays-legend}
 legend(
   "topright",
   inset  = c(0, .01),
