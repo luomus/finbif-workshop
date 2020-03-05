@@ -1,14 +1,13 @@
 ---
-title: FinBIF R Workshop
+title: Using the FinBIF R package
 slides:
   theme: black
   highlight_style: atom-one-dark-reasonable
-  center: false
 ---
 
 
 
-# FinBIF R Workshop
+# Using the FinBIF R package
 
 ---
 
@@ -322,19 +321,19 @@ finbif_occurrence()
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34495201
+#> Records available: 34495549
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1         Cygnus cygnus         1  60.90278  22.71329 2020-03-05 12:00:00
-#> 2   Acanthis hornemanni        15  61.24887  26.22156 2020-03-05 12:00:00
-#> 3  Cladonia ochrochlora         2  60.66508  23.60832 2020-03-04 12:00:00
-#> 4  Xanthoparmelia sten…         1  60.66508  23.60832 2020-03-04 12:00:00
-#> 5    Parmelia saxatilis        10  60.43472  26.85182 2020-03-04 12:00:00
-#> 6             Pica pica        19  65.67320  24.54981 2020-03-04 08:00:00
-#> 7       Regulus regulus         3  65.67320  24.54981 2020-03-04 08:00:00
-#> 8      Poecile montanus         1  65.67320  24.54981 2020-03-04 08:00:00
-#> 9         Cygnus cygnus         5  65.67320  24.54981 2020-03-04 08:00:00
-#> 10      Passer montanus        28  65.67320  24.54981 2020-03-04 08:00:00
+#> 1         Cygnus cygnus         1  60.15059  24.94896 2020-03-05 12:00:00
+#> 2             Grus grus         1  60.59627  24.84059 2020-03-05 12:00:00
+#> 3         Cygnus cygnus         1  60.90278  22.71329 2020-03-05 12:00:00
+#> 4   Acanthis hornemanni        15  61.24887  26.22156 2020-03-05 12:00:00
+#> 5  Cladonia ochrochlora         2  60.66508  23.60832 2020-03-04 12:00:00
+#> 6  Xanthoparmelia sten…         1  60.66508  23.60832 2020-03-04 12:00:00
+#> 7    Parmelia saxatilis        10  60.43472  26.85182 2020-03-04 12:00:00
+#> 8             Pica pica        19  65.67320  24.54981 2020-03-04 08:00:00
+#> 9       Regulus regulus         3  65.67320  24.54981 2020-03-04 08:00:00
+#> 10     Poecile montanus         1  65.67320  24.54981 2020-03-04 08:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -392,19 +391,19 @@ finbif_occurrence("Cygnus cygnus")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 56320
+#> Records available: 56321
 #> A data.frame [10 x 30]
 #>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1    Cygnus cygnus         1  60.90278  22.71329 2020-03-05 12:00:00
-#> 2    Cygnus cygnus         5  65.67320  24.54981 2020-03-04 08:00:00
-#> 3    Cygnus cygnus        15  60.84193  26.18736 2020-03-04 12:00:00
-#> 4    Cygnus cygnus         2  60.76942  26.11235 2020-03-04 12:00:00
-#> 5    Cygnus cygnus         2  60.67690  27.14658 2020-03-03 09:00:00
-#> 6    Cygnus cygnus         2  61.10389  21.54485 2020-03-03 14:30:00
-#> 7    Cygnus cygnus         1  61.03526  24.52440 2020-03-03 12:00:00
-#> 8    Cygnus cygnus         8  60.14002  23.48627 2020-03-03 08:30:00
-#> 9    Cygnus cygnus         1  59.86994  23.05875 2020-03-02 08:30:00
-#> 10   Cygnus cygnus        33  60.89283  21.58223 2020-03-02 08:30:00
+#> 1    Cygnus cygnus         1  60.15059  24.94896 2020-03-05 12:00:00
+#> 2    Cygnus cygnus         1  60.90278  22.71329 2020-03-05 12:00:00
+#> 3    Cygnus cygnus         5  65.67320  24.54981 2020-03-04 08:00:00
+#> 4    Cygnus cygnus        15  60.84193  26.18736 2020-03-04 12:00:00
+#> 5    Cygnus cygnus         2  60.76942  26.11235 2020-03-04 12:00:00
+#> 6    Cygnus cygnus         2  60.67690  27.14658 2020-03-03 09:00:00
+#> 7    Cygnus cygnus         2  61.10389  21.54485 2020-03-03 14:30:00
+#> 8    Cygnus cygnus         1  61.03526  24.52440 2020-03-03 12:00:00
+#> 9    Cygnus cygnus         8  60.14002  23.48627 2020-03-03 08:30:00
+#> 10   Cygnus cygnus         1  59.86994  23.05875 2020-03-02 08:30:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -430,19 +429,19 @@ finbif_occurrence("Cygnus cygnus", "Cygnus olor")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 80557
+#> Records available: 80558
 #> A data.frame [10 x 30]
 #>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1    Cygnus cygnus         1  60.90278  22.71329 2020-03-05 12:00:00
-#> 2    Cygnus cygnus         5  65.67320  24.54981 2020-03-04 08:00:00
-#> 3    Cygnus cygnus        15  60.84193  26.18736 2020-03-04 12:00:00
-#> 4    Cygnus cygnus         2  60.76942  26.11235 2020-03-04 12:00:00
-#> 5      Cygnus olor         4  60.19697  25.10493 2020-03-03 07:45:00
-#> 6    Cygnus cygnus         2  60.67690  27.14658 2020-03-03 09:00:00
-#> 7    Cygnus cygnus         2  61.10389  21.54485 2020-03-03 14:30:00
-#> 8    Cygnus cygnus         1  61.03526  24.52440 2020-03-03 12:00:00
-#> 9    Cygnus cygnus         8  60.14002  23.48627 2020-03-03 08:30:00
-#> 10     Cygnus olor        73  59.86994  23.05875 2020-03-02 08:30:00
+#> 1    Cygnus cygnus         1  60.15059  24.94896 2020-03-05 12:00:00
+#> 2    Cygnus cygnus         1  60.90278  22.71329 2020-03-05 12:00:00
+#> 3    Cygnus cygnus         5  65.67320  24.54981 2020-03-04 08:00:00
+#> 4    Cygnus cygnus        15  60.84193  26.18736 2020-03-04 12:00:00
+#> 5    Cygnus cygnus         2  60.76942  26.11235 2020-03-04 12:00:00
+#> 6      Cygnus olor         4  60.19697  25.10493 2020-03-03 07:45:00
+#> 7    Cygnus cygnus         2  60.67690  27.14658 2020-03-03 09:00:00
+#> 8    Cygnus cygnus         2  61.10389  21.54485 2020-03-03 14:30:00
+#> 9    Cygnus cygnus         1  61.03526  24.52440 2020-03-03 12:00:00
+#> 10   Cygnus cygnus         8  60.14002  23.48627 2020-03-03 08:30:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -502,7 +501,7 @@ View(occurrences)
 
 ---
 
-{{< slide background-image="viewer-occurrence.png" >}}
+{{< figure library="true" src="viewer-occurrence.png" class="stretch" >}}
 
 ---
 
@@ -528,7 +527,7 @@ finbif_occurrence(count_only = TRUE)
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#> [1] 34495201
+#> [1] 34495549
 ```
 
 </div>
@@ -629,19 +628,19 @@ finbif_occurrence(date_time = FALSE)
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34495201
+#> Records available: 34495549
 #> A data.frame [10 x 28]
 #>         scientific_name abundance lat_wgs84 lon_wgs84 taxon_rank
-#> 1         Cygnus cygnus         1  60.90278  22.71329 MX.species
-#> 2   Acanthis hornemanni        15  61.24887  26.22156 MX.species
-#> 3  Cladonia ochrochlora         2  60.66508  23.60832 MX.species
-#> 4  Xanthoparmelia sten…         1  60.66508  23.60832 MX.species
-#> 5    Parmelia saxatilis        10  60.43472  26.85182 MX.species
-#> 6             Pica pica        19  65.67320  24.54981 MX.species
-#> 7       Regulus regulus         3  65.67320  24.54981 MX.species
-#> 8      Poecile montanus         1  65.67320  24.54981 MX.species
-#> 9         Cygnus cygnus         5  65.67320  24.54981 MX.species
-#> 10      Passer montanus        28  65.67320  24.54981 MX.species
+#> 1         Cygnus cygnus         1  60.15059  24.94896 MX.species
+#> 2             Grus grus         1  60.59627  24.84059 MX.species
+#> 3         Cygnus cygnus         1  60.90278  22.71329 MX.species
+#> 4   Acanthis hornemanni        15  61.24887  26.22156 MX.species
+#> 5  Cladonia ochrochlora         2  60.66508  23.60832 MX.species
+#> 6  Xanthoparmelia sten…         1  60.66508  23.60832 MX.species
+#> 7    Parmelia saxatilis        10  60.43472  26.85182 MX.species
+#> 8             Pica pica        19  65.67320  24.54981 MX.species
+#> 9       Regulus regulus         3  65.67320  24.54981 MX.species
+#> 10     Poecile montanus         1  65.67320  24.54981 MX.species
 #> ...with 0 more records and 23 more variables:
 #> country, province, municipality, date_start, date_end, hour_start,
 #> hour_end, minute_start, minute_end, record_id, individual_id,
@@ -688,19 +687,19 @@ finbif_occurrence(tzone = "Etc/UTC")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34495201
+#> Records available: 34495549
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1         Cygnus cygnus         1  60.90278  22.71329 2020-03-05 10:00:00
-#> 2   Acanthis hornemanni        15  61.24887  26.22156 2020-03-05 10:00:00
-#> 3  Cladonia ochrochlora         2  60.66508  23.60832 2020-03-04 10:00:00
-#> 4  Xanthoparmelia sten…         1  60.66508  23.60832 2020-03-04 10:00:00
-#> 5    Parmelia saxatilis        10  60.43472  26.85182 2020-03-04 10:00:00
-#> 6             Pica pica        19  65.67320  24.54981 2020-03-04 06:00:00
-#> 7       Regulus regulus         3  65.67320  24.54981 2020-03-04 06:00:00
-#> 8      Poecile montanus         1  65.67320  24.54981 2020-03-04 06:00:00
-#> 9         Cygnus cygnus         5  65.67320  24.54981 2020-03-04 06:00:00
-#> 10      Passer montanus        28  65.67320  24.54981 2020-03-04 06:00:00
+#> 1         Cygnus cygnus         1  60.15059  24.94896 2020-03-05 10:00:00
+#> 2             Grus grus         1  60.59627  24.84059 2020-03-05 10:00:00
+#> 3         Cygnus cygnus         1  60.90278  22.71329 2020-03-05 10:00:00
+#> 4   Acanthis hornemanni        15  61.24887  26.22156 2020-03-05 10:00:00
+#> 5  Cladonia ochrochlora         2  60.66508  23.60832 2020-03-04 10:00:00
+#> 6  Xanthoparmelia sten…         1  60.66508  23.60832 2020-03-04 10:00:00
+#> 7    Parmelia saxatilis        10  60.43472  26.85182 2020-03-04 10:00:00
+#> 8             Pica pica        19  65.67320  24.54981 2020-03-04 06:00:00
+#> 9       Regulus regulus         3  65.67320  24.54981 2020-03-04 06:00:00
+#> 10     Poecile montanus         1  65.67320  24.54981 2020-03-04 06:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -809,7 +808,7 @@ finbif_occurrence("Cygnus cygnus", order_by = "abundance")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 56320
+#> Records available: 56321
 #> A data.frame [10 x 30]
 #>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1    Cygnus cygnus         1  60.41667  16.00000 1997-04-01 13:00:00
@@ -847,7 +846,7 @@ finbif_occurrence("Cygnus cygnus", order_by = "-abundance")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 56320
+#> Records available: 56321
 #> A data.frame [10 x 30]
 #>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1    Cygnus cygnus      6000  64.40000 -14.54000 1995-07-05 15:00:00
@@ -925,19 +924,19 @@ finbif_occurrence(sample = TRUE)
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34495201
+#> Records available: 34495549
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1        Rubus arcticus         1  61.20978  23.18152 1971-01-01 12:00:00
-#> 2         Festuca ovina         1  61.76541  23.29275 1990-06-27 12:00:00
-#> 3  Schreckensteinia fe…         1  62.55505  28.98942 2007-05-22 12:00:00
-#> 4       Photedes minima         1  62.21369  30.61082 2014-07-31 11:00:00
-#> 5           Buteo buteo         1  61.07699  28.38655 2005-01-01 12:00:00
-#> 6    Equisetum pratense         1  65.73461  27.57390 1973-01-01 12:00:00
-#> 7           Parus major         1  60.43333  22.13333 1979-03-29 12:00:00
-#> 8      Curruca communis         1  61.59435  21.53114 1996-07-29 07:00:00
-#> 9     Fringilla coelebs         1  62.64774  26.03628 2000-01-01 12:00:00
-#> 10     Larus argentatus         1  62.03298  28.65998 1998-07-12 12:00:00
+#> 1     Euplexia lucipara         4  62.49212  29.54803 2017-07-26 12:00:00
+#> 2         Odezia atrata         4  62.30173  29.64762 2017-06-30 12:00:00
+#> 3           Parus major        69  61.45987  24.22976 2017-01-08 10:00:00
+#> 4       Luzula sudetica         1  64.67880  28.19668 1985-08-01 12:00:00
+#> 5          Alnus incana         1  60.42643  23.99152 1967-07-07 12:00:00
+#> 6   Bombycilla garrulus         1  61.63289  23.19441 1989-11-12 14:00:00
+#> 7       Passer montanus         4  60.35916  25.63815 2009-02-16 12:00:00
+#> 8  Chroicocephalus rid…         1  60.43333  22.21667 1986-06-23 12:00:00
+#> 9           Parus major        22  62.54695  22.81641 1993-03-03 09:00:00
+#> 10     Carsia sororiata         1  60.45211  25.99769 1957-01-01 12:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -1105,7 +1104,7 @@ finbif_collections(
 #> HR.175  National Finnish butterfl… Lepidoptera                 349461
 #> HR.200  Finnish Insect Database    Insecta                    3728982
 #> HR.2049 Invasive alien species co… Invasive species                93
-#> HR.206  The Finnish Nature League… biota                        82330
+#> HR.206  The Finnish Nature League… biota                        82332
 #> HR.2089 Håkan Lindberg collection  Hymenoptera                   2295
 #> HR.209  Atlas of Finnish Macrolep… Macrolepidoptera           1217383
 #> HR.2209 KUO Arachnida collection   Arachnida                        3
@@ -1115,7 +1114,7 @@ finbif_collections(
 #> HR.3051 Viekas project invasive s… <NA>                           647
 #> HR.3071 Observing species on milk… <NA>                           160
 #> HR.3211 iNaturalist                <NA>                         15716
-#> HR.39   Winter Bird Census         Aves                       1358050
+#> HR.39   Winter Bird Census         Aves                       1358052
 #> HR.435  Löydös Open Invasive Spec… Biota                        11668
 #> HR.60   Monitoring scheme of bird… Aves, Mammalia              769290
 #> HR.627  Invasive mammal species o… Mammalia                       228
@@ -1186,10 +1185,10 @@ finbif_collections(
 #>        geographic_coverage temporal_coverage secure_level count   
 #> HR.129 <NA>                <NA>              <NA>             1512
 #> HR.160 World               1700 to present   MX.secureLe…      957
-#> HR.173 Finland             1950-             <NA>          4133800
+#> HR.173 Finland             1950-             <NA>          4133802
 #> HR.203 world               2013-             <NA>            14383
 #> HR.447 World               <NA>              <NA>          2012956
-#> HR.48  Ringing data: Finl… 1913-             <NA>         11915068
+#> HR.48  Ringing data: Finl… 1913-             <NA>         11915178
 ```
 
 </div>
@@ -1231,19 +1230,19 @@ finbif_occurrence(filter = c(country = "Finland"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 32654039
+#> Records available: 32654386
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1         Cygnus cygnus         1  60.90278  22.71329 2020-03-05 12:00:00
-#> 2   Acanthis hornemanni        15  61.24887  26.22156 2020-03-05 12:00:00
-#> 3  Cladonia ochrochlora         2  60.66508  23.60832 2020-03-04 12:00:00
-#> 4  Xanthoparmelia sten…         1  60.66508  23.60832 2020-03-04 12:00:00
-#> 5    Parmelia saxatilis        10  60.43472  26.85182 2020-03-04 12:00:00
-#> 6             Pica pica        19  65.67320  24.54981 2020-03-04 08:00:00
-#> 7       Regulus regulus         3  65.67320  24.54981 2020-03-04 08:00:00
-#> 8      Poecile montanus         1  65.67320  24.54981 2020-03-04 08:00:00
-#> 9         Cygnus cygnus         5  65.67320  24.54981 2020-03-04 08:00:00
-#> 10      Passer montanus        28  65.67320  24.54981 2020-03-04 08:00:00
+#> 1         Cygnus cygnus         1  60.15059  24.94896 2020-03-05 12:00:00
+#> 2             Grus grus         1  60.59627  24.84059 2020-03-05 12:00:00
+#> 3         Cygnus cygnus         1  60.90278  22.71329 2020-03-05 12:00:00
+#> 4   Acanthis hornemanni        15  61.24887  26.22156 2020-03-05 12:00:00
+#> 5  Cladonia ochrochlora         2  60.66508  23.60832 2020-03-04 12:00:00
+#> 6  Xanthoparmelia sten…         1  60.66508  23.60832 2020-03-04 12:00:00
+#> 7    Parmelia saxatilis        10  60.43472  26.85182 2020-03-04 12:00:00
+#> 8             Pica pica        19  65.67320  24.54981 2020-03-04 08:00:00
+#> 9       Regulus regulus         3  65.67320  24.54981 2020-03-04 08:00:00
+#> 10     Poecile montanus         1  65.67320  24.54981 2020-03-04 08:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -1271,33 +1270,6 @@ finbif_occurrence(
 ```
 
 </div>
-<div class = 'fragment output'> 
-
-```{.language-r}
-#> Records downloaded: 10
-#> Records available: 27016687
-#> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1         Cygnus cygnus         1  60.90278  22.71329 2020-03-05 12:00:00
-#> 2   Acanthis hornemanni        15  61.24887  26.22156 2020-03-05 12:00:00
-#> 3  Cladonia ochrochlora         2  60.66508  23.60832 2020-03-04 12:00:00
-#> 4  Xanthoparmelia sten…         1  60.66508  23.60832 2020-03-04 12:00:00
-#> 5    Parmelia saxatilis        10  60.43472  26.85182 2020-03-04 12:00:00
-#> 6             Pica pica        19  65.67320  24.54981 2020-03-04 08:00:00
-#> 7       Regulus regulus         3  65.67320  24.54981 2020-03-04 08:00:00
-#> 8      Poecile montanus         1  65.67320  24.54981 2020-03-04 08:00:00
-#> 9         Cygnus cygnus         5  65.67320  24.54981 2020-03-04 08:00:00
-#> 10      Passer montanus        28  65.67320  24.54981 2020-03-04 08:00:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
-```
-
-</div>
 
 ---
 
@@ -1305,9 +1277,7 @@ finbif_occurrence(
 <div class = 'fragment'>
 
 ```r
-finbif_occurrence(
-  filter = list(date_range_ymd = c("2019-12"))
-)
+finbif_occurrence(filter = c(date_range_ymd = "2019-12"))
 ```
 
 </div>
@@ -1357,7 +1327,7 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 344435
+#> Records available: 344494
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1            Flammulina        10  60.39362  25.67044 2019-12-31 12:00:00
@@ -1396,33 +1366,7 @@ finbif_occurrence(
 ```
 
 </div>
-<div class = 'fragment output'> 
 
-```{.language-r}
-#> Records downloaded: 10
-#> Records available: 1487149
-#> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Otiorhynchus sulcat…         1  60.82156  21.57260 2020-02-20 12:00:00
-#> 2         Cygnus cygnus         1  61.08200  27.78355 2020-02-20 12:00:00
-#> 3     Tussilago farfara         1  60.53359  22.25838 2020-02-20 12:00:00
-#> 4     Formica (Formica)         1  60.38138  22.41044 2020-02-20 12:00:00
-#> 5           Lutra lutra         1  60.80374  25.81131 2020-02-20 12:00:00
-#> 6      Acalypta parvula         1  60.28291  22.40971 2020-02-20 12:00:00
-#> 7    Dolycoris baccarum         1  60.28291  22.40971 2020-02-20 12:00:00
-#> 8    Dolycoris baccarum         4  60.28291  22.40971 2020-02-20 12:00:00
-#> 9       Drymus brunneus         3  60.28291  22.40971 2020-02-20 12:00:00
-#> 10     Elasmucha grisea         1  60.28291  22.40971 2020-02-20 12:00:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
-```
-
-</div>
 ---
 
 ### Data quality
@@ -1462,7 +1406,7 @@ c(
 
 ```{.language-r}
 #>     strict permissive 
-#>     307634   34731674
+#>     307637   34732022
 ```
 
 </div>
@@ -1504,7 +1448,7 @@ finbif_occurrence(
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#> [1] 8149365
+#> [1] 8149370
 ```
 
 </div>
@@ -1561,7 +1505,8 @@ finbif_occurrence(
 ```r
 finbif_occurrence(
   "birds",
-  filter = list(administrative_status = "EU_INVSV"))
+  filter = list(administrative_status = "EU_INVSV")
+)
 ```
 
 </div>
@@ -1649,7 +1594,7 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 260081
+#> Records available: 260077
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1   Galerucella pusilla         1  61.71399  29.39042 2020-03-03 16:12:00
@@ -1675,7 +1620,7 @@ finbif_occurrence(
 
 ---
 
-### Finnish occurrence
+### Finnish occurrence (negation)
 <div class = 'fragment'>
 
 ```r
@@ -1686,33 +1631,6 @@ finbif_occurrence(
     taxon_rank = "species"
   )
 )
-```
-
-</div>
-<div class = 'fragment output'> 
-
-```{.language-r}
-#> Records downloaded: 10
-#> Records available: 104609
-#> A data.frame [10 x 30]
-#>       scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1   Larus hyperboreus         1  63.81115  23.03631 2020-03-01 08:45:00
-#> 2       Milvus milvus         1  60.78519  26.07963 2020-02-19 07:00:00
-#> 3    Larus glaucoides         1  63.82952  23.03191 2020-02-05 12:00:00
-#> 4       Gavia adamsii         1  61.14620  26.72432 2020-02-05 12:00:00
-#> 5   Larus hyperboreus         1  63.82944  23.03180 2020-02-04 12:00:00
-#> 6    Larus glaucoides         1  63.82939  23.02910 2020-02-03 12:00:00
-#> 7   Larus hyperboreus         1  65.05931  25.40096 2020-01-06 11:00:00
-#> 8       Milvus milvus         1  60.08416  23.40222 2020-01-06 09:15:00
-#> 9  Cygnus columbianus         1  60.15734  24.87389 2020-01-05 09:10:00
-#> 10      Gavia adamsii         1  61.15926  28.76690 2020-01-01 09:50:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
 ```
 
 </div>
@@ -1730,11 +1648,21 @@ finbif_occurrence(
 recent_obs <- finbif_occurrence(
   filter = c(country = "Finland"), n = 1000
 )
+```
 
+</div>
+
+---
+
+### Occurrence points
+<div class = 'fragment'>
+
+```r
 plot(recent_obs)
 ```
 
-<img src="/slides/finbif/index_files/figure-html/plot-points-1.png" width="672" /></div>
+</div>
+<div class = 'fragment output'> <img src="/slides/finbif/index_files/figure-html/plot-points-1.png" width="672" /></div>
 
 ---
 
@@ -1863,7 +1791,8 @@ legend(
 polygon(finland_map$vertices, lwd = .2)
 ```
 
-<img src="/slides/finbif/index_files/figure-html/plot-finland-1.png" width="672" /></div>
+</div>
+<div class = 'fragment output'> <img src="/slides/finbif/index_files/figure-html/plot-finland-1.png" width="672" /></div>
 
 ---
 

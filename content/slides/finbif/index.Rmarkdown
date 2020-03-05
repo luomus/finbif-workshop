@@ -1,9 +1,8 @@
 ---
-title: FinBIF R Workshop
+title: Using the FinBIF R package
 slides:
   theme: black
   highlight_style: atom-one-dark-reasonable
-  center: false
 ---
 
 ```{r setup, include = FALSE}
@@ -11,8 +10,9 @@ library(knitr)
 library(finbif)
 
 output_hook  <- knit_hooks$get("output")
-error_hook   <- knit_hooks$get("warning")
-warning_hook <- knit_hooks$get("error")
+error_hook   <- knit_hooks$get("error")
+warning_hook <- knit_hooks$get("warning")
+plot_hook    <- knit_hooks$get("plot")
 
 knit_hooks$set(
   frag = function(before, options, envir)
@@ -31,6 +31,11 @@ knit_hooks$set(
     paste(
       "</div>\n<div class = 'fragment output'>",
       warning_hook(x, options)
+    ),
+  plot = function (x, options)
+    paste(
+      "</div>\n<div class = 'fragment output'>",
+      plot_hook(x, options)
     )
 )
 
@@ -50,7 +55,7 @@ opts_knit$set(global.device = TRUE)
 options(finbif_tz = "Europe/Helsinki")
 ```
 
-# FinBIF R Workshop
+# Using the FinBIF R package
 
 ---
 
@@ -265,7 +270,7 @@ View(occurrences)
 
 ---
 
-{{< slide background-image="viewer-occurrence.png" >}}
+{{< figure library="true" src="viewer-occurrence.png" class="stretch" >}}
 
 ---
 
@@ -514,7 +519,7 @@ finbif_occurrence(filter = c(country = "Finland"))
 ---
 
 ### Coordinates
-```{r filter-coords}
+```{r filter-coords, eval = FALSE}
 finbif_occurrence(
   filter = list(
     coordinates = list(
@@ -528,9 +533,7 @@ finbif_occurrence(
 
 ### Dates
 ```{r single-date}
-finbif_occurrence(
-  filter = list(date_range_ymd = c("2019-12"))
-)
+finbif_occurrence(filter = c(date_range_ymd = "2019-12"))
 ```
 
 ---
@@ -547,7 +550,7 @@ finbif_occurrence(
 ---
 
 ### Dates
-```{r every-summer}
+```{r every-winter, eval = FALSE}
 finbif_occurrence(
   filter = list(
     date_range_md = c(begin = "12-21", end = "12-31"),
@@ -555,6 +558,7 @@ finbif_occurrence(
   )
 )
 ```
+
 ---
 
 ### Data quality
@@ -618,7 +622,8 @@ finbif_occurrence(
 ```{r filter-admin-status}
 finbif_occurrence(
   "birds",
-  filter = list(administrative_status = "EU_INVSV"))
+  filter = list(administrative_status = "EU_INVSV")
+)
 ```
 
 ---
@@ -641,8 +646,8 @@ finbif_occurrence(
 
 ---
 
-### Finnish occurrence
-```{r filter-occ-status-neg}
+### Finnish occurrence (negation)
+```{r filter-occ-status-neg, eval = FALSE}
 finbif_occurrence(
   "Birds",
   filter = c(
@@ -659,11 +664,16 @@ finbif_occurrence(
 ---
 
 ### Occurrence points
-```{r plot-points, fig.show = "hold", fig.keep = "last"}
+```{r recent-obs}
 recent_obs <- finbif_occurrence(
   filter = c(country = "Finland"), n = 1000
 )
+```
 
+---
+
+### Occurrence points
+```{r plot-points, fig.show = "hold", fig.keep = "last"}
 plot(recent_obs)
 ```
 
