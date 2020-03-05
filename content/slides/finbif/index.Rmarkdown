@@ -3,6 +3,7 @@ title: FinBIF R Workshop
 slides:
   theme: black
   highlight_style: atom-one-dark-reasonable
+  center: false
 ---
 
 ```{r setup, include = FALSE}
@@ -79,7 +80,7 @@ remotes::install_version("finbif", "0.2.0")
 
 ---
 
-## Loading the package
+### Loading the package
 ```{r library}
 library(finbif)
 ```
@@ -91,7 +92,6 @@ library(finbif)
 ---
 
 ### Requesting a token
-
 ```{r request-token, eval = FALSE}
 finbif_request_token("your@email.com")
 ```
@@ -99,7 +99,6 @@ finbif_request_token("your@email.com")
 ---
 
 ### Setting the token
-
 ```{r set-token, eval = FALSE}
 Sys.setenv(
   FINBIF_ACCESS_TOKEN = "xtmSOIxjPwq0pOMB1WvcZgFLU9QBkl"
@@ -121,16 +120,13 @@ cat(
 
 ---
 
-## Documentation in R
-
+### Documentation in R
 ```{r help1, eval = FALSE}
 ?finbif_request_token
 ```
-
 ```{r help2, eval = FALSE}
 help("finbif_request_token")
 ```
-
 {{% fragment %}} Some important help files {{% /fragment %}}
 ```{r help0-files, eval = FALSE}
 ?filters
@@ -139,7 +135,7 @@ help("finbif_request_token")
 
 ---
 
-### Documentation online
+## Documentation online
 
 ---
 
@@ -191,7 +187,7 @@ finbif_check_taxa(taxa_list)
 
 ---
 
-### Taxa search
+## Taxa search
 
 ---
 
@@ -215,7 +211,6 @@ sapply(deer$content, getElement, "scientificName")
 ---
 
 ### Requesting occurrence records
-
 ```{r occurrence}
 finbif_occurrence()
 ```
@@ -244,7 +239,6 @@ finbif_occurrence("Cygnus cygnus", "Cygnus olor")
 ---
 
 ### Choosing taxa
-
 ```{r birds}
 birds  <- finbif_occurrence("Birds")
 linnut <- finbif_occurrence("Linnut")
@@ -262,7 +256,7 @@ occurrences <- finbif_occurrence(n = 1001)
 
 ---
 
-## Data viewer
+### Data viewer
 ```{r view, eval = FALSE}
 View(occurrences)
 ```
@@ -325,30 +319,473 @@ finbif_occurrence(date_time = FALSE)
 
 ---
 
-### Timezone
+## Timezones
 
 ---
 
-#### Timezone input
+### Timezone input
 ```{r date-time-accurate, eval = FALSE}
 finbif_occurrence(date_time_method = "accurate")
 ```
 
 ---
 
-#### Timezone output
-
+### Timezone output
 ```{r sys-tzone, eval = FALSE}
 Sys.timezone()
 ```
-
 ```{r tzone}
 finbif_occurrence(tzone = "Etc/UTC")
 ```
 
 ---
 
-#### Set timezone
+### Set timezone
 ```{r tzone-global, eval = FALSE}
 options(finbif_tz = "Etc/UTC")
 ```
+
+---
+
+## Selecting & ordering variables
+
+---
+
+### Variables help page
+```{r variables-help, eval = FALSE}
+?variables
+```
+
+---
+
+{{< slide background-image="variables-help.png" >}}
+
+---
+
+## Selecting variables
+
+---
+
+### Limiting Variables
+```{r limiting}
+finbif_occurrence(
+  genus  = "Falco",
+  select = c("scientific_name", "life_stage", "sex")
+)
+```
+
+---
+
+### Extra variables
+```{r extras, eval = FALSE}
+finbif_occurrence(select = c("default_vars", "life_stage"))
+```
+
+---
+
+## Ordering
+
+---
+
+### Ascending order
+```{r order-ascend}
+finbif_occurrence("Cygnus cygnus", order_by = "abundance")
+```
+
+---
+
+### Descending order
+```{r order-descend}
+finbif_occurrence("Cygnus cygnus", order_by = "-abundance")
+```
+
+---
+
+### Multiple variables
+```{r order-multiple}
+finbif_occurrence(
+  "Cygnus olor", order_by = c("municipality", "-abundance")
+)
+```
+
+---
+
+### Random sample
+```{r random}
+finbif_occurrence(sample = TRUE)
+```
+
+---
+
+## Metadata
+
+---
+
+### General metadata
+```{r metadata-general}
+finbif_metadata()
+```
+
+---
+
+### General metadata
+```{r metadata-red-list}
+finbif_metadata("red_list")
+```
+
+---
+
+## Special metadata
+
+---
+
+### Informal groups
+```{r informal-groups}
+finbif_informal_groups(limit = 6)
+```
+
+---
+
+### Informal groups
+```{r informal-groups-crustacea}
+finbif_informal_groups("Crustaceans")
+```
+
+---
+
+### Collections
+```{r collections-finland}
+finbif_collections(
+  filter = geographic_coverage == "Finland",
+  select = 
+    c("collection_name", "taxonomic_coverage", "count")
+)
+```
+
+---
+
+### Collections
+```{r collections-large, eval = FALSE}
+collections <- 
+  finbif_collections(supercollections = TRUE, nmin = 10000)
+View(collections)
+```
+```{r luomus-collection}
+finbif_collections(
+  supercollections = TRUE
+)["HR.128", "collection_name"]
+```
+
+---
+
+### Collections
+```{r collections-128}
+finbif_collections(
+  is_part_of == "HR.128", supercollections = TRUE
+)
+```
+
+---
+
+## Filtering Occurrence Data
+
+---
+
+### Filtering help
+```{r filters-help, eval = FALSE}
+?filters
+```
+
+---
+
+{{< slide background-image="filtering-help.png" >}}
+
+---
+
+## Location
+
+---
+
+### Places
+```{r filter-place}
+finbif_occurrence(filter = c(country = "Finland"))
+```
+
+---
+
+### Coordinates
+```{r filter-coords}
+finbif_occurrence(
+  filter = list(
+    coordinates = list(
+      lat = c(60, 68), lon = c(20, 30), system = "wgs84"
+    )
+  )
+)
+```
+
+---
+
+### Dates
+```{r single-date}
+finbif_occurrence(
+  filter = list(date_range_ymd = c("2019-12"))
+)
+```
+
+---
+
+### Dates
+```{r date-range}
+finbif_occurrence(
+  filter = list(
+    date_range_ymd = c("2019-06-01", "2019-12-31")
+  )
+)
+```
+
+---
+
+### Dates
+```{r every-summer}
+finbif_occurrence(
+  filter = list(
+    date_range_md = c(begin = "12-21", end = "12-31"),
+    date_range_md = c(begin = "01-01", end = "02-20")
+  )
+)
+```
+---
+
+### Data quality
+```{r quality-strict}
+strict <- c(
+  collection_reliability      = 5,
+  coordinates_uncertainty_max = 1,
+  taxon_reliability           = "reliable"
+)
+```
+```{r quality-permissive}
+permissive <- c(quality_issues = "both")
+```
+```{r show-quality}
+c(
+  strict = finbif_occurrence(
+    filter = strict, count_only = TRUE
+  ),
+  permissive = finbif_occurrence(
+    filter = permissive, count_only = TRUE
+  )
+)
+```
+
+---
+
+### Collections
+```{r filter-inaturalist}
+finbif_occurrence(
+  filter = c(collection = "iNaturalist"),
+  count_only = TRUE
+)
+```
+```{r filter-collection-object}
+collections <- finbif_collections(
+  filter = geographic_coverage == "Finland",
+  nmin   = 10000
+)
+finbif_occurrence(
+  filter = list(collection = collections),
+  count_only = TRUE
+)
+```
+
+---
+
+### Informal groups
+```{r filter-informal-group}
+finbif_occurrence(
+  filter = list(informal_group = "Reptiles and amphibians")
+)
+```
+
+---
+
+## Taxon status
+
+---
+
+### Administrative status
+```{r filter-admin-status}
+finbif_occurrence(
+  "birds",
+  filter = list(administrative_status = "EU_INVSV"))
+```
+
+---
+
+### Red list
+```{r filter-red-list}
+finbif_occurrence(
+  "mammals", filter = list(red_list_status = "NT")
+)
+```
+
+---
+
+### Finnish occurrence
+```{r filter-occ-status}
+finbif_occurrence(
+  filter = c(finnish_occurrence_status = "rare")
+)
+```
+
+---
+
+### Finnish occurrence
+```{r filter-occ-status-neg}
+finbif_occurrence(
+  "Birds",
+  filter = c(
+    finnish_occurrence_status_neg = "stable",
+    taxon_rank = "species"
+  )
+)
+```
+
+---
+
+## Plotting
+
+---
+
+### Occurrence points
+```{r plot-points, fig.show = "hold", fig.keep = "last"}
+recent_obs <- finbif_occurrence(
+  filter = c(country = "Finland"), n = 1000
+)
+
+plot(recent_obs)
+```
+
+---
+
+## Occurrence density
+
+---
+
+### Data
+```{r jays, results = "hide", message = FALSE}
+jays <- finbif_occurrence(
+  "Eurasian Jay",
+  filter = c(
+    coordinates_uncertainty_max = 100, country = "Finland"
+  ),
+  select = c("lon_wgs84", "lat_wgs84"),
+  n = 2e4
+)
+```
+
+---
+
+### Breakpoints
+```{r bbox}
+finland_map$bbox
+```
+```{r finland-breaks}
+(breaks <- breaks_xy(finland_map$bbox, size = .25))
+```
+
+---
+
+### 2d histogram
+```{r jay-density}
+jay_density <- hist_xy(jays, breaks)
+```
+
+---
+
+### Image
+```{r plot-jays-image}
+image(
+  jay_density,
+  asp    = 2.4,
+  breaks = 2^seq(0, 12),
+  col    = hcl.colors(12, rev = TRUE),
+  xlab   = "Longitude",
+  ylab   = "Latitude",
+  las    = 1,
+  panel.first = grid()
+)
+```
+
+---
+
+### Legend
+```{r plot-jays-legend}
+legend(
+  "topright",
+  inset  = c(0, .01),
+  legend = expression(2^12, "", "", 2^6, "", "", 2^0),
+  fill   = hcl.colors(7),
+  border = NA,
+  bty    = "n",
+  adj    = c(0, 0.25),
+  x.intersp = .2,
+  y.intersp = .5
+)
+```
+
+---
+
+### Border
+```{r plot-finland, fig.show = "hold", fig.keep = "last"}
+polygon(finland_map$vertices, lwd = .2)
+```
+
+---
+
+## Reproduciblity & Caching
+
+---
+
+### Reproduciblity
+```{r reproducibility, eval = FALSE}
+remotes::install_version("finbif", "0.2.0")
+options(finbif_tz = "Europe/Helsinki")
+```
+
+---
+
+## Caching
+
+---
+
+### Cache on/off
+```{r without-cache, eval = FALSE}
+finbif_occurrence(cache = FALSE)
+```
+```{r cache-off, eval = FALSE}
+options(finbif_use_cache = FALSE)
+```
+
+---
+
+### Cache on disk
+```{r cache-temp, eval = FALSE}
+options(finbif_cache_path = tempdir())
+```
+```{r create-cache, eval = FALSE}
+dir.create("cache")
+options(finbif_cache_path = "cache")
+```
+
+---
+
+### Clear cache
+```{r clear-cache, eval = FALSE}
+finbif_clear_cache()
+```
+
+---
+
+# FIN
