@@ -501,7 +501,7 @@ View(occurrences)
 
 ---
 
-{{< figure library="true" src="viewer-occurrence.png" class="stretch" >}}
+{{< figure library="true" src="viewer-occurrence.png" >}}
 
 ---
 
@@ -927,16 +927,16 @@ finbif_occurrence(sample = TRUE)
 #> Records available: 34495549
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1     Euplexia lucipara         4  62.49212  29.54803 2017-07-26 12:00:00
-#> 2         Odezia atrata         4  62.30173  29.64762 2017-06-30 12:00:00
-#> 3           Parus major        69  61.45987  24.22976 2017-01-08 10:00:00
-#> 4       Luzula sudetica         1  64.67880  28.19668 1985-08-01 12:00:00
-#> 5          Alnus incana         1  60.42643  23.99152 1967-07-07 12:00:00
-#> 6   Bombycilla garrulus         1  61.63289  23.19441 1989-11-12 14:00:00
-#> 7       Passer montanus         4  60.35916  25.63815 2009-02-16 12:00:00
-#> 8  Chroicocephalus rid…         1  60.43333  22.21667 1986-06-23 12:00:00
-#> 9           Parus major        22  62.54695  22.81641 1993-03-03 09:00:00
-#> 10     Carsia sororiata         1  60.45211  25.99769 1957-01-01 12:00:00
+#> 1           Parus major         1  61.13567  24.38948 2007-10-07 12:00:00
+#> 2          Amara aulica         1  61.21219  24.03274 2018-08-21 12:00:00
+#> 3        Plantago major         1  60.26637  25.03652 1992-05-08 12:00:00
+#> 4  Hamatocaulis vernic…         1  67.59188  27.34214 2016-06-21 12:00:00
+#> 5   Scrophularia nodosa         1  60.22486  19.32572 1964-08-15 12:00:00
+#> 6     Fringilla coelebs         1  60.77856  22.41808 2000-01-01 12:00:00
+#> 7      Calopteryx virgo        NA  62.00781  30.24444 2009-08-06 11:00:00
+#> 8      Dasypolia templi         1  61.18520  28.73515 1990-09-28 12:00:00
+#> 9        Viola tricolor         1  59.84921  23.20461 1985-07-16 12:00:00
+#> 10     Sorbus aucuparia         1  62.61400  27.12328 2014-07-30 12:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -1114,7 +1114,7 @@ finbif_collections(
 #> HR.3051 Viekas project invasive s… <NA>                           647
 #> HR.3071 Observing species on milk… <NA>                           160
 #> HR.3211 iNaturalist                <NA>                         15716
-#> HR.39   Winter Bird Census         Aves                       1358052
+#> HR.39   Winter Bird Census         Aves                       1358053
 #> HR.435  Löydös Open Invasive Spec… Biota                        11668
 #> HR.60   Monitoring scheme of bird… Aves, Mammalia              769290
 #> HR.627  Invasive mammal species o… Mammalia                       228
@@ -1185,7 +1185,7 @@ finbif_collections(
 #>        geographic_coverage temporal_coverage secure_level count   
 #> HR.129 <NA>                <NA>              <NA>             1512
 #> HR.160 World               1700 to present   MX.secureLe…      957
-#> HR.173 Finland             1950-             <NA>          4133802
+#> HR.173 Finland             1950-             <NA>          4133803
 #> HR.203 world               2013-             <NA>            14383
 #> HR.447 World               <NA>              <NA>          2012956
 #> HR.48  Ringing data: Finl… 1913-             <NA>         11915178
