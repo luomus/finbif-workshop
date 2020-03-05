@@ -73,9 +73,9 @@ finbif_occurrence(
 
 You can also filter by time of year (i.e, a date range across all years) using
 the `date_range_md` filter (note `_md` rather than `_ymd`). To filter a range of
-dates that overlaps with the end of the year (e.g., summer) you'll need to
+dates that overlaps with the end of the year (e.g., winter) you'll need to
 supply two date ranges: one for the end of the year and one for the start.
-```{r every-summer}
+```{r every-winter}
 finbif_occurrence(
   filter = list(
     date_range_md = c(begin = "12-21", end = "12-31"),

@@ -1,6 +1,6 @@
 ---
 linktitle: Using the FinBIF R package
-summary: Learn how to access and analyse FinBIF data using r and the finbif package
+summary: "Learn how to access and analyse FinBIF data using R and the {finbif} package"
 weight: 1
 
 title: Introduction
@@ -33,3 +33,4 @@ collection information, getting and filtering occurrence records, creating
 graphics from FinBIF data and fitting models to FinBIF data.
 
 ### [Begin the tutorial __>__](/tutorials/finbif/installation/)
+### [View slideshow __>__](/slides/finbif/)

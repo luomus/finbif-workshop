@@ -43,19 +43,19 @@ finbif_occurrence(filter = c(country = "Finland"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 32650861
+#> Records available: 32654320
 #> A data.frame [10 x 30]
-#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Carduelis carduelis         1  60.42794  22.20052 2020-03-04 12:00:00
-#> 2      Chloris chloris         4  60.42794  22.20052 2020-03-04 12:00:00
-#> 3        Spinus spinus         1  60.42794  22.20052 2020-03-04 12:00:00
-#> 4     Nabis ericetorum         1  61.66988  29.45235 2020-03-04 14:16:00
-#> 5            Pica pica        29  65.82691  24.61553 2020-03-04 08:20:00
-#> 6     Poecile montanus         7  65.82691  24.61553 2020-03-04 08:20:00
-#> 7         Corvus corax         4  65.82691  24.61553 2020-03-04 08:20:00
-#> 8  Capreolus capreolus         1  65.82691  24.61553 2020-03-04 08:20:00
-#> 9     Sciurus vulgaris         1  65.82691  24.61553 2020-03-04 08:20:00
-#> 10   Dendrocopos minor         1  65.82691  24.61553 2020-03-04 08:20:00
+#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1             Grus grus         1  60.59627  24.84059 2020-03-05 12:00:00
+#> 2         Cygnus cygnus         1  60.90278  22.71329 2020-03-05 12:00:00
+#> 3   Acanthis hornemanni        15  61.24887  26.22156 2020-03-05 12:00:00
+#> 4  Cladonia ochrochlora         2  60.66508  23.60832 2020-03-04 12:00:00
+#> 5  Xanthoparmelia sten…         1  60.66508  23.60832 2020-03-04 12:00:00
+#> 6    Parmelia saxatilis        10  60.43472  26.85182 2020-03-04 12:00:00
+#> 7             Pica pica        19  65.67320  24.54981 2020-03-04 08:00:00
+#> 8       Regulus regulus         3  65.67320  24.54981 2020-03-04 08:00:00
+#> 9      Poecile montanus         1  65.67320  24.54981 2020-03-04 08:00:00
+#> 10        Cygnus cygnus         5  65.67320  24.54981 2020-03-04 08:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -80,19 +80,19 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 27014042
+#> Records available: 27016956
 #> A data.frame [10 x 30]
-#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Carduelis carduelis         1  60.42794  22.20052 2020-03-04 12:00:00
-#> 2      Chloris chloris         4  60.42794  22.20052 2020-03-04 12:00:00
-#> 3        Spinus spinus         1  60.42794  22.20052 2020-03-04 12:00:00
-#> 4     Nabis ericetorum         1  61.66988  29.45235 2020-03-04 14:16:00
-#> 5            Pica pica        29  65.82691  24.61553 2020-03-04 08:20:00
-#> 6     Poecile montanus         7  65.82691  24.61553 2020-03-04 08:20:00
-#> 7         Corvus corax         4  65.82691  24.61553 2020-03-04 08:20:00
-#> 8  Capreolus capreolus         1  65.82691  24.61553 2020-03-04 08:20:00
-#> 9     Sciurus vulgaris         1  65.82691  24.61553 2020-03-04 08:20:00
-#> 10   Dendrocopos minor         1  65.82691  24.61553 2020-03-04 08:20:00
+#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1             Grus grus         1  60.59627  24.84059 2020-03-05 12:00:00
+#> 2         Cygnus cygnus         1  60.90278  22.71329 2020-03-05 12:00:00
+#> 3   Acanthis hornemanni        15  61.24887  26.22156 2020-03-05 12:00:00
+#> 4  Cladonia ochrochlora         2  60.66508  23.60832 2020-03-04 12:00:00
+#> 5  Xanthoparmelia sten…         1  60.66508  23.60832 2020-03-04 12:00:00
+#> 6    Parmelia saxatilis        10  60.43472  26.85182 2020-03-04 12:00:00
+#> 7             Pica pica        19  65.67320  24.54981 2020-03-04 08:00:00
+#> 8       Regulus regulus         3  65.67320  24.54981 2020-03-04 08:00:00
+#> 9      Poecile montanus         1  65.67320  24.54981 2020-03-04 08:00:00
+#> 10        Cygnus cygnus         5  65.67320  24.54981 2020-03-04 08:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -146,7 +146,7 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 344104
+#> Records available: 344435
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1            Flammulina        10  60.39362  25.67044 2019-12-31 12:00:00
@@ -170,7 +170,7 @@ finbif_occurrence(
 
 You can also filter by time of year (i.e, a date range across all years) using
 the `date_range_md` filter (note `_md` rather than `_ymd`). To filter a range of
-dates that overlaps with the end of the year (e.g., summer) you'll need to
+dates that overlaps with the end of the year (e.g., winter) you'll need to
 supply two date ranges: one for the end of the year and one for the start.
 
 ```r
@@ -184,7 +184,7 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 1487124
+#> Records available: 1487158
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1  Otiorhynchus sulcat…         1  60.82156  21.57260 2020-02-20 12:00:00
@@ -244,7 +244,7 @@ c(
 
 ```{.language-r}
 #>     strict permissive 
-#>     307627   34728461
+#>     307637   34731956
 ```
 
 ## Collections
@@ -272,7 +272,7 @@ finbif_occurrence(filter = list(collection = collections), count_only = TRUE)
 ```
 
 ```{.language-r}
-#> [1] 8149208
+#> [1] 8149367
 ```
 
 ## Informal groups
@@ -286,7 +286,7 @@ finbif_occurrence(filter = list(informal_group = "Reptiles and amphibians"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 30486
+#> Records available: 30489
 #> A data.frame [10 x 30]
 #>     scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1  Zootoca vivipara         1  60.60121  21.67021 2020-02-28 12:00:00
@@ -388,7 +388,7 @@ finbif_occurrence(filter = c(finnish_occurrence_status = "rare"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 260002
+#> Records available: 260081
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
 #> 1   Galerucella pusilla         1  61.71399  29.39042 2020-03-03 16:12:00
