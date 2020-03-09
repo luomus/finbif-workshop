@@ -35,7 +35,7 @@ install the latest version of the package under development. The `{remotes}`
 package can be used to install packages directly from [GitHub].
 
 ```r
-if (require(remotes)) install.packages("remotes")
+if (!require(remotes)) install.packages("remotes")
 remotes::install_github("luomus/finbif@dev")
 ```
 

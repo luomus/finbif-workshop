@@ -72,7 +72,7 @@ install.packages("finbif")
 
 ### Development version
 ```{r install-github, eval = FALSE}
-if (require(remotes)) install.packages("remotes")
+if (!require(remotes)) install.packages("remotes")
 remotes::install_github("luomus/finbif@dev")
 ```
 
