@@ -17,9 +17,9 @@ In short, [reproducible research
 ](https://ropensci.github.io/reproducibility-guide/sections/introduction/) is
 the practice of documenting and archiving as much of your data collection, data
 analysis and data synthesis as is possible to ensure that your work is
-verifiable and repeated.
+verifiable and repeatable.
 
-Some things you might considered doing to ensure your research is reproducible
+Some things you might consider doing to ensure your research is reproducible
 is to install a specific version of `{finbif}` and set the timezone for
 computing event dates and times explicitly.
 
