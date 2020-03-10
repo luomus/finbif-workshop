@@ -11,9 +11,13 @@ menu:
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
+cache_path <- "../../../cache/"
+knitr::opts_chunk$set(
+  echo = TRUE, comment = "#>", class.output = "language-r", cache = TRUE,
+  cache.path = cache_path
+)
 library(finbif)
-options(finbif_tz = "Europe/Helsinki")
+options(finbif_tz = "Europe/Helsinki", finbif_cache_path = cache_path)
 ```
 
 When requesting data using `{finbif}` you can select from among (or order by)

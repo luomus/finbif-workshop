@@ -11,9 +11,13 @@ menu:
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
+cache_path <- "../../../cache/"
+knitr::opts_chunk$set(
+  echo = TRUE, comment = "#>", class.output = "language-r", cache = TRUE,
+  cache.path = cache_path
+)
 library(finbif)
-options(finbif_tz = "Europe/Helsinki")
+options(finbif_tz = "Europe/Helsinki", finbif_cache_path = cache_path)
 ```
 Much of the information in the FinBIF database consists of metadata that helps
 provide context for occurrence records and other information in FinBIF.

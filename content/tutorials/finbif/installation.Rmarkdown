@@ -52,6 +52,6 @@ remotes::install_version("finbif", "0.2.0")
 ## Loading
 Once you have installed the package you can load it into your R session with the
 `library` function.
-```{r library}
+```{r library, eval = FALSE}
 library(finbif)
 ```

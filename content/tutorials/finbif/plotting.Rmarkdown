@@ -11,13 +11,14 @@ menu:
 ---
 
 ```{r setup, include = FALSE}
+cache_path <- "../../../cache/"
 knitr::opts_chunk$set(
   echo = TRUE, comment = "#>", class.output = "language-r", fig.show = "hide",
-  fig.keep = "none"
+  fig.keep = "none", cache = TRUE, cache.path = cache_path
 )
 knitr::opts_knit$set(global.device = TRUE)
 library(finbif)
-options(finbif_tz = "Europe/Helsinki")
+options(finbif_tz = "Europe/Helsinki", finbif_cache_path = cache_path)
 ```
 
 Visualisation is an important part of data exploration and analysis. The

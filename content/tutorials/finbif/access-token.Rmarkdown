@@ -20,7 +20,7 @@ session, or store the token in an `Renviron` file so that is loaded each time R
 starts up.
 
 If you have not already done so, load `{finbif}` into your R session.
-```{r library}
+```{r library, eval = FALSE}
 library(finbif)
 ```
 

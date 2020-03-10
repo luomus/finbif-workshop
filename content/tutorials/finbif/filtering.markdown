@@ -43,19 +43,19 @@ finbif_occurrence(filter = c(country = "Finland"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 32654320
+#> Records available: 32673736
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1             Grus grus         1  60.59627  24.84059 2020-03-05 12:00:00
-#> 2         Cygnus cygnus         1  60.90278  22.71329 2020-03-05 12:00:00
-#> 3   Acanthis hornemanni        15  61.24887  26.22156 2020-03-05 12:00:00
-#> 4  Cladonia ochrochlora         2  60.66508  23.60832 2020-03-04 12:00:00
-#> 5  Xanthoparmelia sten…         1  60.66508  23.60832 2020-03-04 12:00:00
-#> 6    Parmelia saxatilis        10  60.43472  26.85182 2020-03-04 12:00:00
-#> 7             Pica pica        19  65.67320  24.54981 2020-03-04 08:00:00
-#> 8       Regulus regulus         3  65.67320  24.54981 2020-03-04 08:00:00
-#> 9      Poecile montanus         1  65.67320  24.54981 2020-03-04 08:00:00
-#> 10        Cygnus cygnus         5  65.67320  24.54981 2020-03-04 08:00:00
+#> 1       Regulus regulus         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 2   Emberiza citrinella         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 3          Corvus corax         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 4         Cygnus cygnus         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 5         Turdus merula         3  61.10426  21.56173 2020-03-10 07:50:00
+#> 6  Plectrophenax nival…         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 7   Cyanistes caeruleus         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 8           Parus major         3  61.10426  21.56173 2020-03-10 07:50:00
+#> 9  Lophophanes cristat…         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 10             Acanthis         1  61.10426  21.56173 2020-03-10 07:50:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -80,19 +80,19 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 27016956
+#> Records available: 27034696
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1             Grus grus         1  60.59627  24.84059 2020-03-05 12:00:00
-#> 2         Cygnus cygnus         1  60.90278  22.71329 2020-03-05 12:00:00
-#> 3   Acanthis hornemanni        15  61.24887  26.22156 2020-03-05 12:00:00
-#> 4  Cladonia ochrochlora         2  60.66508  23.60832 2020-03-04 12:00:00
-#> 5  Xanthoparmelia sten…         1  60.66508  23.60832 2020-03-04 12:00:00
-#> 6    Parmelia saxatilis        10  60.43472  26.85182 2020-03-04 12:00:00
-#> 7             Pica pica        19  65.67320  24.54981 2020-03-04 08:00:00
-#> 8       Regulus regulus         3  65.67320  24.54981 2020-03-04 08:00:00
-#> 9      Poecile montanus         1  65.67320  24.54981 2020-03-04 08:00:00
-#> 10        Cygnus cygnus         5  65.67320  24.54981 2020-03-04 08:00:00
+#> 1       Regulus regulus         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 2   Emberiza citrinella         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 3          Corvus corax         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 4         Cygnus cygnus         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 5         Turdus merula         3  61.10426  21.56173 2020-03-10 07:50:00
+#> 6  Plectrophenax nival…         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 7   Cyanistes caeruleus         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 8           Parus major         3  61.10426  21.56173 2020-03-10 07:50:00
+#> 9  Lophophanes cristat…         1  61.10426  21.56173 2020-03-10 07:50:00
+#> 10             Acanthis         1  61.10426  21.56173 2020-03-10 07:50:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -113,19 +113,19 @@ finbif_occurrence(filter = list(date_range_ymd = c("2019-12")))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 7994
+#> Records available: 8037
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1            Flammulina        10  60.39362  25.67044 2019-12-31 12:00:00
-#> 2      Panellus ringens         1  63.06800  21.69020 2019-12-31 12:00:00
-#> 3  Basidioradulum radu…         1  63.06800  21.69020 2019-12-31 12:00:00
-#> 4    Sarcosoma globosum         1  60.28506  21.98599 2019-12-31 12:00:00
-#> 5             Pica pica         3  62.21189  21.66492 2019-12-31 09:54:00
-#> 6      Poecile montanus         4  62.21189  21.66492 2019-12-31 09:54:00
-#> 7   Emberiza citrinella        16  62.21189  21.66492 2019-12-31 09:54:00
-#> 8          Corvus corax         1  62.21189  21.66492 2019-12-31 09:54:00
-#> 9     Dendrocopos major         5  62.21189  21.66492 2019-12-31 09:54:00
-#> 10      Corvus monedula         2  62.21189  21.66492 2019-12-31 09:54:00
+#> 1  Clavulinopsis luteo…         1  60.43100  22.28100 2019-12-31 12:00:00
+#> 2            Flammulina        10  60.39362  25.67044 2019-12-31 12:00:00
+#> 3      Panellus ringens         1  63.06800  21.69020 2019-12-31 12:00:00
+#> 4  Basidioradulum radu…         1  63.06800  21.69020 2019-12-31 12:00:00
+#> 5    Sarcosoma globosum         1  60.28506  21.98599 2019-12-31 12:00:00
+#> 6             Pica pica         3  62.21189  21.66492 2019-12-31 09:54:00
+#> 7      Poecile montanus         4  62.21189  21.66492 2019-12-31 09:54:00
+#> 8   Emberiza citrinella        16  62.21189  21.66492 2019-12-31 09:54:00
+#> 9          Corvus corax         1  62.21189  21.66492 2019-12-31 09:54:00
+#> 10    Dendrocopos major         5  62.21189  21.66492 2019-12-31 09:54:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -146,19 +146,19 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 344435
+#> Records available: 347883
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1            Flammulina        10  60.39362  25.67044 2019-12-31 12:00:00
-#> 2      Panellus ringens         1  63.06800  21.69020 2019-12-31 12:00:00
-#> 3  Basidioradulum radu…         1  63.06800  21.69020 2019-12-31 12:00:00
-#> 4    Sarcosoma globosum         1  60.28506  21.98599 2019-12-31 12:00:00
-#> 5             Pica pica         3  62.21189  21.66492 2019-12-31 09:54:00
-#> 6      Poecile montanus         4  62.21189  21.66492 2019-12-31 09:54:00
-#> 7   Emberiza citrinella        16  62.21189  21.66492 2019-12-31 09:54:00
-#> 8          Corvus corax         1  62.21189  21.66492 2019-12-31 09:54:00
-#> 9     Dendrocopos major         5  62.21189  21.66492 2019-12-31 09:54:00
-#> 10      Corvus monedula         2  62.21189  21.66492 2019-12-31 09:54:00
+#> 1  Clavulinopsis luteo…         1  60.43100  22.28100 2019-12-31 12:00:00
+#> 2            Flammulina        10  60.39362  25.67044 2019-12-31 12:00:00
+#> 3      Panellus ringens         1  63.06800  21.69020 2019-12-31 12:00:00
+#> 4  Basidioradulum radu…         1  63.06800  21.69020 2019-12-31 12:00:00
+#> 5    Sarcosoma globosum         1  60.28506  21.98599 2019-12-31 12:00:00
+#> 6             Pica pica         3  62.21189  21.66492 2019-12-31 09:54:00
+#> 7      Poecile montanus         4  62.21189  21.66492 2019-12-31 09:54:00
+#> 8   Emberiza citrinella        16  62.21189  21.66492 2019-12-31 09:54:00
+#> 9          Corvus corax         1  62.21189  21.66492 2019-12-31 09:54:00
+#> 10    Dendrocopos major         5  62.21189  21.66492 2019-12-31 09:54:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -184,19 +184,19 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 1487158
+#> Records available: 1487757
 #> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Otiorhynchus sulcat…         1  60.82156  21.57260 2020-02-20 12:00:00
-#> 2         Cygnus cygnus         1  61.08200  27.78355 2020-02-20 12:00:00
-#> 3     Tussilago farfara         1  60.53359  22.25838 2020-02-20 12:00:00
-#> 4     Formica (Formica)         1  60.38138  22.41044 2020-02-20 12:00:00
-#> 5           Lutra lutra         1  60.80374  25.81131 2020-02-20 12:00:00
-#> 6      Acalypta parvula         1  60.28291  22.40971 2020-02-20 12:00:00
-#> 7    Dolycoris baccarum         1  60.28291  22.40971 2020-02-20 12:00:00
-#> 8    Dolycoris baccarum         4  60.28291  22.40971 2020-02-20 12:00:00
-#> 9       Drymus brunneus         3  60.28291  22.40971 2020-02-20 12:00:00
-#> 10     Elasmucha grisea         1  60.28291  22.40971 2020-02-20 12:00:00
+#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1            Pica pica         2  61.43119  24.92867 2020-02-20 07:45:00
+#> 2          Picus canus         3  61.43119  24.92867 2020-02-20 07:45:00
+#> 3      Regulus regulus        12  61.43119  24.92867 2020-02-20 07:45:00
+#> 4     Poecile montanus        18  61.43119  24.92867 2020-02-20 07:45:00
+#> 5  Emberiza citrinella         1  61.43119  24.92867 2020-02-20 07:45:00
+#> 6         Corvus corax         3  61.43119  24.92867 2020-02-20 07:45:00
+#> 7      Cinclus cinclus         1  61.43119  24.92867 2020-02-20 07:45:00
+#> 8       Periparus ater         3  61.43119  24.92867 2020-02-20 07:45:00
+#> 9                Loxia         3  61.43119  24.92867 2020-02-20 07:45:00
+#> 10   Dendrocopos major        73  61.43119  24.92867 2020-02-20 07:45:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -244,7 +244,7 @@ c(
 
 ```{.language-r}
 #>     strict permissive 
-#>     307637   34731956
+#>     307679   34751933
 ```
 
 ## Collections
@@ -272,7 +272,7 @@ finbif_occurrence(filter = list(collection = collections), count_only = TRUE)
 ```
 
 ```{.language-r}
-#> [1] 8149367
+#> [1] 8153033
 ```
 
 ## Informal groups
@@ -286,19 +286,19 @@ finbif_occurrence(filter = list(informal_group = "Reptiles and amphibians"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 30489
+#> Records available: 30493
 #> A data.frame [10 x 30]
 #>     scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Zootoca vivipara         1  60.60121  21.67021 2020-02-28 12:00:00
-#> 2   Anguis fragilis         1  59.96766  24.39325 2020-02-22 12:00:00
-#> 3   Anguis fragilis         1  62.25426  25.13755 2020-02-21 12:00:00
-#> 4  Zootoca vivipara         1  60.26828  24.89337 2020-02-17 12:00:00
-#> 5         Bufo bufo         1  60.23152  24.98346 2020-01-15 18:00:00
-#> 6   Anguis fragilis         1  60.23968  25.79487 2020-01-04 18:00:00
-#> 7         Bufo bufo         1  61.08603  26.86767 2020-01-03 14:53:00
-#> 8        Lacertidae         1  28.14624 -16.43370 2019-12-04 13:00:00
-#> 9        Lacertidae         1  28.13532 -16.44389 2019-12-04 13:00:00
-#> 10        Bufo bufo         1  60.89002  24.69797 2019-10-18 10:00:00
+#> 1  Zootoca vivipara         1  60.93303  26.84106 2020-03-08 12:00:00
+#> 2  Zootoca vivipara         1  60.60121  21.67021 2020-02-28 12:00:00
+#> 3   Anguis fragilis         1  59.96766  24.39325 2020-02-22 12:00:00
+#> 4   Anguis fragilis         1  62.25426  25.13755 2020-02-21 12:00:00
+#> 5  Zootoca vivipara         1  60.26828  24.89337 2020-02-17 12:00:00
+#> 6         Bufo bufo         1  60.23152  24.98346 2020-01-15 18:00:00
+#> 7   Anguis fragilis         1  60.23968  25.79487 2020-01-04 18:00:00
+#> 8         Bufo bufo         1  61.08603  26.86767 2020-01-03 14:53:00
+#> 9        Lacertidae         1  28.14624 -16.43370 2019-12-04 13:00:00
+#> 10       Lacertidae         1  28.13532 -16.44389 2019-12-04 13:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -356,19 +356,19 @@ finbif_occurrence("mammals", filter = list(red_list_status = "NT"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 1648
+#> Records available: 1650
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Rangifer tarandus f…         5  63.83774  29.16123 2020-02-29 09:18:00
-#> 2  Rangifer tarandus f…         4  64.42648  29.11431 2019-10-20 12:00:00
-#> 3  Rangifer tarandus f…         1  64.09919  29.40356 2019-09-23 12:00:00
-#> 4  Rangifer tarandus f…         1  63.79309  29.51080 2019-09-13 12:00:00
-#> 5  Rangifer tarandus f…         1  63.93649  29.59252 2019-07-26 12:00:00
-#> 6  Rangifer tarandus f…         2  63.27123  25.35634 2019-06-28 12:00:00
-#> 7  Rangifer tarandus f…         1  63.26554  25.36645 2019-06-28 12:00:00
-#> 8  Rangifer tarandus f…         4  63.03293  24.32905 2019-06-13 12:00:00
-#> 9  Rangifer tarandus f…         1  64.32293  26.69975 2019-05-27 12:00:00
-#> 10 Rangifer tarandus f…         1  63.54897  24.54795 2019-05-18 12:00:00
+#> 1  Pusa hispida botnica         1  64.66837  24.40488 2020-03-07 12:00:00
+#> 2  Rangifer tarandus f…         5  63.83774  29.16123 2020-02-29 09:18:00
+#> 3  Rangifer tarandus f…         4  64.42648  29.11431 2019-10-20 12:00:00
+#> 4  Rangifer tarandus f…         1  64.09919  29.40356 2019-09-23 12:00:00
+#> 5  Rangifer tarandus f…         1  63.79309  29.51080 2019-09-13 12:00:00
+#> 6  Rangifer tarandus f…         1  63.93649  29.59252 2019-07-26 12:00:00
+#> 7  Rangifer tarandus f…         2  63.27123  25.35634 2019-06-28 12:00:00
+#> 8  Rangifer tarandus f…         1  63.26554  25.36645 2019-06-28 12:00:00
+#> 9  Rangifer tarandus f…         4  63.03293  24.32905 2019-06-13 12:00:00
+#> 10 Rangifer tarandus f…         1  64.32293  26.69975 2019-05-27 12:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -388,19 +388,19 @@ finbif_occurrence(filter = c(finnish_occurrence_status = "rare"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 260081
+#> Records available: 260312
 #> A data.frame [10 x 30]
 #>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1   Galerucella pusilla         1  61.71399  29.39042 2020-03-03 16:12:00
-#> 2  Olisthopus rotundat…         1  60.35368  22.36139 2020-02-24 12:00:00
-#> 3  Dromius quadrimacul…         1  60.29779  22.40343 2020-02-22 12:00:00
-#> 4  Otiorhynchus sulcat…         1  60.82156  21.57260 2020-02-20 12:00:00
-#> 5  Dromius quadrimacul…         1  60.29790  22.39917 2020-02-20 12:00:00
-#> 6  Dromius quadrimacul…         1  60.29713  22.39969 2020-02-20 12:00:00
-#> 7    Hylesinus crenatus         1  60.29713  22.39969 2020-02-20 12:00:00
-#> 8   Conistra rubiginosa         4  60.45842  22.17823 2020-02-17 12:00:00
-#> 9    Oenopia conglobata         1  61.71205  29.39218 2020-02-13 15:36:00
-#> 10   Oenopia conglobata         1  61.71378  29.39089 2020-02-12 18:52:00
+#> 1   Agriopis marginaria         7  60.24385  24.74891 2020-03-09 12:00:00
+#> 2  Coleophora binderel…         1  62.23735  27.42594 2020-03-06 12:00:00
+#> 3   Coleophora violacea         1  62.23735  27.42594 2020-03-06 12:00:00
+#> 4   Galerucella pusilla         1  61.71399  29.39042 2020-03-03 16:12:00
+#> 5      Scymnus limbatus         1  60.83753  26.72020 2020-03-01 12:00:00
+#> 6  Olisthopus rotundat…         1  60.35368  22.36139 2020-02-24 12:00:00
+#> 7  Dromius quadrimacul…         1  60.29779  22.40343 2020-02-22 12:00:00
+#> 8  Otiorhynchus sulcat…         1  60.82156  21.57260 2020-02-20 12:00:00
+#> 9  Dromius quadrimacul…         1  60.29790  22.39917 2020-02-20 12:00:00
+#> 10 Dromius quadrimacul…         1  60.29713  22.39969 2020-02-20 12:00:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,
@@ -424,19 +424,19 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 104609
+#> Records available: 104618
 #> A data.frame [10 x 30]
-#>       scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1   Larus hyperboreus         1  63.81115  23.03631 2020-03-01 08:45:00
-#> 2       Milvus milvus         1  60.78519  26.07963 2020-02-19 07:00:00
-#> 3    Larus glaucoides         1  63.82952  23.03191 2020-02-05 12:00:00
-#> 4       Gavia adamsii         1  61.14620  26.72432 2020-02-05 12:00:00
-#> 5   Larus hyperboreus         1  63.82944  23.03180 2020-02-04 12:00:00
-#> 6    Larus glaucoides         1  63.82939  23.02910 2020-02-03 12:00:00
-#> 7   Larus hyperboreus         1  65.05931  25.40096 2020-01-06 11:00:00
-#> 8       Milvus milvus         1  60.08416  23.40222 2020-01-06 09:15:00
-#> 9  Cygnus columbianus         1  60.15734  24.87389 2020-01-05 09:10:00
-#> 10      Gavia adamsii         1  61.15926  28.76690 2020-01-01 09:50:00
+#>      scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1    Anser albifrons        37  60.44720  24.22434 2020-03-08 06:40:00
+#> 2    Anser albifrons         5  60.21013  25.17325 2020-03-07 08:15:00
+#> 3    Anser albifrons         4  60.58187  21.83153 2020-03-07 07:10:00
+#> 4    Anser albifrons         8  60.20768  23.99499 2020-03-07 07:20:00
+#> 5    Anser albifrons         2  60.88855  26.12326 2020-03-07 12:00:00
+#> 6    Anser albifrons         2  59.90500  23.11641 2020-03-06 07:02:00
+#> 7    Anser albifrons         1  60.41835  22.11738 2020-03-06 08:00:00
+#> 8    Anser albifrons         1  60.05221  24.25531 2020-03-06 07:10:00
+#> 9    Anser albifrons         7  60.76204  23.23494 2020-03-06 09:20:00
+#> 10 Larus hyperboreus         1  63.81115  23.03631 2020-03-01 08:45:00
 #> ...with 0 more records and 25 more variables:
 #> taxon_rank, country, province, municipality, date_start, date_end,
 #> hour_start, hour_end, minute_start, minute_end, record_id,

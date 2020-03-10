@@ -11,9 +11,13 @@ menu:
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
+cache_path <- "../../../cache/"
+knitr::opts_chunk$set(
+  echo = TRUE, comment = "#>", class.output = "language-r", cache = TRUE,
+  cache.path = cache_path
+)
 library(finbif)
-options(finbif_tz = "Europe/Helsinki")
+options(finbif_tz = "Europe/Helsinki", finbif_cache_path = cache_path)
 ```
 
 When getting records from FinBIF it's often a good idea to filter the data at
