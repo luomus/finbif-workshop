@@ -1,6 +1,6 @@
 ---
 linktitle: Using the FinBIF R package
-summary: "Learn how to access and analyse FinBIF data using R and the {finbif} package"
+summary: "Learn how to access and work with FinBIF data using R and the {finbif} package"
 weight: 1
 
 title: Introduction

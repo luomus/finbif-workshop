@@ -39,6 +39,8 @@ knit_hooks$set(
     )
 )
 
+cache_path <- "../../../cache/"
+
 opts_chunk$set(
   echo          = TRUE,
   comment       = "#>",
@@ -47,12 +49,14 @@ opts_chunk$set(
   class.warning = "language-r",
   frag          = TRUE,
   fig.show      = "hide",
-  fig.keep      = "none"
+  fig.keep      = "none",
+  cache         = TRUE,
+  cache.path    = cache_path
 )
 
 opts_knit$set(global.device = TRUE)
 
-options(finbif_tz = "Europe/Helsinki")
+options(finbif_tz = "Europe/Helsinki", finbif_cache_path = cache_path)
 ```
 
 # Using the FinBIF R package
