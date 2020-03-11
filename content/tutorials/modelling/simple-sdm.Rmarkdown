@@ -8,6 +8,8 @@ menu:
   modelling:
     name: 1. Build an SDM
     weight: 2
+editor_options:
+  chunk_output_type: console
 ---
 
 ```{r setup, include = FALSE}
@@ -25,10 +27,10 @@ options(finbif_tz = "Europe/Helsinki", finbif_cache_path = cache_path)
 
 This tutorial is a quick demonstration of how to build a species distribution
 model (SDM) for Eurasian Red Squirrel (_Sciurus vulgaris_) using Maximum Entropy
-(MaxEnt). MaxEnt is popular method for constructing SDMs for presence-only data.
-The following should not be taken as a "best practice" example, as it only aims
-to outline some of the key steps in the modelling process without applying any
-of the rigour required to build a fit for purpose model.
+(MaxEnt). MaxEnt is a popular method for constructing SDMs for presence-only 
+data. The following should not be taken as a "best practice" example, as it only
+aims to outline some of the key steps in the modelling process without applying
+any of the rigour required to build a fit for purpose model.
 
 ## Software setup
 To fit distribution models to FinBIF occurrence records will require the
@@ -62,7 +64,7 @@ options(finbif_cache_path = cache_path)
 ```
 
 ## Occurrence & background
-Fitting a presence-only SDM requires to input sources: occurrence records and
+Fitting a presence-only SDM requires two inputs: occurrence records and
 background data points to compare with the occurrence records. Both occurrence
 and background points can be downloaded directly from FinBIF.
 
@@ -83,7 +85,7 @@ coordinates_filter <- list(
 ```
 
 ### Occurrence records
-Using the predetermined filter the coordinates of the last (up to) 5000
+Using the predetermined filter the coordinates of the most recent (up to) 5000
 occurrences of Eurasian Red Squirrel can be downloaded from FinBIF.
 ```{r red-squirrel-points, message = FALSE, results = "hide"}
 red_squirrel_points <- finbif_occurrence(
@@ -96,7 +98,7 @@ red_squirrel_points <- finbif_occurrence(
 
 ### Background points
 Using the same filter we can obtain background points by selecting a random
-sample (10,000) of Mammal occurrences. Using the records of a higher taxonomic
+sample (10,000) of mammal occurrences. Using the records of a higher taxonomic
 group rather than selecting points completely at random helps to mitigate
 sampling bias in the occurrence data on the assumption that bias will be similar
 in the Squirrel occurrences to the bias in the background points chosen in this
@@ -118,7 +120,7 @@ graphically.
 
 First plot the background data, selecting a semi-transparent colour to convey
 the density of points.
-```{r plot-bg}
+```{r plot-bg, cache = FALSE}
 plot(
   x   = background_points,
   col = rgb(0, 0, 0, .1)
@@ -128,7 +130,7 @@ plot(
 Now overlay the Eurasian Red Squirrel occurrence points in a different shade.
 ```{r plot-points}
 points(
-  x   = as.data.frame(red_squirrel_points),
+  x   = red_squirrel_points,
   col = rgb(1, 0, 0, .1),
   pch = 19,
   cex = .2
@@ -143,10 +145,10 @@ polygon(finland_map$vertices, lwd = .2)
 ## Climate data 
 You can obtain climate layers directly from [WorldClim](http://worldclim.org)
 with the `{raster}` package function `getData()`. We use these data purely for
-convenience, and there is little guarantee that all or any of them is at all
-related to any given taxon's distribution. A more robust and rigorous model
-requires a deeper understanding of the underling drivers of the taxon of
-interest's distribution to select appropriate response variables.
+convenience, and there is little guarantee that all, or any of them, is related
+to a given taxon's distribution. A more robust and rigorous model requires a
+deeper understanding of the underlying drivers of the taxon of interest's
+distribution to select appropriate response variables.
 
 ### Getting climate data
 Specify the highest resolution (0.5 arc-minutes) available and the appropriate
@@ -166,7 +168,7 @@ climate_high_res <- getData(
 
 ### Extracting climate data
 You can extract the climate data for all 19 variables at each of the Squirrel
-occurrence data locations using the `{raster}` function `extract()`.
+occurrence locations using the `{raster}` function `extract()`.
 ```{r climate-red-squirrel}
 climate_red_squirrel <- extract(
   x = climate_high_res,
@@ -233,8 +235,8 @@ climate_low_res <- crop(
 )
 ```
 
-To make projections to these climate layers with model requires the data as a
-`data.frame`.
+To make projections to these climate layers with the model requires the data as
+a `data.frame`.
 ```{r climate-df}
 climate_low_res_df <- as.data.frame(climate_low_res)
 ```
@@ -261,11 +263,7 @@ predicted_dist <- predict(
 An empty gridded data layer can be created using the low-res climate layers as
 a template.
 ```{r predict-dist-raster}
-predicted_dist_raster <- raster(
-  x          = extent(climate_low_res),
-  resolution = res(climate_low_res),
-  crs        = crs(climate_low_res)
-)
+predicted_dist_raster <- raster(climate_low_res)
 ```
 
 And the projected Squirrel distribution can be added by using non-NA data cells
