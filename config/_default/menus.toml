@@ -33,34 +33,48 @@
   weight = 5
   parent = "setup"
 
-#[[main]]
-#  name = "Tutorials"
-#  weight = 2
-# identifier = "tutorials"
-
-#[[main]]
-#  name = "Tutorials Overview"
-#  url = "tutorials/"
-#  weight = 1
-#  parent = "tutorials"
-
-#[[main]]
-#  name = "Using the FinBIF R package"
-#  url = "tutorials/finbif/"
-#  weight = 2
-#  parent = "tutorials"
+[[main]]
+  name = "Tutorials"
+  weight = 2
+  identifier = "tutorials"
 
 [[main]]
-  pre = "<i class=\"fab fa-github fa-lg\"></i>"
-  name = ""
-  url = "https://github.com/luomus/finbif/"
+  name = "Tutorials Overview"
+  url = "tutorials/"
+  weight = 1
+  parent = "tutorials"
+
+[[main]]
+  identifier = "Using the FinBIF R package - tutorial"
+  name = "Using the FinBIF R package"
+  url = "tutorials/finbif/"
+  weight = 2
+  parent = "tutorials"
+
+[[main]]
+  identifier = "Building an SDM - tutorial"
+  name = "Building an SDM"
+  url = "tutorials/modelling/"
   weight = 3
-  identifier = "github"
+  parent = "tutorials"
+
+[[main]]
+  pre = "<i class=\"fas fa-tv fa-lg\"></i>"
+  name = ""
+  weight = 3
+  identifier = "slides"
+
+[[main]]
+  identifier = "Using the FinBIF R package - presentation"
+  name = "Using the FinBIF R package"
+  url = "slides/finbif/"
+  weight = 1
+  parent = "slides"
 
 [[main]]
   pre = "<i class=\"fas fa-book-open fa-lg\"></i>"
   name = ""
-  weight = 4 
+  weight = 4
   identifier = "docs"
 
 [[main]]
@@ -74,4 +88,11 @@
   url = "https://finbif-docs-dev.netlify.com/"
   weight = 2
   parent = "docs"
-  
+
+[[main]]
+  pre = "<i class=\"fab fa-github fa-lg\"></i>"
+  name = ""
+  url = "https://github.com/luomus/finbif/"
+  weight = 5
+  identifier = "github"
+

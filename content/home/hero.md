@@ -21,9 +21,9 @@ hero_media = "finbif-logo.png"
   icon_pack = ""
   icon = ""
 
-#[cta_alt]
-#  url = "/tutorials/"
-#  label = "Begin the tutorials"
+[cta_alt]
+  url = "/tutorials/"
+  label = "Begin the tutorials"
 +++
 
 A workshop on using the FinBIF R package for accessing and analysing
