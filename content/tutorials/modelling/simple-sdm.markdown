@@ -53,6 +53,7 @@ hold cached data.
 
 ```r
 cache_path <- "cache"
+dir.create(cache_path)
 options(finbif_cache_path = cache_path)
 ```
 
