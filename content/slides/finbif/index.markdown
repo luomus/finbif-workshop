@@ -1800,11 +1800,11 @@ polygon(finland_map$vertices, lwd = .2)
 
 ---
 
-## Reproduciblity & Caching
+## Reproducibility & Caching
 
 ---
 
-### Reproduciblity
+### Reproducibility
 <div class = 'fragment'>
 
 ```r

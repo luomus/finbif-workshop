@@ -762,11 +762,11 @@ polygon(finland_map$vertices, lwd = .2)
 
 ---
 
-## Reproduciblity & Caching
+## Reproducibility & Caching
 
 ---
 
-### Reproduciblity
+### Reproducibility
 ```{r reproducibility, eval = FALSE}
 remotes::install_version("finbif", "0.2.0")
 options(finbif_tz = "Europe/Helsinki")
