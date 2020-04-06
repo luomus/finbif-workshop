@@ -115,11 +115,11 @@ wrong or misspelled.
 
 ## Time & duration
 The default behaviour of `finbif_occurrence` is to consolidate date and time
-data for occurrence recording events into `date_time` and `duration` variables.
-This can be turned off (which can speed up data processing time) by setting
-`date_time` to `"FALSE"`.
+data for occurrence recording events into a `date_time` variable. This can be
+turned off (which can speed up data processing time) by deselecting the
+`date_time` variable.
 ```{r date-time-false}
-finbif_occurrence(date_time = FALSE)
+finbif_occurrence(select = "-date_time")
 ```
 
 ### Timezone

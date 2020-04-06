@@ -65,7 +65,7 @@ finbif_metadata("red_list")
 ```
 
 ## Special cases
-Some, more complex, metadata is accessed with other `{finbif}` functions
+Some more complex metadata is accessed with other `{finbif}` functions
 
 ### Informal groups
 Informal taxonomic groups and their relationships can be displayed with
@@ -120,38 +120,38 @@ finbif_collections(
 
 ```{.language-r}
 #>         collection_name            taxonomic_coverage         count  
-#> HR.1227 Coll Mikko Heikkinen       Biota                           61
+#> HR.1227 Coll Mikko Heikkinen       Biota                           62
 #> HR.1349 JYV - Fungal collections   <NA>                         13398
 #> HR.1350 JYV - Lichen collections   <NA>                           398
 #> HR.1351 JYV - Bryophyte collectio… <NA>                          3227
 #> HR.1467 Per-Eric Grankvist´s butt… Lepidoptera                      5
 #> HR.1487 JYV - Fish collections     <NA>                          1371
 #> HR.1507 Lingonblad Birger och Hjö… Lepidoptera                   2797
-#> HR.1592 Herbarium of The Ark Natu… <NA>                          1287
+#> HR.1592 Herbarium of The Ark Natu… <NA>                          1522
 #> HR.1687 Papilionoidea of Coll. La… Papilionoidea                  525
 #> HR.1688 Noctuidae I of Coll. Lauro Noctuidae                      614
 #> HR.1689 Noctuidae II of Coll. Lau… Noctuidae                      839
 #> HR.1690 Noctuidae III, Bombycoide… Noctuidae, Bombycoidea, G…     521
 #> HR.1691 Drepanidae & Geometridae … Drepanidae, Geometridae       1408
-#> HR.175  National Finnish butterfl… Lepidoptera                 349476
-#> HR.200  Finnish Insect Database    Insecta                    3728982
+#> HR.175  National Finnish butterfl… Lepidoptera                 349599
+#> HR.200  Finnish Insect Database    Insecta                    3729195
 #> HR.2049 Invasive alien species co… Invasive species                93
-#> HR.206  The Finnish Nature League… biota                        82324
+#> HR.206  The Finnish Nature League… biota                        84304
 #> HR.2089 Håkan Lindberg collection  Hymenoptera                   2295
 #> HR.209  Atlas of Finnish Macrolep… Macrolepidoptera           1217383
 #> HR.2209 KUO Arachnida collection   Arachnida                        3
 #> HR.2289 Specimens that lack colle… <NA>                           109
 #> HR.2691 Line transect censuses of… Aves                        588124
 #> HR.2692 Censuses of breeding bird… Aves                         14963
-#> HR.3051 Viekas project invasive s… <NA>                           647
+#> HR.3051 Viekas project invasive s… <NA>                           651
 #> HR.3071 Observing species on milk… <NA>                           160
 #> HR.3211 iNaturalist                <NA>                         15716
-#> HR.39   Winter Bird Census         Aves                       1361703
-#> HR.435  Löydös Open Invasive Spec… Biota                        11674
+#> HR.39   Winter Bird Census         Aves                       1364899
+#> HR.435  Löydös Open Invasive Spec… Biota                        11698
 #> HR.60   Monitoring scheme of bird… Aves, Mammalia              769290
 #> HR.627  Invasive mammal species o… Mammalia                       228
 #> HR.808  E. Sjöholm´s butterfly co… Lepidoptera                   4952
-#> HR.847  Atlas of amphibians and r… Amphibia, Reptilia            5106
+#> HR.847  Atlas of amphibians and r… Amphibia, Reptilia            5117
 ```
 
 By default, `finbif_collections()` only displays the lowest level collections.
@@ -199,9 +199,9 @@ finbif_collections(is_part_of == "HR.128", supercollections = TRUE)
 #> HR.48  HR.128     MY.dataQual… NA      MY.collectionT… <NA>              
 #>        geographic_coverage temporal_coverage secure_level count   
 #> HR.129 <NA>                <NA>              <NA>             1512
-#> HR.160 World               1700 to present   MX.secureLe…      957
-#> HR.173 Finland             1950-             <NA>          4137453
-#> HR.203 world               2013-             <NA>            14392
-#> HR.447 World               <NA>              <NA>          2012986
-#> HR.48  Ringing data: Finl… 1913-             <NA>         11916923
+#> HR.160 World               1700 to present   MX.secureLe…      956
+#> HR.173 Finland             1950-             <NA>          4140660
+#> HR.203 world               2013-             <NA>            14438
+#> HR.447 World               <NA>              <NA>          2012987
+#> HR.48  Ringing data: Finl… 1913-             <NA>         11935299
 ```

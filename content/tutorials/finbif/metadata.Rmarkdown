@@ -36,7 +36,7 @@ finbif_metadata("red_list")
 ```
 
 ## Special cases
-Some, more complex, metadata is accessed with other `{finbif}` functions
+Some more complex metadata is accessed with other `{finbif}` functions
 
 ### Informal groups
 Informal taxonomic groups and their relationships can be displayed with
