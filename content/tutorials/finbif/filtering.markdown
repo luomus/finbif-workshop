@@ -43,22 +43,22 @@ finbif_occurrence(filter = c(country = "Finland"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 32770995
-#> A data.frame [10 x 10]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Mompha sturnipennel…  1         62.23735  27.42594 2020-04-06 12:00:00
-#> 2                  <NA>  1         60.19302  23.41405 2020-04-06 12:00:00
-#> 3      Sturnus vulgaris  1         60.7171   27.2106  2020-04-06 12:00:00
-#> 4     Tussilago farfara  1         63.74834  27.64843 2020-04-06 12:00:00
-#> 5             Aglais io  1         61.50572  23.82138 2020-04-05 12:00:00
-#> 6     Nymphalis antiopa  1         61.52834  24.86208 2020-04-05 12:00:00
-#> 7    Rabocerus gabrieli  1         63.83328  23.0308  2020-04-05 12:00:00
-#> 8         Vulpes vulpes  1         60.11628  23.47399 2020-04-05 12:00:00
-#> 9      Hepatica nobilis  3         60.11204  23.5322  2020-04-05 12:00:00
-#> 10       Bombus lucorum  1         60.11204  23.5322  2020-04-05 12:00:00
-#> ...with 0 more records and 5 more variables:
-#> record_id, any_issues, record_reliable, taxon_reliability,
-#> coordinates_uncertainty
+#> Records available: 36008265
+#> A data.frame [10 x 12]
+#>               record_id     scientific_name abundance lat_wgs84 lon_wgs84
+#> 1          JX.1176642#4    Poecile montanus  4         61.00708  26.43348
+#> 2          JX.1176641#4         Parus major  10        61.01079  26.44975
+#> 3          JX.1176640#4 Cyanistes caeruleus  12        61.01079  26.44975
+#> 4  KE.176/5fbe1425d5de…      Sitta europaea  1         65.39619  27.31273
+#> 5          JX.1176602#4 Chelifer cancroides  1         60.43392  22.38267
+#> 6         JX.1176634#10           Pica pica  1         68.41036  27.41244
+#> 7          JX.1176634#7    Poecile montanus  2         68.41036  27.41244
+#> 8          JX.1176634#4         Parus major  6         68.41036  27.41244
+#> 9         JX.1176537#13            Anatidae  4         60.17956  24.66378
+#> 10        JX.1176537#16                Aves  3         60.17956  24.66378
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 ### Coordinates
@@ -76,22 +76,22 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 27121414
-#> A data.frame [10 x 10]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Mompha sturnipennel…  1         62.23735  27.42594 2020-04-06 12:00:00
-#> 2                  <NA>  1         60.19302  23.41405 2020-04-06 12:00:00
-#> 3      Sturnus vulgaris  1         60.7171   27.2106  2020-04-06 12:00:00
-#> 4     Tussilago farfara  1         63.74834  27.64843 2020-04-06 12:00:00
-#> 5             Aglais io  1         61.50572  23.82138 2020-04-05 12:00:00
-#> 6     Nymphalis antiopa  1         61.52834  24.86208 2020-04-05 12:00:00
-#> 7    Rabocerus gabrieli  1         63.83328  23.0308  2020-04-05 12:00:00
-#> 8         Vulpes vulpes  1         60.11628  23.47399 2020-04-05 12:00:00
-#> 9      Hepatica nobilis  3         60.11204  23.5322  2020-04-05 12:00:00
-#> 10       Bombus lucorum  1         60.11204  23.5322  2020-04-05 12:00:00
-#> ...with 0 more records and 5 more variables:
-#> record_id, any_issues, record_reliable, taxon_reliability,
-#> coordinates_uncertainty
+#> Records available: 29884902
+#> A data.frame [10 x 12]
+#>               record_id     scientific_name abundance lat_wgs84 lon_wgs84
+#> 1          JX.1176642#4    Poecile montanus  4         61.00708  26.43348
+#> 2          JX.1176641#4         Parus major  10        61.01079  26.44975
+#> 3          JX.1176640#4 Cyanistes caeruleus  12        61.01079  26.44975
+#> 4  KE.176/5fbe1425d5de…      Sitta europaea  1         65.39619  27.31273
+#> 5          JX.1176602#4 Chelifer cancroides  1         60.43392  22.38267
+#> 6         JX.1176537#13            Anatidae  4         60.17956  24.66378
+#> 7         JX.1176537#16                Aves  3         60.17956  24.66378
+#> 8         JX.1176537#19             Insecta  5         60.17956  24.66378
+#> 9          JX.1176537#7                Aves  23        60.17956  24.66378
+#> 10         JX.1176537#4         Parus major  1         60.17956  24.66378
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 ## Dates
@@ -105,22 +105,22 @@ finbif_occurrence(filter = list(date_range_ymd = c("2019-12")))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 8074
-#> A data.frame [10 x 10]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Flammulina finlandi…  1         60.3753   23.16409 2019-12-31 12:00:00
-#> 2     Exidia glandulosa  1         60.37529  23.16411 2019-12-31 12:00:00
-#> 3  Hypocreopsis lichen…  10        60.37529  23.16411 2019-12-31 12:00:00
-#> 4  Clavulinopsis luteo…  1         60.431    22.281   2019-12-31 12:00:00
-#> 5            Flammulina  10        60.39362  25.67044 2019-12-31 12:00:00
-#> 6      Panellus ringens  1         63.068    21.6902  2019-12-31 12:00:00
-#> 7  Basidioradulum radu…  1         63.068    21.6902  2019-12-31 12:00:00
-#> 8    Sarcosoma globosum  1         60.28506  21.98599 2019-12-31 12:00:00
-#> 9             Pica pica  3         62.21189  21.66492 2019-12-31 09:54:00
-#> 10     Poecile montanus  4         62.21189  21.66492 2019-12-31 09:54:00
-#> ...with 0 more records and 5 more variables:
-#> record_id, any_issues, record_reliable, taxon_reliability,
-#> coordinates_uncertainty
+#> Records available: 19083
+#> A data.frame [10 x 12]
+#>               record_id     scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  tun.fi/HR.3211/6524…    Pinus sylvestris  1         68.84709  28.33712
+#> 2  mus.utu.fi/MY.72933…        Viscum album  1         60.4638   22.3343 
+#> 3  mus.utu.fi/MY.73114… Nowellia curvifolia  1         60.38972  22.52086
+#> 4  tun.fi/HR.3211/3712… Bombycilla garrulus  1         60.16761  24.94694
+#> 5  tun.fi/KE.921/LGE.6…     Pteromys volans  1         61.81362  25.75756
+#> 6  tun.fi/HR.3211/3712…           Pica pica  1         60.16964  24.95628
+#> 7  tun.fi/HR.3691/OBS8… Emberiza citrinella  10        60.4811   22.1214 
+#> 8  tun.fi/HR.3691/OBS8…     Chloris chloris  1         60.414    22.2446 
+#> 9  tun.fi/HR.3691/OBS8…        Corvus corax  2         60.3753   23.7216 
+#> 10 tun.fi/HR.3691/OBS8… Carduelis carduelis  1         60.177    24.7949 
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 You can further customize the date range filter by specifying an end date
@@ -134,22 +134,22 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 379860
-#> A data.frame [10 x 10]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Flammulina finlandi…  1         60.3753   23.16409 2019-12-31 12:00:00
-#> 2     Exidia glandulosa  1         60.37529  23.16411 2019-12-31 12:00:00
-#> 3  Hypocreopsis lichen…  10        60.37529  23.16411 2019-12-31 12:00:00
-#> 4  Clavulinopsis luteo…  1         60.431    22.281   2019-12-31 12:00:00
-#> 5            Flammulina  10        60.39362  25.67044 2019-12-31 12:00:00
-#> 6      Panellus ringens  1         63.068    21.6902  2019-12-31 12:00:00
-#> 7  Basidioradulum radu…  1         63.068    21.6902  2019-12-31 12:00:00
-#> 8    Sarcosoma globosum  1         60.28506  21.98599 2019-12-31 12:00:00
-#> 9             Pica pica  3         62.21189  21.66492 2019-12-31 09:54:00
-#> 10     Poecile montanus  4         62.21189  21.66492 2019-12-31 09:54:00
-#> ...with 0 more records and 5 more variables:
-#> record_id, any_issues, record_reliable, taxon_reliability,
-#> coordinates_uncertainty
+#> Records available: 587345
+#> A data.frame [10 x 12]
+#>               record_id     scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  tun.fi/HR.3211/6524…    Pinus sylvestris  1         68.84709  28.33712
+#> 2  mus.utu.fi/MY.72933…        Viscum album  1         60.4638   22.3343 
+#> 3  mus.utu.fi/MY.73114… Nowellia curvifolia  1         60.38972  22.52086
+#> 4  tun.fi/HR.3211/3712… Bombycilla garrulus  1         60.16761  24.94694
+#> 5  tun.fi/KE.921/LGE.6…     Pteromys volans  1         61.81362  25.75756
+#> 6  tun.fi/HR.3211/3712…           Pica pica  1         60.16964  24.95628
+#> 7  tun.fi/HR.3691/OBS8… Emberiza citrinella  10        60.4811   22.1214 
+#> 8  tun.fi/HR.3691/OBS8…     Chloris chloris  1         60.414    22.2446 
+#> 9  tun.fi/HR.3691/OBS8…        Corvus corax  2         60.3753   23.7216 
+#> 10 tun.fi/HR.3691/OBS8… Carduelis carduelis  1         60.177    24.7949 
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 You can also filter by time of year (i.e, a date range across all years) using
@@ -168,22 +168,22 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 1488420
-#> A data.frame [10 x 10]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1         Cygnus cygnus  1         61.082    27.78355 2020-02-20 12:00:00
-#> 2         Cygnus cygnus  1         61.437    23.031   2020-02-20 12:00:00
-#> 3         Cygnus cygnus  1         61.0722   25.70648 2020-02-20 12:00:00
-#> 4  Phragmatobia fuligi…  1         64.26197  27.92685 2020-02-20 12:00:00
-#> 5  Xeromphalina campan…  1         60.401    22.393   2020-02-20 12:00:00
-#> 6     Tussilago farfara  1         61.454    22.116   2020-02-20 12:00:00
-#> 7             Pica pica  2         61.43119  24.92867 2020-02-20 07:45:00
-#> 8           Picus canus  3         61.43119  24.92867 2020-02-20 07:45:00
-#> 9       Regulus regulus  12        61.43119  24.92867 2020-02-20 07:45:00
-#> 10     Poecile montanus  18        61.43119  24.92867 2020-02-20 07:45:00
-#> ...with 0 more records and 5 more variables:
-#> record_id, any_issues, record_reliable, taxon_reliability,
-#> coordinates_uncertainty
+#> Records available: 1555025
+#> A data.frame [10 x 12]
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  tun.fi/KE.921/LGE.6…   Bazzania trilobata  1         60.06576  23.77395
+#> 2  tun.fi/KE.921/LGE.6…   Calypogeia suecica  1         60.06707  23.77198
+#> 3  tun.fi/KE.921/LGE.6…     Scapania nemorea  1         60.06576  23.77395
+#> 4  tun.fi/KE.921/LGE.6…  Bazzania tricrenata  1         60.06576  23.77395
+#> 5   tun.fi/JX.1099335#4   Rhizocybe pruinosa  7         61.47031  23.37529
+#> 6  mus.utu.fi/MY.94320…  Bazzania tricrenata  1         60.06577  23.77395
+#> 7  mus.utu.fi/MY.94319…   Bazzania trilobata  1         60.06577  23.77395
+#> 8  mus.utu.fi/MY.94319…   Calypogeia suecica  1         60.06708  23.77197
+#> 9  mus.utu.fi/MY.94320… Herzogiella striate…  1         60.06577  23.77395
+#> 10 mus.utu.fi/MY.94320…      Hypnum imponens  1         60.06577  23.77395
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 ## Data quality
@@ -196,8 +196,8 @@ following set of filters.
 
 ```r
 strict <- c(
-  collection_reliability = 5, coordinates_uncertainty_max = 1,
-  taxon_reliability = "reliable"
+  collection_quality = "professional", coordinates_uncertainty_max = 1,
+  record_quality = "expert_verified"
 )
 ```
 These filters will limit the occurrence records to those belonging to the most
@@ -208,7 +208,14 @@ At the other end of the spectrum, you can also allow all records regardless of
 quality with the following filter.
 
 ```r
-permissive <- c(quality_issues = "both")
+permissive <- list(
+  quality_issues = "both",
+  record_reliability = c("reliable", "unassessed", "unreliable"),
+  record_quality = c(
+    "expert_verified", "community_verified", "unassessed", "uncertain",
+    "erroneous"
+  )
+)
 ```
 This will include all records, both with and without, quality issues.
 
@@ -224,7 +231,7 @@ c(
 
 ```{.language-r}
 #>     strict permissive 
-#>     311202   34855912
+#>         16   38304202
 ```
 
 ## Collections
@@ -232,11 +239,13 @@ You can filter by collection using the collection ID, the collection name or
 the abbreviated collection name (if available).
 
 ```r
-finbif_occurrence(filter = c(collection = "iNaturalist"), count_only = TRUE)
+finbif_occurrence(
+  filter = c(collection = "iNaturalist Suomi Finland"), count_only = TRUE
+)
 ```
 
 ```{.language-r}
-#> [1] 15716
+#> [1] 238719
 ```
 
 You can also use the results of a call to the `finbif_collections` function as
@@ -252,7 +261,7 @@ finbif_occurrence(filter = list(collection = collections), count_only = TRUE)
 ```
 
 ```{.language-r}
-#> [1] 8158569
+#> [1] 10508335
 ```
 
 ## Informal groups
@@ -266,22 +275,22 @@ finbif_occurrence(filter = list(informal_group = "Reptiles and amphibians"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 30576
-#> A data.frame [10 x 10]
-#>     scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1   Rana temporaria  1         60.2365   24.99785 2020-04-05 12:00:00
-#> 2  Zootoca vivipara  1         60.0558   24.24036 2020-04-04 12:00:00
-#> 3  Zootoca vivipara  2         61.39162  24.63277 2020-03-31 13:00:00
-#> 4  Zootoca vivipara  1         60.393    25.744   2020-03-28 12:00:00
-#> 5  Zootoca vivipara  1         60.4338   26.68982 2020-03-28 12:00:00
-#> 6  Zootoca vivipara  1         60.4338   26.68982 2020-03-28 12:00:00
-#> 7  Zootoca vivipara  1         60.55858  24.22039 2020-03-28 12:00:00
-#> 8  Zootoca vivipara  1         60.55858  24.22039 2020-03-28 12:00:00
-#> 9  Zootoca vivipara  1         60.15582  24.18372 2020-03-28 12:00:00
-#> 10  Rana temporaria  1         60.19852  25.0141  2020-03-28 12:00:00
-#> ...with 0 more records and 5 more variables:
-#> record_id, any_issues, record_reliable, taxon_reliability,
-#> coordinates_uncertainty
+#> Records available: 37632
+#> A data.frame [10 x 12]
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  KE.176/5fb7ba4bd5de…      Anguis fragilis  1         60.5007   25.05817
+#> 2    HR.3211/65137611-U      Rana temporaria  1         60.45358  22.40777
+#> 3  KE.176/5fa6c8e9d5de…            Bufo bufo  10        60.39596  25.1878 
+#> 4    HR.3211/63305915-U              Ranidae  1         60.48971  22.43561
+#> 5    HR.3211/62991435-U      Rana temporaria  1         62.65     23.15   
+#> 6    HR.3211/63876686-U     Zootoca vivipara  1         61.79251  23.63291
+#> 7    HR.3211/62890648-U      Rana temporaria  1         60.25     23.65   
+#> 8    HR.3211/62781862-U     Zootoca vivipara  1         62.25     26.35   
+#> 9  KE.176/5f8c62d0d5de… Pelophylax esculent…  1         65.20437  25.44325
+#> 10 KE.176/5f86d744d5de…      Anguis fragilis  1         60.15856  24.18494
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 ## Taxon status
@@ -300,22 +309,22 @@ finbif_occurrence("birds", filter = list(administrative_status = "EU_INVSV"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 437
-#> A data.frame [10 x 10]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Alopochen aegyptiaca  3         52.16081  4.485534 2019-10-23 13:00:00
-#> 2  Alopochen aegyptiaca  4         53.36759  6.191796 2018-10-26 11:15:00
-#> 3  Alopochen aegyptiaca  6         53.37574  6.207861 2018-10-23 08:30:00
-#> 4  Alopochen aegyptiaca  30        52.3399   5.069133 2018-10-22 10:45:00
-#> 5  Alopochen aegyptiaca  36        51.74641  4.535283 2018-10-21 13:00:00
-#> 6  Alopochen aegyptiaca  3         51.74641  4.535283 2018-10-21 13:00:00
-#> 7  Alopochen aegyptiaca  2         51.90871  4.53258  2018-10-20 12:10:00
-#> 8  Alopochen aegyptiaca  2         53.19242  5.437417 2017-10-24 11:06:00
-#> 9  Alopochen aegyptiaca  20        53.32081  6.192341 2017-10-23 12:15:00
-#> 10 Alopochen aegyptiaca  5         53.32081  6.192341 2017-10-23 12:15:00
-#> ...with 0 more records and 5 more variables:
-#> record_id, any_issues, record_reliable, taxon_reliability,
-#> coordinates_uncertainty
+#> Records available: 454
+#> A data.frame [10 x 12]
+#>           record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1     JX.1045316#34 Alopochen aegyptiaca  3         52.16081  4.485534
+#> 2     JX.138840#123 Alopochen aegyptiaca  4         53.36759  6.191796
+#> 3     JX.139978#214 Alopochen aegyptiaca  6         53.37574  6.207861
+#> 4      JX.139710#17 Alopochen aegyptiaca  30        52.3399   5.069133
+#> 5      JX.139645#57 Alopochen aegyptiaca  36        51.74641  4.535283
+#> 6      JX.139645#10 Alopochen aegyptiaca  3         51.74641  4.535283
+#> 7      JX.139442#16 Alopochen aegyptiaca  2         51.90871  4.53258 
+#> 8   KE.8_1208123#15 Alopochen aegyptiaca  2         53.19242  5.437417
+#> 9  KE.8_1208068#101 Alopochen aegyptiaca  20        53.32081  6.192341
+#> 10  KE.8_1208068#89 Alopochen aegyptiaca  5         53.32081  6.192341
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 ### Red list
@@ -328,22 +337,22 @@ finbif_occurrence("mammals", filter = list(red_list_status = "NT"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 1650
-#> A data.frame [10 x 10]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Rangifer tarandus f…  7         63.11867  24.12289 2020-03-28 12:00:00
-#> 2  Pusa hispida botnica  1         64.66837  24.40488 2020-03-07 12:00:00
-#> 3  Rangifer tarandus f…  5         63.83774  29.16123 2020-02-29 09:18:00
-#> 4  Rangifer tarandus f…  4         64.42648  29.11431 2019-10-20 12:00:00
-#> 5  Rangifer tarandus f…  1         64.09919  29.40356 2019-09-23 12:00:00
-#> 6  Rangifer tarandus f…  1         63.79309  29.5108  2019-09-13 12:00:00
-#> 7  Rangifer tarandus f…  1         63.93649  29.59252 2019-07-26 12:00:00
-#> 8  Rangifer tarandus f…  2         63.27123  25.35634 2019-06-28 12:00:00
-#> 9  Rangifer tarandus f…  1         63.26554  25.36645 2019-06-28 12:00:00
-#> 10 Rangifer tarandus f…  4         63.03293  24.32905 2019-06-13 12:00:00
-#> ...with 0 more records and 5 more variables:
-#> record_id, any_issues, record_reliable, taxon_reliability,
-#> coordinates_uncertainty
+#> Records available: 1883
+#> A data.frame [10 x 12]
+#>             record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1      JX.1172081#680 Rangifer tarandus f…  5         64.28951  29.15453
+#> 2  HR.3211/65002184-U Rangifer tarandus f…  1         63.1      23.9    
+#> 3      JX.1172081#134 Rangifer tarandus f…  3         64.10893  29.48419
+#> 4       JX.1161996#91 Rangifer tarandus f…  4         64.33462  30.10569
+#> 5        JX.1168245#4 Rangifer tarandus f…  5         63.31715  25.30074
+#> 6  HR.3211/61379553-U Rangifer tarandus f…  1         63.55     23.75   
+#> 7  HR.3211/58578975-U                 <NA>  1         65.83274  30.05538
+#> 8  HR.3211/56410884-U Rangifer tarandus f…  1         61.85     23.55   
+#> 9  HR.3211/56416254-U Rangifer tarandus f…  1               NA        NA
+#> 10 HR.3211/56742224-U Rangifer tarandus f…  1         63.25     24.75   
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 ### Finnish occurrence
@@ -356,22 +365,22 @@ finbif_occurrence(filter = c(finnish_occurrence_status = "rare"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 260804
-#> A data.frame [10 x 10]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1            Uloma rufa  2         61.70041  29.39708 2020-04-05 18:31:00
-#> 2  Lithophane ornitopus  1         60.05748  22.49088 2020-04-05 12:00:00
-#> 3    Oenopia conglobata  1         61.69288  29.68773 2020-04-03 12:00:00
-#> 4      Archiearis notha  3         60.25712  24.73908 2020-03-28 12:00:00
-#> 5        Thecla betulae  4         60.33962  25.23897 2020-03-28 12:00:00
-#> 6   Agriopis marginaria  20        60.24476  24.74196 2020-03-28 12:00:00
-#> 7  Subcoccinella vigin…  1         59.89182  22.5213  2020-03-27 12:00:00
-#> 8  Chilocorus bipustul…  1         59.86901  22.46867 2020-03-27 12:00:00
-#> 9   Conistra rubiginosa  7         60.12303  20.25994 2020-03-26 12:00:00
-#> 10 Eriogaster lanestris  1         60.12303  20.25994 2020-03-26 12:00:00
-#> ...with 0 more records and 5 more variables:
-#> record_id, any_issues, record_reliable, taxon_reliability,
-#> coordinates_uncertainty
+#> Records available: 291233
+#> A data.frame [10 x 12]
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1    HR.3211/65472829-U Dromius quadrimacul…  1         60.15249  24.95254
+#> 2         JX.1176173#10  Conistra rubiginosa  19        60.45842  22.17823
+#> 3         JX.1175000#23 Subcoccinella vigin…  1         61.35822  28.47772
+#> 4    HR.3211/64917225-U     Anthocomus rufus  1         60.20888  24.99462
+#> 5         JX.1175007#13  Conistra rubiginosa  78        60.45842  22.17823
+#> 6         JX.1175223#10      Acleris umbrana  1         62.80743  30.06103
+#> 7         JX.1173580#10 Lithophane ornitopus  1         60.05748  22.49088
+#> 8  KE.176/5fa43d58d5de… Cleorodes lichenari…  1         60.11788  20.256  
+#> 9          JX.1172678#4 Ectoedemia intimella  1         62.54624  28.92781
+#> 10        JX.1173664#16  Conistra rubiginosa  62        60.45842  22.17823
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 You can also us the negation of the `finnish_occurrence_status` to filter out
@@ -388,20 +397,20 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 104637
-#> A data.frame [10 x 10]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1     Branta ruficollis  1         60.60374  26.49053 2020-04-02 12:00:00
-#> 2       Branta bernicla  2         60.83308  26.2358  2020-04-01 12:00:00
-#> 3       Anser albifrons  50        60.90404  26.33529 2020-04-01 12:00:00
-#> 4       Anser albifrons  1         60.18324  24.66028 2020-03-28 06:30:00
-#> 5       Anser albifrons  5         60.14681  24.92787 2020-03-26 07:50:00
-#> 6       Anser albifrons  1300      60.85064  26.29335 2020-03-25 12:00:00
-#> 7  Anser brachyrhynchus  3         60.84962  26.29034 2020-03-25 12:00:00
-#> 8       Anser albifrons  2000      60.7876   26.09082 2020-03-23 12:00:00
-#> 9    Cygnus columbianus  4         60.95256  26.02778 2020-03-20 12:00:00
-#> 10 Anser brachyrhynchus  1         60.7876   26.09082 2020-03-17 12:00:00
-#> ...with 0 more records and 5 more variables:
-#> record_id, any_issues, record_reliable, taxon_reliability,
-#> coordinates_uncertainty
+#> Records available: 115183
+#> A data.frame [10 x 12]
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1          JX.1176146#4      Anser albifrons  1         60.6286   26.19815
+#> 2        JX.1175321#165   Cygnus columbianus  1         60.90204  26.16786
+#> 3    HR.3211/64595796-U          Upupa epops  1         60.5      26.7    
+#> 4          JX.1174384#4           Aix sponsa  1         60.18447  23.93021
+#> 5          JX.1174062#7   Cygnus columbianus  1         60.71324  25.94479
+#> 6        JX.1173669#191 Phalaropus fulicari…  1         61.99952  21.3029 
+#> 7    HR.3211/64298655-U          Upupa epops  1         60.41978  21.83083
+#> 8  KE.176/5fa2dd70d5de…          Upupa epops  1         62.73651  22.51383
+#> 9         JX.1172250#11     Aix galericulata  1         60.37831  23.56202
+#> 10         JX.1172182#4      Anser albifrons  2         60.94112  26.51525
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```

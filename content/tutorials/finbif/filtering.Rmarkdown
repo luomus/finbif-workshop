@@ -97,8 +97,8 @@ To restrict occurrence records to the highest quality level you can use the
 following set of filters.
 ```{r quality-strict}
 strict <- c(
-  collection_reliability = 5, coordinates_uncertainty_max = 1,
-  taxon_reliability = "reliable"
+  collection_quality = "professional", coordinates_uncertainty_max = 1,
+  record_quality = "expert_verified"
 )
 ```
 These filters will limit the occurrence records to those belonging to the most
@@ -108,7 +108,14 @@ location data), and have reliable taxonomic identifications.
 At the other end of the spectrum, you can also allow all records regardless of
 quality with the following filter.
 ```{r quality-permissive}
-permissive <- c(quality_issues = "both")
+permissive <- list(
+  quality_issues = "both",
+  record_reliability = c("reliable", "unassessed", "unreliable"),
+  record_quality = c(
+    "expert_verified", "community_verified", "unassessed", "uncertain",
+    "erroneous"
+  )
+)
 ```
 This will include all records, both with and without, quality issues.
 
@@ -125,7 +132,9 @@ c(
 You can filter by collection using the collection ID, the collection name or
 the abbreviated collection name (if available).
 ```{r filter-inaturalist}
-finbif_occurrence(filter = c(collection = "iNaturalist"), count_only = TRUE)
+finbif_occurrence(
+  filter = c(collection = "iNaturalist Suomi Finland"), count_only = TRUE
+)
 ```
 
 You can also use the results of a call to the `finbif_collections` function as
