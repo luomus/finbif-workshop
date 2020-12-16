@@ -152,7 +152,7 @@ finbif_occurrence(
 #> requires_identification, record_reliability, record_quality
 ```
 
-You can also filter by time of year (i.e, a date range across all years) using
+You can also filter by time of year (i.e., a date range across all years) using
 the `date_range_md` filter (note `_md` rather than `_ymd`). To filter a range of
 dates that overlaps with the end of the year (e.g., winter) you'll need to
 supply two date ranges: one for the end of the year and one for the start.
