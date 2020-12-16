@@ -183,7 +183,7 @@ and this status can be used to filter records.
 finbif_occurrence(filter = c(finnish_occurrence_status = "rare"))
 ```
 
-You can also us the negation of the `finnish_occurrence_status` to filter out
+You can also use the negation of the `finnish_occurrence_status` to filter out
 records of that have a given occurrence status. For example, you can get
 records of bird species that are not considered to have stable populations in
 Finland with the following filter.
