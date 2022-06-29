@@ -2,7 +2,7 @@
 title: Metadata
 draft: no
 toc: yes
-type: docs
+type: book
 weight: 8
 menu:
   finbif:
@@ -26,20 +26,20 @@ finbif_metadata()
 #>    metadata_name            
 #> 1  admin_status             
 #> 2  red_list                 
-#> 3  countries                
-#> 4  provinces                
-#> 5  municipalities           
-#> 6  bird_assoc_areas         
+#> 3  country                  
+#> 4  province                 
+#> 5  municipality             
+#> 6  bird_assoc_area          
 #> 7  finnish_occurrence_status
-#> 8  habitat_types            
-#> 9  habitat_qualifiers       
-#> 10 life_stages              
+#> 8  habitat_type             
+#> 9  habitat_qualifier        
+#> 10 life_stage               
 #> 11 record_basis             
-#> 12 restriction_levels       
-#> 13 restriction_reasons      
-#> 14 sex_categories           
-#> 15 sources                  
-#> 16 taxon_ranks
+#> 12 restriction_level        
+#> 13 restriction_reason       
+#> 14 sex_category             
+#> 15 source                   
+#> 16 taxon_rank
 ```
 
 Calling `finbif_metadata()` and specifying one of the metadata categories will
@@ -82,7 +82,7 @@ finbif_informal_groups(limit = 6)
 #>      ¦--Green algae                                           
 #>      ¦--Red algae                                             
 #>      °--Stoneworts                                            
-#> ...111 more groups
+#> ...142 more groups
 ```
 
 You can select a subgroup by specifying a parent informal group as a function
@@ -118,40 +118,68 @@ finbif_collections(
 )
 ```
 
+```
+#> Warning in is.na(cols) || is.null(cols): 'length(x) = 3 > 1' in coercion to
+#> 'logical(1)'
+```
+
 ```{.language-r}
 #>         collection_name            taxonomic_coverage         count  
-#> HR.1227 Coll Mikko Heikkinen       Biota                           62
-#> HR.1349 JYV - Fungal collections   <NA>                         13398
-#> HR.1350 JYV - Lichen collections   <NA>                           398
-#> HR.1351 JYV - Bryophyte collectio… <NA>                          3227
+#> HR.1227 Coll Mikko Heikkinen       Biota                           67
+#> HR.1349 JYV - Fungal collections   <NA>                         13443
+#> HR.1350 JYV - Lichen collections   <NA>                           541
+#> HR.1351 JYV - Bryophyte collectio… <NA>                          5760
 #> HR.1467 Per-Eric Grankvist´s butt… Lepidoptera                      5
 #> HR.1487 JYV - Fish collections     <NA>                          1371
-#> HR.1507 Lingonblad Birger och Hjö… Lepidoptera                   2797
-#> HR.1592 Herbarium of The Ark Natu… <NA>                          1522
-#> HR.1687 Papilionoidea of Coll. La… Papilionoidea                  525
+#> HR.1507 Lingonblad Birger och Hjö… Lepidoptera                   2796
+#> HR.157  Point counts of breeding … Birds, landbirds            384824
+#> HR.1592 Herbarium of The Ark Natu… <NA>                          7864
+#> HR.1687 Papilionoidea of Coll. La… Papilionoidea                  550
 #> HR.1688 Noctuidae I of Coll. Lauro Noctuidae                      614
 #> HR.1689 Noctuidae II of Coll. Lau… Noctuidae                      839
 #> HR.1690 Noctuidae III, Bombycoide… Noctuidae, Bombycoidea, G…     521
 #> HR.1691 Drepanidae & Geometridae … Drepanidae, Geometridae       1408
-#> HR.175  National Finnish butterfl… Lepidoptera                 349599
-#> HR.200  Finnish Insect Database    Insecta                    3729195
-#> HR.2049 Invasive alien species co… Invasive species                93
-#> HR.206  The Finnish Nature League… biota                        84304
-#> HR.2089 Håkan Lindberg collection  Hymenoptera                   2295
-#> HR.209  Atlas of Finnish Macrolep… Macrolepidoptera           1217383
+#> HR.175  National Finnish butterfl… Lepidoptera                 423571
+#> HR.1916 Wildlife triangle          Siberian flying squirrel …   18560
+#> HR.200  Finnish Insect Database    Insecta                    3725794
+#> HR.2009 Fish observation data fro… invasive alien fish speci…   34396
+#> HR.2049 Invasive alien species co… Invasive species              1040
+#> HR.206  The Finnish Nature League… biota                       115286
+#> HR.2089 Håkan Lindberg collection  Hymenoptera                   2435
+#> HR.209  Atlas of Finnish Macrolep… Macrolepidoptera           1218552
+#> HR.2129 Fungal atlas               fungi                       102238
 #> HR.2209 KUO Arachnida collection   Arachnida                        3
 #> HR.2289 Specimens that lack colle… <NA>                           109
-#> HR.2691 Line transect censuses of… Aves                        588124
+#> HR.2691 Line transect censuses of… Aves                        608520
 #> HR.2692 Censuses of breeding bird… Aves                         14963
-#> HR.3051 Viekas project invasive s… <NA>                           651
-#> HR.3071 Observing species on milk… <NA>                           160
-#> HR.3211 iNaturalist                <NA>                         15716
-#> HR.39   Winter Bird Census         Aves                       1364899
-#> HR.435  Löydös Open Invasive Spec… Biota                        11698
-#> HR.60   Monitoring scheme of bird… Aves, Mammalia              769290
+#> HR.3051 VieKas LIFE project invas… <NA>                          1399
+#> HR.3071 Observing species on milk… <NA>                           529
+#> HR.3211 iNaturalist Suomi Finland  biota                       504372
+#> HR.3491 LajiGIS: Aquatic species … Biota                       592897
+#> HR.3553 LajiGIS: Species monitori… Biota                       696609
+#> HR.3671 Bird of prey nests for pr… Aves                         10246
+#> HR.3691 eBird                      Aves                        806562
+#> HR.3791 Invasive species observat… Biota                         1993
+#> HR.39   Winter Bird Census         Aves, Mammalia             1447328
+#> HR.3911 Bumblebee census           Bumblebees                    7394
+#> HR.3991 Waterbird counts, Luomus … Aves                          3068
+#> HR.3992 Waterbird counts, Luke da… Aves                          2429
+#> HR.4011 Salmonidae in streams      Salmonidae                   12630
+#> HR.4051 LajiGIS: Species monitori… Aquila chrysaetos; Haliae…    8083
+#> HR.4091 Retkikasvio                <NA>                            66
+#> HR.4131 Butterflies in Finnish ag… Papilionoidea, Others       356987
+#> HR.4191 Butterfly Collection by C… Lepidoptera                  10415
+#> HR.4251 LajiGIS: Species surveys   Biota                       238301
+#> HR.435  Löydös Open Invasive Spec… Biota                        17791
+#> HR.4352 NFI rare tree species      <NA>                           997
+#> HR.4412 Tiira.fi: The Fourth Bree… Aves                        140113
+#> HR.4471 4th Finnish Bird Atlas, o… Aves                         74481
+#> HR.4511 Finnish National Moth Mon… Bombycoidea, Noctuoidea, … 1156357
+#> HR.4612 Pölyttäjäseuranta          Insecta                       1142
+#> HR.60   Monitoring scheme of bird… Aves, Mammalia              851835
 #> HR.627  Invasive mammal species o… Mammalia                       228
-#> HR.808  E. Sjöholm´s butterfly co… Lepidoptera                   4952
-#> HR.847  Atlas of amphibians and r… Amphibia, Reptilia            5117
+#> HR.808  E. Sjöholm´s butterfly co… Lepidoptera                   4951
+#> HR.847  Atlas of amphibians and r… Amphibia, Reptilia            6415
 ```
 
 By default, `finbif_collections()` only displays the lowest level collections.
@@ -183,25 +211,31 @@ finbif_collections(is_part_of == "HR.128", supercollections = TRUE)
 ```
 
 ```{.language-r}
-#>        collection_name abbreviation description online_url has_children
-#> HR.129 Collections of… H            Herbarium … <NA>        TRUE       
-#> HR.160 Zoological col… MZH          The collec… http://ww…  TRUE       
-#> HR.173 Zoological mon… <NA>         Monitoring… <NA>        TRUE       
-#> HR.203 Löydös Open Fi… <NA>         A service … http://ws…  TRUE       
-#> HR.447 Hatikka.fi obs… <NA>         Hatikka.fi… http://ha… FALSE       
-#> HR.48  Ringing and re… TIPU         Database o… <NA>        TRUE       
-#>        is_part_of data_quality methods collection_type taxonomic_coverage
-#> HR.129 HR.128     MY.dataQual… NA      MY.collectionT… <NA>              
-#> HR.160 HR.128     MY.dataQual… NA      MY.collectionT… Animalia          
-#> HR.173 HR.128     MY.dataQual… NA      MY.collectionT… <NA>              
-#> HR.203 HR.128     MY.dataQual… NA      MY.collectionT… biota             
-#> HR.447 HR.128     MY.dataQual… NA      MY.collectionT… Biota             
-#> HR.48  HR.128     MY.dataQual… NA      MY.collectionT… <NA>              
-#>        geographic_coverage temporal_coverage secure_level count   
-#> HR.129 <NA>                <NA>              <NA>             1512
-#> HR.160 World               1700 to present   MX.secureLe…      956
-#> HR.173 Finland             1950-             <NA>          4140660
-#> HR.203 world               2013-             <NA>            14438
-#> HR.447 World               <NA>              <NA>          2012987
-#> HR.48  Ringing data: Finl… 1913-             <NA>         11935299
+#>         collection_name abbreviation description online_url has_children
+#> HR.129  Collections of… H            Herbarium … <NA>        TRUE       
+#> HR.160  Zoological col… MZH          The collec… http://ww…  TRUE       
+#> HR.173  Zoological mon… <NA>         Monitoring… <NA>        TRUE       
+#> HR.1849 Genomic resour… <NA>         Genomic re… <NA>        TRUE       
+#> HR.203  Löydös Open Fi… <NA>         A service … https://l… FALSE       
+#> HR.435  Löydös Open In… <NA>         A service … https://l… FALSE       
+#> HR.447  Hatikka.fi obs… <NA>         Hatikka.fi… http://ha… FALSE       
+#> HR.48   Ringing and re… TIPU         Database o… <NA>        TRUE       
+#>         is_part_of data_quality methods   collection_type taxonomic_coverage
+#> HR.129  HR.128     MY.dataQual… <NA>      MY.collectionT… <NA>              
+#> HR.160  HR.128     MY.dataQual… <NA>      MY.collectionT… Animalia          
+#> HR.173  HR.128     MY.dataQual… <NA>      MY.collectionT… <NA>              
+#> HR.1849 HR.128     MY.dataQual… Sampling… MY.collectionT… Biota             
+#> HR.203  HR.128     <NA>         <NA>      MY.collectionT… biota             
+#> HR.435  HR.128     MY.dataQual… <NA>      MY.collectionT… Biota             
+#> HR.447  HR.128     MY.dataQual… <NA>      MY.collectionT… Biota             
+#> HR.48   HR.128     MY.dataQual… <NA>      MY.collectionT… <NA>              
+#>         geographic_coverage temporal_coverage secure_level count   
+#> HR.129  <NA>                <NA>              <NA>                2
+#> HR.160  World               1700 to present   MX.secureLe…      743
+#> HR.173  Finland             1950-             <NA>          4882057
+#> HR.1849 World               2000-             <NA>                1
+#> HR.203  world               2013-             <NA>            30508
+#> HR.435  Finland             2015-             <NA>            17791
+#> HR.447  World               <NA>              <NA>          2010232
+#> HR.48   Ringing data: Finl… 1913-             <NA>         12642149
 ```

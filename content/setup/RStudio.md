@@ -5,7 +5,7 @@ menu:
     parent: Setup
     weight: 3
 title: Download and install RStudio
-type: docs
+type: book
 weight: 3
 ---
 

@@ -2,7 +2,7 @@
 title: Installation
 draft: false
 toc: true
-type: docs
+type: book
 weight: 2
 menu:
   finbif:
@@ -21,7 +21,7 @@ version or a previously released version to install.
 ## Versions
 ### Stable
 To install the current stable version of the package from [CRAN] (currently
-0.2.0) use the function
+0.6.5) use the function
 `install.packages`. This is the recommended option and suitable in most cases.
 
 ```r

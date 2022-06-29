@@ -2,7 +2,7 @@
 title: Reproducibility and Caching
 draft: no
 toc: yes
-type: docs
+type: book
 weight: 11
 menu:
   finbif:

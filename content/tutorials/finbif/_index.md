@@ -3,10 +3,10 @@ linktitle: Using the FinBIF R package
 summary: "Learn how to access and work with FinBIF data using R and the {finbif} package"
 weight: 1
 
-title: Introduction
+title: Using the FinBIF R package
 toc: false
 draft: false
-type: docs
+type: book
 
 menu:
   finbif:

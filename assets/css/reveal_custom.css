@@ -1,8 +1,4 @@
 .output pre code {
   font-size: .6em;
-}
-
-.reveal h1,
-.reveal h2 {
-  margin-top: 25%;
+  line-height: 1.3em;
 }

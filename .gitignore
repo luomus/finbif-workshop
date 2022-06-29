@@ -2,9 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
-blogdown
-public
-resources
+/blogdown
+/public/
+/resources/
 !content/resources
 .DS_Store
 Thumbs.db
@@ -12,3 +12,4 @@ Thumbs.db
 .vscode
 README.html
 cache
+.hugo_build.lock

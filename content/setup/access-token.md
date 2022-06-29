@@ -5,7 +5,7 @@ menu:
     parent: Setup
     weight: 5
 title: Request a FinBIF access token
-type: docs
+type: book
 weight: 5
 ---
 

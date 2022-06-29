@@ -2,7 +2,7 @@
 title: Selecting and Ordering Variables
 draft: no
 toc: yes
-type: docs
+type: book
 weight: 7
 menu:
   finbif:
@@ -57,20 +57,20 @@ descending, then `load_date` descending, then `reported_name`.
 ### Ascending order
 By default occurrence records are ordered by variables in ascending order.
 ```{r order-ascend}
-finbif_occurrence("Cygnus cygnus", order_by = "abundance")
+finbif_occurrence("Cygnus cygnus", order_by = "abundance_interpreted")
 ```
 
 ### Descending order
 You can switch to descending order by prefixing the variable with a dash.
 ```{r order-descend}
-finbif_occurrence("Cygnus cygnus", order_by = "-abundance")
+finbif_occurrence("Cygnus cygnus", order_by = "-abundance_interpreted")
 ```
 
 ### Multiple variables
 You can specify multiple variables to order by. Sorting primacy is from left to
 right.
 ```{r order-multiple}
-finbif_occurrence("Cygnus olor", order_by = c("municipality", "-abundance"))
+finbif_occurrence("Cygnus olor", order_by = c("municipality_id", "-abundance_interpreted"))
 ```
 
 ### Random sample

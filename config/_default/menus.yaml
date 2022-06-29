@@ -1,0 +1,67 @@
+main:
+  - name: 'Setup'
+    weight: 1
+    identifier: 'setup'
+  - name: 'Software Overview'
+    url: 'setup/'
+    weight: 1
+    parent: 'setup'
+  - name: "R"
+    url: 'setup/r/'
+    weight: 2
+    parent: 'setup'
+  - name: "RStudio"
+    url: 'setup/RStudio/'
+    weight: 3
+    parent: 'setup'
+  - name: "FinBIF R package"
+    url: 'setup/finbif/'
+    weight: 4
+    parent: 'setup'
+  - name: "Access Token"
+    url: 'setup/access-token/'
+    weight: 5
+    parent: 'setup'
+  - name: 'Tutorials'
+    weight: 2
+    identifier: 'tutorials'
+  - name: 'Tutorials Overview'
+    url: 'tutorials/'
+    weight: 1 
+    parent: 'tutorials'
+  - name: 'Using the FinBIF R package'
+    url: 'tutorials/finbif/'
+    weight: 2
+    parent: 'tutorials'
+    identifier: 'Using the FinBIF R package - tutorial'
+  - name: 'Building an SDM'
+    url: 'tutorials/modelling'
+    weight: 3
+    parent: "tutorials"
+    identifier: 'Building an SDM - tutorial'
+  - name: ''
+    pre: '<i class="fas fa-tv fa-lg"></i>'
+    weight: 3
+    identifier: 'slides'
+  - name: 'Using the FinBIF R package'
+    url: 'slides/finbif/'
+    weight: 1
+    parent: 'slides'
+    identifier: 'Using the FinBIF R package - presentation'
+  - name: ''
+    pre: '<i class="fas fa-book-open fa-lg"></i>'
+    weight: 4
+    identifier: 'docs'
+  - name: 'Current'
+    url: 'https://luomus.github.io/finbif/'
+    weight: 1
+    parent: 'docs'
+  - name: 'Development'
+    url: 'https://finbif-docs-dev.netlify.com/'
+    weight: 2
+    parent: 'docs'
+  - name: ''
+    pre: '<i class="fab fa-github fa-lg"></i>'
+    url: 'https://github.com/luomus/finbif/'
+    weight: 5
+    identifier: 'github'

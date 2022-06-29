@@ -2,7 +2,7 @@
 title: Building an SDM using MaxEnt
 draft: no
 toc: yes
-type: docs
+type: book
 weight: 2
 menu:
   modelling:
@@ -74,7 +74,7 @@ coordinate uncertainty of 100m.
 
 ```r
 coordinates_filter <- list(
-  coordinates = list(lat = c(60, 70), lon = c(20, 30), "wgs84"),
+  coordinates = list(lat = c(60, 70), lon = c(20, 30), system = "wgs84"),
   coordinates_uncertainty_max = 100
 )
 ```
@@ -142,8 +142,6 @@ Finally add the Finnish border to the figure.
 polygon(finland_map$vertices, lwd = .2)
 ```
 
-<img src="/tutorials/modelling/simple-sdm_files/figure-html/plot-poly-1.png" width="384" />
-
 ## Climate data 
 You can obtain climate layers directly from [WorldClim](http://worldclim.org)
 with the `{raster}` package function `getData()`. We use these data purely for
@@ -167,6 +165,11 @@ climate_high_res <- getData(
   lon  = 25,
   path = cache_path
 )
+```
+
+```
+#> Warning in getData(name = "worldclim", var = "bio", res = 0.5, lat = 65, : getData will be removed in a future version of raster
+#> . You can use access these data, and more, with functions from the geodata package instead
 ```
 
 ### Extracting climate data
@@ -233,6 +236,11 @@ climate_low_res <- getData(
   res  = 2.5, 
   path = cache_path
 )
+```
+
+```
+#> Warning in getData(name = "worldclim", var = "bio", res = 2.5, path = cache_path): getData will be removed in a future version of raster
+#> . You can use access these data, and more, with functions from the geodata package instead
 ```
 
 However, this lower resolution data is untiled so needs to be cropped; in this
@@ -316,5 +324,3 @@ points(
   pch = 19
 )
 ```
-
-<img src="/tutorials/modelling/simple-sdm_files/figure-html/points-1.png" width="384" />

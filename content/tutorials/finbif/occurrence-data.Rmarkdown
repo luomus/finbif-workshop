@@ -2,7 +2,7 @@
 title: Occurrence Data
 draft: no
 toc: yes
-type: docs
+type: book
 weight: 6
 menu:
   finbif:
@@ -74,7 +74,11 @@ View(occurrences)
 When using the RStudio IDE you can also invoke the browser by clicking on the
 data in the 'Environment' pane.
 
-{{< figure library="true" src="data-viewer.png" lightbox="true" >}}
+```{r echo=FALSE}
+blogdown::shortcode(
+  "figure", library = "true", src = "/img/data-viewer.png", lightbox = "true"
+)
+```
 
 When there are more than 1000 records to retrieve a progress bar will be
 initiated. You can suppress the progress bar with the `quiet` argument.

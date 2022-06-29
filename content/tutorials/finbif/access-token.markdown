@@ -2,7 +2,7 @@
 title: Access Token
 draft: no
 toc: yes
-type: docs
+type: book
 weight: 3
 menu:
   finbif:

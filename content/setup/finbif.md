@@ -5,7 +5,7 @@ menu:
     parent: Setup
     weight: 4
 title: Install the FinBIF R package
-type: docs
+type: book
 weight: 4
 ---
 

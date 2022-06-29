@@ -16,9 +16,10 @@ slides:
 ---
 
 ### Stable version
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 install.packages("finbif")
 ```
 
@@ -27,9 +28,10 @@ install.packages("finbif")
 ---
 
 ### Development version
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 if (!require(remotes)) install.packages("remotes")
 remotes::install_github("luomus/finbif@dev")
 ```
@@ -39,9 +41,10 @@ remotes::install_github("luomus/finbif@dev")
 ---
 
 ### Previous versions
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 remotes::install_version("finbif", "0.2.0")
 ```
 
@@ -50,9 +53,10 @@ remotes::install_version("finbif", "0.2.0")
 ---
 
 ### Loading the package
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 library(finbif)
 ```
 
@@ -65,9 +69,10 @@ library(finbif)
 ---
 
 ### Requesting a token
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_request_token("your@email.com")
 ```
 
@@ -76,9 +81,10 @@ finbif_request_token("your@email.com")
 ---
 
 ### Setting the token
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 Sys.setenv(
   FINBIF_ACCESS_TOKEN = "xtmSOIxjPwq0pOMB1WvcZgFLU9QBkl"
 )
@@ -88,7 +94,7 @@ Sys.setenv(
 
 <div class = 'fragment'>
 
-```r
+```.language-r
 cat(
   'FINBIF_ACCESS_TOKEN = "xtmSOIxjPwq0pOMB1WvcZgFLU9QBkl"',
   file = "~/.Renviron",
@@ -106,24 +112,28 @@ cat(
 ---
 
 ### Documentation in R
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 ?finbif_request_token
 ```
 
 </div>
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 help("finbif_request_token")
 ```
 
 </div>
+
 {{% fragment %}} Some important help files {{% /fragment %}}
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 ?filters
 ?variables
 ```
@@ -157,9 +167,10 @@ help("finbif_request_token")
 ---
 
 ### Taxa checking
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 (taxa <- finbif_check_taxa(c("Ursus arctos", "Moomin")))
 ```
 
@@ -175,7 +186,7 @@ help("finbif_request_token")
 
 <div class = 'fragment'>
 
-```r
+```.language-r
 taxa[[1]]
 ```
 
@@ -191,7 +202,7 @@ taxa[[1]]
 
 <div class = 'fragment'>
 
-```r
+```.language-r
 taxa[[2]]
 ```
 
@@ -208,9 +219,10 @@ taxa[[2]]
 ---
 
 ### Taxa checking
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_check_taxa(
   list(species = c("Ursus arctos", "Ursus"), genus = "Ursus")
 )
@@ -230,9 +242,10 @@ finbif_check_taxa(
 ---
 
 ### Taxa checking
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 taxa_list <- readLines("taxa.csv")
 finbif_check_taxa(taxa_list)
 ```
@@ -246,9 +259,10 @@ finbif_check_taxa(taxa_list)
 ---
 
 ### Exact matching
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_taxa("Capreolus capreolus")
 ```
 
@@ -256,30 +270,26 @@ finbif_taxa("Capreolus capreolus")
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#> <FinBIF taxa/search>
-#> List of 1
-#>  $ :List of 12
-#>   ..$ matchingName            : chr "Capreolus capreolus"
-#>   ..$ nameType                : chr "MX.scientificName"
-#>   ..$ id                      : chr "MX.47507"
-#>   ..$ scientificName          : chr "Capreolus capreolus"
-#>   ..$ scientificNameAuthorship: chr "(Linnaeus, 1758)"
-#>   ..$ taxonRank               : chr "MX.species"
-#>   ..$ cursiveName             : logi TRUE
-#>   ..$ finnish                 : logi TRUE
-#>   ..$ species                 : logi TRUE
-#>   ..$ vernacularName          :List of 3
-#>   .. ..$ en: chr "Roe Deer"
-#>   .. ..$ fi: chr "metsäkauris"
-#>   .. ..$ sv: chr "rådjur"
-#>   ..$ informalGroups          :List of 1
-#>   .. ..$ :List of 2
-#>   .. .. ..$ id  : chr "MVL.2"
-#>   .. .. ..$ name:List of 3
-#>   .. .. .. ..$ sv: chr "Däggdjur"
-#>   .. .. .. ..$ fi: chr "Nisäkkäät"
-#>   .. .. .. ..$ en: chr "Mammals"
-#>   ..$ type                    : chr "exactMatches"
+#> [content:                                                      ] ID: list(matchingName = "Capreolus capreolus", nameType = "MX.scientificName", id = "MX.47507", scientificName = "Capreolus capreolus", scientificNameAuthorship = "(Linnaeus, 1758)", taxonRank = "MX.species", cursiveName = TRUE, finnish = TRUE, species = TRUE, vernacularName = list(fi = "metsäkauris", en = "Roe Deer", sv = "rådjur"), informalGroups = list(list(id = "MVL.2", name = list(fi = "Nisäkkäät", en = "Mammals", sv = "Däggdjur"))), type = "exactMatches")
+#> [path:                                                         ] ID: taxa/search
+#> [response: url                                                 ] ID: https://api.laji.fi/v0/taxa/search?query=Capreolus%20capreolus&matchType=exact&limit=1
+#> [response: status_code                                         ] ID: 200
+#> [response: headers                                             ] ID: list(date = "Wed, 29 Jun 2022 06:48:42 GMT", `content-type` = "application/json; charset=utf-8", `content-length` = "433", `access-control-allow-origin` = "*", `access-control-allow-credentials` = "true", `x-frame-options` = "SAMEORIGIN", `x-download-options` = "noopen", etag = "W/\"1b1-Q/E3AqDTyjtsfdjfmS/H+yFWS54\"", vary = "Accept-Encoding", `cache-control` = "public", `x-xss-protection` = "1;mode=block", `x-content-type-options` = "nosniff", `strict-transport-security` = "max-age=31536000;includeSubDomains;preload", 
+#>     `referrer-policy` = "no-referrer-when-downgrade")
+#> [response: all_headers                                         ] ID: list(list(status = 200, version = "HTTP/1.1", headers = list(date = "Wed, 29 Jun 2022 06:48:42 GMT", `content-type` = "application/json; charset=utf-8", `content-length` = "433", `access-control-allow-origin` = "*", `access-control-allow-credentials` = "true", `x-frame-options` = "SAMEORIGIN", `x-download-options` = "noopen", etag = "W/\"1b1-Q/E3AqDTyjtsfdjfmS/H+yFWS54\"", vary = "Accept-Encoding", `cache-control` = "public", `x-xss-protection` = "1;mode=block", `x-content-type-options` = "nosniff", 
+#>     `strict-transport-security` = "max-age=31536000;includeSubDomains;preload", `referrer-policy` = "no-referrer-when-downgrade")))
+#> [response: cookies                                             ] ID: list(domain = logical(0), flag = logical(0), path = logical(0), secure = logical(0), expiration = numeric(0), name = logical(0), value = logical(0))
+#> [response: content                                             ] ID: as.raw(c(0x5b, 0x7b, 0x22, 0x6d, 0x61, 0x74, 0x63, 0x68, 0x69, 0x6e, 0x67, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3a, 0x22, 0x43, 0x61, 0x70, 0x72, 0x65, 0x6f, 0x6c, 0x75, 0x73, 0x20, 0x63, 0x61, 0x70, 0x72, 0x65, 0x6f, 0x6c, 0x75, 0x73, 0x22, 0x2c, 0x22, 0x6e, 0x61, 0x6d, 0x65, 0x54, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 0x4d, 0x58, 0x2e, 0x73, 0x63, 0x69, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x2c, 0x22, 0x69, 0x64, 0x22, 0x3a, 0x22, 0x4d, 0x58, 0x2e, 0x34, 0x37, 0x35, 
+#> 0x30, 0x37, 0x22, 0x2c, 0x22, 0x73, 0x63, 0x69, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3a, 0x22, 0x43, 0x61, 0x70, 0x72, 0x65, 0x6f, 0x6c, 0x75, 0x73, 0x20, 0x63, 0x61, 0x70, 0x72, 0x65, 0x6f, 0x6c, 0x75, 0x73, 0x22, 0x2c, 0x22, 0x73, 0x63, 0x69, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x41, 0x75, 0x74, 0x68, 0x6f, 0x72, 0x73, 0x68, 0x69, 0x70, 0x22, 0x3a, 0x22, 0x28, 0x4c, 0x69, 0x6e, 0x6e, 0x61, 0x65, 0x75, 0x73, 0x2c, 0x20, 0x31, 0x37, 
+#> 0x35, 0x38, 0x29, 0x22, 0x2c, 0x22, 0x74, 0x61, 0x78, 0x6f, 0x6e, 0x52, 0x61, 0x6e, 0x6b, 0x22, 0x3a, 0x22, 0x4d, 0x58, 0x2e, 0x73, 0x70, 0x65, 0x63, 0x69, 0x65, 0x73, 0x22, 0x2c, 0x22, 0x63, 0x75, 0x72, 0x73, 0x69, 0x76, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3a, 0x74, 0x72, 0x75, 0x65, 0x2c, 0x22, 0x66, 0x69, 0x6e, 0x6e, 0x69, 0x73, 0x68, 0x22, 0x3a, 0x74, 0x72, 0x75, 0x65, 0x2c, 0x22, 0x73, 0x70, 0x65, 0x63, 0x69, 0x65, 0x73, 0x22, 0x3a, 0x74, 0x72, 0x75, 0x65, 0x2c, 0x22, 0x76, 0x65, 0x72, 0x6e, 
+#> 0x61, 0x63, 0x75, 0x6c, 0x61, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3a, 0x7b, 0x22, 0x66, 0x69, 0x22, 0x3a, 0x22, 0x6d, 0x65, 0x74, 0x73, 0xc3, 0xa4, 0x6b, 0x61, 0x75, 0x72, 0x69, 0x73, 0x22, 0x2c, 0x22, 0x65, 0x6e, 0x22, 0x3a, 0x22, 0x52, 0x6f, 0x65, 0x20, 0x44, 0x65, 0x65, 0x72, 0x22, 0x2c, 0x22, 0x73, 0x76, 0x22, 0x3a, 0x22, 0x72, 0xc3, 0xa5, 0x64, 0x6a, 0x75, 0x72, 0x22, 0x7d, 0x2c, 0x22, 0x69, 0x6e, 0x66, 0x6f, 0x72, 0x6d, 0x61, 0x6c, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x73, 0x22, 0x3a, 0x5b, 0x7b, 
+#> 0x22, 0x69, 0x64, 0x22, 0x3a, 0x22, 0x4d, 0x56, 0x4c, 0x2e, 0x32, 0x22, 0x2c, 0x22, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x3a, 0x7b, 0x22, 0x66, 0x69, 0x22, 0x3a, 0x22, 0x4e, 0x69, 0x73, 0xc3, 0xa4, 0x6b, 0x6b, 0xc3, 0xa4, 0xc3, 0xa4, 0x74, 0x22, 0x2c, 0x22, 0x65, 0x6e, 0x22, 0x3a, 0x22, 0x4d, 0x61, 0x6d, 0x6d, 0x61, 0x6c, 0x73, 0x22, 0x2c, 0x22, 0x73, 0x76, 0x22, 0x3a, 0x22, 0x44, 0xc3, 0xa4, 0x67, 0x67, 0x64, 0x6a, 0x75, 0x72, 0x22, 0x7d, 0x7d, 0x5d, 0x2c, 0x22, 0x74, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 
+#> 0x65, 0x78, 0x61, 0x63, 0x74, 0x4d, 0x61, 0x74, 0x63, 0x68, 0x65, 0x73, 0x22, 0x7d, 0x5d))
+#> [response: date                                                ] ID: 1656485322
+#> [response: times                                               ] ID: c(redirect = 0, namelookup = 3.6e-05, connect = 3.6e-05, pretransfer = 0.00011, starttransfer = 0.217837, total = 0.217879)
+#> [response: request                                             ] ID: list(method = "GET", url = "https://api.laji.fi/v0/taxa/search?query=Capreolus%20capreolus&matchType=exact&limit=1", headers = c(`Content-Type` = "", Accept = "application/json"), fields = NULL, options = list(post = TRUE, postfieldsize = 0, useragent = "https://github.com/luomus/finbif#0.6.5.9000:finbif_taxa()", httpget = TRUE), auth_token = NULL, output = list())
+#> [response: handle                                              ] ID: <pointer: (nil)>
+#> [hash:                                                         ] ID: 21cd8ef127e966d2e7c42a9e2a0d4d7d
 ```
 
 </div>
@@ -287,9 +297,10 @@ finbif_taxa("Capreolus capreolus")
 ---
 
 ### Partial matching
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 deer <- finbif_taxa("deer", type = "partial", n = 10)
 sapply(deer$content, getElement, "scientificName")
 ```
@@ -298,11 +309,11 @@ sapply(deer$content, getElement, "scientificName")
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#>  [1] "Dama dama"                "Capreolus capreolus"     
-#>  [3] "Odocoileus virginianus"   "Rangifer tarandus"       
-#>  [5] "Hippuriphila modeeri"     "Pseudombrophila merdaria"
-#>  [7] "Odocoileus"               "Cervidae"                
-#>  [9] "Dama"                     "Capreolus"
+#>  [1] "Odocoileus virginianus"     "Capreolus capreolus"       
+#>  [3] "Dama dama"                  "Cervus elaphus"            
+#>  [5] "Rangifer tarandus"          "Hippuriphila modeeri"      
+#>  [7] "Pseudombrophila merdaria"   "Rangifer tarandus fennicus"
+#>  [9] "Rangifer tarandus tarandus" "Odocoileus"
 ```
 
 </div>
@@ -314,9 +325,10 @@ sapply(deer$content, getElement, "scientificName")
 ---
 
 ### Requesting occurrence records
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence()
 ```
 
@@ -325,26 +337,22 @@ finbif_occurrence()
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34515438
-#> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1       Regulus regulus         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 2   Emberiza citrinella         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 3          Corvus corax         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 4         Cygnus cygnus         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 5         Turdus merula         3  61.10426  21.56173 2020-03-10 07:50:00
-#> 6  Plectrophenax nival…         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 7   Cyanistes caeruleus         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 8           Parus major         3  61.10426  21.56173 2020-03-10 07:50:00
-#> 9  Lophophanes cristat…         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 10             Acanthis         1  61.10426  21.56173 2020-03-10 07:50:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 43808551
+#> A data.frame [10 x 12]
+#>    record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1      …42#3            Apus apus        NA  60.4911   22.1561 
+#> 2      …41#3 Phylloscopus trochi…        NA  60.4911   22.1561 
+#> 3      …39#6       Sylvia curruca  1         59.83882  19.92228
+#> 4      …39#3      Sylvia communis  1         59.84056  19.91378
+#> 5      …35#5      Sylvia communis  1         61.0872   23.65435
+#> 6      …35#3     Saxicola rubetra  2         61.0872   23.65435
+#> 7     …31#15    Charadrius dubius  4         64.83067  26.10181
+#> 8     …31#11       Turdus pilaris  1         64.82108  26.01163
+#> 9      …31#3   Anas platyrhynchos  14        64.82164  25.96167
+#> 10     …31#7            Apus apus  30        64.80656  25.99359
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -352,9 +360,10 @@ finbif_occurrence()
 ---
 
 ### Darwin Core Variables
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 colnames(finbif_occurrence(dwc = TRUE))
 ```
 
@@ -362,21 +371,12 @@ colnames(finbif_occurrence(dwc = TRUE))
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#>  [1] "scientificName"                "taxonRankID"                  
-#>  [3] "individualCount"               "country"                      
-#>  [5] "stateProvince"                 "county"                       
-#>  [7] "decimalLatitude"               "decimalLongitude"             
-#>  [9] "eventDateStart"                "eventDateEnd"                 
-#> [11] "hourStart"                     "hourEnd"                      
-#> [13] "minuteStart"                   "minuteEnd"                    
-#> [15] "occurrenceID"                  "organismID"                   
-#> [17] "eventID"                       "collectionID"                 
-#> [19] "hasIssues"                     "occurrenceIssue"              
-#> [21] "occurrenceReliable"            "identificationQualifier"      
-#> [23] "documentIssue"                 "documentReliability"          
-#> [25] "coordinateUncertaintyInMeters" "eventIssue"                   
-#> [27] "locationIssue"                 "timeIssue"                    
-#> [29] "eventDateTime"                 "samplingEffort"
+#>  [1] "occurrenceID"                  "scientificName"               
+#>  [3] "individualCount"               "decimalLatitude"              
+#>  [5] "decimalLongitude"              "eventDateTime"                
+#>  [7] "coordinateUncertaintyInMeters" "hasIssues"                    
+#>  [9] "requiresVerification"          "requiresIdentification"       
+#> [11] "occurrenceReliability"         "occurrenceQuality"
 ```
 
 </div>
@@ -384,9 +384,10 @@ colnames(finbif_occurrence(dwc = TRUE))
 ---
 
 ### Choosing taxa
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence("Cygnus cygnus")
 ```
 
@@ -395,26 +396,22 @@ finbif_occurrence("Cygnus cygnus")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 56438
-#> A data.frame [10 x 30]
-#>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1    Cygnus cygnus         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 2    Cygnus cygnus         2  62.37061  24.34632 2020-03-10 07:07:00
-#> 3    Cygnus cygnus         1  60.59627  24.84059 2020-03-09 12:00:00
-#> 4    Cygnus cygnus         5  60.94799  26.06977 2020-03-09 12:00:00
-#> 5    Cygnus cygnus         2  60.94322  26.07587 2020-03-09 12:00:00
-#> 6    Cygnus cygnus         1  62.08653  30.17037 2020-03-09 07:35:00
-#> 7    Cygnus cygnus        13  62.47332  21.82174 2020-03-09 08:20:00
-#> 8    Cygnus cygnus        17  60.42104  22.39173 2020-03-09 12:00:00
-#> 9    Cygnus cygnus         9  61.12103  21.52880 2020-03-09 08:10:00
-#> 10   Cygnus cygnus         2  61.10567  21.54241 2020-03-09 07:10:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 80292
+#> A data.frame [10 x 12]
+#>               record_id scientific_name abundance lat_wgs84 lon_wgs84
+#> 1        …JX.1411611#18   Cygnus cygnus        NA  61.35074  27.83794
+#> 2  …HR.4412/62bb91fcbd…   Cygnus cygnus        NA  60.77169  21.02729
+#> 3  …HR.4412/62bb91ff5c…   Cygnus cygnus        NA  63.85516  25.26802
+#> 4  …HR.4412/62bb920880…   Cygnus cygnus        NA  66.28617  26.43911
+#> 5  …HR.4412/62bb921b4f…   Cygnus cygnus        NA  61.15693  24.8605 
+#> 6  …HR.4412/62bb920b6a…   Cygnus cygnus        NA  61.69497  24.82332
+#> 7  …HR.4412/62bb9209ce…   Cygnus cygnus        NA  60.78464  24.15072
+#> 8  …HR.4412/62bb920676…   Cygnus cygnus        NA  66.09645  28.87577
+#> 9  …HR.4412/62bb920db6…   Cygnus cygnus        NA  62.04549  21.35311
+#> 10 …HR.4412/62bb92172a…   Cygnus cygnus        NA  65.81431  24.2622 
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -422,9 +419,10 @@ finbif_occurrence("Cygnus cygnus")
 ---
 
 ### Choosing taxa
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence("Cygnus cygnus", "Cygnus olor")
 ```
 
@@ -433,26 +431,22 @@ finbif_occurrence("Cygnus cygnus", "Cygnus olor")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 80696
-#> A data.frame [10 x 30]
-#>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1    Cygnus cygnus         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 2    Cygnus cygnus         2  62.37061  24.34632 2020-03-10 07:07:00
-#> 3    Cygnus cygnus         1  60.59627  24.84059 2020-03-09 12:00:00
-#> 4    Cygnus cygnus         5  60.94799  26.06977 2020-03-09 12:00:00
-#> 5    Cygnus cygnus         2  60.94322  26.07587 2020-03-09 12:00:00
-#> 6    Cygnus cygnus         1  62.08653  30.17037 2020-03-09 07:35:00
-#> 7    Cygnus cygnus        13  62.47332  21.82174 2020-03-09 08:20:00
-#> 8    Cygnus cygnus        17  60.42104  22.39173 2020-03-09 12:00:00
-#> 9    Cygnus cygnus         9  61.12103  21.52880 2020-03-09 08:10:00
-#> 10   Cygnus cygnus         2  61.10567  21.54241 2020-03-09 07:10:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 117412
+#> A data.frame [10 x 12]
+#>               record_id scientific_name abundance lat_wgs84 lon_wgs84
+#> 1        …JX.1411611#18   Cygnus cygnus        NA  61.35074  27.83794
+#> 2  …HR.4412/62bb91fcbd…   Cygnus cygnus        NA  60.77169  21.02729
+#> 3  …HR.4412/62bb91ff5c…   Cygnus cygnus        NA  63.85516  25.26802
+#> 4  …HR.4412/62bb920880…   Cygnus cygnus        NA  66.28617  26.43911
+#> 5  …HR.4412/62bb921b4f…   Cygnus cygnus        NA  61.15693  24.8605 
+#> 6  …HR.4412/62bb920b6a…   Cygnus cygnus        NA  61.69497  24.82332
+#> 7  …HR.4412/62bb9209ce…   Cygnus cygnus        NA  60.78464  24.15072
+#> 8  …HR.4412/62bb920676…   Cygnus cygnus        NA  66.09645  28.87577
+#> 9  …HR.4412/62bb920db6…   Cygnus cygnus        NA  62.04549  21.35311
+#> 10 …HR.4412/62bb92172a…   Cygnus cygnus        NA  65.81431  24.2622 
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -460,9 +454,10 @@ finbif_occurrence("Cygnus cygnus", "Cygnus olor")
 ---
 
 ### Choosing taxa
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 birds  <- finbif_occurrence("Birds")
 linnut <- finbif_occurrence("Linnut")
 faglar <- finbif_occurrence("Fåglar")
@@ -482,9 +477,10 @@ sapply(list(birds, linnut, faglar), nrow)
 ---
 
 ### Request size
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 occurrences <- finbif_occurrence(n = 1001)
 ```
 
@@ -493,26 +489,28 @@ occurrences <- finbif_occurrence(n = 1001)
 ---
 
 ### Data viewer
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 View(occurrences)
 ```
 
 </div>
 
-{{< figure library="true" src="data-viewer.png" lightbox="true" class="fragment" >}}
+{{% figure library="true" src="/img/data-viewer.png" lightbox="true" class="fragment" %}}
 
 ---
 
-{{< figure library="true" src="viewer-occurrence.png" >}}
+{{% figure library="true" src="/img/viewer-occurrence.png" %}}
 
 ---
 
 ### Suppress progress bar
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(n = 1001, quiet = TRUE)
 ```
 
@@ -521,9 +519,10 @@ finbif_occurrence(n = 1001, quiet = TRUE)
 ---
 
 ### Count records
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(count_only = TRUE)
 ```
 
@@ -531,7 +530,7 @@ finbif_occurrence(count_only = TRUE)
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#> [1] 34515439
+#> [1] 43808551
 ```
 
 </div>
@@ -539,9 +538,10 @@ finbif_occurrence(count_only = TRUE)
 ---
 
 ### Checking taxa
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence("Vulpes vulpes", "Moomin")
 ```
 
@@ -549,7 +549,11 @@ finbif_occurrence("Vulpes vulpes", "Moomin")
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#> Warning: Cannot find taxa: Moomin
+#> Warning: Cannot find the following taxa in the FinBIF taxonomy.
+#> Please check you are using accepted names and not synonyms or
+#> other names for the taxa you are selecting:
+#> 
+#> Moomin
 ```
 
 </div>
@@ -557,26 +561,22 @@ finbif_occurrence("Vulpes vulpes", "Moomin")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 3309
-#> A data.frame [10 x 30]
-#>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1    Vulpes vulpes         2  60.36823  22.00878 2020-03-08 07:00:00
-#> 2    Vulpes vulpes         1  60.90204  26.16786 2020-03-08 08:35:00
-#> 3    Vulpes vulpes         1  62.29012  24.70473 2020-03-08 06:45:00
-#> 4    Vulpes vulpes         1  63.12255  24.32082 2020-03-07 08:00:00
-#> 5    Vulpes vulpes         1  59.90500  23.11641 2020-03-06 07:02:00
-#> 6    Vulpes vulpes         1  60.82207  21.26828 2020-03-02 20:00:00
-#> 7    Vulpes vulpes         2  61.15387  24.67518 2020-03-01 14:30:00
-#> 8    Vulpes vulpes         1  60.42291  25.07076 2020-02-29 07:25:00
-#> 9    Vulpes vulpes         1  60.83577  21.25200 2020-02-29 09:00:00
-#> 10   Vulpes vulpes         2  60.72749  26.99773 2020-02-29 08:25:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 4600
+#> A data.frame [10 x 12]
+#>               record_id scientific_name abundance lat_wgs84 lon_wgs84
+#> 1        …JX.1411439#86   Vulpes vulpes  1         67.44423  23.77218
+#> 2  …HR.3211/123404764-U   Vulpes vulpes        NA  65.01624  25.60409
+#> 3         …JX.1408878#3   Vulpes vulpes  1         62.30458  29.63992
+#> 4  …HR.3211/123069087-U   Vulpes vulpes        NA  60.73751  24.76117
+#> 5  …KE.176/62b3609cd5d…   Vulpes vulpes  2         60.11016  25.01864
+#> 6         …JX.1408390#3   Vulpes vulpes  4         60.82445  21.53643
+#> 7         …JX.1407814#7   Vulpes vulpes  1         62.80186  24.42096
+#> 8  …HR.3211/122701464-U   Vulpes vulpes        NA  63.83883  23.15996
+#> 9  …HR.3211/122682509-U   Vulpes vulpes        NA  59.93074  20.93271
+#> 10 …HR.3211/122473532-U   Vulpes vulpes        NA  60.75704  24.77011
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -584,9 +584,10 @@ finbif_occurrence("Vulpes vulpes", "Moomin")
 ---
 
 ### Without checking
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(
   "Vulpes vulpes", "Moomin", check_taxa = FALSE
 )
@@ -597,9 +598,10 @@ finbif_occurrence(
 ---
 
 ### Failing with error
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(
   "Vulpes vulpes", "Moomin", on_check_fail = "error"
 )
@@ -609,7 +611,11 @@ finbif_occurrence(
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#> Error: Cannot find taxa: Moomin
+#> Error: Cannot find the following taxa in the FinBIF taxonomy.
+#> Please check you are using accepted names and not synonyms or
+#> other names for the taxa you are selecting:
+#> 
+#> Moomin
 ```
 
 </div>
@@ -621,10 +627,11 @@ finbif_occurrence(
 ---
 
 ### Compute date & time
+
 <div class = 'fragment'>
 
-```r
-finbif_occurrence(date_time = FALSE)
+```.language-r
+finbif_occurrence(select = c("default_vars", "-date_time"))
 ```
 
 </div>
@@ -632,25 +639,22 @@ finbif_occurrence(date_time = FALSE)
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34515438
-#> A data.frame [10 x 28]
-#>         scientific_name abundance lat_wgs84 lon_wgs84 taxon_rank
-#> 1       Regulus regulus         1  61.10426  21.56173 MX.species
-#> 2   Emberiza citrinella         1  61.10426  21.56173 MX.species
-#> 3          Corvus corax         1  61.10426  21.56173 MX.species
-#> 4         Cygnus cygnus         1  61.10426  21.56173 MX.species
-#> 5         Turdus merula         3  61.10426  21.56173 MX.species
-#> 6  Plectrophenax nival…         1  61.10426  21.56173 MX.species
-#> 7   Cyanistes caeruleus         1  61.10426  21.56173 MX.species
-#> 8           Parus major         3  61.10426  21.56173 MX.species
-#> 9  Lophophanes cristat…         1  61.10426  21.56173 MX.species
-#> 10             Acanthis         1  61.10426  21.56173   MX.genus
-#> ...with 0 more records and 23 more variables:
-#> country, province, municipality, date_start, date_end, hour_start,
-#> hour_end, minute_start, minute_end, record_id, individual_id,
-#> event_id, collection_id, any_issues, record_issue, record_reliable,
-#> taxon_reliability, document_issue, collection_reliability,
-#> coordinates_uncertainty, event_issue, location_issue, time_issue
+#> Records available: 43809442
+#> A data.frame [10 x 11]
+#>    record_id    scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …925586-U   Abraxas sylvatus        NA  60.21452  25.15645
+#> 2  …929172-U   Adscita statices        NA  62.01821  22.96884
+#> 3  …896520-U    Archips podanus        NA  60.06069  23.66039
+#> 4  …929698-U    Bombus hypnorum        NA  60.91897  25.89668
+#> 5  …929447-U         Brachycera        NA  62.01821  22.96884
+#> 6  …921913-U          Bryophyta        NA  67.92459  23.8096 
+#> 7  …892019-U Caradrina morpheus        NA  60.38722  24.75005
+#> 8  …930698-U Chiasmia clathrata        NA  62.12781  27.45273
+#> 9  …918736-U       Dactylorhiza        NA  67.92468  23.81718
+#> 10 …918504-U Hypomecis atomaria        NA  67.92603  23.82139
+#> ...with 0 more records and 6 more variables:
+#> coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -662,9 +666,10 @@ finbif_occurrence(date_time = FALSE)
 ---
 
 ### Timezone input
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(date_time_method = "accurate")
 ```
 
@@ -673,16 +678,18 @@ finbif_occurrence(date_time_method = "accurate")
 ---
 
 ### Timezone output
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 Sys.timezone()
 ```
 
 </div>
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(tzone = "Etc/UTC")
 ```
 
@@ -691,26 +698,22 @@ finbif_occurrence(tzone = "Etc/UTC")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34515438
-#> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1       Regulus regulus         1  61.10426  21.56173 2020-03-10 05:50:00
-#> 2   Emberiza citrinella         1  61.10426  21.56173 2020-03-10 05:50:00
-#> 3          Corvus corax         1  61.10426  21.56173 2020-03-10 05:50:00
-#> 4         Cygnus cygnus         1  61.10426  21.56173 2020-03-10 05:50:00
-#> 5         Turdus merula         3  61.10426  21.56173 2020-03-10 05:50:00
-#> 6  Plectrophenax nival…         1  61.10426  21.56173 2020-03-10 05:50:00
-#> 7   Cyanistes caeruleus         1  61.10426  21.56173 2020-03-10 05:50:00
-#> 8           Parus major         3  61.10426  21.56173 2020-03-10 05:50:00
-#> 9  Lophophanes cristat…         1  61.10426  21.56173 2020-03-10 05:50:00
-#> 10             Acanthis         1  61.10426  21.56173 2020-03-10 05:50:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 43808551
+#> A data.frame [10 x 12]
+#>    record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1      …42#3            Apus apus        NA  60.4911   22.1561 
+#> 2      …41#3 Phylloscopus trochi…        NA  60.4911   22.1561 
+#> 3      …39#6       Sylvia curruca  1         59.83882  19.92228
+#> 4      …39#3      Sylvia communis  1         59.84056  19.91378
+#> 5      …35#5      Sylvia communis  1         61.0872   23.65435
+#> 6      …35#3     Saxicola rubetra  2         61.0872   23.65435
+#> 7     …31#15    Charadrius dubius  4         64.83067  26.10181
+#> 8     …31#11       Turdus pilaris  1         64.82108  26.01163
+#> 9      …31#3   Anas platyrhynchos  14        64.82164  25.96167
+#> 10     …31#7            Apus apus  30        64.80656  25.99359
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -718,9 +721,10 @@ finbif_occurrence(tzone = "Etc/UTC")
 ---
 
 ### Set timezone
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 options(finbif_tz = "Etc/UTC")
 ```
 
@@ -733,9 +737,10 @@ options(finbif_tz = "Etc/UTC")
 ---
 
 ### Variables help page
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 ?variables
 ```
 
@@ -752,9 +757,10 @@ options(finbif_tz = "Etc/UTC")
 ---
 
 ### Limiting Variables
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(
   genus  = "Falco",
   select = c("scientific_name", "life_stage", "sex")
@@ -766,19 +772,19 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 280298
+#> Records available: 324767
 #> A data.frame [10 x 3]
-#>      scientific_name life_stage  sex
-#> 1  Falco columbarius       <NA> <NA>
-#> 2  Falco tinnunculus       <NA> <NA>
-#> 3  Falco tinnunculus       <NA> <NA>
-#> 4  Falco tinnunculus       <NA> <NA>
-#> 5  Falco columbarius       <NA> MALE
-#> 6  Falco tinnunculus       <NA> <NA>
-#> 7  Falco columbarius       <NA> <NA>
-#> 8  Falco columbarius       <NA> <NA>
-#> 9  Falco tinnunculus       <NA> <NA>
-#> 10 Falco columbarius       <NA> <NA>
+#>      scientific_name life_stage sex
+#> 1  Falco tinnunculus         NA  NA
+#> 2     Falco subbuteo         NA  NA
+#> 3  Falco tinnunculus         NA  NA
+#> 4  Falco tinnunculus         NA  NA
+#> 5     Falco subbuteo         NA  NA
+#> 6  Falco tinnunculus         NA  NA
+#> 7     Falco subbuteo         NA  NA
+#> 8  Falco tinnunculus         NA  NA
+#> 9  Falco tinnunculus         NA  NA
+#> 10 Falco tinnunculus         NA  NA
 ```
 
 </div>
@@ -786,9 +792,10 @@ finbif_occurrence(
 ---
 
 ### Extra variables
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(select = c("default_vars", "life_stage"))
 ```
 
@@ -801,10 +808,11 @@ finbif_occurrence(select = c("default_vars", "life_stage"))
 ---
 
 ### Ascending order
+
 <div class = 'fragment'>
 
-```r
-finbif_occurrence("Cygnus cygnus", order_by = "abundance")
+```.language-r
+finbif_occurrence("Cygnus cygnus", order_by = "abundance_interpreted")
 ```
 
 </div>
@@ -812,26 +820,22 @@ finbif_occurrence("Cygnus cygnus", order_by = "abundance")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 56438
-#> A data.frame [10 x 30]
-#>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1    Cygnus cygnus         1  60.41667  16.00000 1997-04-01 13:00:00
-#> 2    Cygnus cygnus         1  63.37022  30.37826                <NA>
-#> 3    Cygnus cygnus         1  61.08200  27.78355 2017-04-08 12:00:00
-#> 4    Cygnus cygnus         1  52.71667   1.55000 1997-01-03 14:00:00
-#> 5    Cygnus cygnus         1  61.21489  23.36719 2006-06-12 12:00:00
-#> 6    Cygnus cygnus         1  61.80000  22.76667 2000-03-22 12:00:00
-#> 7    Cygnus cygnus         1  63.13333  22.43333 2003-06-07 12:00:00
-#> 8    Cygnus cygnus         1  61.72481  24.17242                <NA>
-#> 9    Cygnus cygnus         1  60.23968  25.79487                <NA>
-#> 10   Cygnus cygnus         1  62.27627  23.59633 1994-04-30 19:50:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 80292
+#> A data.frame [10 x 12]
+#>               record_id scientific_name abundance lat_wgs84 lon_wgs84
+#> 1   …KE.67/9403350#Unit   Cygnus cygnus  1         60.41667  16      
+#> 2         …MHU.29327372   Cygnus cygnus        NA  63.37022  30.37826
+#> 3  …KE.176/58c7db302d0…   Cygnus cygnus        NA  61.082    27.78355
+#> 4          …MHU.2529766   Cygnus cygnus        NA  64.94099  27.52532
+#> 5  …HR.4412/6285786fa7…   Cygnus cygnus        NA  61.66266  23.31439
+#> 6   …KE.67/9069501#Unit   Cygnus cygnus  1         52.71667  1.55    
+#> 7         …MHU.12651157   Cygnus cygnus  1         61.21489  23.36719
+#> 8         …MHU.21539922   Cygnus cygnus        NA  60.42008  22.44084
+#> 9         …MHU.29669347   Cygnus cygnus        NA  63.57075  29.71466
+#> 10  …KE.67/9465507#Unit   Cygnus cygnus  1         61.8      22.76667
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -839,10 +843,11 @@ finbif_occurrence("Cygnus cygnus", order_by = "abundance")
 ---
 
 ### Descending order
+
 <div class = 'fragment'>
 
-```r
-finbif_occurrence("Cygnus cygnus", order_by = "-abundance")
+```.language-r
+finbif_occurrence("Cygnus cygnus", order_by = "-abundance_interpreted")
 ```
 
 </div>
@@ -850,26 +855,22 @@ finbif_occurrence("Cygnus cygnus", order_by = "-abundance")
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 56438
-#> A data.frame [10 x 30]
-#>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1    Cygnus cygnus      6000  64.40000 -14.54000 1995-07-05 15:00:00
-#> 2    Cygnus cygnus      2010  64.54597  27.88859 2010-01-01 12:00:00
-#> 3    Cygnus cygnus      1500        NA        NA 2003-04-18 15:00:00
-#> 4    Cygnus cygnus      1200        NA        NA 2003-04-16 15:00:00
-#> 5    Cygnus cygnus      1064  62.50172  21.33260 2017-11-04 08:40:00
-#> 6    Cygnus cygnus       722  60.97170  26.48918 2012-11-04 09:00:00
-#> 7    Cygnus cygnus       673  60.76462  26.09601 2012-11-07 08:00:00
-#> 8    Cygnus cygnus       645  64.84588  25.62653 2005-11-05 12:00:00
-#> 9    Cygnus cygnus       645  64.84588  25.62653 2005-11-05 09:00:00
-#> 10   Cygnus cygnus       641  62.27627  23.59633 2008-11-20 12:00:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 80292
+#> A data.frame [10 x 12]
+#>               record_id scientific_name abundance lat_wgs84 lon_wgs84
+#> 1          …MHU.2981587   Cygnus cygnus  6000      64.4     -14.54   
+#> 2         …MHU.29480894   Cygnus cygnus  2010      64.54597  27.88859
+#> 3  …HR.3691/OBS6046423…   Cygnus cygnus  1753      64.50736  24.27894
+#> 4  …HR.3691/OBS6635688…   Cygnus cygnus  1600      65.98787  24.06341
+#> 5         …MHU.28815250   Cygnus cygnus  1500            NA        NA
+#> 6  …HR.3691/OBS6713538…   Cygnus cygnus  1361      64.71656  24.53188
+#> 7         …JX.1357345#5   Cygnus cygnus  1300      64.8465   25.2883 
+#> 8         …JX.1398409#3   Cygnus cygnus  1280      64.8448   25.2816 
+#> 9         …MHU.28815110   Cygnus cygnus  1200            NA        NA
+#> 10        …JX.1402662#3   Cygnus cygnus  1160      64.872    24.8788 
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -877,11 +878,12 @@ finbif_occurrence("Cygnus cygnus", order_by = "-abundance")
 ---
 
 ### Multiple variables
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(
-  "Cygnus olor", order_by = c("municipality", "-abundance")
+  "Cygnus olor", order_by = c("municipality_id", "-abundance_interpreted")
 )
 ```
 
@@ -890,26 +892,22 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 24258
-#> A data.frame [10 x 30]
-#>    scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1      Cygnus olor         4  61.13908  23.93331 2007-11-04 09:00:00
-#> 2      Cygnus olor         3  61.13908  23.93331 1990-11-04 09:00:00
-#> 3      Cygnus olor         3  61.22435  23.73872 1990-11-14 11:00:00
-#> 4      Cygnus olor         2  61.16607  23.91207 2013-11-09 08:30:00
-#> 5      Cygnus olor         1  61.22435  23.73872 2007-03-01 10:00:00
-#> 6      Cygnus olor         4  61.13908  23.93331 2007-11-04 12:00:00
-#> 7      Cygnus olor         6  61.22870  23.92458 2002-11-01 12:00:00
-#> 8      Cygnus olor         3  61.22870  23.92458 2000-12-22 12:00:00
-#> 9      Cygnus olor         1  61.22870  23.92458 2006-03-11 12:00:00
-#> 10     Cygnus olor         1  61.22870  23.92458 2010-05-11 12:00:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 37120
+#> A data.frame [10 x 12]
+#>    record_id scientific_name abundance lat_wgs84 lon_wgs84           date_time
+#> 1  …12015253     Cygnus olor  2500            NA        NA 2008-08-17 12:00:00
+#> 2  …13633876     Cygnus olor  1500            NA        NA 2008-10-03 12:00:00
+#> 3    …780984     Cygnus olor  1300            NA        NA 2006-02-14 12:00:00
+#> 4    …781416     Cygnus olor  1300            NA        NA 2006-02-14 12:00:00
+#> 5   …2062563     Cygnus olor  1200            NA        NA 2006-12-19 12:00:00
+#> 6  …10352894     Cygnus olor  1100            NA        NA 2008-06-28 12:00:00
+#> 7    …927797     Cygnus olor  1050            NA        NA 2006-04-05 12:00:00
+#> 8   …3110953     Cygnus olor  960             NA        NA 2007-10-06 12:00:00
+#> 9  …26309317     Cygnus olor  900             NA        NA 2009-07-08 12:00:00
+#> 10  …1260385     Cygnus olor  800       58.66     23.57    2006-04-26 18:00:00
+#> ...with 0 more records and 6 more variables:
+#> coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -917,9 +915,10 @@ finbif_occurrence(
 ---
 
 ### Random sample
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(sample = TRUE)
 ```
 
@@ -928,26 +927,22 @@ finbif_occurrence(sample = TRUE)
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 34515439
-#> A data.frame [10 x 30]
-#>        scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1                 <NA>         1        NA        NA                <NA>
-#> 2  Cyanistes caeruleus         1  60.53333  24.21667 1982-06-06 12:00:00
-#> 3    Pandion haliaetus         1  61.41204  24.09394 1993-01-01 12:00:00
-#> 4    Pyrrhula pyrrhula         1  60.82859  24.25148 2000-01-01 12:00:00
-#> 5    Gonepteryx rhamni         1  60.63534  26.90566 1987-05-03 12:00:00
-#> 6      Lanius collurio         1  62.74843  22.29672 1987-07-19 12:00:00
-#> 7      Mythimna impura         1  60.72509  26.90540 1988-01-01 12:00:00
-#> 8     Delichon urbicum         1  61.00000  23.85000 1978-07-12 12:00:00
-#> 9                Jaera         1  59.78898  21.51318 2014-09-03 00:00:00
-#> 10         Parus major         1  59.81667  22.90000 2009-10-09 09:00:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 43808551
+#> A data.frame [10 x 12]
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …tun.fi/JX.1024552#…   Bucephala clangula  1         60.28977  25.86029
+#> 2  …tun.fi/MKC.25656454   Salix myrsinifolia        NA  66.47118  29.1717 
+#> 3  …tun.fi/KE.67/11535…          Parus major  1         60.77856  22.41808
+#> 4  …id.luomus.fi/MY.47…   Astragalus alpinus        NA        NA        NA
+#> 5  …tun.fi/A.22B93AD5-… Herminia tarsipenna…  1         59.86133  23.15867
+#> 6  …tun.fi/KE.67/44938…   Erithacus rubecula  1         59.83333  19.93333
+#> 7   …tun.fi/MKC.1268070 Amaranthus retrofle…        NA  61.69857  27.27081
+#> 8  …tun.fi/JX.1177981#…   Erannis defoliaria  215       60.45842  22.17798
+#> 9  …tun.fi/KE.941/Samp…   Lepidostoma hirtum        NA  61.63891  21.70778
+#> 10 …tun.fi/MKC.32851600 Leucanthemum vulgare        NA  63.06518  28.35152
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -959,9 +954,10 @@ finbif_occurrence(sample = TRUE)
 ---
 
 ### General metadata
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_metadata()
 ```
 
@@ -972,20 +968,20 @@ finbif_metadata()
 #>    metadata_name            
 #> 1  admin_status             
 #> 2  red_list                 
-#> 3  countries                
-#> 4  provinces                
-#> 5  municipalities           
-#> 6  bird_assoc_areas         
+#> 3  country                  
+#> 4  province                 
+#> 5  municipality             
+#> 6  bird_assoc_area          
 #> 7  finnish_occurrence_status
-#> 8  habitat_types            
-#> 9  habitat_qualifiers       
-#> 10 life_stages              
+#> 8  habitat_type             
+#> 9  habitat_qualifier        
+#> 10 life_stage               
 #> 11 record_basis             
-#> 12 restriction_levels       
-#> 13 restriction_reasons      
-#> 14 sex_categories           
-#> 15 sources                  
-#> 16 taxon_ranks
+#> 12 restriction_level        
+#> 13 restriction_reason       
+#> 14 sex_category             
+#> 15 source                   
+#> 16 taxon_rank
 ```
 
 </div>
@@ -993,9 +989,10 @@ finbif_metadata()
 ---
 
 ### General metadata
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_metadata("red_list")
 ```
 
@@ -1026,9 +1023,10 @@ finbif_metadata("red_list")
 ---
 
 ### Informal groups
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_informal_groups(limit = 6)
 ```
 
@@ -1042,7 +1040,7 @@ finbif_informal_groups(limit = 6)
 #>      ¦--Green algae                                           
 #>      ¦--Red algae                                             
 #>      °--Stoneworts                                            
-#> ...111 more groups
+#> ...142 more groups
 ```
 
 </div>
@@ -1050,9 +1048,10 @@ finbif_informal_groups(limit = 6)
 ---
 
 ### Informal groups
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_informal_groups("Crustaceans")
 ```
 
@@ -1077,9 +1076,10 @@ finbif_informal_groups("Crustaceans")
 ---
 
 ### Collections
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_collections(
   filter = geographic_coverage == "Finland",
   select = 
@@ -1091,39 +1091,70 @@ finbif_collections(
 <div class = 'fragment output'> 
 
 ```{.language-r}
+#> Warning in is.na(cols) || is.null(cols): 'length(x) = 3 > 1' in coercion to
+#> 'logical(1)'
+```
+
+</div>
+<div class = 'fragment output'> 
+
+```{.language-r}
 #>         collection_name            taxonomic_coverage         count  
-#> HR.1227 Coll Mikko Heikkinen       Biota                           61
-#> HR.1349 JYV - Fungal collections   <NA>                         13398
-#> HR.1350 JYV - Lichen collections   <NA>                           398
-#> HR.1351 JYV - Bryophyte collectio… <NA>                          3227
+#> HR.1227 Coll Mikko Heikkinen       Biota                           67
+#> HR.1349 JYV - Fungal collections   <NA>                         13443
+#> HR.1350 JYV - Lichen collections   <NA>                           541
+#> HR.1351 JYV - Bryophyte collectio… <NA>                          5760
 #> HR.1467 Per-Eric Grankvist´s butt… Lepidoptera                      5
 #> HR.1487 JYV - Fish collections     <NA>                          1371
-#> HR.1507 Lingonblad Birger och Hjö… Lepidoptera                   2797
-#> HR.1592 Herbarium of The Ark Natu… <NA>                          1287
-#> HR.1687 Papilionoidea of Coll. La… Papilionoidea                  525
+#> HR.1507 Lingonblad Birger och Hjö… Lepidoptera                   2796
+#> HR.157  Point counts of breeding … Birds, landbirds            384824
+#> HR.1592 Herbarium of The Ark Natu… <NA>                          7864
+#> HR.1687 Papilionoidea of Coll. La… Papilionoidea                  550
 #> HR.1688 Noctuidae I of Coll. Lauro Noctuidae                      614
 #> HR.1689 Noctuidae II of Coll. Lau… Noctuidae                      839
 #> HR.1690 Noctuidae III, Bombycoide… Noctuidae, Bombycoidea, G…     521
 #> HR.1691 Drepanidae & Geometridae … Drepanidae, Geometridae       1408
-#> HR.175  National Finnish butterfl… Lepidoptera                 349476
-#> HR.200  Finnish Insect Database    Insecta                    3728982
-#> HR.2049 Invasive alien species co… Invasive species                93
-#> HR.206  The Finnish Nature League… biota                        82324
-#> HR.2089 Håkan Lindberg collection  Hymenoptera                   2295
-#> HR.209  Atlas of Finnish Macrolep… Macrolepidoptera           1217383
+#> HR.175  National Finnish butterfl… Lepidoptera                 423571
+#> HR.1916 Wildlife triangle          Siberian flying squirrel …   18560
+#> HR.200  Finnish Insect Database    Insecta                    3725794
+#> HR.2009 Fish observation data fro… invasive alien fish speci…   34396
+#> HR.2049 Invasive alien species co… Invasive species              1040
+#> HR.206  The Finnish Nature League… biota                       115286
+#> HR.2089 Håkan Lindberg collection  Hymenoptera                   2435
+#> HR.209  Atlas of Finnish Macrolep… Macrolepidoptera           1218552
+#> HR.2129 Fungal atlas               fungi                       102238
 #> HR.2209 KUO Arachnida collection   Arachnida                        3
 #> HR.2289 Specimens that lack colle… <NA>                           109
-#> HR.2691 Line transect censuses of… Aves                        588124
+#> HR.2691 Line transect censuses of… Aves                        608520
 #> HR.2692 Censuses of breeding bird… Aves                         14963
-#> HR.3051 Viekas project invasive s… <NA>                           647
-#> HR.3071 Observing species on milk… <NA>                           160
-#> HR.3211 iNaturalist                <NA>                         15716
-#> HR.39   Winter Bird Census         Aves                       1361703
-#> HR.435  Löydös Open Invasive Spec… Biota                        11674
-#> HR.60   Monitoring scheme of bird… Aves, Mammalia              769290
+#> HR.3051 VieKas LIFE project invas… <NA>                          1399
+#> HR.3071 Observing species on milk… <NA>                           529
+#> HR.3211 iNaturalist Suomi Finland  biota                       504372
+#> HR.3491 LajiGIS: Aquatic species … Biota                       592897
+#> HR.3553 LajiGIS: Species monitori… Biota                       696609
+#> HR.3671 Bird of prey nests for pr… Aves                         10246
+#> HR.3691 eBird                      Aves                        806562
+#> HR.3791 Invasive species observat… Biota                         1993
+#> HR.39   Winter Bird Census         Aves, Mammalia             1447328
+#> HR.3911 Bumblebee census           Bumblebees                    7394
+#> HR.3991 Waterbird counts, Luomus … Aves                          3068
+#> HR.3992 Waterbird counts, Luke da… Aves                          2429
+#> HR.4011 Salmonidae in streams      Salmonidae                   12630
+#> HR.4051 LajiGIS: Species monitori… Aquila chrysaetos; Haliae…    8083
+#> HR.4091 Retkikasvio                <NA>                            66
+#> HR.4131 Butterflies in Finnish ag… Papilionoidea, Others       356987
+#> HR.4191 Butterfly Collection by C… Lepidoptera                  10415
+#> HR.4251 LajiGIS: Species surveys   Biota                       238301
+#> HR.435  Löydös Open Invasive Spec… Biota                        17791
+#> HR.4352 NFI rare tree species      <NA>                           997
+#> HR.4412 Tiira.fi: The Fourth Bree… Aves                        140113
+#> HR.4471 4th Finnish Bird Atlas, o… Aves                         74481
+#> HR.4511 Finnish National Moth Mon… Bombycoidea, Noctuoidea, … 1156357
+#> HR.4612 Pölyttäjäseuranta          Insecta                       1142
+#> HR.60   Monitoring scheme of bird… Aves, Mammalia              851835
 #> HR.627  Invasive mammal species o… Mammalia                       228
-#> HR.808  E. Sjöholm´s butterfly co… Lepidoptera                   4952
-#> HR.847  Atlas of amphibians and r… Amphibia, Reptilia            5106
+#> HR.808  E. Sjöholm´s butterfly co… Lepidoptera                   4951
+#> HR.847  Atlas of amphibians and r… Amphibia, Reptilia            6415
 ```
 
 </div>
@@ -1131,18 +1162,20 @@ finbif_collections(
 ---
 
 ### Collections
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 collections <- 
   finbif_collections(supercollections = TRUE, nmin = 10000)
 View(collections)
 ```
 
 </div>
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_collections(
   supercollections = TRUE
 )["HR.128", "collection_name"]
@@ -1160,9 +1193,10 @@ finbif_collections(
 ---
 
 ### Collections
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_collections(
   is_part_of == "HR.128", supercollections = TRUE
 )
@@ -1172,27 +1206,33 @@ finbif_collections(
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#>        collection_name abbreviation description online_url has_children
-#> HR.129 Collections of… H            Herbarium … <NA>        TRUE       
-#> HR.160 Zoological col… MZH          The collec… http://ww…  TRUE       
-#> HR.173 Zoological mon… <NA>         Monitoring… <NA>        TRUE       
-#> HR.203 Löydös Open Fi… <NA>         A service … http://ws…  TRUE       
-#> HR.447 Hatikka.fi obs… <NA>         Hatikka.fi… http://ha… FALSE       
-#> HR.48  Ringing and re… TIPU         Database o… <NA>        TRUE       
-#>        is_part_of data_quality methods collection_type taxonomic_coverage
-#> HR.129 HR.128     MY.dataQual… NA      MY.collectionT… <NA>              
-#> HR.160 HR.128     MY.dataQual… NA      MY.collectionT… Animalia          
-#> HR.173 HR.128     MY.dataQual… NA      MY.collectionT… <NA>              
-#> HR.203 HR.128     MY.dataQual… NA      MY.collectionT… biota             
-#> HR.447 HR.128     MY.dataQual… NA      MY.collectionT… Biota             
-#> HR.48  HR.128     MY.dataQual… NA      MY.collectionT… <NA>              
-#>        geographic_coverage temporal_coverage secure_level count   
-#> HR.129 <NA>                <NA>              <NA>             1512
-#> HR.160 World               1700 to present   MX.secureLe…      957
-#> HR.173 Finland             1950-             <NA>          4137453
-#> HR.203 world               2013-             <NA>            14392
-#> HR.447 World               <NA>              <NA>          2012986
-#> HR.48  Ringing data: Finl… 1913-             <NA>         11916923
+#>         collection_name abbreviation description online_url has_children
+#> HR.129  Collections of… H            Herbarium … <NA>        TRUE       
+#> HR.160  Zoological col… MZH          The collec… http://ww…  TRUE       
+#> HR.173  Zoological mon… <NA>         Monitoring… <NA>        TRUE       
+#> HR.1849 Genomic resour… <NA>         Genomic re… <NA>        TRUE       
+#> HR.203  Löydös Open Fi… <NA>         A service … https://l… FALSE       
+#> HR.435  Löydös Open In… <NA>         A service … https://l… FALSE       
+#> HR.447  Hatikka.fi obs… <NA>         Hatikka.fi… http://ha… FALSE       
+#> HR.48   Ringing and re… TIPU         Database o… <NA>        TRUE       
+#>         is_part_of data_quality methods   collection_type taxonomic_coverage
+#> HR.129  HR.128     MY.dataQual… <NA>      MY.collectionT… <NA>              
+#> HR.160  HR.128     MY.dataQual… <NA>      MY.collectionT… Animalia          
+#> HR.173  HR.128     MY.dataQual… <NA>      MY.collectionT… <NA>              
+#> HR.1849 HR.128     MY.dataQual… Sampling… MY.collectionT… Biota             
+#> HR.203  HR.128     <NA>         <NA>      MY.collectionT… biota             
+#> HR.435  HR.128     MY.dataQual… <NA>      MY.collectionT… Biota             
+#> HR.447  HR.128     MY.dataQual… <NA>      MY.collectionT… Biota             
+#> HR.48   HR.128     MY.dataQual… <NA>      MY.collectionT… <NA>              
+#>         geographic_coverage temporal_coverage secure_level count   
+#> HR.129  <NA>                <NA>              <NA>                2
+#> HR.160  World               1700 to present   MX.secureLe…      743
+#> HR.173  Finland             1950-             <NA>          4882057
+#> HR.1849 World               2000-             <NA>                1
+#> HR.203  world               2013-             <NA>            30508
+#> HR.435  Finland             2015-             <NA>            17791
+#> HR.447  World               <NA>              <NA>          2010232
+#> HR.48   Ringing data: Finl… 1913-             <NA>         12642149
 ```
 
 </div>
@@ -1204,9 +1244,10 @@ finbif_collections(
 ---
 
 ### Filtering help
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 ?filters
 ```
 
@@ -1223,9 +1264,10 @@ finbif_collections(
 ---
 
 ### Places
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(filter = c(country = "Finland"))
 ```
 
@@ -1234,26 +1276,22 @@ finbif_occurrence(filter = c(country = "Finland"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 32673736
-#> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1       Regulus regulus         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 2   Emberiza citrinella         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 3          Corvus corax         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 4         Cygnus cygnus         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 5         Turdus merula         3  61.10426  21.56173 2020-03-10 07:50:00
-#> 6  Plectrophenax nival…         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 7   Cyanistes caeruleus         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 8           Parus major         3  61.10426  21.56173 2020-03-10 07:50:00
-#> 9  Lophophanes cristat…         1  61.10426  21.56173 2020-03-10 07:50:00
-#> 10             Acanthis         1  61.10426  21.56173 2020-03-10 07:50:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 41580509
+#> A data.frame [10 x 12]
+#>    record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1      …42#3            Apus apus        NA  60.4911   22.1561 
+#> 2      …41#3 Phylloscopus trochi…        NA  60.4911   22.1561 
+#> 3      …39#6       Sylvia curruca  1         59.83882  19.92228
+#> 4      …39#3      Sylvia communis  1         59.84056  19.91378
+#> 5      …35#5      Sylvia communis  1         61.0872   23.65435
+#> 6      …35#3     Saxicola rubetra  2         61.0872   23.65435
+#> 7     …31#15    Charadrius dubius  4         64.83067  26.10181
+#> 8     …31#11       Turdus pilaris  1         64.82108  26.01163
+#> 9      …31#3   Anas platyrhynchos  14        64.82164  25.96167
+#> 10     …31#7            Apus apus  30        64.80656  25.99359
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -1261,9 +1299,10 @@ finbif_occurrence(filter = c(country = "Finland"))
 ---
 
 ### Coordinates
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(
   filter = list(
     coordinates = list(
@@ -1278,9 +1317,10 @@ finbif_occurrence(
 ---
 
 ### Dates
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(filter = c(date_range_ymd = "2019-12"))
 ```
 
@@ -1289,26 +1329,22 @@ finbif_occurrence(filter = c(date_range_ymd = "2019-12"))
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 8037
-#> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Clavulinopsis luteo…         1  60.43100  22.28100 2019-12-31 12:00:00
-#> 2            Flammulina        10  60.39362  25.67044 2019-12-31 12:00:00
-#> 3      Panellus ringens         1  63.06800  21.69020 2019-12-31 12:00:00
-#> 4  Basidioradulum radu…         1  63.06800  21.69020 2019-12-31 12:00:00
-#> 5    Sarcosoma globosum         1  60.28506  21.98599 2019-12-31 12:00:00
-#> 6             Pica pica         3  62.21189  21.66492 2019-12-31 09:54:00
-#> 7      Poecile montanus         4  62.21189  21.66492 2019-12-31 09:54:00
-#> 8   Emberiza citrinella        16  62.21189  21.66492 2019-12-31 09:54:00
-#> 9          Corvus corax         1  62.21189  21.66492 2019-12-31 09:54:00
-#> 10    Dendrocopos major         5  62.21189  21.66492 2019-12-31 09:54:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 19883
+#> A data.frame [10 x 12]
+#>         record_id     scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …44280127_Unit       Turdus merula  2         60.41401  22.24457
+#> 2  …44304840_Unit   Dendrocopos major  1         60.40432  22.18121
+#> 3  …44280136_Unit Emberiza citrinella  2         60.41401  22.24457
+#> 4  …54619078_Unit       Turdus merula  3         60.27095  24.83408
+#> 5  …44317394_Unit    Larus argentatus  1         64.66585  24.40813
+#> 6  …54625618_Unit         Parus major  6         60.27448  24.86076
+#> 7  …44308453_Unit        Corvus corax  1         61.97913  21.42103
+#> 8  …44300432_Unit    Carduelis spinus  2         60.42983  22.21151
+#> 9  …44286929_Unit   Fringilla coelebs  2         60.25655  21.38695
+#> 10 …44304839_Unit    Carduelis spinus  10        60.40432  22.18121
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -1316,9 +1352,10 @@ finbif_occurrence(filter = c(date_range_ymd = "2019-12"))
 ---
 
 ### Dates
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(
   filter = list(
     date_range_ymd = c("2019-06-01", "2019-12-31")
@@ -1331,26 +1368,22 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 347883
-#> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Clavulinopsis luteo…         1  60.43100  22.28100 2019-12-31 12:00:00
-#> 2            Flammulina        10  60.39362  25.67044 2019-12-31 12:00:00
-#> 3      Panellus ringens         1  63.06800  21.69020 2019-12-31 12:00:00
-#> 4  Basidioradulum radu…         1  63.06800  21.69020 2019-12-31 12:00:00
-#> 5    Sarcosoma globosum         1  60.28506  21.98599 2019-12-31 12:00:00
-#> 6             Pica pica         3  62.21189  21.66492 2019-12-31 09:54:00
-#> 7      Poecile montanus         4  62.21189  21.66492 2019-12-31 09:54:00
-#> 8   Emberiza citrinella        16  62.21189  21.66492 2019-12-31 09:54:00
-#> 9          Corvus corax         1  62.21189  21.66492 2019-12-31 09:54:00
-#> 10    Dendrocopos major         5  62.21189  21.66492 2019-12-31 09:54:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 835439
+#> A data.frame [10 x 12]
+#>         record_id     scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …44280127_Unit       Turdus merula  2         60.41401  22.24457
+#> 2  …44304840_Unit   Dendrocopos major  1         60.40432  22.18121
+#> 3  …44280136_Unit Emberiza citrinella  2         60.41401  22.24457
+#> 4  …54619078_Unit       Turdus merula  3         60.27095  24.83408
+#> 5  …44317394_Unit    Larus argentatus  1         64.66585  24.40813
+#> 6  …54625618_Unit         Parus major  6         60.27448  24.86076
+#> 7  …44308453_Unit        Corvus corax  1         61.97913  21.42103
+#> 8  …44300432_Unit    Carduelis spinus  2         60.42983  22.21151
+#> 9  …44286929_Unit   Fringilla coelebs  2         60.25655  21.38695
+#> 10 …44304839_Unit    Carduelis spinus  10        60.40432  22.18121
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -1358,9 +1391,10 @@ finbif_occurrence(
 ---
 
 ### Dates
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(
   filter = list(
     date_range_md = c(begin = "12-21", end = "12-31"),
@@ -1374,27 +1408,32 @@ finbif_occurrence(
 ---
 
 ### Data quality
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 strict <- c(
-  collection_reliability      = 5,
+  collection_quality          = "professional",
+  requires_verification       = FALSE,
   coordinates_uncertainty_max = 1,
-  taxon_reliability           = "reliable"
+  record_reliability          = "reliable",
+  record_quality              = "expert_verified"
 )
 ```
 
 </div>
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 permissive <- c(quality_issues = "both")
 ```
 
 </div>
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 c(
   strict = finbif_occurrence(
     filter = strict, count_only = TRUE
@@ -1410,7 +1449,7 @@ c(
 
 ```{.language-r}
 #>     strict permissive 
-#>     307679   34751933
+#>         50   44002046
 ```
 
 </div>
@@ -1418,11 +1457,12 @@ c(
 ---
 
 ### Collections
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(
-  filter = c(collection = "iNaturalist"),
+  filter = c(collection = "iNaturalist Suomi Finland"),
   count_only = TRUE
 )
 ```
@@ -1431,13 +1471,14 @@ finbif_occurrence(
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#> [1] 15716
+#> [1] 504372
 ```
 
 </div>
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 collections <- finbif_collections(
   filter = geographic_coverage == "Finland",
   nmin   = 10000
@@ -1452,7 +1493,7 @@ finbif_occurrence(
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#> [1] 8153033
+#> [1] 13577108
 ```
 
 </div>
@@ -1460,9 +1501,10 @@ finbif_occurrence(
 ---
 
 ### Informal groups
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(
   filter = list(informal_group = "Reptiles and amphibians")
 )
@@ -1473,26 +1515,22 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 30493
-#> A data.frame [10 x 30]
-#>     scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Zootoca vivipara         1  60.93303  26.84106 2020-03-08 12:00:00
-#> 2  Zootoca vivipara         1  60.60121  21.67021 2020-02-28 12:00:00
-#> 3   Anguis fragilis         1  59.96766  24.39325 2020-02-22 12:00:00
-#> 4   Anguis fragilis         1  62.25426  25.13755 2020-02-21 12:00:00
-#> 5  Zootoca vivipara         1  60.26828  24.89337 2020-02-17 12:00:00
-#> 6         Bufo bufo         1  60.23152  24.98346 2020-01-15 18:00:00
-#> 7   Anguis fragilis         1  60.23968  25.79487 2020-01-04 18:00:00
-#> 8         Bufo bufo         1  61.08603  26.86767 2020-01-03 14:53:00
-#> 9        Lacertidae         1  28.14624 -16.43370 2019-12-04 13:00:00
-#> 10       Lacertidae         1  28.13532 -16.44389 2019-12-04 13:00:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 44950
+#> A data.frame [10 x 12]
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …KE.176/62bbcbcdd5d…      Anguis fragilis  1         61.10221  22.88537
+#> 2  …KE.176/62bbd8e9d5d… Pelophylax esculent…  3         60.61041  21.5252 
+#> 3  …KE.176/62bb6a86d5d…      Anguis fragilis  1         59.98272  23.99422
+#> 4  …KE.176/62bb617fd5d…      Anguis fragilis  1         60.14724  24.36741
+#> 5  …HR.3211/123833894-U     Zootoca vivipara        NA  63.64611  27.17139
+#> 6  …HR.3211/123838182-U      Rana temporaria        NA        NA        NA
+#> 7  …KE.176/62baf319d5d…      Anguis fragilis  1         61.98459  24.06683
+#> 8  …KE.176/62baeaffd5d…      Anguis fragilis  1         60.04463  24.55186
+#> 9  …HR.3211/123804109-U     Zootoca vivipara        NA  61.03338  25.88673
+#> 10 …KE.176/62baa39cd5d…      Anguis fragilis  1         61.47152  24.43033
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -1504,9 +1542,10 @@ finbif_occurrence(
 ---
 
 ### Administrative status
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(
   "birds",
   filter = list(administrative_status = "EU_INVSV")
@@ -1518,26 +1557,22 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 437
-#> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Alopochen aegyptiaca         3  52.16081  4.485534 2019-10-23 13:00:00
-#> 2  Alopochen aegyptiaca         4  53.36759  6.191796 2018-10-26 11:15:00
-#> 3  Alopochen aegyptiaca         6  53.37574  6.207861 2018-10-23 08:30:00
-#> 4  Alopochen aegyptiaca        30  52.33990  5.069133 2018-10-22 10:45:00
-#> 5  Alopochen aegyptiaca        36  51.74641  4.535283 2018-10-21 13:00:00
-#> 6  Alopochen aegyptiaca         3  51.74641  4.535283 2018-10-21 13:00:00
-#> 7  Alopochen aegyptiaca         2  51.90871  4.532580 2018-10-20 12:10:00
-#> 8  Alopochen aegyptiaca         2  53.19242  5.437417 2017-10-24 11:06:00
-#> 9  Alopochen aegyptiaca        20  53.32081  6.192341 2017-10-23 12:15:00
-#> 10 Alopochen aegyptiaca         5  53.32081  6.192341 2017-10-23 12:15:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 469
+#> A data.frame [10 x 12]
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …KE.176/62b1ad90d5d…   Oxyura jamaicensis  7         61.66207  23.57706
+#> 2        …JX.1045316#34 Alopochen aegyptiaca  3         52.16081  4.485534
+#> 3        …JX.138840#123 Alopochen aegyptiaca  4         53.36759  6.191796
+#> 4        …JX.139978#214 Alopochen aegyptiaca  6         53.37574  6.207861
+#> 5         …JX.139710#17 Alopochen aegyptiaca  30        52.3399   5.069133
+#> 6         …JX.139645#57 Alopochen aegyptiaca  36        51.74641  4.535283
+#> 7         …JX.139645#10 Alopochen aegyptiaca  3         51.74641  4.535283
+#> 8         …JX.139442#16 Alopochen aegyptiaca  2         51.90871  4.53258 
+#> 9      …KE.8_1208123#15 Alopochen aegyptiaca  2         53.19242  5.437417
+#> 10    …KE.8_1208068#101 Alopochen aegyptiaca  20        53.32081  6.192341
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -1545,9 +1580,10 @@ finbif_occurrence(
 ---
 
 ### Red list
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(
   "mammals", filter = list(red_list_status = "NT")
 )
@@ -1558,26 +1594,22 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 1650
-#> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  Pusa hispida botnica         1  64.66837  24.40488 2020-03-07 12:00:00
-#> 2  Rangifer tarandus f…         5  63.83774  29.16123 2020-02-29 09:18:00
-#> 3  Rangifer tarandus f…         4  64.42648  29.11431 2019-10-20 12:00:00
-#> 4  Rangifer tarandus f…         1  64.09919  29.40356 2019-09-23 12:00:00
-#> 5  Rangifer tarandus f…         1  63.79309  29.51080 2019-09-13 12:00:00
-#> 6  Rangifer tarandus f…         1  63.93649  29.59252 2019-07-26 12:00:00
-#> 7  Rangifer tarandus f…         2  63.27123  25.35634 2019-06-28 12:00:00
-#> 8  Rangifer tarandus f…         1  63.26554  25.36645 2019-06-28 12:00:00
-#> 9  Rangifer tarandus f…         4  63.03293  24.32905 2019-06-13 12:00:00
-#> 10 Rangifer tarandus f…         1  64.32293  26.69975 2019-05-27 12:00:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 2457
+#> A data.frame [10 x 12]
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …KE.176/62bab390d5d…         Castor fiber  1         62.24068  28.8834 
+#> 2         …JX.1408115#3 Rangifer tarandus f…  1         63.21216  24.31222
+#> 3        …JX.1397132#39 Rangifer tarandus f…  2         64.13285  26.27761
+#> 4       …JX.1396580#493 Rangifer tarandus f…  1         64.32912  28.7958 
+#> 5  …HR.3211/121755178-U Rangifer tarandus f…        NA  63.5      24.3    
+#> 6  …HR.3211/121759281-U Rangifer tarandus f…        NA  63.5      24.3    
+#> 7  …HR.3211/121755627-U Rangifer tarandus f…        NA  63.9      24.7    
+#> 8        …JX.1392113#15 Rangifer tarandus f…  1         64.0517   28.32895
+#> 9  …KE.176/62a04ad6d5d… Pusa hispida botnica  1         60.21181  25.37497
+#> 10       …JX.1390384#11 Rangifer tarandus f…  1         64.33209  25.73386
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -1585,9 +1617,10 @@ finbif_occurrence(
 ---
 
 ### Finnish occurrence
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(
   filter = c(finnish_occurrence_status = "rare")
 )
@@ -1598,26 +1631,22 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 260312
-#> A data.frame [10 x 30]
-#>         scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1   Agriopis marginaria         7  60.24385  24.74891 2020-03-09 12:00:00
-#> 2  Coleophora binderel…         1  62.23735  27.42594 2020-03-06 12:00:00
-#> 3   Coleophora violacea         1  62.23735  27.42594 2020-03-06 12:00:00
-#> 4   Galerucella pusilla         1  61.71399  29.39042 2020-03-03 16:12:00
-#> 5      Scymnus limbatus         1  60.83753  26.72020 2020-03-01 12:00:00
-#> 6  Olisthopus rotundat…         1  60.35368  22.36139 2020-02-24 12:00:00
-#> 7  Dromius quadrimacul…         1  60.29779  22.40343 2020-02-22 12:00:00
-#> 8  Otiorhynchus sulcat…         1  60.82156  21.57260 2020-02-20 12:00:00
-#> 9  Dromius quadrimacul…         1  60.29790  22.39917 2020-02-20 12:00:00
-#> 10 Dromius quadrimacul…         1  60.29713  22.39969 2020-02-20 12:00:00
-#> ...with 0 more records and 25 more variables:
-#> taxon_rank, country, province, municipality, date_start, date_end,
-#> hour_start, hour_end, minute_start, minute_end, record_id,
-#> individual_id, event_id, collection_id, any_issues, record_issue,
-#> record_reliable, taxon_reliability, document_issue,
-#> collection_reliability, coordinates_uncertainty, event_issue,
-#> location_issue, time_issue, duration
+#> Records available: 357479
+#> A data.frame [10 x 12]
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1         …JX.1411601#9     Stegania cararia  3         61.48089  29.45853
+#> 2         …JX.1411614#3 Habrosyne pyritoides  1         61.71285  29.39905
+#> 3        …JX.1411450#36      Ancylis upupana  1         61.51447  24.0233 
+#> 4        …JX.1411450#15  Eupithecia selinata  1         61.51447  24.0233 
+#> 5        …JX.1411579#17        Pyrgus alveus  2         60.24476  22.30047
+#> 6  …HR.3211/123829199-U Korscheltellus lupu…        NA  60.98495  25.54631
+#> 7         …JX.1411456#6         Colias tyche  1         69.06191  20.82332
+#> 8         …JX.1411456#3     Euphydryas iduna  6         69.06191  20.82332
+#> 9  …HR.3211/123811818-U Ypsolopha chazariel…        NA  60.31112  25.03602
+#> 10        …JX.1411418#3      Eucosma fulvana  2         61.71372  29.39204
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
+#> requires_identification, record_reliability, record_quality
 ```
 
 </div>
@@ -1625,9 +1654,10 @@ finbif_occurrence(
 ---
 
 ### Finnish occurrence (negation)
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(
   "Birds",
   filter = c(
@@ -1646,9 +1676,10 @@ finbif_occurrence(
 ---
 
 ### Occurrence points
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 recent_obs <- finbif_occurrence(
   filter = c(country = "Finland"), n = 1000
 )
@@ -1659,14 +1690,14 @@ recent_obs <- finbif_occurrence(
 ---
 
 ### Occurrence points
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 plot(recent_obs)
 ```
 
 </div>
-<div class = 'fragment output'> <img src="/slides/finbif/index_files/figure-html/plot-points-1.png" width="672" /></div>
 
 ---
 
@@ -1675,9 +1706,10 @@ plot(recent_obs)
 ---
 
 ### Data
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 jays <- finbif_occurrence(
   "Eurasian Jay",
   filter = c(
@@ -1693,9 +1725,10 @@ jays <- finbif_occurrence(
 ---
 
 ### Breakpoints
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finland_map$bbox
 ```
 
@@ -1707,9 +1740,10 @@ finland_map$bbox
 ```
 
 </div>
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 (breaks <- breaks_xy(finland_map$bbox, size = .25))
 ```
 
@@ -1737,9 +1771,10 @@ finland_map$bbox
 ---
 
 ### 2d histogram
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 jay_density <- hist_xy(jays, breaks)
 ```
 
@@ -1748,9 +1783,10 @@ jay_density <- hist_xy(jays, breaks)
 ---
 
 ### Image
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 image(
   jay_density,
   asp    = 2.4,
@@ -1768,9 +1804,10 @@ image(
 ---
 
 ### Legend
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 legend(
   "topright",
   inset  = c(0, .01),
@@ -1789,14 +1826,14 @@ legend(
 ---
 
 ### Border
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 polygon(finland_map$vertices, lwd = .2)
 ```
 
 </div>
-<div class = 'fragment output'> <img src="/slides/finbif/index_files/figure-html/plot-finland-1.png" width="672" /></div>
 
 ---
 
@@ -1805,9 +1842,10 @@ polygon(finland_map$vertices, lwd = .2)
 ---
 
 ### Reproducibility
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 remotes::install_version("finbif", "0.2.0")
 options(finbif_tz = "Europe/Helsinki")
 ```
@@ -1821,16 +1859,18 @@ options(finbif_tz = "Europe/Helsinki")
 ---
 
 ### Cache on/off
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_occurrence(cache = FALSE)
 ```
 
 </div>
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 options(finbif_use_cache = FALSE)
 ```
 
@@ -1839,16 +1879,18 @@ options(finbif_use_cache = FALSE)
 ---
 
 ### Cache on disk
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 options(finbif_cache_path = tempdir())
 ```
 
 </div>
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 dir.create("cache")
 options(finbif_cache_path = "cache")
 ```
@@ -1858,9 +1900,10 @@ options(finbif_cache_path = "cache")
 ---
 
 ### Clear cache
+
 <div class = 'fragment'>
 
-```r
+```.language-r
 finbif_clear_cache()
 ```
 

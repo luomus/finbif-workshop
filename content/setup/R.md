@@ -5,7 +5,7 @@ menu:
     parent: Setup
     weight: 2
 title: Download and install R
-type: docs
+type: book
 weight: 2
 ---
 

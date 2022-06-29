@@ -2,7 +2,7 @@
 title: Building an SDM using MaxEnt
 draft: no
 toc: yes
-type: docs
+type: book
 weight: 2
 menu:
   modelling:
@@ -80,7 +80,7 @@ data. This filter limits records to those within a bounding box encompassing
 coordinate uncertainty of 100m.
 ```{r coordinates-filter}
 coordinates_filter <- list(
-  coordinates = list(lat = c(60, 70), lon = c(20, 30), "wgs84"),
+  coordinates = list(lat = c(60, 70), lon = c(20, 30), system = "wgs84"),
   coordinates_uncertainty_max = 100
 )
 ```

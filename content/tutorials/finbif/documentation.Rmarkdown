@@ -2,7 +2,7 @@
 title: Documentation
 draft: no
 toc: yes
-type: docs
+type: book
 weight: 4
 menu:
   finbif:

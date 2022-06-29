@@ -2,7 +2,7 @@
 title: Plotting
 draft: no
 toc: yes
-type: docs
+type: book
 weight: 10
 menu:
   finbif:

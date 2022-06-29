@@ -7,10 +7,10 @@ weight = 1
 
 title = "FinBIF R Workshop"
 
-hero_media = "finbif-logo.png"
+hero_media = "icon.png"
 
 [design.background]
-  text_color_light = false
+  text_color_light = true
 
 [design.spacing]
   padding = ["100px", "0", "100px", "0"]

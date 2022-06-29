@@ -6,7 +6,7 @@ weight: 1
 title: Software Setup
 toc: false
 draft: false
-type: docs
+type: book
 
 menu:
   setup:
