@@ -20,7 +20,7 @@ occurrence data from FinBIF.
 The default `plot` method for the result of a call to `finbif_occurrence` will
 display (if available) coordinates of the occurrence points in a scatter-plot.
 
-```r
+```.language-r
 recent_obs <- finbif_occurrence(filter = c(country = "Finland"), n = 1000)
 plot(recent_obs)
 ```
@@ -38,7 +38,7 @@ First you'll need to acquire some occurrence records. For example, you can use
 the following to get the latitude and longitude of all the Finnish records of
 Eurasian Jays where the coordinate uncertainty is less then 100m[^1].
 
-```r
+```.language-r
 jays <- finbif_occurrence(
   "Eurasian Jay",
   filter = c(coordinates_uncertainty_max = 100, country = "Finland"),
@@ -53,7 +53,7 @@ plot the density of occurrence records.
 
 `{finbif}` has an inbuilt Finland map object which includes its bounding box.
 
-```r
+```.language-r
 finland_map$bbox
 ```
 
@@ -64,7 +64,7 @@ finland_map$bbox
 You can use the function `breaks_xy` in combination with map bounding box to
 compute break points that a quarter of a degree in both dimensions.
 
-```r
+```.language-r
 (breaks <- breaks_xy(finland_map$bbox, size = .25))
 ```
 
@@ -88,7 +88,7 @@ compute break points that a quarter of a degree in both dimensions.
 The function `hist_xy` can be used compute the density of occurrences in the
 grid-cells defined by a set of break points.
 
-```r
+```.language-r
 jay_density <- hist_xy(jays, breaks)
 ```
 
@@ -98,7 +98,10 @@ corresponding to the density of occurrence records. You can use its arguments to
 control properties of the plot such as the aspect ratio[^2], the breaks[^3], the
 color palette, the axis labels and grid lines.
 
-```r
+
+
+
+```.language-r
 image(
   jay_density,
   asp    = 2.4,
@@ -115,7 +118,7 @@ image(
 You can add a plot legend to indicate how the image breakpoints are mapped to
 the image colors.
 
-```r
+```.language-r
 legend(
   "topright",
   inset  = c(0, .01),
@@ -133,7 +136,7 @@ legend(
 Finally, you can use `{finbif}`'s internal map to add the border of Finland to
 your plot.
 
-```r
+```.language-r
 polygon(finland_map$vertices, lwd = .2)
 ```
 

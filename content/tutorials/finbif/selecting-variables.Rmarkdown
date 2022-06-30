@@ -13,9 +13,10 @@ menu:
 ```{r setup, include = FALSE}
 cache_path <- "../../../cache/"
 knitr::opts_chunk$set(
-  echo = TRUE, comment = "#>", class.output = "language-r", cache = TRUE,
-  cache.path = cache_path
+  echo = TRUE, comment = "#>", lang = ".language-r",
+  class.output = "language-r", cache = TRUE, cache.path = cache_path
 )
+
 library(finbif)
 options(finbif_tz = "Europe/Helsinki", finbif_cache_path = cache_path)
 ```
@@ -57,20 +58,26 @@ descending, then `load_date` descending, then `reported_name`.
 ### Ascending order
 By default occurrence records are ordered by variables in ascending order.
 ```{r order-ascend}
-finbif_occurrence("Cygnus cygnus", order_by = "abundance_interpreted")
+finbif_occurrence(
+  "Cygnus cygnus", order_by = "abundance_interpreted"
+)
 ```
 
 ### Descending order
 You can switch to descending order by prefixing the variable with a dash.
 ```{r order-descend}
-finbif_occurrence("Cygnus cygnus", order_by = "-abundance_interpreted")
+finbif_occurrence(
+  "Cygnus cygnus", order_by = "-abundance_interpreted"
+)
 ```
 
 ### Multiple variables
 You can specify multiple variables to order by. Sorting primacy is from left to
 right.
 ```{r order-multiple}
-finbif_occurrence("Cygnus olor", order_by = c("municipality_id", "-abundance_interpreted"))
+finbif_occurrence(
+  "Cygnus cygnus", order_by = c("-abundance_interpreted", "lat_wgs84")
+)
 ```
 
 ### Random sample

@@ -18,7 +18,7 @@ variables returned is a small subset of those available. Note that not all
 variables are available for all records. To see the variables available and
 their definitions in the R help system,
 
-```r
+```.language-r
 ?variables
 ```
 or visit the `{finbif}` [documentation online
@@ -29,7 +29,7 @@ or visit the `{finbif}` [documentation online
 To retrieve a limited set of variables from FinBIF simply specify the desired
 variables in the `select` argument.
 
-```r
+```.language-r
 finbif_occurrence(
   genus  = "Falco",
   select = c("scientific_name", "life_stage", "sex")
@@ -57,7 +57,7 @@ finbif_occurrence(
 To get extra variables as well as the default set, specify the extra variables
 in addition to the keyword `"default_vars"`.
 
-```r
+```.language-r
 finbif_occurrence(select = c("default_vars", "life_stage"))
 ```
 
@@ -69,8 +69,10 @@ descending, then `load_date` descending, then `reported_name`.
 ### Ascending order
 By default occurrence records are ordered by variables in ascending order.
 
-```r
-finbif_occurrence("Cygnus cygnus", order_by = "abundance_interpreted")
+```.language-r
+finbif_occurrence(
+  "Cygnus cygnus", order_by = "abundance_interpreted"
+)
 ```
 
 ```{.language-r}
@@ -96,8 +98,10 @@ finbif_occurrence("Cygnus cygnus", order_by = "abundance_interpreted")
 ### Descending order
 You can switch to descending order by prefixing the variable with a dash.
 
-```r
-finbif_occurrence("Cygnus cygnus", order_by = "-abundance_interpreted")
+```.language-r
+finbif_occurrence(
+  "Cygnus cygnus", order_by = "-abundance_interpreted"
+)
 ```
 
 ```{.language-r}
@@ -124,27 +128,29 @@ finbif_occurrence("Cygnus cygnus", order_by = "-abundance_interpreted")
 You can specify multiple variables to order by. Sorting primacy is from left to
 right.
 
-```r
-finbif_occurrence("Cygnus olor", order_by = c("municipality_id", "-abundance_interpreted"))
+```.language-r
+finbif_occurrence(
+  "Cygnus cygnus", order_by = c("-abundance_interpreted", "lat_wgs84")
+)
 ```
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 37120
+#> Records available: 80319
 #> A data.frame [10 x 12]
-#>    record_id scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  …12015253     Cygnus olor  2500            NA        NA 2008-08-17 12:00:00
-#> 2  …13633876     Cygnus olor  1500            NA        NA 2008-10-03 12:00:00
-#> 3    …780984     Cygnus olor  1300            NA        NA 2006-02-14 12:00:00
-#> 4    …781416     Cygnus olor  1300            NA        NA 2006-02-14 12:00:00
-#> 5   …2062563     Cygnus olor  1200            NA        NA 2006-12-19 12:00:00
-#> 6  …10352894     Cygnus olor  1100            NA        NA 2008-06-28 12:00:00
-#> 7    …927797     Cygnus olor  1050            NA        NA 2006-04-05 12:00:00
-#> 8   …3110953     Cygnus olor  960             NA        NA 2007-10-06 12:00:00
-#> 9  …26309317     Cygnus olor  900             NA        NA 2009-07-08 12:00:00
-#> 10  …1260385     Cygnus olor  800       58.66     23.57    2006-04-26 18:00:00
-#> ...with 0 more records and 6 more variables:
-#> coordinates_uncertainty, any_issues, requires_verification,
+#>               record_id scientific_name abundance lat_wgs84 lon_wgs84
+#> 1          …MHU.2981587   Cygnus cygnus  6000      64.4     -14.54   
+#> 2         …MHU.29480894   Cygnus cygnus  2010      64.54597  27.88859
+#> 3  …HR.3691/OBS6046423…   Cygnus cygnus  1753      64.50736  24.27894
+#> 4  …HR.3691/OBS6635688…   Cygnus cygnus  1600      65.98787  24.06341
+#> 5         …MHU.28815250   Cygnus cygnus  1500            NA        NA
+#> 6  …HR.3691/OBS6713538…   Cygnus cygnus  1361      64.71656  24.53188
+#> 7         …JX.1357345#5   Cygnus cygnus  1300      64.8465   25.2883 
+#> 8         …JX.1398409#3   Cygnus cygnus  1280      64.8448   25.2816 
+#> 9         …MHU.28815110   Cygnus cygnus  1200            NA        NA
+#> 10        …JX.1402662#3   Cygnus cygnus  1160      64.872    24.8788 
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
 
@@ -152,7 +158,7 @@ finbif_occurrence("Cygnus olor", order_by = c("municipality_id", "-abundance_int
 You can also request a random sample (random order) of occurrence records by
 setting the `sample` argument to `TRUE`.
 
-```r
+```.language-r
 finbif_occurrence(sample = TRUE)
 ```
 

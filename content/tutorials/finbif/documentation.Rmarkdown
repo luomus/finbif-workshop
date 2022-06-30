@@ -11,7 +11,9 @@ menu:
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
+knitr::opts_chunk$set(
+  echo = TRUE, comment = "#>", lang = ".language-r", class.output = "language-r"
+)
 ```
 
 Documentation for the `{finbif}` package and its functions are available from

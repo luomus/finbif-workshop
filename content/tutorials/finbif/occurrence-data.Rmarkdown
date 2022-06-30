@@ -13,13 +13,13 @@ menu:
 ```{r setup, include = FALSE}
 cache_path <- "../../../cache/"
 knitr::opts_chunk$set(
-  echo = TRUE, comment = "#>", class.output = "language-r", cache = TRUE,
-  cache.path = cache_path
+  echo = TRUE, comment = "#>", lang = ".language-r",
+  class.output = "language-r", cache = TRUE, cache.path = cache_path
 )
+
 library(finbif)
 options(finbif_tz = "Europe/Helsinki", finbif_cache_path = cache_path)
 ```
-
 The core purpose of `{finbif}` is accessing occurrence data stored in the
 FinBIF database. Occurrence data can be retrieved from FinBIF with the function
 `finbif_occurrence`. Without any arguments specified `finbif_occurrence` will
@@ -74,11 +74,7 @@ View(occurrences)
 When using the RStudio IDE you can also invoke the browser by clicking on the
 data in the 'Environment' pane.
 
-```{r echo=FALSE}
-blogdown::shortcode(
-  "figure", library = "true", src = "/img/data-viewer.png", lightbox = "true"
-)
-```
+{{% figure library="true" src="/img/data-viewer.png" lightbox="true" %}}
 
 When there are more than 1000 records to retrieve a progress bar will be
 initiated. You can suppress the progress bar with the `quiet` argument.

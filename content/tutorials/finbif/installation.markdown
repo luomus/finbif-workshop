@@ -24,7 +24,7 @@ To install the current stable version of the package from [CRAN] (currently
 0.6.5) use the function
 `install.packages`. This is the recommended option and suitable in most cases.
 
-```r
+```.language-r
 install.packages("finbif")
 ```
 
@@ -33,7 +33,7 @@ If you want to try out the newest features, or if there is a bug discovered
 in the current stable version and it has yet to be updated, then you can also
 install the latest version of the package under development.
 
-```r
+```.language-r
 install.packages("finbif", repos = "https://luomus.r-universe.dev")
 ```
 
@@ -44,7 +44,7 @@ if you want to ensure your work is
 [reproducible](https://www.practicereproducibleresearch.org/). The
 `{remotes}` package can be used in this case.
 
-```r
+```.language-r
 if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
 remotes::install_version("finbif", "0.6.0")
 ```
@@ -53,6 +53,6 @@ remotes::install_version("finbif", "0.6.0")
 Once you have installed the package you can load it into your R session with the
 `library` function.
 
-```r
+```.language-r
 library(finbif)
 ```

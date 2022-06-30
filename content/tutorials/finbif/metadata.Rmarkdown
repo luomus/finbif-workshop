@@ -13,8 +13,8 @@ menu:
 ```{r setup, include = FALSE}
 cache_path <- "../../../cache/"
 knitr::opts_chunk$set(
-  echo = TRUE, comment = "#>", class.output = "language-r", cache = TRUE,
-  cache.path = cache_path
+  echo = TRUE, comment = "#>", lang = ".language-r",
+  class.output = "language-r", cache = TRUE, cache.path = cache_path
 )
 library(finbif)
 options(finbif_tz = "Europe/Helsinki", finbif_cache_path = cache_path)
@@ -58,8 +58,8 @@ highest level of record aggregation in the FinBIF database.
 You can subset collection metadata by using the `filter` and `select` arguments.
 ```{r collections-finland}
 finbif_collections(
-  filter = geographic_coverage == "Finland",
-  select = c("collection_name", "taxonomic_coverage", "count")
+  filter = taxonomic_coverage == "fungi",
+  select = c("collection_name", "geographic_coverage", "count")
 )
 ```
 

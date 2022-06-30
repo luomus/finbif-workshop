@@ -8,8 +8,6 @@ menu:
   modelling:
     name: 1. Build an SDM
     weight: 2
-editor_options:
-  chunk_output_type: console
 ---
 
 
@@ -27,7 +25,7 @@ installation of some additional software.
 
 The `{raster}` package is needed for working with gridded data.
 
-```r
+```.language-r
 if (!require("raster")) install.packages("raster")
 library(raster)
 ```
@@ -36,7 +34,7 @@ The `{maxnet}` package is an implementation of the popular presence-only
 modelling software, MaxEnt, using the elastic-net regularised generalised linear
 models (glmnet).
 
-```r
+```.language-r
 if (!require("maxnet")) install.packages("maxnet")
 library(maxnet)
 ```
@@ -44,14 +42,14 @@ library(maxnet)
 To obtain the occurrence records to model the Eurasian Red Squirrel distribution
 will require the `{finbif}` package
 
-```r
+```.language-r
 library(finbif)
 ```
 
 For the sake of reproducibility it is a good idea to set an explicit path to
 hold cached data.
 
-```r
+```.language-r
 cache_path <- "cache"
 dir.create(cache_path)
 options(finbif_cache_path = cache_path)
@@ -72,7 +70,7 @@ data. This filter limits records to those within a bounding box encompassing
 (approximately) Finland, and restricts the data to those with a maximum
 coordinate uncertainty of 100m.
 
-```r
+```.language-r
 coordinates_filter <- list(
   coordinates = list(lat = c(60, 70), lon = c(20, 30), system = "wgs84"),
   coordinates_uncertainty_max = 100
@@ -83,7 +81,7 @@ coordinates_filter <- list(
 Using the predetermined filter the coordinates of the most recent (up to) 5000
 occurrences of Eurasian Red Squirrel can be downloaded from FinBIF.
 
-```r
+```.language-r
 red_squirrel_points <- finbif_occurrence(
   species = "Sciurus vulgaris",
   filter  = coordinates_filter,
@@ -101,7 +99,7 @@ in the Squirrel occurrences to the bias in the background points chosen in this
 way. In reality this is only one source of bias and more careful thought is
 needed to minimise the effect of bias in the model data.
 
-```r
+```.language-r
 background_points <- finbif_occurrence(
   class  = "Mammals",
   filter = coordinates_filter,
@@ -118,7 +116,9 @@ graphically.
 First plot the background data, selecting a semi-transparent colour to convey
 the density of points.
 
-```r
+
+
+```.language-r
 plot(
   x   = background_points,
   col = rgb(0, 0, 0, .1)
@@ -127,7 +127,7 @@ plot(
 
 Now overlay the Eurasian Red Squirrel occurrence points in a different shade.
 
-```r
+```.language-r
 points(
   x   = red_squirrel_points,
   col = rgb(1, 0, 0, .1),
@@ -138,9 +138,11 @@ points(
 
 Finally add the Finnish border to the figure.
 
-```r
+```.language-r
 polygon(finland_map$vertices, lwd = .2)
 ```
+
+<img src="/tutorials/modelling/simple-sdm_files/figure-html/plot-poly-1.png" width="672" />
 
 ## Climate data 
 You can obtain climate layers directly from [WorldClim](http://worldclim.org)
@@ -156,7 +158,7 @@ latitude and longitude to retrieve the tiles that cover the majority of Finland.
 There are 19 bioclimatic variables available, the following retrieves them all
 and stores them in the same cache directory as the FinBIF data.
 
-```r
+```.language-r
 climate_high_res <- getData(
   name = "worldclim",
   var  = "bio",
@@ -176,7 +178,7 @@ climate_high_res <- getData(
 You can extract the climate data for all 19 variables at each of the Squirrel
 occurrence locations using the `{raster}` function `extract()`.
 
-```r
+```.language-r
 climate_red_squirrel <- extract(
   x = climate_high_res,
   y = as.data.frame(red_squirrel_points)
@@ -185,7 +187,7 @@ climate_red_squirrel <- extract(
 
 Do the same for the background data points.
 
-```r
+```.language-r
 climate_background <- extract(
   x = climate_high_res,
   y = as.data.frame(background_points)
@@ -196,7 +198,7 @@ climate_background <- extract(
 Now combine the two datasets into a single object with an indicator variable `p`
 that is `1` for presence (occurrence records) and `0` for background points.
 
-```r
+```.language-r
 input_data <- rbind(
   cbind(p = 1, climate_red_squirrel),
   cbind(p = 0, climate_background)
@@ -206,7 +208,7 @@ input_data <- rbind(
 To fit a model the input data must be in the form of a `data.frame` and cannot
 contain any `NA` data.
 
-```r
+```.language-r
 input_data <- na.omit(data.frame(input_data))
 ```
 
@@ -215,7 +217,7 @@ To fit the SDM use the `{maxnet}` function `maxnet()`. Here the default settings
 are used. In general this is inadvisable and care should be taken to find the
 appropriate model form and settings for the purpose of the model.
 
-```r
+```.language-r
 red_squirrel_model <- maxnet(p = input_data[, 1], data = input_data[, -1])
 ```
 
@@ -229,7 +231,7 @@ In this case, it will be unnecessary to project to the high resolution climate
 data. For the purpose of visualization the 2.5 arc-minutes is fine-grained
 enough. 
 
-```r
+```.language-r
 climate_low_res <- getData(
   name = "worldclim",
   var  = "bio",
@@ -238,15 +240,10 @@ climate_low_res <- getData(
 )
 ```
 
-```
-#> Warning in getData(name = "worldclim", var = "bio", res = 2.5, path = cache_path): getData will be removed in a future version of raster
-#> . You can use access these data, and more, with functions from the geodata package instead
-```
-
 However, this lower resolution data is untiled so needs to be cropped; in this
 case, to the bounding box of the `{finbif}` package's internal map of Finland.
 
-```r
+```.language-r
 climate_low_res <- crop(
   x = climate_low_res,
   y = extent(sort(finland_map$bbox))
@@ -256,14 +253,14 @@ climate_low_res <- crop(
 To make projections to these climate layers with the model requires the data as
 a `data.frame`.
 
-```r
+```.language-r
 climate_low_res_df <- as.data.frame(climate_low_res)
 ```
 
 And also requires that the names of the bioclimatic layers are the same as the
 the lower resolution version
 
-```r
+```.language-r
 colnames(climate_low_res_df) <- paste0(names(climate_low_res), "_06")
 ```
 (the `"_06"` suffix indicates the sixth Worldclim tile that covers Finland).
@@ -273,7 +270,7 @@ Projecting to the new climate data can be done with `{maxnet}` package's
 `predict` method and selecting the "cloglog" (complementary log-log) output
 type.
 
-```r
+```.language-r
 predicted_dist <- predict(
   object   = red_squirrel_model,
   newdata  = climate_low_res_df,
@@ -284,14 +281,14 @@ predicted_dist <- predict(
 An empty gridded data layer can be created using the low-res climate layers as
 a template.
 
-```r
+```.language-r
 predicted_dist_raster <- raster(climate_low_res)
 ```
 
 And the projected Squirrel distribution can be added by using non-NA data cells
 from the climate layers as an index.
 
-```r
+```.language-r
 predicted_dist_raster[!is.na(climate_low_res_df[, 1])] <- predicted_dist
 ```
 
@@ -299,7 +296,7 @@ predicted_dist_raster[!is.na(climate_low_res_df[, 1])] <- predicted_dist
 A plot of the Eurasian Red Squirrel's modelled distribution can be made using
 the `plot` method from the `{raster}` package,
 
-```r
+```.language-r
 plot(
   x   = predicted_dist_raster,
   col = hcl.colors(12),
@@ -310,13 +307,13 @@ plot(
 
 adding the border of Finland
 
-```r
+```.language-r
 polygon(finland_map$vertices, lwd = .5)
 ```
 
 and finally the original Squirrel occurrence data.
 
-```r
+```.language-r
 points(
   x   = as.data.frame(red_squirrel_points),
   cex = .05,
@@ -324,3 +321,5 @@ points(
   pch = 19
 )
 ```
+
+<img src="/tutorials/modelling/simple-sdm_files/figure-html/points-1.png" width="672" />

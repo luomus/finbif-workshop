@@ -14,7 +14,9 @@ menu:
 [GitHub]: https://github.com
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE, comment = "#>", class.output = "language-r")
+knitr::opts_chunk$set(
+  echo = TRUE, comment = "#>", lang = ".language-r", class.output = "language-r"
+)
 ```
 The `{finbif}` package can be installed from [CRAN] or [GitHub]. You can choose
 either the most recent stable version (recommended), the latest development

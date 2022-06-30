@@ -23,7 +23,7 @@ Some things you might consider doing to ensure your research is reproducible
 is to install a specific version of `{finbif}` and set the timezone for
 computing event dates and times explicitly.
 
-```r
+```.language-r
 remotes::install_version("finbif", "0.2.0")
 options(finbif_tz = "Europe/Helsinki")
 ```
@@ -40,14 +40,14 @@ request to the FinBIF database within a single session you only fetch the data
 from the server on the first occasion. This behaviour can be switched off for a
 single instance by setting the `cache` parameter to `FALSE`.
 
-```r
+```.language-r
 finbif_occurrence(cache = FALSE)
 ```
 
 You can switch it off for the whole session by setting the `finbif_use_cache`
 option.
 
-```r
+```.language-r
 options(finbif_use_cache = FALSE)
 ```
 
@@ -55,14 +55,14 @@ options(finbif_use_cache = FALSE)
 If you are making many large data requests you made need to switch the cache to
 write to disk instead of to memory by setting the `finbif_cache_path`.
 
-```r
+```.language-r
 options(finbif_cache_path = tempdir())
 ```
 
 You can make your analysis more reproducible by setting the cache path to a
 permanent directory in which all your FinBIF data will be archived.
 
-```r
+```.language-r
 dir.create("cache")
 options(finbif_cache_path = "cache")
 ```
@@ -70,6 +70,6 @@ options(finbif_cache_path = "cache")
 ### Clear cache
 To clear the cache (in memory or on disk) use the function `finbif_clear_cache`.
 
-```r
+```.language-r
 finbif_clear_cache()
 ```

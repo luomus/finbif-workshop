@@ -8,15 +8,14 @@ menu:
   modelling:
     name: 1. Build an SDM
     weight: 2
-editor_options:
-  chunk_output_type: console
 ---
 
 ```{r setup, include = FALSE}
 cache_path <- "../../../cache/"
 knitr::opts_chunk$set(
-  echo = TRUE, comment = "#>", class.output = "language-r", fig.show = "hide",
-  fig.keep = "none", fig.width = 4, cache = TRUE, cache.path = cache_path
+  echo = TRUE, comment = "#>", lang = ".language-r",
+  class.output = "language-r", cache = TRUE, cache.path = cache_path,
+  fig.show = "hide", fig.keep = "none"
 )
 knitr::opts_knit$set(global.device = TRUE)
 library(raster)
@@ -121,6 +120,10 @@ graphically.
 
 First plot the background data, selecting a semi-transparent colour to convey
 the density of points.
+```{r plot-workaround, include = FALSE, fig.keep = "last", cache = FALSE}
+plot.new()
+```
+
 ```{r plot-bg, cache = FALSE}
 plot(
   x   = background_points,
@@ -129,7 +132,7 @@ plot(
 ```
 
 Now overlay the Eurasian Red Squirrel occurrence points in a different shade.
-```{r plot-points}
+```{r plot-points, cache = FALSE}
 points(
   x   = red_squirrel_points,
   col = rgb(1, 0, 0, .1),
@@ -139,7 +142,7 @@ points(
 ```
 
 Finally add the Finnish border to the figure.
-```{r plot-poly,  fig.show = "hold", fig.keep = "last"}
+```{r plot-poly, fig.show = "hold", fig.keep = "last", cache = FALSE}
 polygon(finland_map$vertices, lwd = .2)
 ```
 

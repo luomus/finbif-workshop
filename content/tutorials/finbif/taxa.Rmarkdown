@@ -12,10 +12,12 @@ menu:
 
 ```{r setup, include = FALSE}
 cache_path <- "../../../cache/"
+
 knitr::opts_chunk$set(
-  echo = TRUE, comment = "#>", class.output = "language-r", cache = TRUE,
-  cache.path = cache_path
+  echo = TRUE, comment = "#>", lang = ".language-r",
+  class.output = "language-r", cache = TRUE, cache.path = cache_path
 )
+
 library(finbif)
 options(finbif_tz = "Europe/Helsinki", finbif_cache_path = cache_path)
 ```
@@ -27,7 +29,8 @@ in the FinBIF database.
 You can use the function `finbif_check_taxa` to check whether taxa are in the
 FinBIF database.
 ```{r check-taxa}
-(taxa <- finbif_check_taxa(c("Ursus arctos", "Moomin")))
+taxa <- finbif_check_taxa(c("Ursus arctos", "Moomin"))
+taxa
 ```
 
 If the taxa are present then the function returns their FinBIF ID, otherwise it
@@ -58,7 +61,7 @@ be accessed with the `finbif_taxa` function. By default, `finbif_taxa` will use
 exact matching, only returning information on taxa that exactly match the query
 that was made.
 ```{r search-taxa}
-finbif_taxa("Capreolus capreolus")
+finbif_taxa("Capreolus capreolus")$content[[1]][1:5]
 ```
 
 ### Partial matching
