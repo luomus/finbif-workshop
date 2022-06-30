@@ -1,13 +1,10 @@
 ---
+linktitle: 3. Documentation
 title: Documentation
 draft: no
 toc: yes
 type: book
 weight: 4
-menu:
-  finbif:
-    name: 3. Documentation
-    weight: 4
 ---
 
 ```{r setup, include = FALSE}

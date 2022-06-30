@@ -1,13 +1,10 @@
 ---
+linktitle: 6. Select & Order
 title: Selecting and Ordering Variables
 draft: no
 toc: yes
 type: book
 weight: 7
-menu:
-  finbif:
-    name: 6. Select & Order
-    weight: 7
 ---
 
 ```{r setup, include = FALSE}

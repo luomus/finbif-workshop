@@ -2,16 +2,10 @@
 linktitle: Building an SDM
 summary: "Learn how to build a species distribution model with FinBIF data"
 weight: 2
-
 title: Building an SDM
 toc: false
 draft: false
 type: book
-
-menu:
-  modelling:
-    name: Introduction
-    weight: 1
 ---
 
 The following tutorial is a quick demonstration of building a species

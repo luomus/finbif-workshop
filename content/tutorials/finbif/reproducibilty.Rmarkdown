@@ -1,13 +1,10 @@
 ---
+linktitle: 10. Reproducibility
 title: Reproducibility and Caching
 draft: no
 toc: yes
 type: book
 weight: 11
-menu:
-  finbif:
-    name: 10. Reproducibility
-    weight: 11
 ---
 
 ```{r setup, include = FALSE}

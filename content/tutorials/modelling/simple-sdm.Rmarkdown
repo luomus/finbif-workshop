@@ -1,4 +1,5 @@
 ---
+linktitle: 1. Build an SDM
 title: Building an SDM using MaxEnt
 draft: no
 toc: yes
@@ -6,7 +7,6 @@ type: book
 weight: 2
 menu:
   modelling:
-    name: 1. Build an SDM
     weight: 2
 ---
 

@@ -1,13 +1,10 @@
 ---
+linktitle: 8. Filtering
 title: Filtering Occurrence Data
 draft: no
 toc: yes
 type: book
 weight: 9
-menu:
-  finbif:
-    name: 8. Filtering
-    weight: 9
 ---
 
 ```{r setup, include = FALSE}

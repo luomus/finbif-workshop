@@ -1,13 +1,10 @@
 ---
+linktitle: 9. Plotting
 title: Plotting
 draft: no
 toc: yes
 type: book
 weight: 10
-menu:
-  finbif:
-    name: 9. Plotting
-    weight: 10
 ---
 
 

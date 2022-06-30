@@ -1,13 +1,10 @@
 ---
+linktitle: 7. Metadata
 title: Metadata
 draft: no
 toc: yes
 type: book
 weight: 8
-menu:
-  finbif:
-    name: 7. Metadata
-    weight: 8
 ---
 
 ```{r setup, include = FALSE}

@@ -1,13 +1,10 @@
 ---
+linktitle: 5. Occurrence Data
 title: Occurrence Data
 draft: no
 toc: yes
 type: book
 weight: 6
-menu:
-  finbif:
-    name: 5. Occurrence Data
-    weight: 6
 ---
 
 

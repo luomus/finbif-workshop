@@ -1,13 +1,10 @@
 ---
+linktitle:  2. Access Token
 title: Access Token
 draft: no
 toc: yes
 type: book
 weight: 3
-menu:
-  finbif:
-    name: 2. Access Token
-    weight: 3
 ---
 
 

@@ -1,13 +1,10 @@
 ---
+linktitle: 4. Taxa
 title: Working with taxa
 draft: no
 toc: yes
 type: book
 weight: 5
-menu:
-  finbif:
-    name: 4. Taxa
-    weight: 5
 ---
 
 ```{r setup, include = FALSE}

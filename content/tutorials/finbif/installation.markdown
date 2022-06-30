@@ -1,13 +1,10 @@
 ---
+linktitle: 1. Installation
 title: Installation
 draft: false
 toc: true
 type: book
 weight: 2
-menu:
-  finbif:
-    name: 1. Installation
-    weight: 2
 ---
 
 [CRAN]: https://cran.r-project.org

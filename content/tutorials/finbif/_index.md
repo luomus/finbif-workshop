@@ -1,17 +1,11 @@
 ---
-linktitle: Using the FinBIF R package
+linktitle: FinBIF R package
 summary: "Learn how to access and work with FinBIF data using R and the {finbif} package"
 weight: 1
-
 title: Using the FinBIF R package
 toc: false
 draft: false
 type: book
-
-menu:
-  finbif:
-    name: Introduction
-    weight: 1
 ---
 
 Welcome to the FinBIF R workshop. The Finnish Biodiversity Information Facility,
