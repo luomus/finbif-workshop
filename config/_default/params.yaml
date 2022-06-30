@@ -55,6 +55,7 @@ features:
     extra_languages:
       - r
       - latex
+    theme_dark: atom-one-dark-reasonable
   math:
     enable: false
   privacy_pack:
