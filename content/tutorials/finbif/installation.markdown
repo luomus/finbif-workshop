@@ -31,23 +31,22 @@ install.packages("finbif")
 ### Development
 If you want to try out the newest features, or if there is a bug discovered
 in the current stable version and it has yet to be updated, then you can also
-install the latest version of the package under development. The `{remotes}`
-package can be used to install packages directly from [GitHub].
+install the latest version of the package under development.
 
 ```r
-if (!require(remotes)) install.packages("remotes")
-remotes::install_github("luomus/finbif@dev")
+install.packages("finbif", repos = "https://luomus.r-universe.dev")
 ```
 
 ### Previous
 In some circumstances you may want to install a specific (potentially old)
 version of the package. It is often a good idea to install a specific version
 if you want to ensure your work is
-[reproducible](https://www.practicereproducibleresearch.org/). Again, the
+[reproducible](https://www.practicereproducibleresearch.org/). The
 `{remotes}` package can be used in this case.
 
 ```r
-remotes::install_version("finbif", "0.2.0")
+if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+remotes::install_version("finbif", "0.6.0")
 ```
 
 ## Loading
