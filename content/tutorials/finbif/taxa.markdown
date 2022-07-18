@@ -96,24 +96,34 @@ exact matching, only returning information on taxa that exactly match the query
 that was made.
 
 ```.language-r
-finbif_taxa("Capreolus capreolus")$content[[1]][1:5]
+finbif_taxa("Capreolus capreolus")
 ```
 
 ```{.language-r}
-#> $matchingName
-#> [1] "Capreolus capreolus"
-#> 
-#> $nameType
-#> [1] "MX.scientificName"
-#> 
-#> $id
-#> [1] "MX.47507"
-#> 
-#> $scientificName
-#> [1] "Capreolus capreolus"
-#> 
-#> $scientificNameAuthorship
-#> [1] "(Linnaeus, 1758)"
+#> <FinBIF taxa/search>
+#> List of 1
+#>  $ :List of 12
+#>   ..$ matchingName            : chr "Capreolus capreolus"
+#>   ..$ nameType                : chr "MX.scientificName"
+#>   ..$ id                      : chr "MX.47507"
+#>   ..$ scientificName          : chr "Capreolus capreolus"
+#>   ..$ scientificNameAuthorship: chr "(Linnaeus, 1758)"
+#>   ..$ taxonRank               : chr "MX.species"
+#>   ..$ cursiveName             : logi TRUE
+#>   ..$ finnish                 : logi TRUE
+#>   ..$ species                 : logi TRUE
+#>   ..$ vernacularName          :List of 3
+#>   .. ..$ fi: chr "metsäkauris"
+#>   .. ..$ en: chr "Roe Deer"
+#>   .. ..$ sv: chr "rådjur"
+#>   ..$ informalGroups          :List of 1
+#>   .. ..$ :List of 2
+#>   .. .. ..$ id  : chr "MVL.2"
+#>   .. .. ..$ name:List of 3
+#>   .. .. .. ..$ fi: chr "Nisäkkäät"
+#>   .. .. .. ..$ en: chr "Mammals"
+#>   .. .. .. ..$ sv: chr "Däggdjur"
+#>   ..$ type                    : chr "exactMatches"
 ```
 
 ### Partial matching

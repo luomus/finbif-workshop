@@ -58,7 +58,7 @@ be accessed with the `finbif_taxa` function. By default, `finbif_taxa` will use
 exact matching, only returning information on taxa that exactly match the query
 that was made.
 ```{r search-taxa}
-finbif_taxa("Capreolus capreolus")$content[[1]][1:5]
+finbif_taxa("Capreolus capreolus")
 ```
 
 ### Partial matching
