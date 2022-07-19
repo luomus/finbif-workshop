@@ -56,7 +56,7 @@ descending, then `load_date` descending, then `reported_name`.
 By default occurrence records are ordered by variables in ascending order.
 ```{r order-ascend}
 finbif_occurrence(
-  "Cygnus cygnus", order_by = "abundance_interpreted"
+  "Cygnus cygnus", order_by = "abundance"
 )
 ```
 
@@ -64,7 +64,7 @@ finbif_occurrence(
 You can switch to descending order by prefixing the variable with a dash.
 ```{r order-descend}
 finbif_occurrence(
-  "Cygnus cygnus", order_by = "-abundance_interpreted"
+  "Cygnus cygnus", order_by = "-abundance"
 )
 ```
 
@@ -73,7 +73,7 @@ You can specify multiple variables to order by. Sorting primacy is from left to
 right.
 ```{r order-multiple}
 finbif_occurrence(
-  "Cygnus cygnus", order_by = c("-abundance_interpreted", "lat_wgs84")
+  "Cygnus cygnus", order_by = c("-abundance", "lat_wgs84")
 )
 ```
 

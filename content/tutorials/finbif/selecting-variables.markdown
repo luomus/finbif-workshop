@@ -68,7 +68,7 @@ By default occurrence records are ordered by variables in ascending order.
 
 ```.language-r
 finbif_occurrence(
-  "Cygnus cygnus", order_by = "abundance_interpreted"
+  "Cygnus cygnus", order_by = "abundance"
 )
 ```
 
@@ -97,7 +97,7 @@ You can switch to descending order by prefixing the variable with a dash.
 
 ```.language-r
 finbif_occurrence(
-  "Cygnus cygnus", order_by = "-abundance_interpreted"
+  "Cygnus cygnus", order_by = "-abundance"
 )
 ```
 
@@ -127,7 +127,7 @@ right.
 
 ```.language-r
 finbif_occurrence(
-  "Cygnus cygnus", order_by = c("-abundance_interpreted", "lat_wgs84")
+  "Cygnus cygnus", order_by = c("-abundance", "lat_wgs84")
 )
 ```
 
