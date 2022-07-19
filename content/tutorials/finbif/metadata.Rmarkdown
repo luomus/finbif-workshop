@@ -70,7 +70,7 @@ View(collections)
 ```
 
 The `finbif_collections()` function returns a `data.frame` where the row names
-are the ID number of the collection.
+are the ID of the collection.
 ```{r luomus-collection}
 finbif_collections(supercollections = TRUE)["HR.128", "collection_name"]
 ```
@@ -78,5 +78,7 @@ finbif_collections(supercollections = TRUE)["HR.128", "collection_name"]
 You can see the child collections of a supercollection by specifying the ID as
 a filter. Note that the children of supercollections may also be supercollections
 ```{r collections-128}
-finbif_collections(is_part_of == "HR.128", supercollections = TRUE)
+finbif_collections(
+  is_part_of == "HR.128", "collection_name", supercollections = TRUE
+)
 ```

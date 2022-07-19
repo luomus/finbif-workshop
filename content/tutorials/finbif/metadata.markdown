@@ -131,7 +131,7 @@ View(collections)
 ```
 
 The `finbif_collections()` function returns a `data.frame` where the row names
-are the ID number of the collection.
+are the ID of the collection.
 
 ```.language-r
 finbif_collections(supercollections = TRUE)["HR.128", "collection_name"]
@@ -145,35 +145,19 @@ You can see the child collections of a supercollection by specifying the ID as
 a filter. Note that the children of supercollections may also be supercollections
 
 ```.language-r
-finbif_collections(is_part_of == "HR.128", supercollections = TRUE)
+finbif_collections(
+  is_part_of == "HR.128", "collection_name", supercollections = TRUE
+)
 ```
 
 ```{.language-r}
-#>         collection_name abbreviation description online_url has_children
-#> HR.129  Collections of… H            Herbarium … <NA>        TRUE       
-#> HR.160  Zoological col… MZH          The collec… http://ww…  TRUE       
-#> HR.173  Zoological mon… <NA>         Monitoring… <NA>        TRUE       
-#> HR.1849 Genomic resour… <NA>         Genomic re… <NA>        TRUE       
-#> HR.203  Löydös Open Fi… <NA>         A service … https://l… FALSE       
-#> HR.435  Löydös Open In… <NA>         A service … https://l… FALSE       
-#> HR.447  Hatikka.fi obs… <NA>         Hatikka.fi… http://ha… FALSE       
-#> HR.48   Ringing and re… TIPU         Database o… <NA>        TRUE       
-#>         is_part_of data_quality methods   collection_type taxonomic_coverage
-#> HR.129  HR.128     MY.dataQual… <NA>      MY.collectionT… <NA>              
-#> HR.160  HR.128     MY.dataQual… <NA>      MY.collectionT… Animalia          
-#> HR.173  HR.128     MY.dataQual… <NA>      MY.collectionT… <NA>              
-#> HR.1849 HR.128     MY.dataQual… Sampling… MY.collectionT… Biota             
-#> HR.203  HR.128     <NA>         <NA>      MY.collectionT… biota             
-#> HR.435  HR.128     MY.dataQual… <NA>      MY.collectionT… Biota             
-#> HR.447  HR.128     MY.dataQual… <NA>      MY.collectionT… Biota             
-#> HR.48   HR.128     MY.dataQual… <NA>      MY.collectionT… <NA>              
-#>         geographic_coverage temporal_coverage secure_level count   
-#> HR.129  <NA>                <NA>              <NA>                2
-#> HR.160  World               1700 to present   MX.secureLe…      743
-#> HR.173  Finland             1950-             <NA>          4882057
-#> HR.1849 World               2000-             <NA>                1
-#> HR.203  world               2013-             <NA>            30508
-#> HR.435  Finland             2015-             <NA>            17791
-#> HR.447  World               <NA>              <NA>          2010232
-#> HR.48   Ringing data: Finl… 1913-             <NA>         12642149
+#>         collection_name                          
+#> HR.129  Collections of the Botanical Museum      
+#> HR.160  Zoological collections                   
+#> HR.173  Zoological monitoring schemes            
+#> HR.1849 Genomic resources collection samples     
+#> HR.203  Löydös Open Finnish Observation Database 
+#> HR.435  Löydös Open Invasive Species Observations
+#> HR.447  Hatikka.fi observations                  
+#> HR.48   Ringing and recovery database of birds
 ```
