@@ -115,11 +115,6 @@ finbif_collections(
 )
 ```
 
-```
-#> Warning in is.na(cols) || is.null(cols): 'length(x) = 3 > 1' in coercion to
-#> 'logical(1)'
-```
-
 ```{.language-r}
 #>         collection_name geographic_coverage count 
 #> HR.2129 Fungal atlas    Finland             102238
