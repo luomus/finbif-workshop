@@ -28,7 +28,7 @@ Some things you might consider doing to ensure your research is reproducible
 is to install a specific version of `{finbif}` and set the timezone for
 computing event dates and times explicitly.
 ```{r install-version, eval = FALSE}
-remotes::install_version("finbif", "0.2.0")
+remotes::install_version("finbif", "0.6.5")
 options(finbif_tz = "Europe/Helsinki")
 ```
 

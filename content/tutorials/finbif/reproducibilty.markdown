@@ -21,7 +21,7 @@ is to install a specific version of `{finbif}` and set the timezone for
 computing event dates and times explicitly.
 
 ```.language-r
-remotes::install_version("finbif", "0.2.0")
+remotes::install_version("finbif", "0.6.5")
 options(finbif_tz = "Europe/Helsinki")
 ```
 
