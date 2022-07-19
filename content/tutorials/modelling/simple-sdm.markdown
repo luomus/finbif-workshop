@@ -30,6 +30,13 @@ if (!require("raster")) install.packages("raster")
 library(raster)
 ```
 
+The `{geodata}` package is needed for getting bioclimatic data from WordlClim.
+
+```.language-r
+if (!require("geodata")) install.packages("geodata")
+library(geodata)
+```
+
 The `{maxnet}` package is an implementation of the popular presence-only
 modelling software, MaxEnt, using the elastic-net regularised generalised linear
 models (glmnet).
@@ -146,32 +153,25 @@ polygon(finland_map$vertices, lwd = .2)
 
 ## Climate data 
 You can obtain climate layers directly from [WorldClim](http://worldclim.org)
-with the `{raster}` package function `getData()`. We use these data purely for
-convenience, and there is little guarantee that all, or any of them, is related
-to a given taxon's distribution. A more robust and rigorous model requires a
-deeper understanding of the underlying drivers of the taxon of interest's
-distribution to select appropriate response variables.
+with the `{geodata}` package function `worldclim_tile()`. We use these data
+purely for convenience, and there is little guarantee that all, or any of them,
+is related to a given taxon's distribution. A more robust and rigorous model 
+requires a deeper understanding of the underlying drivers of the taxon of 
+interest's distribution to select appropriate response variables.
 
 ### Getting climate data
-Specify the highest resolution (0.5 arc-minutes) available and the appropriate
-latitude and longitude to retrieve the tiles that cover the majority of Finland.
-There are 19 bioclimatic variables available, the following retrieves them all
-and stores them in the same cache directory as the FinBIF data.
+Specify the appropriate latitude and longitude to retrieve the tiles that cover
+the majority of Finland. There are 19 bioclimatic variables available, the
+following retrieves them all and stores them in the same cache directory as the
+FinBIF data.
 
 ```.language-r
-climate_high_res <- getData(
-  name = "worldclim",
+climate_high_res <- worldclim_tile(
   var  = "bio",
-  res  = .5,
   lat  = 65,
   lon  = 25,
   path = cache_path
 )
-```
-
-```
-#> Warning in getData(name = "worldclim", var = "bio", res = 0.5, lat = 65, : getData will be removed in a future version of raster
-#> . You can use access these data, and more, with functions from the geodata package instead
 ```
 
 ### Extracting climate data

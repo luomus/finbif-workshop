@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 )
 knitr::opts_knit$set(global.device = TRUE)
 library(raster)
+library(geodata)
 library(maxnet)
 library(finbif)
 options(finbif_tz = "Europe/Helsinki", finbif_cache_path = cache_path)
@@ -39,6 +40,12 @@ The `{raster}` package is needed for working with gridded data.
 ```{r install-raster, eval = FALSE}
 if (!require("raster")) install.packages("raster")
 library(raster)
+```
+
+The `{geodata}` package is needed for getting bioclimatic data from WordlClim.
+```{r install-geodata, eval = FALSE}
+if (!require("geodata")) install.packages("geodata")
+library(geodata)
 ```
 
 The `{maxnet}` package is an implementation of the popular presence-only
@@ -148,22 +155,20 @@ polygon(finland_map$vertices, lwd = .2)
 
 ## Climate data 
 You can obtain climate layers directly from [WorldClim](http://worldclim.org)
-with the `{raster}` package function `getData()`. We use these data purely for
-convenience, and there is little guarantee that all, or any of them, is related
-to a given taxon's distribution. A more robust and rigorous model requires a
-deeper understanding of the underlying drivers of the taxon of interest's
-distribution to select appropriate response variables.
+with the `{geodata}` package function `worldclim_tile()`. We use these data
+purely for convenience, and there is little guarantee that all, or any of them,
+is related to a given taxon's distribution. A more robust and rigorous model 
+requires a deeper understanding of the underlying drivers of the taxon of 
+interest's distribution to select appropriate response variables.
 
 ### Getting climate data
-Specify the highest resolution (0.5 arc-minutes) available and the appropriate
-latitude and longitude to retrieve the tiles that cover the majority of Finland.
-There are 19 bioclimatic variables available, the following retrieves them all
-and stores them in the same cache directory as the FinBIF data.
+Specify the appropriate latitude and longitude to retrieve the tiles that cover
+the majority of Finland. There are 19 bioclimatic variables available, the
+following retrieves them all and stores them in the same cache directory as the
+FinBIF data.
 ```{r climate-high-res, message = FALSE}
-climate_high_res <- getData(
-  name = "worldclim",
+climate_high_res <- worldclim_tile(
   var  = "bio",
-  res  = .5,
   lat  = 65,
   lon  = 25,
   path = cache_path
