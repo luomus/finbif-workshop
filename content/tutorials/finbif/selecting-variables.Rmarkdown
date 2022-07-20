@@ -36,7 +36,8 @@ variables in the `select` argument.
 ```{r limiting}
 finbif_occurrence(
   genus  = "Falco",
-  select = c("scientific_name", "life_stage", "sex")
+  select = c("scientific_name", "life_stage", "sex"),
+  exclude_na = TRUE
 )
 ```
 

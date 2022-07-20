@@ -29,25 +29,26 @@ variables in the `select` argument.
 ```.language-r
 finbif_occurrence(
   genus  = "Falco",
-  select = c("scientific_name", "life_stage", "sex")
+  select = c("scientific_name", "life_stage", "sex"),
+  exclude_na = TRUE
 )
 ```
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 324767
+#> Records available: 31954
 #> A data.frame [10 x 3]
-#>      scientific_name life_stage sex
-#> 1  Falco tinnunculus         NA  NA
-#> 2     Falco subbuteo         NA  NA
-#> 3  Falco tinnunculus         NA  NA
-#> 4  Falco tinnunculus         NA  NA
-#> 5     Falco subbuteo         NA  NA
-#> 6  Falco tinnunculus         NA  NA
-#> 7     Falco subbuteo         NA  NA
-#> 8  Falco tinnunculus         NA  NA
-#> 9  Falco tinnunculus         NA  NA
-#> 10 Falco tinnunculus         NA  NA
+#>      scientific_name life_stage    sex
+#> 1  Falco tinnunculus      ADULT   MALE
+#> 2  Falco tinnunculus      ADULT   MALE
+#> 3  Falco tinnunculus      ADULT   MALE
+#> 4  Falco tinnunculus      ADULT   MALE
+#> 5  Falco tinnunculus      ADULT   MALE
+#> 6  Falco tinnunculus   JUVENILE   MALE
+#> 7  Falco tinnunculus   JUVENILE   MALE
+#> 8  Falco tinnunculus   JUVENILE FEMALE
+#> 9  Falco tinnunculus   JUVENILE FEMALE
+#> 10 Falco tinnunculus   JUVENILE FEMALE
 ```
 
 ### Extra variables
