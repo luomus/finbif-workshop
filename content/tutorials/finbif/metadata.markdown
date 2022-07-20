@@ -134,7 +134,11 @@ The `finbif_collections()` function returns a `data.frame` where the row names
 are the ID of the collection.
 
 ```.language-r
-finbif_collections(supercollections = TRUE)["HR.128", "collection_name"]
+collections <- finbif_collections(
+  supercollections = TRUE
+)
+
+collections["HR.128", "collection_name"]
 ```
 
 ```{.language-r}

@@ -53,7 +53,7 @@ Another special case of metadata is `finbif_collections()`. Collections are the
 highest level of record aggregation in the FinBIF database.
 
 You can subset collection metadata by using the `filter` and `select` arguments.
-```{r collections-finland}
+```{r collections-fungi}
 finbif_collections(
   filter = taxonomic_coverage == "fungi",
   select = c("collection_name", "geographic_coverage", "count")
@@ -72,7 +72,11 @@ View(collections)
 The `finbif_collections()` function returns a `data.frame` where the row names
 are the ID of the collection.
 ```{r luomus-collection}
-finbif_collections(supercollections = TRUE)["HR.128", "collection_name"]
+collections <- finbif_collections(
+  supercollections = TRUE
+)
+
+collections["HR.128", "collection_name"]
 ```
 
 You can see the child collections of a supercollection by specifying the ID as
