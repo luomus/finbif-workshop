@@ -45,7 +45,7 @@ remotes::install_github("luomus/finbif@dev")
 <div class = 'fragment'>
 
 ```.language-r
-remotes::install_version("finbif", "0.2.0")
+remotes::install_version("finbif", "0.6.0")
 ```
 
 </div>
@@ -270,26 +270,30 @@ finbif_taxa("Capreolus capreolus")
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#> [content:                                                      ] ID: list(matchingName = "Capreolus capreolus", nameType = "MX.scientificName", id = "MX.47507", scientificName = "Capreolus capreolus", scientificNameAuthorship = "(Linnaeus, 1758)", taxonRank = "MX.species", cursiveName = TRUE, finnish = TRUE, species = TRUE, vernacularName = list(fi = "metsäkauris", en = "Roe Deer", sv = "rådjur"), informalGroups = list(list(id = "MVL.2", name = list(fi = "Nisäkkäät", en = "Mammals", sv = "Däggdjur"))), type = "exactMatches")
-#> [path:                                                         ] ID: taxa/search
-#> [response: url                                                 ] ID: https://api.laji.fi/v0/taxa/search?query=Capreolus%20capreolus&matchType=exact&limit=1
-#> [response: status_code                                         ] ID: 200
-#> [response: headers                                             ] ID: list(date = "Wed, 29 Jun 2022 06:48:42 GMT", `content-type` = "application/json; charset=utf-8", `content-length` = "433", `access-control-allow-origin` = "*", `access-control-allow-credentials` = "true", `x-frame-options` = "SAMEORIGIN", `x-download-options` = "noopen", etag = "W/\"1b1-Q/E3AqDTyjtsfdjfmS/H+yFWS54\"", vary = "Accept-Encoding", `cache-control` = "public", `x-xss-protection` = "1;mode=block", `x-content-type-options` = "nosniff", `strict-transport-security` = "max-age=31536000;includeSubDomains;preload", 
-#>     `referrer-policy` = "no-referrer-when-downgrade")
-#> [response: all_headers                                         ] ID: list(list(status = 200, version = "HTTP/1.1", headers = list(date = "Wed, 29 Jun 2022 06:48:42 GMT", `content-type` = "application/json; charset=utf-8", `content-length` = "433", `access-control-allow-origin` = "*", `access-control-allow-credentials` = "true", `x-frame-options` = "SAMEORIGIN", `x-download-options` = "noopen", etag = "W/\"1b1-Q/E3AqDTyjtsfdjfmS/H+yFWS54\"", vary = "Accept-Encoding", `cache-control` = "public", `x-xss-protection` = "1;mode=block", `x-content-type-options` = "nosniff", 
-#>     `strict-transport-security` = "max-age=31536000;includeSubDomains;preload", `referrer-policy` = "no-referrer-when-downgrade")))
-#> [response: cookies                                             ] ID: list(domain = logical(0), flag = logical(0), path = logical(0), secure = logical(0), expiration = numeric(0), name = logical(0), value = logical(0))
-#> [response: content                                             ] ID: as.raw(c(0x5b, 0x7b, 0x22, 0x6d, 0x61, 0x74, 0x63, 0x68, 0x69, 0x6e, 0x67, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3a, 0x22, 0x43, 0x61, 0x70, 0x72, 0x65, 0x6f, 0x6c, 0x75, 0x73, 0x20, 0x63, 0x61, 0x70, 0x72, 0x65, 0x6f, 0x6c, 0x75, 0x73, 0x22, 0x2c, 0x22, 0x6e, 0x61, 0x6d, 0x65, 0x54, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 0x4d, 0x58, 0x2e, 0x73, 0x63, 0x69, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x2c, 0x22, 0x69, 0x64, 0x22, 0x3a, 0x22, 0x4d, 0x58, 0x2e, 0x34, 0x37, 0x35, 
-#> 0x30, 0x37, 0x22, 0x2c, 0x22, 0x73, 0x63, 0x69, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3a, 0x22, 0x43, 0x61, 0x70, 0x72, 0x65, 0x6f, 0x6c, 0x75, 0x73, 0x20, 0x63, 0x61, 0x70, 0x72, 0x65, 0x6f, 0x6c, 0x75, 0x73, 0x22, 0x2c, 0x22, 0x73, 0x63, 0x69, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x41, 0x75, 0x74, 0x68, 0x6f, 0x72, 0x73, 0x68, 0x69, 0x70, 0x22, 0x3a, 0x22, 0x28, 0x4c, 0x69, 0x6e, 0x6e, 0x61, 0x65, 0x75, 0x73, 0x2c, 0x20, 0x31, 0x37, 
-#> 0x35, 0x38, 0x29, 0x22, 0x2c, 0x22, 0x74, 0x61, 0x78, 0x6f, 0x6e, 0x52, 0x61, 0x6e, 0x6b, 0x22, 0x3a, 0x22, 0x4d, 0x58, 0x2e, 0x73, 0x70, 0x65, 0x63, 0x69, 0x65, 0x73, 0x22, 0x2c, 0x22, 0x63, 0x75, 0x72, 0x73, 0x69, 0x76, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3a, 0x74, 0x72, 0x75, 0x65, 0x2c, 0x22, 0x66, 0x69, 0x6e, 0x6e, 0x69, 0x73, 0x68, 0x22, 0x3a, 0x74, 0x72, 0x75, 0x65, 0x2c, 0x22, 0x73, 0x70, 0x65, 0x63, 0x69, 0x65, 0x73, 0x22, 0x3a, 0x74, 0x72, 0x75, 0x65, 0x2c, 0x22, 0x76, 0x65, 0x72, 0x6e, 
-#> 0x61, 0x63, 0x75, 0x6c, 0x61, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x3a, 0x7b, 0x22, 0x66, 0x69, 0x22, 0x3a, 0x22, 0x6d, 0x65, 0x74, 0x73, 0xc3, 0xa4, 0x6b, 0x61, 0x75, 0x72, 0x69, 0x73, 0x22, 0x2c, 0x22, 0x65, 0x6e, 0x22, 0x3a, 0x22, 0x52, 0x6f, 0x65, 0x20, 0x44, 0x65, 0x65, 0x72, 0x22, 0x2c, 0x22, 0x73, 0x76, 0x22, 0x3a, 0x22, 0x72, 0xc3, 0xa5, 0x64, 0x6a, 0x75, 0x72, 0x22, 0x7d, 0x2c, 0x22, 0x69, 0x6e, 0x66, 0x6f, 0x72, 0x6d, 0x61, 0x6c, 0x47, 0x72, 0x6f, 0x75, 0x70, 0x73, 0x22, 0x3a, 0x5b, 0x7b, 
-#> 0x22, 0x69, 0x64, 0x22, 0x3a, 0x22, 0x4d, 0x56, 0x4c, 0x2e, 0x32, 0x22, 0x2c, 0x22, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x3a, 0x7b, 0x22, 0x66, 0x69, 0x22, 0x3a, 0x22, 0x4e, 0x69, 0x73, 0xc3, 0xa4, 0x6b, 0x6b, 0xc3, 0xa4, 0xc3, 0xa4, 0x74, 0x22, 0x2c, 0x22, 0x65, 0x6e, 0x22, 0x3a, 0x22, 0x4d, 0x61, 0x6d, 0x6d, 0x61, 0x6c, 0x73, 0x22, 0x2c, 0x22, 0x73, 0x76, 0x22, 0x3a, 0x22, 0x44, 0xc3, 0xa4, 0x67, 0x67, 0x64, 0x6a, 0x75, 0x72, 0x22, 0x7d, 0x7d, 0x5d, 0x2c, 0x22, 0x74, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 
-#> 0x65, 0x78, 0x61, 0x63, 0x74, 0x4d, 0x61, 0x74, 0x63, 0x68, 0x65, 0x73, 0x22, 0x7d, 0x5d))
-#> [response: date                                                ] ID: 1656485322
-#> [response: times                                               ] ID: c(redirect = 0, namelookup = 3.6e-05, connect = 3.6e-05, pretransfer = 0.00011, starttransfer = 0.217837, total = 0.217879)
-#> [response: request                                             ] ID: list(method = "GET", url = "https://api.laji.fi/v0/taxa/search?query=Capreolus%20capreolus&matchType=exact&limit=1", headers = c(`Content-Type` = "", Accept = "application/json"), fields = NULL, options = list(post = TRUE, postfieldsize = 0, useragent = "https://github.com/luomus/finbif#0.6.5.9000:finbif_taxa()", httpget = TRUE), auth_token = NULL, output = list())
-#> [response: handle                                              ] ID: <pointer: (nil)>
-#> [hash:                                                         ] ID: 21cd8ef127e966d2e7c42a9e2a0d4d7d
+#> <FinBIF taxa/search>
+#> List of 1
+#>  $ :List of 12
+#>   ..$ matchingName            : chr "Capreolus capreolus"
+#>   ..$ nameType                : chr "MX.scientificName"
+#>   ..$ id                      : chr "MX.47507"
+#>   ..$ scientificName          : chr "Capreolus capreolus"
+#>   ..$ scientificNameAuthorship: chr "(Linnaeus, 1758)"
+#>   ..$ taxonRank               : chr "MX.species"
+#>   ..$ cursiveName             : logi TRUE
+#>   ..$ finnish                 : logi TRUE
+#>   ..$ species                 : logi TRUE
+#>   ..$ vernacularName          :List of 3
+#>   .. ..$ fi: chr "metsäkauris"
+#>   .. ..$ en: chr "Roe Deer"
+#>   .. ..$ sv: chr "rådjur"
+#>   ..$ informalGroups          :List of 1
+#>   .. ..$ :List of 2
+#>   .. .. ..$ id  : chr "MVL.2"
+#>   .. .. ..$ name:List of 3
+#>   .. .. .. ..$ fi: chr "Nisäkkäät"
+#>   .. .. .. ..$ en: chr "Mammals"
+#>   .. .. .. ..$ sv: chr "Däggdjur"
+#>   ..$ type                    : chr "exactMatches"
 ```
 
 </div>
@@ -631,7 +635,7 @@ finbif_occurrence(
 <div class = 'fragment'>
 
 ```.language-r
-finbif_occurrence(select = c("default_vars", "-date_time"))
+finbif_occurrence(select = "-date_time")
 ```
 
 </div>
@@ -763,8 +767,20 @@ options(finbif_tz = "Etc/UTC")
 ```.language-r
 finbif_occurrence(
   genus  = "Falco",
-  select = c("scientific_name", "life_stage", "sex")
+  select = c("scientific_name", "life_stage", "sex"),
+  na_exclude = TRUE
 )
+```
+
+</div>
+<div class = 'fragment output'> 
+
+```{.language-r}
+#> Warning: Cannot find the following taxa in the FinBIF taxonomy.
+#> Please check you are using accepted names and not synonyms or
+#> other names for the taxa you are selecting:
+#> 
+#> na_exclude - TRUE
 ```
 
 </div>
@@ -812,7 +828,7 @@ finbif_occurrence(select = c("default_vars", "life_stage"))
 <div class = 'fragment'>
 
 ```.language-r
-finbif_occurrence("Cygnus cygnus", order_by = "abundance_interpreted")
+finbif_occurrence("Cygnus cygnus", order_by = "abundance")
 ```
 
 </div>
@@ -847,7 +863,7 @@ finbif_occurrence("Cygnus cygnus", order_by = "abundance_interpreted")
 <div class = 'fragment'>
 
 ```.language-r
-finbif_occurrence("Cygnus cygnus", order_by = "-abundance_interpreted")
+finbif_occurrence("Cygnus cygnus", order_by = "-abundance")
 ```
 
 </div>
@@ -883,7 +899,7 @@ finbif_occurrence("Cygnus cygnus", order_by = "-abundance_interpreted")
 
 ```.language-r
 finbif_occurrence(
-  "Cygnus olor", order_by = c("municipality_id", "-abundance_interpreted")
+  "Cygnus cygnus", order_by = c("-abundance", "lat_wgs84")
 )
 ```
 
@@ -892,21 +908,21 @@ finbif_occurrence(
 
 ```{.language-r}
 #> Records downloaded: 10
-#> Records available: 37120
+#> Records available: 80319
 #> A data.frame [10 x 12]
-#>    record_id scientific_name abundance lat_wgs84 lon_wgs84           date_time
-#> 1  …12015253     Cygnus olor  2500            NA        NA 2008-08-17 12:00:00
-#> 2  …13633876     Cygnus olor  1500            NA        NA 2008-10-03 12:00:00
-#> 3    …780984     Cygnus olor  1300            NA        NA 2006-02-14 12:00:00
-#> 4    …781416     Cygnus olor  1300            NA        NA 2006-02-14 12:00:00
-#> 5   …2062563     Cygnus olor  1200            NA        NA 2006-12-19 12:00:00
-#> 6  …10352894     Cygnus olor  1100            NA        NA 2008-06-28 12:00:00
-#> 7    …927797     Cygnus olor  1050            NA        NA 2006-04-05 12:00:00
-#> 8   …3110953     Cygnus olor  960             NA        NA 2007-10-06 12:00:00
-#> 9  …26309317     Cygnus olor  900             NA        NA 2009-07-08 12:00:00
-#> 10  …1260385     Cygnus olor  800       58.66     23.57    2006-04-26 18:00:00
-#> ...with 0 more records and 6 more variables:
-#> coordinates_uncertainty, any_issues, requires_verification,
+#>               record_id scientific_name abundance lat_wgs84 lon_wgs84
+#> 1          …MHU.2981587   Cygnus cygnus  6000      64.4     -14.54   
+#> 2         …MHU.29480894   Cygnus cygnus  2010      64.54597  27.88859
+#> 3  …HR.3691/OBS6046423…   Cygnus cygnus  1753      64.50736  24.27894
+#> 4  …HR.3691/OBS6635688…   Cygnus cygnus  1600      65.98787  24.06341
+#> 5         …MHU.28815250   Cygnus cygnus  1500            NA        NA
+#> 6  …HR.3691/OBS6713538…   Cygnus cygnus  1361      64.71656  24.53188
+#> 7         …JX.1357345#5   Cygnus cygnus  1300      64.8465   25.2883 
+#> 8         …JX.1398409#3   Cygnus cygnus  1280      64.8448   25.2816 
+#> 9         …MHU.28815110   Cygnus cygnus  1200            NA        NA
+#> 10        …JX.1402662#3   Cygnus cygnus  1160      64.872    24.8788 
+#> ...with 0 more records and 7 more variables:
+#> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
 
@@ -1081,9 +1097,8 @@ finbif_informal_groups("Crustaceans")
 
 ```.language-r
 finbif_collections(
-  filter = geographic_coverage == "Finland",
-  select = 
-    c("collection_name", "taxonomic_coverage", "count")
+  filter = taxonomic_coverage == "fungi",
+  select = c("collection_name", "geographic_coverage", "count")
 )
 ```
 
@@ -1091,70 +1106,8 @@ finbif_collections(
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#> Warning in is.na(cols) || is.null(cols): 'length(x) = 3 > 1' in coercion to
-#> 'logical(1)'
-```
-
-</div>
-<div class = 'fragment output'> 
-
-```{.language-r}
-#>         collection_name            taxonomic_coverage         count  
-#> HR.1227 Coll Mikko Heikkinen       Biota                           67
-#> HR.1349 JYV - Fungal collections   <NA>                         13443
-#> HR.1350 JYV - Lichen collections   <NA>                           541
-#> HR.1351 JYV - Bryophyte collectio… <NA>                          5760
-#> HR.1467 Per-Eric Grankvist´s butt… Lepidoptera                      5
-#> HR.1487 JYV - Fish collections     <NA>                          1371
-#> HR.1507 Lingonblad Birger och Hjö… Lepidoptera                   2796
-#> HR.157  Point counts of breeding … Birds, landbirds            384824
-#> HR.1592 Herbarium of The Ark Natu… <NA>                          7864
-#> HR.1687 Papilionoidea of Coll. La… Papilionoidea                  550
-#> HR.1688 Noctuidae I of Coll. Lauro Noctuidae                      614
-#> HR.1689 Noctuidae II of Coll. Lau… Noctuidae                      839
-#> HR.1690 Noctuidae III, Bombycoide… Noctuidae, Bombycoidea, G…     521
-#> HR.1691 Drepanidae & Geometridae … Drepanidae, Geometridae       1408
-#> HR.175  National Finnish butterfl… Lepidoptera                 423571
-#> HR.1916 Wildlife triangle          Siberian flying squirrel …   18560
-#> HR.200  Finnish Insect Database    Insecta                    3725794
-#> HR.2009 Fish observation data fro… invasive alien fish speci…   34396
-#> HR.2049 Invasive alien species co… Invasive species              1040
-#> HR.206  The Finnish Nature League… biota                       115286
-#> HR.2089 Håkan Lindberg collection  Hymenoptera                   2435
-#> HR.209  Atlas of Finnish Macrolep… Macrolepidoptera           1218552
-#> HR.2129 Fungal atlas               fungi                       102238
-#> HR.2209 KUO Arachnida collection   Arachnida                        3
-#> HR.2289 Specimens that lack colle… <NA>                           109
-#> HR.2691 Line transect censuses of… Aves                        608520
-#> HR.2692 Censuses of breeding bird… Aves                         14963
-#> HR.3051 VieKas LIFE project invas… <NA>                          1399
-#> HR.3071 Observing species on milk… <NA>                           529
-#> HR.3211 iNaturalist Suomi Finland  biota                       504372
-#> HR.3491 LajiGIS: Aquatic species … Biota                       592897
-#> HR.3553 LajiGIS: Species monitori… Biota                       696609
-#> HR.3671 Bird of prey nests for pr… Aves                         10246
-#> HR.3691 eBird                      Aves                        806562
-#> HR.3791 Invasive species observat… Biota                         1993
-#> HR.39   Winter Bird Census         Aves, Mammalia             1447328
-#> HR.3911 Bumblebee census           Bumblebees                    7394
-#> HR.3991 Waterbird counts, Luomus … Aves                          3068
-#> HR.3992 Waterbird counts, Luke da… Aves                          2429
-#> HR.4011 Salmonidae in streams      Salmonidae                   12630
-#> HR.4051 LajiGIS: Species monitori… Aquila chrysaetos; Haliae…    8083
-#> HR.4091 Retkikasvio                <NA>                            66
-#> HR.4131 Butterflies in Finnish ag… Papilionoidea, Others       356987
-#> HR.4191 Butterfly Collection by C… Lepidoptera                  10415
-#> HR.4251 LajiGIS: Species surveys   Biota                       238301
-#> HR.435  Löydös Open Invasive Spec… Biota                        17791
-#> HR.4352 NFI rare tree species      <NA>                           997
-#> HR.4412 Tiira.fi: The Fourth Bree… Aves                        140113
-#> HR.4471 4th Finnish Bird Atlas, o… Aves                         74481
-#> HR.4511 Finnish National Moth Mon… Bombycoidea, Noctuoidea, … 1156357
-#> HR.4612 Pölyttäjäseuranta          Insecta                       1142
-#> HR.60   Monitoring scheme of bird… Aves, Mammalia              851835
-#> HR.627  Invasive mammal species o… Mammalia                       228
-#> HR.808  E. Sjöholm´s butterfly co… Lepidoptera                   4951
-#> HR.847  Atlas of amphibians and r… Amphibia, Reptilia            6415
+#>         collection_name geographic_coverage count 
+#> HR.2129 Fungal atlas    Finland             102238
 ```
 
 </div>
@@ -1166,8 +1119,10 @@ finbif_collections(
 <div class = 'fragment'>
 
 ```.language-r
-collections <- 
-  finbif_collections(supercollections = TRUE, nmin = 10000)
+collections <- finbif_collections(
+  supercollections = TRUE, nmin = 10000
+)
+
 View(collections)
 ```
 
@@ -1176,9 +1131,11 @@ View(collections)
 <div class = 'fragment'>
 
 ```.language-r
-finbif_collections(
+collections <- finbif_collections(
   supercollections = TRUE
-)["HR.128", "collection_name"]
+)
+
+collections["HR.128", "collection_name"]
 ```
 
 </div>
@@ -1198,7 +1155,8 @@ finbif_collections(
 
 ```.language-r
 finbif_collections(
-  is_part_of == "HR.128", supercollections = TRUE
+  is_part_of == "HR.128", "collection_name",
+  supercollections = TRUE
 )
 ```
 
@@ -1206,33 +1164,15 @@ finbif_collections(
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#>         collection_name abbreviation description online_url has_children
-#> HR.129  Collections of… H            Herbarium … <NA>        TRUE       
-#> HR.160  Zoological col… MZH          The collec… http://ww…  TRUE       
-#> HR.173  Zoological mon… <NA>         Monitoring… <NA>        TRUE       
-#> HR.1849 Genomic resour… <NA>         Genomic re… <NA>        TRUE       
-#> HR.203  Löydös Open Fi… <NA>         A service … https://l… FALSE       
-#> HR.435  Löydös Open In… <NA>         A service … https://l… FALSE       
-#> HR.447  Hatikka.fi obs… <NA>         Hatikka.fi… http://ha… FALSE       
-#> HR.48   Ringing and re… TIPU         Database o… <NA>        TRUE       
-#>         is_part_of data_quality methods   collection_type taxonomic_coverage
-#> HR.129  HR.128     MY.dataQual… <NA>      MY.collectionT… <NA>              
-#> HR.160  HR.128     MY.dataQual… <NA>      MY.collectionT… Animalia          
-#> HR.173  HR.128     MY.dataQual… <NA>      MY.collectionT… <NA>              
-#> HR.1849 HR.128     MY.dataQual… Sampling… MY.collectionT… Biota             
-#> HR.203  HR.128     <NA>         <NA>      MY.collectionT… biota             
-#> HR.435  HR.128     MY.dataQual… <NA>      MY.collectionT… Biota             
-#> HR.447  HR.128     MY.dataQual… <NA>      MY.collectionT… Biota             
-#> HR.48   HR.128     MY.dataQual… <NA>      MY.collectionT… <NA>              
-#>         geographic_coverage temporal_coverage secure_level count   
-#> HR.129  <NA>                <NA>              <NA>                2
-#> HR.160  World               1700 to present   MX.secureLe…      743
-#> HR.173  Finland             1950-             <NA>          4882057
-#> HR.1849 World               2000-             <NA>                1
-#> HR.203  world               2013-             <NA>            30508
-#> HR.435  Finland             2015-             <NA>            17791
-#> HR.447  World               <NA>              <NA>          2010232
-#> HR.48   Ringing data: Finl… 1913-             <NA>         12642149
+#>         collection_name                          
+#> HR.129  Collections of the Botanical Museum      
+#> HR.160  Zoological collections                   
+#> HR.173  Zoological monitoring schemes            
+#> HR.1849 Genomic resources collection samples     
+#> HR.203  Löydös Open Finnish Observation Database 
+#> HR.435  Löydös Open Invasive Species Observations
+#> HR.447  Hatikka.fi observations                  
+#> HR.48   Ringing and recovery database of birds
 ```
 
 </div>
@@ -1413,11 +1353,9 @@ finbif_occurrence(
 
 ```.language-r
 strict <- c(
-  collection_quality          = "professional",
-  requires_verification       = FALSE,
+  collection_quality = "professional",
   coordinates_uncertainty_max = 1,
-  record_reliability          = "reliable",
-  record_quality              = "expert_verified"
+  record_quality = "expert_verified"
 )
 ```
 
@@ -1426,7 +1364,16 @@ strict <- c(
 <div class = 'fragment'>
 
 ```.language-r
-permissive <- c(quality_issues = "both")
+permissive <- list(
+  quality_issues = "both",
+  record_reliability = c(
+    "reliable", "unassessed", "unreliable"
+  ),
+  record_quality = c(
+    "expert_verified", "community_verified",
+    "unassessed", "uncertain", "erroneous"
+  )
+)
 ```
 
 </div>
@@ -1846,7 +1793,7 @@ polygon(finland_map$vertices, lwd = .2)
 <div class = 'fragment'>
 
 ```.language-r
-remotes::install_version("finbif", "0.2.0")
+remotes::install_version("finbif", "0.6.5")
 options(finbif_tz = "Europe/Helsinki")
 ```
 

@@ -88,7 +88,7 @@ remotes::install_github("luomus/finbif@dev")
 ### Previous versions
 
 ```{r install-version, eval = FALSE}
-remotes::install_version("finbif", "0.2.0")
+remotes::install_version("finbif", "0.6.0")
 ```
 
 ---
@@ -356,7 +356,7 @@ finbif_occurrence(
 ### Compute date & time
 
 ```{r date-time-false}
-finbif_occurrence(select = c("default_vars", "-date_time"))
+finbif_occurrence(select = "-date_time")
 ```
 
 ---
@@ -418,7 +418,8 @@ options(finbif_tz = "Etc/UTC")
 ```{r limiting}
 finbif_occurrence(
   genus  = "Falco",
-  select = c("scientific_name", "life_stage", "sex")
+  select = c("scientific_name", "life_stage", "sex"),
+  na_exclude = TRUE
 )
 ```
 
@@ -439,7 +440,7 @@ finbif_occurrence(select = c("default_vars", "life_stage"))
 ### Ascending order
 
 ```{r order-ascend}
-finbif_occurrence("Cygnus cygnus", order_by = "abundance_interpreted")
+finbif_occurrence("Cygnus cygnus", order_by = "abundance")
 ```
 
 ---
@@ -447,7 +448,7 @@ finbif_occurrence("Cygnus cygnus", order_by = "abundance_interpreted")
 ### Descending order
 
 ```{r order-descend}
-finbif_occurrence("Cygnus cygnus", order_by = "-abundance_interpreted")
+finbif_occurrence("Cygnus cygnus", order_by = "-abundance")
 ```
 
 ---
@@ -456,7 +457,7 @@ finbif_occurrence("Cygnus cygnus", order_by = "-abundance_interpreted")
 
 ```{r order-multiple}
 finbif_occurrence(
-  "Cygnus olor", order_by = c("municipality_id", "-abundance_interpreted")
+  "Cygnus cygnus", order_by = c("-abundance", "lat_wgs84")
 )
 ```
 
@@ -512,12 +513,12 @@ finbif_informal_groups("Crustaceans")
 
 ### Collections
 
-```{r collections-finland}
+```{r collections-fungi}
 finbif_collections(
-  filter = geographic_coverage == "Finland",
-  select = 
-    c("collection_name", "taxonomic_coverage", "count")
+  filter = taxonomic_coverage == "fungi",
+  select = c("collection_name", "geographic_coverage", "count")
 )
+
 ```
 
 ---
@@ -525,15 +526,19 @@ finbif_collections(
 ### Collections
 
 ```{r collections-large, eval = FALSE}
-collections <- 
-  finbif_collections(supercollections = TRUE, nmin = 10000)
+collections <- finbif_collections(
+  supercollections = TRUE, nmin = 10000
+)
+
 View(collections)
 ```
 
 ```{r luomus-collection}
-finbif_collections(
+collections <- finbif_collections(
   supercollections = TRUE
-)["HR.128", "collection_name"]
+)
+
+collections["HR.128", "collection_name"]
 ```
 
 ---
@@ -542,7 +547,8 @@ finbif_collections(
 
 ```{r collections-128}
 finbif_collections(
-  is_part_of == "HR.128", supercollections = TRUE
+  is_part_of == "HR.128", "collection_name",
+  supercollections = TRUE
 )
 ```
 
@@ -627,16 +633,23 @@ finbif_occurrence(
 
 ```{r quality-strict}
 strict <- c(
-  collection_quality          = "professional",
-  requires_verification       = FALSE,
+  collection_quality = "professional",
   coordinates_uncertainty_max = 1,
-  record_reliability          = "reliable",
-  record_quality              = "expert_verified"
+  record_quality = "expert_verified"
 )
 ```
 
 ```{r quality-permissive}
-permissive <- c(quality_issues = "both")
+permissive <- list(
+  quality_issues = "both",
+  record_reliability = c(
+    "reliable", "unassessed", "unreliable"
+  ),
+  record_quality = c(
+    "expert_verified", "community_verified",
+    "unassessed", "uncertain", "erroneous"
+  )
+)
 ```
 
 ```{r show-quality}
@@ -844,7 +857,7 @@ polygon(finland_map$vertices, lwd = .2)
 ### Reproducibility
 
 ```{r reproducibility, eval = FALSE}
-remotes::install_version("finbif", "0.2.0")
+remotes::install_version("finbif", "0.6.5")
 options(finbif_tz = "Europe/Helsinki")
 ```
 
