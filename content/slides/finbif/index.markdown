@@ -768,7 +768,7 @@ options(finbif_tz = "Etc/UTC")
 finbif_occurrence(
   genus  = "Falco",
   select = c("scientific_name", "life_stage", "sex"),
-  na_exclude = TRUE
+  exclude_na = TRUE
 )
 ```
 
@@ -776,31 +776,20 @@ finbif_occurrence(
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#> Warning: Cannot find the following taxa in the FinBIF taxonomy.
-#> Please check you are using accepted names and not synonyms or
-#> other names for the taxa you are selecting:
-#> 
-#> na_exclude - TRUE
-```
-
-</div>
-<div class = 'fragment output'> 
-
-```{.language-r}
 #> Records downloaded: 10
-#> Records available: 324767
+#> Records available: 31954
 #> A data.frame [10 x 3]
-#>      scientific_name life_stage sex
-#> 1  Falco tinnunculus         NA  NA
-#> 2     Falco subbuteo         NA  NA
-#> 3  Falco tinnunculus         NA  NA
-#> 4  Falco tinnunculus         NA  NA
-#> 5     Falco subbuteo         NA  NA
-#> 6  Falco tinnunculus         NA  NA
-#> 7     Falco subbuteo         NA  NA
-#> 8  Falco tinnunculus         NA  NA
-#> 9  Falco tinnunculus         NA  NA
-#> 10 Falco tinnunculus         NA  NA
+#>      scientific_name life_stage    sex
+#> 1  Falco tinnunculus      ADULT   MALE
+#> 2  Falco tinnunculus      ADULT   MALE
+#> 3  Falco tinnunculus      ADULT   MALE
+#> 4  Falco tinnunculus      ADULT   MALE
+#> 5  Falco tinnunculus      ADULT   MALE
+#> 6  Falco tinnunculus   JUVENILE   MALE
+#> 7  Falco tinnunculus   JUVENILE   MALE
+#> 8  Falco tinnunculus   JUVENILE FEMALE
+#> 9  Falco tinnunculus   JUVENILE FEMALE
+#> 10 Falco tinnunculus   JUVENILE FEMALE
 ```
 
 </div>
@@ -1098,7 +1087,9 @@ finbif_informal_groups("Crustaceans")
 ```.language-r
 finbif_collections(
   filter = taxonomic_coverage == "fungi",
-  select = c("collection_name", "geographic_coverage", "count")
+  select = c(
+    "collection_name", "geographic_coverage", "count"
+  )
 )
 ```
 
@@ -1352,7 +1343,7 @@ finbif_occurrence(
 <div class = 'fragment'>
 
 ```.language-r
-strict <- c(
+strict <- list(
   collection_quality = "professional",
   coordinates_uncertainty_max = 1,
   record_quality = "expert_verified"
@@ -1378,16 +1369,15 @@ permissive <- list(
 
 </div>
 
+---
+
+### Data quality
+
 <div class = 'fragment'>
 
 ```.language-r
-c(
-  strict = finbif_occurrence(
-    filter = strict, count_only = TRUE
-  ),
-  permissive = finbif_occurrence(
-    filter = permissive, count_only = TRUE
-  )
+finbif_occurrence(
+  filter = list(strict, permissive), count_only = TRUE
 )
 ```
 
@@ -1395,8 +1385,11 @@ c(
 <div class = 'fragment output'> 
 
 ```{.language-r}
-#>     strict permissive 
-#>         50   44002046
+#> [[1]]
+#> [1] 51
+#> 
+#> [[2]]
+#> [1] 44002863
 ```
 
 </div>

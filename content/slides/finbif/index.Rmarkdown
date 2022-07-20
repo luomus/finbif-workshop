@@ -419,7 +419,7 @@ options(finbif_tz = "Etc/UTC")
 finbif_occurrence(
   genus  = "Falco",
   select = c("scientific_name", "life_stage", "sex"),
-  na_exclude = TRUE
+  exclude_na = TRUE
 )
 ```
 
@@ -516,7 +516,9 @@ finbif_informal_groups("Crustaceans")
 ```{r collections-fungi}
 finbif_collections(
   filter = taxonomic_coverage == "fungi",
-  select = c("collection_name", "geographic_coverage", "count")
+  select = c(
+    "collection_name", "geographic_coverage", "count"
+  )
 )
 
 ```
@@ -632,7 +634,7 @@ finbif_occurrence(
 ### Data quality
 
 ```{r quality-strict}
-strict <- c(
+strict <- list(
   collection_quality = "professional",
   coordinates_uncertainty_max = 1,
   record_quality = "expert_verified"
@@ -652,14 +654,13 @@ permissive <- list(
 )
 ```
 
+---
+
+### Data quality
+
 ```{r show-quality}
-c(
-  strict = finbif_occurrence(
-    filter = strict, count_only = TRUE
-  ),
-  permissive = finbif_occurrence(
-    filter = permissive, count_only = TRUE
-  )
+finbif_occurrence(
+  filter = list(strict, permissive), count_only = TRUE
 )
 ```
 

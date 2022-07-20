@@ -192,8 +192,9 @@ To restrict occurrence records to the highest quality level you can use the
 following set of filters.
 
 ```.language-r
-strict <- c(
-  collection_quality = "professional", coordinates_uncertainty_max = 1,
+strict <- list(
+  collection_quality = "professional",
+  coordinates_uncertainty_max = 1,
   record_quality = "expert_verified"
 )
 ```
@@ -207,10 +208,11 @@ quality with the following filter.
 ```.language-r
 permissive <- list(
   quality_issues = "both",
-  record_reliability = c("reliable", "unassessed", "unreliable"),
+  record_reliability = c(
+    "reliable", "unassessed", "unreliable"),
   record_quality = c(
-    "expert_verified", "community_verified", "unassessed", "uncertain",
-    "erroneous"
+    "expert_verified", "community_verified", 
+    "unassessed", "uncertain", "erroneous"
   )
 )
 ```
@@ -220,15 +222,15 @@ The highest quality records are only a small fraction of all the records that
 are available.
 
 ```.language-r
-c(
-  strict     = finbif_occurrence(filter = strict,     count_only = TRUE),
-  permissive = finbif_occurrence(filter = permissive, count_only = TRUE)
-)
+finbif_occurrence(filter = list(strict, permissive), count_only = TRUE)
 ```
 
 ```{.language-r}
-#>     strict permissive 
-#>         51   44002863
+#> [[1]]
+#> [1] 51
+#> 
+#> [[2]]
+#> [1] 44002863
 ```
 
 ## Collections
