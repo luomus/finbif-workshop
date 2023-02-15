@@ -10,8 +10,7 @@ weight: 9
 ```{r setup, include = FALSE}
 cache_path <- "../../../cache/"
 knitr::opts_chunk$set(
-  echo = TRUE, comment = "#>", lang = ".language-r",
-  class.output = "language-r", cache = TRUE, cache.path = cache_path
+  echo = TRUE, comment = "#>", cache = TRUE, cache.path = cache_path
 )
 library(finbif)
 options(finbif_tz = "Europe/Helsinki", finbif_cache_path = cache_path)
@@ -149,7 +148,7 @@ Many informal taxonomic groups align with formal taxonomic groups (e.g., birds)
 but some, such as "Reptiles & amphibians" do not, making the `informal_group`
 potential useful in some circumstances.
 ```{r filter-informal-group}
-finbif_occurrence(filter = list(informal_group = "Reptiles and amphibians"))
+finbif_occurrence(filter = list(informal_groups = "Reptiles and amphibians"))
 ```
 
 ## Taxon status
@@ -162,7 +161,7 @@ Many taxa appear on various lists such as the EU's invasive species list. The
 `adminstrative_status` filter makes it easy to search for records of birds
 considered invasive in the EU.
 ```{r filter-admin-status}
-finbif_occurrence("birds", filter = list(administrative_status = "EU_INVSV"))
+finbif_occurrence("birds", filter = list(regulatory_status = "EU_INVSV"))
 ```
 
 ### Red list

@@ -18,12 +18,12 @@ within R and online. There are also articles on particular topics such as
 To see the documentation for a particular function use a `?` in front of the
 function name.
 
-```.language-r
+```r
 ?finbif_request_token
 ```
 Or, use the help function.
 
-```.language-r
+```r
 help("finbif_request_token")
 ```
 

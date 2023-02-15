@@ -9,7 +9,7 @@ weight: 4
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
-  echo = TRUE, comment = "#>", lang = ".language-r", class.output = "language-r"
+  echo = TRUE, comment = "#>"
 )
 ```
 

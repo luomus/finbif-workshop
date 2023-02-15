@@ -16,7 +16,7 @@ starts up.
 
 If you have not already done so, load `{finbif}` into your R session.
 
-```.language-r
+```r
 library(finbif)
 ```
 
@@ -25,7 +25,7 @@ First you need to request a token from FinBIF. This can be done using the
 `{finbif}` function `finbif_request_token`. Simply specify your own email in
 place of the address shown below.
 
-```.language-r
+```r
 finbif_request_token("your@email.com")
 ```
 You should soon receive an email from __laji.fi__ which contains your access
@@ -37,7 +37,7 @@ To access data from FinBIF using the R package you need to set your access token
 for the current R session. You can either do this each time you start a new
 session,
 
-```.language-r
+```r
 Sys.setenv(
   FINBIF_ACCESS_TOKEN = "xtmSOIxjPwq0pOMB1WvcZgFLU9QBklauOlonWl8K5oaLIx8RniJ"
 )
@@ -48,7 +48,7 @@ save it in an [`Renviron`](https://rviews.rstudio.com/2017/04/19/r-for-enterpris
 file. To add the key you to your user `Renviron` file run the following:
 
 
-```.language-r
+```r
 cat(
   'FINBIF_ACCESS_TOKEN = "xtmSOIxjPwq0pOMB1WvcZgFLU9QBklauOlonWl8K5oaLIx8RniJ"',
   file = "~/.Renviron",

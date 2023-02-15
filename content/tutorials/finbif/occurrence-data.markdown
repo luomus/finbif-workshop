@@ -13,26 +13,26 @@ FinBIF database. Occurrence data can be retrieved from FinBIF with the function
 `finbif_occurrence`. Without any arguments specified `finbif_occurrence` will
 retrieve the latest 10 occurrence records from FinBIF.
 
-```.language-r
+```r
 finbif_occurrence()
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 43808551
+#> Records available: 45893791
 #> A data.frame [10 x 12]
-#>    record_id      scientific_name abundance lat_wgs84 lon_wgs84
-#> 1      …42#3            Apus apus        NA  60.4911   22.1561 
-#> 2      …41#3 Phylloscopus trochi…        NA  60.4911   22.1561 
-#> 3      …39#6       Sylvia curruca  1         59.83882  19.92228
-#> 4      …39#3      Sylvia communis  1         59.84056  19.91378
-#> 5      …35#5      Sylvia communis  1         61.0872   23.65435
-#> 6      …35#3     Saxicola rubetra  2         61.0872   23.65435
-#> 7     …31#15    Charadrius dubius  4         64.83067  26.10181
-#> 8     …31#11       Turdus pilaris  1         64.82108  26.01163
-#> 9      …31#3   Anas platyrhynchos  14        64.82164  25.96167
-#> 10     …31#7            Apus apus  30        64.80656  25.99359
-#> ...with 0 more records and 7 more variables:
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …KE.176/63ec916fd5d… Carduelis spinus (L…  10        62.31748  21.73122
+#> 2  …KE.176/63ec90e7d5d… Carduelis chloris (…  10        62.31748  21.73122
+#> 3         …JX.1529821#3 Larus marinus Linna…  4         60.18657  24.98811
+#> 4  …HR.3211/148812589-U Fomitopsis pinicola…        NA  60.43726  22.37422
+#> 5  …HR.3211/148812535-U                 <NA>        NA  60.17128  24.9309 
+#> 6         …JX.1529815#3 Pteromys volans (Li…        NA  62.46923  25.94574
+#> 7         …JX.1529813#6 Carduelis chloris (…  1         60.17831  24.65979
+#> 8         …JX.1529813#9 Carduelis chloris (…        NA  60.17857  24.6614 
+#> 9        …JX.1529813#12 Carduelis spinus (L…  1         60.1796   24.66341
+#> 10        …JX.1529813#3 Passer montanus (Li…  3         60.17811  24.65902
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
@@ -46,11 +46,11 @@ variables.
 You can switch from the default variable names to [Darwin Core
 ](http://rs.tdwg.org/dwc/) style names by setting `dwc = TRUE`.
 
-```.language-r
+```r
 colnames(finbif_occurrence(dwc = TRUE))
 ```
 
-```{.language-r}
+```
 #>  [1] "occurrenceID"                  "scientificName"               
 #>  [3] "individualCount"               "decimalLatitude"              
 #>  [5] "decimalLongitude"              "eventDateTime"                
@@ -62,52 +62,52 @@ colnames(finbif_occurrence(dwc = TRUE))
 ## Choosing taxa
 You can limit the records to certain taxa by specifying them as an argument.
 
-```.language-r
+```r
 finbif_occurrence("Cygnus cygnus")
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 80292
+#> Records available: 87008
 #> A data.frame [10 x 12]
-#>               record_id scientific_name abundance lat_wgs84 lon_wgs84
-#> 1        …JX.1411611#18   Cygnus cygnus        NA  61.35074  27.83794
-#> 2  …HR.4412/62bb91fcbd…   Cygnus cygnus        NA  60.77169  21.02729
-#> 3  …HR.4412/62bb91ff5c…   Cygnus cygnus        NA  63.85516  25.26802
-#> 4  …HR.4412/62bb920880…   Cygnus cygnus        NA  66.28617  26.43911
-#> 5  …HR.4412/62bb921b4f…   Cygnus cygnus        NA  61.15693  24.8605 
-#> 6  …HR.4412/62bb920b6a…   Cygnus cygnus        NA  61.69497  24.82332
-#> 7  …HR.4412/62bb9209ce…   Cygnus cygnus        NA  60.78464  24.15072
-#> 8  …HR.4412/62bb920676…   Cygnus cygnus        NA  66.09645  28.87577
-#> 9  …HR.4412/62bb920db6…   Cygnus cygnus        NA  62.04549  21.35311
-#> 10 …HR.4412/62bb92172a…   Cygnus cygnus        NA  65.81431  24.2622 
-#> ...with 0 more records and 7 more variables:
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1         …JX.1529724#3 Cygnus cygnus (Linn…  6         61.23665  21.603  
+#> 2         …JX.1529605#3 Cygnus cygnus (Linn…  2         60.17308  25.10504
+#> 3        …JX.1528427#12 Cygnus cygnus (Linn…  7         62.67004  26.83646
+#> 4        …JX.1528427#21 Cygnus cygnus (Linn…  1         62.71214  26.88074
+#> 5  …HR.4412/63df09c19f… Cygnus cygnus (Linn…        NA  64.22258  27.71767
+#> 6        …JX.1525388#13 Cygnus cygnus (Linn…  6         61.23082  21.59979
+#> 7         …JX.1524017#6 Cygnus cygnus (Linn…  1         62.71322  26.87991
+#> 8  …HR.3211/147025285-U Cygnus cygnus (Linn…        NA  60.4534   22.40308
+#> 9        …JX.1518416#24 Cygnus cygnus (Linn…  1         62.21534  24.41688
+#> 10        …JX.1518050#3 Cygnus cygnus (Linn…        NA  60.45842  22.17798
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
 
 Multiple taxa can be requested at once.
 
-```.language-r
+```r
 finbif_occurrence("Cygnus cygnus", "Cygnus olor")
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 117412
+#> Records available: 128631
 #> A data.frame [10 x 12]
-#>               record_id scientific_name abundance lat_wgs84 lon_wgs84
-#> 1        …JX.1411611#18   Cygnus cygnus        NA  61.35074  27.83794
-#> 2  …HR.4412/62bb91fcbd…   Cygnus cygnus        NA  60.77169  21.02729
-#> 3  …HR.4412/62bb91ff5c…   Cygnus cygnus        NA  63.85516  25.26802
-#> 4  …HR.4412/62bb920880…   Cygnus cygnus        NA  66.28617  26.43911
-#> 5  …HR.4412/62bb921b4f…   Cygnus cygnus        NA  61.15693  24.8605 
-#> 6  …HR.4412/62bb920b6a…   Cygnus cygnus        NA  61.69497  24.82332
-#> 7  …HR.4412/62bb9209ce…   Cygnus cygnus        NA  60.78464  24.15072
-#> 8  …HR.4412/62bb920676…   Cygnus cygnus        NA  66.09645  28.87577
-#> 9  …HR.4412/62bb920db6…   Cygnus cygnus        NA  62.04549  21.35311
-#> 10 …HR.4412/62bb92172a…   Cygnus cygnus        NA  65.81431  24.2622 
-#> ...with 0 more records and 7 more variables:
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1         …JX.1529724#3 Cygnus cygnus (Linn…  6         61.23665  21.603  
+#> 2         …JX.1529605#3 Cygnus cygnus (Linn…  2         60.17308  25.10504
+#> 3  …HR.3211/148449187-U Cygnus olor (J.F. G…        NA  60.17314  24.96962
+#> 4  …HR.4412/63e6f54184… Cygnus olor (J.F. G…        NA  60.17038  24.925  
+#> 5  …HR.4412/63e5a1fc8c… Cygnus olor (J.F. G…        NA  60.17038  24.925  
+#> 6         …JX.1528551#5 Cygnus olor (J.F. G…  3         60.17975  24.93798
+#> 7         …JX.1529628#8 Cygnus olor (J.F. G…  12        60.17989  24.93988
+#> 8        …JX.1528427#12 Cygnus cygnus (Linn…  7         62.67004  26.83646
+#> 9        …JX.1528427#21 Cygnus cygnus (Linn…  1         62.71214  26.88074
+#> 10 …HR.3211/148044622-U Cygnus olor (J.F. G…        NA  60.17996  24.94015
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
@@ -115,7 +115,7 @@ finbif_occurrence("Cygnus cygnus", "Cygnus olor")
 You can also chose higher taxonomic groups and use common names (in English,
 Finnish and Swedish).
 
-```.language-r
+```r
 birds  <- finbif_occurrence("Birds")
 linnut <- finbif_occurrence("Linnut")
 faglar <- finbif_occurrence("Fåglar")
@@ -123,20 +123,20 @@ faglar <- finbif_occurrence("Fåglar")
 sapply(list(birds, linnut, faglar), nrow)
 ```
 
-```{.language-r}
+```
 #> [1] 10 10 10
 ```
 
 ## Request size
 You can increase the number of records returned by using the `n` argument.
 
-```.language-r
+```r
 occurrences <- finbif_occurrence(n = 1001)
 ```
 
 You can invoke a spreadsheet-style data browser with the `View` function
 
-```.language-r
+```r
 View(occurrences)
 ```
 When using the RStudio IDE you can also invoke the browser by clicking on the
@@ -147,18 +147,18 @@ data in the 'Environment' pane.
 When there are more than 1000 records to retrieve a progress bar will be
 initiated. You can suppress the progress bar with the `quiet` argument.
 
-```.language-r
+```r
 finbif_occurrence(n = 1001, quiet = TRUE)
 ```
 
 You can see how many records are available for a given request, without
 retrieving any records, by setting `count_only = TRUE`.
 
-```.language-r
+```r
 finbif_occurrence(count_only = TRUE)
 ```
 
-```{.language-r}
+```
 #> [1] 43808551
 ```
 
@@ -168,7 +168,7 @@ names are first checked against the FinBIF database. If any of the requested
 taxa are not found in the database you will receive a warning but the data will
 still be retrieved for the remaining taxa.
 
-```.language-r
+```r
 finbif_occurrence("Vulpes vulpes", "Moomin")
 ```
 
@@ -180,22 +180,22 @@ finbif_occurrence("Vulpes vulpes", "Moomin")
 #> Moomin
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 4600
+#> Records available: 4856
 #> A data.frame [10 x 12]
-#>               record_id scientific_name abundance lat_wgs84 lon_wgs84
-#> 1        …JX.1411439#86   Vulpes vulpes  1         67.44423  23.77218
-#> 2  …HR.3211/123404764-U   Vulpes vulpes        NA  65.01624  25.60409
-#> 3         …JX.1408878#3   Vulpes vulpes  1         62.30458  29.63992
-#> 4  …HR.3211/123069087-U   Vulpes vulpes        NA  60.73751  24.76117
-#> 5  …KE.176/62b3609cd5d…   Vulpes vulpes  2         60.11016  25.01864
-#> 6         …JX.1408390#3   Vulpes vulpes  4         60.82445  21.53643
-#> 7         …JX.1407814#7   Vulpes vulpes  1         62.80186  24.42096
-#> 8  …HR.3211/122701464-U   Vulpes vulpes        NA  63.83883  23.15996
-#> 9  …HR.3211/122682509-U   Vulpes vulpes        NA  59.93074  20.93271
-#> 10 …HR.3211/122473532-U   Vulpes vulpes        NA  60.75704  24.77011
-#> ...with 0 more records and 7 more variables:
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1         …JX.1529698#3 Vulpes vulpes (Linn…  1         61.52397  24.43148
+#> 2  …HR.3211/148618452-U Vulpes vulpes (Linn…        NA  60.5      21.9    
+#> 3  …KE.176/63e927b8d5d… Vulpes vulpes (Linn…  1         61.52345  24.43397
+#> 4  …KE.176/63e88da6d5d… Vulpes vulpes (Linn…  1         64.95278  25.53677
+#> 5  …HR.3211/148628701-U Vulpes vulpes (Linn…        NA  61.51742  24.28717
+#> 6         …JX.1529398#3 Vulpes vulpes (Linn…  1         60.31397  25.27919
+#> 7         …JX.1529165#3 Vulpes vulpes (Linn…  1         60.42797  22.20048
+#> 8  …HR.3211/148184681-U Vulpes vulpes (Linn…        NA  64.82136  25.31144
+#> 9  …HR.3211/148170078-U Vulpes vulpes (Linn…        NA  60.25293  22.42181
+#> 10        …JX.1526017#3 Vulpes vulpes (Linn…  1         64.93555  25.62159
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
@@ -203,7 +203,7 @@ finbif_occurrence("Vulpes vulpes", "Moomin")
 You can turn off taxon name pre-checking by setting the value of the
 `check_taxa` argument to `FALSE`. 
 
-```.language-r
+```r
 finbif_occurrence("Vulpes vulpes", "Moomin", check_taxa = FALSE)
 ```
 
@@ -211,7 +211,7 @@ By setting the argument, `on_check_fail` to `"error"` (the default is `"warn"`),
 you can elevate the warnings to errors and the request will fail if any of the
 taxa are not found in the FinBIF database.
 
-```.language-r
+```r
 finbif_occurrence("Vulpes vulpes", "Moomin", on_check_fail = "error")
 ```
 
@@ -232,26 +232,26 @@ data for occurrence recording events into a `date_time` variable. This can be
 turned off (which can speed up data processing time) by deselecting the
 `date_time` variable.
 
-```.language-r
+```r
 finbif_occurrence(select = "-date_time")
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 43809442
+#> Records available: 45893791
 #> A data.frame [10 x 11]
-#>    record_id    scientific_name abundance lat_wgs84 lon_wgs84
-#> 1  …925586-U   Abraxas sylvatus        NA  60.21452  25.15645
-#> 2  …929172-U   Adscita statices        NA  62.01821  22.96884
-#> 3  …896520-U    Archips podanus        NA  60.06069  23.66039
-#> 4  …929698-U    Bombus hypnorum        NA  60.91897  25.89668
-#> 5  …929447-U         Brachycera        NA  62.01821  22.96884
-#> 6  …921913-U          Bryophyta        NA  67.92459  23.8096 
-#> 7  …892019-U Caradrina morpheus        NA  60.38722  24.75005
-#> 8  …930698-U Chiasmia clathrata        NA  62.12781  27.45273
-#> 9  …918736-U       Dactylorhiza        NA  67.92468  23.81718
-#> 10 …918504-U Hypomecis atomaria        NA  67.92603  23.82139
-#> ...with 0 more records and 6 more variables:
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …KE.176/63ec916fd5d… Carduelis spinus (L…  10        62.31748  21.73122
+#> 2  …KE.176/63ec90e7d5d… Carduelis chloris (…  10        62.31748  21.73122
+#> 3         …JX.1529821#3 Larus marinus Linna…  4         60.18657  24.98811
+#> 4  …HR.3211/148812589-U Fomitopsis pinicola…        NA  60.43726  22.37422
+#> 5  …HR.3211/148812535-U                 <NA>        NA  60.17128  24.9309 
+#> 6         …JX.1529815#3 Pteromys volans (Li…        NA  62.46923  25.94574
+#> 7         …JX.1529813#6 Carduelis chloris (…  1         60.17831  24.65979
+#> 8         …JX.1529813#9 Carduelis chloris (…        NA  60.17857  24.6614 
+#> 9        …JX.1529813#12 Carduelis spinus (L…  1         60.1796   24.66341
+#> 10        …JX.1529813#3 Passer montanus (Li…  3         60.17811  24.65902
+#> ...with 0 more record and 6 more variables:
 #> coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
@@ -266,7 +266,7 @@ greater accuracy (e.g., you are using data on the Finnish/Swedish border and
 daytime/nighttime hours are important), you can switch to more accurate, though
 slower, timezone calculation method.
 
-```.language-r
+```r
 finbif_occurrence(date_time_method = "accurate")
 ```
 
@@ -274,39 +274,39 @@ finbif_occurrence(date_time_method = "accurate")
 The timezone of the calculated `date_time` variable is determined by the
 timezone of your operating system.
 
-```.language-r
+```r
 Sys.timezone()
 ```
 
 You can override this by setting the `tzone` argument to a different value.
 
-```.language-r
+```r
 finbif_occurrence(tzone = "Etc/UTC")
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 43808551
+#> Records available: 45893791
 #> A data.frame [10 x 12]
-#>    record_id      scientific_name abundance lat_wgs84 lon_wgs84
-#> 1      …42#3            Apus apus        NA  60.4911   22.1561 
-#> 2      …41#3 Phylloscopus trochi…        NA  60.4911   22.1561 
-#> 3      …39#6       Sylvia curruca  1         59.83882  19.92228
-#> 4      …39#3      Sylvia communis  1         59.84056  19.91378
-#> 5      …35#5      Sylvia communis  1         61.0872   23.65435
-#> 6      …35#3     Saxicola rubetra  2         61.0872   23.65435
-#> 7     …31#15    Charadrius dubius  4         64.83067  26.10181
-#> 8     …31#11       Turdus pilaris  1         64.82108  26.01163
-#> 9      …31#3   Anas platyrhynchos  14        64.82164  25.96167
-#> 10     …31#7            Apus apus  30        64.80656  25.99359
-#> ...with 0 more records and 7 more variables:
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …KE.176/63ec916fd5d… Carduelis spinus (L…  10        62.31748  21.73122
+#> 2  …KE.176/63ec90e7d5d… Carduelis chloris (…  10        62.31748  21.73122
+#> 3         …JX.1529821#3 Larus marinus Linna…  4         60.18657  24.98811
+#> 4  …HR.3211/148812589-U Fomitopsis pinicola…        NA  60.43726  22.37422
+#> 5  …HR.3211/148812535-U                 <NA>        NA  60.17128  24.9309 
+#> 6         …JX.1529815#3 Pteromys volans (Li…        NA  62.46923  25.94574
+#> 7         …JX.1529813#6 Carduelis chloris (…  1         60.17831  24.65979
+#> 8         …JX.1529813#9 Carduelis chloris (…        NA  60.17857  24.6614 
+#> 9        …JX.1529813#12 Carduelis spinus (L…  1         60.1796   24.66341
+#> 10        …JX.1529813#3 Passer montanus (Li…  3         60.17811  24.65902
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
 
 Or set the global timezone option to set the timezone for the current session.
 
-```.language-r
+```r
 options(finbif_tz = "Etc/UTC")
 ```
 This may be advisable for reproducibility or when working with multiple systems.

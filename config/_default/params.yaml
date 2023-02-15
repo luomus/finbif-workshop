@@ -51,11 +51,8 @@ locale:
 
 features:
   syntax_highlighter:
-    enable: true
-    extra_languages:
-      - r
-      - latex
-    theme: atom-one-dark-reasonable
+    theme_light: github-light
+    theme_dark: github-dark
   math:
     enable: false
   privacy_pack:

@@ -15,7 +15,7 @@ data will save bandwidth and local post-processing time. There are many options
 for filtering occurrence records, for the full list of filtering options refer
 to the package documentation.
 
-```.language-r
+```r
 ?filters
 ```
 
@@ -34,26 +34,26 @@ A number of filters allow you to restrict records geographically by place name.
 These include `country`, `province`, `municipality` and `bird_assoc_area`
 (BirdLife Finland local groups).
 
-```.language-r
+```r
 finbif_occurrence(filter = c(country = "Finland"))
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 41580509
+#> Records available: 43524543
 #> A data.frame [10 x 12]
-#>    record_id      scientific_name abundance lat_wgs84 lon_wgs84
-#> 1      …42#3            Apus apus        NA  60.4911   22.1561 
-#> 2      …41#3 Phylloscopus trochi…        NA  60.4911   22.1561 
-#> 3      …39#6       Sylvia curruca  1         59.83882  19.92228
-#> 4      …39#3      Sylvia communis  1         59.84056  19.91378
-#> 5      …35#5      Sylvia communis  1         61.0872   23.65435
-#> 6      …35#3     Saxicola rubetra  2         61.0872   23.65435
-#> 7     …31#15    Charadrius dubius  4         64.83067  26.10181
-#> 8     …31#11       Turdus pilaris  1         64.82108  26.01163
-#> 9      …31#3   Anas platyrhynchos  14        64.82164  25.96167
-#> 10     …31#7            Apus apus  30        64.80656  25.99359
-#> ...with 0 more records and 7 more variables:
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …HR.3211/148814912-U            Betula L.        NA  66.5783   26.01684
+#> 2  …HR.3211/148812535-U                 <NA>        NA  60.17128  24.9309 
+#> 3  …HR.3211/148815015-U Carduelis spinus (L…        NA  61.21254  21.74742
+#> 4  …HR.3211/148814252-U Parus major Linnaeu…        NA  60.17131  24.93085
+#> 5  …HR.3211/148814253-U Passer domesticus (…        NA  60.17131  24.93085
+#> 6  …HR.3211/148812940-U Sphagnum capillifol…        NA  60.43821  22.37334
+#> 7  …HR.3211/148813130-U Trichaptum abietinu…        NA  60.43727  22.37443
+#> 8  …KE.176/63ec916fd5d… Carduelis spinus (L…  10        62.31748  21.73122
+#> 9  …KE.176/63ec90e7d5d… Carduelis chloris (…  10        62.31748  21.73122
+#> 10        …JX.1529821#3 Larus marinus Linna…  4         60.18657  24.98811
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
@@ -63,7 +63,7 @@ You can also filter geographically by specifying coordinates. The coordinates
 must be supplied with at least a latitude, longitude and a valid coordinate
 system.
 
-```.language-r
+```r
 finbif_occurrence(
   filter = list(
     coordinates = list(lat = c(60, 68), lon = c(20, 30), system = "wgs84")
@@ -71,22 +71,22 @@ finbif_occurrence(
 )
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 34695990
+#> Records available: 22
 #> A data.frame [10 x 12]
-#>    record_id      scientific_name abundance lat_wgs84 lon_wgs84
-#> 1         …3        Anas penelope        NA  64.99198  25.56643
-#> 2        …21          Larus canus        NA  64.99198  25.56643
-#> 3        …15       Sterna hirundo        NA  64.99198  25.56643
-#> 4        …11     Numenius arquata        NA  64.99198  25.56643
-#> 5        …17    Sterna paradisaea        NA  64.99198  25.56643
-#> 6         …7 Haematopus ostraleg…        NA  64.99198  25.56643
-#> 7        …19     Larus ridibundus        NA  64.99198  25.56643
-#> 8        …31      Passer montanus        NA  64.99198  25.56643
-#> 9        …27       Turdus iliacus        NA  64.99198  25.56643
-#> 10       …13   Actitis hypoleucos        NA  64.99198  25.56643
-#> ...with 0 more records and 7 more variables:
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …tun.fi/KE.67/99796… Alca torda Linnaeus…  1         60        20      
+#> 2  …id.luomus.fi/MY.13… Turdus merula Linna…        NA  60        20      
+#> 3  …tun.fi/KE.67/90463… Somateria mollissim…  1         60        20      
+#> 4  …tun.fi/KE.67/90840… Larus argentatus Po…  1         60        20      
+#> 5  …tun.fi/KE.67/90231… Larus marinus Linna…  1         60        20      
+#> 6  …tun.fi/KE.67/90224… Larus marinus Linna…  1         60        20      
+#> 7  …tun.fi/KE.67/90842… Larus argentatus Po…  1         60        20      
+#> 8  …tun.fi/KE.67/93902… Larus ridibundus (L…  1         60        20      
+#> 9  …tun.fi/KE.67/23051… Alca torda Linnaeus…  1         60        20      
+#> 10 …tun.fi/KE.67/77435… Cepphus grylle (Lin…  1         60        20      
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
@@ -96,26 +96,26 @@ Another common way to filter is by date using the `date_range_ymd` filter.
 Specifying a single date will filter records that fall on the day or within the
 month or year indicated.
 
-```.language-r
+```r
 finbif_occurrence(filter = list(date_range_ymd = c("2019-12")))
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 19883
+#> Records available: 20092
 #> A data.frame [10 x 12]
-#>         record_id     scientific_name abundance lat_wgs84 lon_wgs84
-#> 1  …44280127_Unit       Turdus merula  2         60.41401  22.24457
-#> 2  …44304840_Unit   Dendrocopos major  1         60.40432  22.18121
-#> 3  …44280136_Unit Emberiza citrinella  2         60.41401  22.24457
-#> 4  …54619078_Unit       Turdus merula  3         60.27095  24.83408
-#> 5  …44317394_Unit    Larus argentatus  1         64.66585  24.40813
-#> 6  …54625618_Unit         Parus major  6         60.27448  24.86076
-#> 7  …44308453_Unit        Corvus corax  1         61.97913  21.42103
-#> 8  …44300432_Unit    Carduelis spinus  2         60.42983  22.21151
-#> 9  …44286929_Unit   Fringilla coelebs  2         60.25655  21.38695
-#> 10 …44304839_Unit    Carduelis spinus  10        60.40432  22.18121
-#> ...with 0 more records and 7 more variables:
+#>         record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …44286930_Unit Cyanistes caeruleus…  6         60.25655  21.38695
+#> 2  …44309720_Unit Corvus monedula Lin…        NA  61.25934  22.36198
+#> 3  …54618625_Unit Turdus merula Linna…  12        60.27545  24.83069
+#> 4  …44368562_Unit Buteo buteo (Linnae…  1         60.39103  23.57326
+#> 5  …45418881_Unit Pica pica (Linnaeus…  1         60.2301   24.01585
+#> 6  …54624981_Unit Turdus merula Linna…  2         60.26978  24.86533
+#> 7  …44304786_Unit Bucephala clangula …  1         61.58844  21.46563
+#> 8  …44304775_Unit Larus marinus Linna…  3         61.58844  21.46563
+#> 9  …44317298_Unit Larus canus Linnaeu…  1         64.69889  24.46876
+#> 10 …44319650_Unit Cyanistes caeruleus…  1         61.25854  22.34658
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
@@ -123,28 +123,28 @@ finbif_occurrence(filter = list(date_range_ymd = c("2019-12")))
 You can further customize the date range filter by specifying an end date
 allowing an arbitrary range of dates.
 
-```.language-r
+```r
 finbif_occurrence(
   filter = list(date_range_ymd = c("2019-06-01", "2019-12-31"))
 )
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 835439
+#> Records available: 853743
 #> A data.frame [10 x 12]
-#>         record_id     scientific_name abundance lat_wgs84 lon_wgs84
-#> 1  …44280127_Unit       Turdus merula  2         60.41401  22.24457
-#> 2  …44304840_Unit   Dendrocopos major  1         60.40432  22.18121
-#> 3  …44280136_Unit Emberiza citrinella  2         60.41401  22.24457
-#> 4  …54619078_Unit       Turdus merula  3         60.27095  24.83408
-#> 5  …44317394_Unit    Larus argentatus  1         64.66585  24.40813
-#> 6  …54625618_Unit         Parus major  6         60.27448  24.86076
-#> 7  …44308453_Unit        Corvus corax  1         61.97913  21.42103
-#> 8  …44300432_Unit    Carduelis spinus  2         60.42983  22.21151
-#> 9  …44286929_Unit   Fringilla coelebs  2         60.25655  21.38695
-#> 10 …44304839_Unit    Carduelis spinus  10        60.40432  22.18121
-#> ...with 0 more records and 7 more variables:
+#>         record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …44286930_Unit Cyanistes caeruleus…  6         60.25655  21.38695
+#> 2  …44309720_Unit Corvus monedula Lin…        NA  61.25934  22.36198
+#> 3  …54618625_Unit Turdus merula Linna…  12        60.27545  24.83069
+#> 4  …44368562_Unit Buteo buteo (Linnae…  1         60.39103  23.57326
+#> 5  …45418881_Unit Pica pica (Linnaeus…  1         60.2301   24.01585
+#> 6  …54624981_Unit Turdus merula Linna…  2         60.26978  24.86533
+#> 7  …44304786_Unit Bucephala clangula …  1         61.58844  21.46563
+#> 8  …44304775_Unit Larus marinus Linna…  3         61.58844  21.46563
+#> 9  …44317298_Unit Larus canus Linnaeu…  1         64.69889  24.46876
+#> 10 …44319650_Unit Cyanistes caeruleus…  1         61.25854  22.34658
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
@@ -154,7 +154,7 @@ the `date_range_md` filter (note `_md` rather than `_ymd`). To filter a range of
 dates that overlaps with the end of the year (e.g., winter) you'll need to
 supply two date ranges: one for the end of the year and one for the start.
 
-```.language-r
+```r
 finbif_occurrence(
   filter = list(
     date_range_md = c(begin = "12-21", end = "12-31"),
@@ -163,22 +163,22 @@ finbif_occurrence(
 )
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 1699183
+#> Records available: 1476175
 #> A data.frame [10 x 12]
-#>    record_id     scientific_name abundance lat_wgs84 lon_wgs84
-#> 1       …132   Castor canadensis        NA  62.20497  23.44074
-#> 2        …66 Phellinus igniarius  1         62.20497  23.44074
-#> 3        …30         Alces alces  2         62.20497  23.44074
-#> 4        …24         Alces alces  1         62.20497  23.44074
-#> 5        …27    Poecile montanus  1         62.20497  23.44074
-#> 6         …3       Vulpes vulpes  1         62.20497  23.44074
-#> 7        …75       Vulpes vulpes  1         62.20497  23.44074
-#> 8       …126       Vulpes vulpes  1         62.20497  23.44074
-#> 9        …93       Vulpes vulpes  1         62.20497  23.44074
-#> 10       …33       Vulpes vulpes  1         62.20497  23.44074
-#> ...with 0 more records and 7 more variables:
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …HR.3211/148814912-U            Betula L.        NA  66.5783   26.01684
+#> 2  …HR.3211/148812535-U                 <NA>        NA  60.17128  24.9309 
+#> 3  …HR.3211/148815015-U Carduelis spinus (L…        NA  61.21254  21.74742
+#> 4  …HR.3211/148814252-U Parus major Linnaeu…        NA  60.17131  24.93085
+#> 5  …HR.3211/148814253-U Passer domesticus (…        NA  60.17131  24.93085
+#> 6  …HR.3211/148812940-U Sphagnum capillifol…        NA  60.43821  22.37334
+#> 7  …HR.3211/148813130-U Trichaptum abietinu…        NA  60.43727  22.37443
+#> 8  …KE.176/63ec916fd5d… Carduelis spinus (L…  10        62.31748  21.73122
+#> 9  …KE.176/63ec90e7d5d… Carduelis chloris (…  10        62.31748  21.73122
+#> 10        …JX.1529821#3 Larus marinus Linna…  4         60.18657  24.98811
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
@@ -191,7 +191,7 @@ quality filter in detail.
 To restrict occurrence records to the highest quality level you can use the
 following set of filters.
 
-```.language-r
+```r
 strict <- list(
   collection_quality = "professional",
   coordinates_uncertainty_max = 1,
@@ -205,7 +205,7 @@ location data), and have reliable taxonomic identifications.
 At the other end of the spectrum, you can also allow all records regardless of
 quality with the following filter.
 
-```.language-r
+```r
 permissive <- list(
   quality_issues = "both",
   record_reliability = c(
@@ -221,36 +221,36 @@ This will include all records, both with and without, quality issues.
 The highest quality records are only a small fraction of all the records that
 are available.
 
-```.language-r
+```r
 finbif_occurrence(filter = list(strict, permissive), count_only = TRUE)
 ```
 
-```{.language-r}
+```
 #> [[1]]
-#> [1] 51
+#> [1] 121
 #> 
 #> [[2]]
-#> [1] 44002863
+#> [1] 46086500
 ```
 
 ## Collections
 You can filter by collection using the collection ID, the collection name or
 the abbreviated collection name (if available).
 
-```.language-r
+```r
 finbif_occurrence(
   filter = c(collection = "iNaturalist Suomi Finland"), count_only = TRUE
 )
 ```
 
-```{.language-r}
+```
 #> [1] 504372
 ```
 
 You can also use the results of a call to the `finbif_collections` function as
 filter directly.
 
-```.language-r
+```r
 collections <- finbif_collections(
   filter = geographic_coverage == "Finland",
   nmin   = 10000
@@ -259,8 +259,8 @@ collections <- finbif_collections(
 finbif_occurrence(filter = list(collection = collections), count_only = TRUE)
 ```
 
-```{.language-r}
-#> [1] 13577108
+```
+#> [1] 45893880
 ```
 
 ## Informal groups
@@ -268,26 +268,26 @@ Many informal taxonomic groups align with formal taxonomic groups (e.g., birds)
 but some, such as "Reptiles & amphibians" do not, making the `informal_group`
 potential useful in some circumstances.
 
-```.language-r
-finbif_occurrence(filter = list(informal_group = "Reptiles and amphibians"))
+```r
+finbif_occurrence(filter = list(informal_groups = "Reptiles and amphibians"))
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 44950
+#> Records available: 46918
 #> A data.frame [10 x 12]
 #>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
-#> 1  …KE.176/62bbcbcdd5d…      Anguis fragilis  1         61.10221  22.88537
-#> 2  …KE.176/62bbd8e9d5d… Pelophylax esculent…  3         60.61041  21.5252 
-#> 3  …KE.176/62bb6a86d5d…      Anguis fragilis  1         59.98272  23.99422
-#> 4  …KE.176/62bb617fd5d…      Anguis fragilis  1         60.14724  24.36741
-#> 5  …HR.3211/123833894-U     Zootoca vivipara        NA  63.64611  27.17139
-#> 6  …HR.3211/123838182-U      Rana temporaria        NA        NA        NA
-#> 7  …KE.176/62baf319d5d…      Anguis fragilis  1         61.98459  24.06683
-#> 8  …KE.176/62baeaffd5d…      Anguis fragilis  1         60.04463  24.55186
-#> 9  …HR.3211/123804109-U     Zootoca vivipara        NA  61.03338  25.88673
-#> 10 …KE.176/62baa39cd5d…      Anguis fragilis  1         61.47152  24.43033
-#> ...with 0 more records and 7 more variables:
+#> 1  …HR.3211/146607558-U Bufo bufo (Linnaeus…        NA  60.29014  24.60482
+#> 2  …HR.3211/146520576-U Bufo bufo (Linnaeus…        NA  60.61056  25.22402
+#> 3  …HR.3211/141883071-U Lissotriton vulgari…        NA  60.39002  23.11718
+#> 4  …HR.3211/141783787-U Bufo bufo (Linnaeus…        NA  61.05236  25.04516
+#> 5  …HR.3211/141784215-U Rana temporaria Lin…        NA  61.05141  25.04307
+#> 6  …KE.176/63714108d5d… Anguis colchica (No…  1         61.3986   21.99607
+#> 7  …KE.176/636e7ca7d5d… Anguis colchica (No…  1         61.29448  27.58093
+#> 8  …HR.3211/141648529-U Rana temporaria Lin…        NA  60.22848  24.91664
+#> 9  …HR.3211/141598361-U Anguis colchica (No…        NA  60.64372  24.88825
+#> 10 …HR.3211/142675274-U Lissotriton vulgari…        NA  63.6829   22.78389
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
@@ -302,26 +302,26 @@ Many taxa appear on various lists such as the EU's invasive species list. The
 `adminstrative_status` filter makes it easy to search for records of birds
 considered invasive in the EU.
 
-```.language-r
-finbif_occurrence("birds", filter = list(administrative_status = "EU_INVSV"))
+```r
+finbif_occurrence("birds", filter = list(regulatory_status = "EU_INVSV"))
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
 #> Records available: 469
 #> A data.frame [10 x 12]
 #>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
-#> 1  …KE.176/62b1ad90d5d…   Oxyura jamaicensis  7         61.66207  23.57706
-#> 2        …JX.1045316#34 Alopochen aegyptiaca  3         52.16081  4.485534
-#> 3        …JX.138840#123 Alopochen aegyptiaca  4         53.36759  6.191796
-#> 4        …JX.139978#214 Alopochen aegyptiaca  6         53.37574  6.207861
-#> 5         …JX.139710#17 Alopochen aegyptiaca  30        52.3399   5.069133
-#> 6         …JX.139645#57 Alopochen aegyptiaca  36        51.74641  4.535283
-#> 7         …JX.139645#10 Alopochen aegyptiaca  3         51.74641  4.535283
-#> 8         …JX.139442#16 Alopochen aegyptiaca  2         51.90871  4.53258 
-#> 9      …KE.8_1208123#15 Alopochen aegyptiaca  2         53.19242  5.437417
-#> 10    …KE.8_1208068#101 Alopochen aegyptiaca  20        53.32081  6.192341
-#> ...with 0 more records and 7 more variables:
+#> 1  …KE.176/62b1ad90d5d… Oxyura jamaicensis …  7         61.66207  23.57706
+#> 2        …JX.1045316#34 Alopochen aegyptiac…  3         52.16081  4.485534
+#> 3        …JX.138840#123 Alopochen aegyptiac…  4         53.36759  6.191796
+#> 4        …JX.139978#214 Alopochen aegyptiac…  6         53.37574  6.207861
+#> 5         …JX.139710#17 Alopochen aegyptiac…  30        52.3399   5.069133
+#> 6         …JX.139645#57 Alopochen aegyptiac…  36        51.74641  4.535283
+#> 7         …JX.139645#10 Alopochen aegyptiac…  3         51.74641  4.535283
+#> 8         …JX.139442#16 Alopochen aegyptiac…  2         51.90871  4.53258 
+#> 9      …KE.8_1208123#15 Alopochen aegyptiac…  2         53.19242  5.437417
+#> 10     …KE.8_1208068#89 Alopochen aegyptiac…  5         53.32081  6.192341
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
@@ -330,26 +330,26 @@ finbif_occurrence("birds", filter = list(administrative_status = "EU_INVSV"))
 Using the `red_list` filter you can search for records of near threatened
 mammals.
 
-```.language-r
+```r
 finbif_occurrence("mammals", filter = list(red_list_status = "NT"))
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 2457
+#> Records available: 42448
 #> A data.frame [10 x 12]
 #>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
-#> 1  …KE.176/62bab390d5d…         Castor fiber  1         62.24068  28.8834 
-#> 2         …JX.1408115#3 Rangifer tarandus f…  1         63.21216  24.31222
-#> 3        …JX.1397132#39 Rangifer tarandus f…  2         64.13285  26.27761
-#> 4       …JX.1396580#493 Rangifer tarandus f…  1         64.32912  28.7958 
-#> 5  …HR.3211/121755178-U Rangifer tarandus f…        NA  63.5      24.3    
-#> 6  …HR.3211/121759281-U Rangifer tarandus f…        NA  63.5      24.3    
-#> 7  …HR.3211/121755627-U Rangifer tarandus f…        NA  63.9      24.7    
-#> 8        …JX.1392113#15 Rangifer tarandus f…  1         64.0517   28.32895
-#> 9  …KE.176/62a04ad6d5d… Pusa hispida botnica  1         60.21181  25.37497
-#> 10       …JX.1390384#11 Rangifer tarandus f…  1         64.33209  25.73386
-#> ...with 0 more records and 7 more variables:
+#> 1        …JX.1515508#39 Rangifer tarandus f…        NA  64.22363  28.96249
+#> 2  …HR.3211/145844443-U Rangifer tarandus f…        NA  64.1      28.5    
+#> 3        …JX.1509526#13 Rangifer tarandus f…  9         64.28961  29.15437
+#> 4        …JX.1509526#16 Rangifer tarandus f…  17        64.18418  29.21215
+#> 5         …JX.1509182#3 Rangifer tarandus f…  4         64.13615  26.24839
+#> 6  …HR.3211/142946329-U Rangifer tarandus f…        NA  63.5      23.9    
+#> 7       …JX.1503045#165 Rangifer tarandus f…  5         62.13633  22.14217
+#> 8         …JX.1505392#3 Rangifer tarandus f…  4         63.40215  24.27285
+#> 9  …HR.3211/140674988-U Pusa hispida botnic…        NA  60.03843  24.68483
+#> 10        …JX.1501060#3 Rangifer tarandus f…  3         64.09919  29.40356
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
@@ -358,26 +358,26 @@ finbif_occurrence("mammals", filter = list(red_list_status = "NT"))
 Many taxa in the FinBIF database have been given an "Finnish occurrence status"
 and this status can be used to filter records.
 
-```.language-r
+```r
 finbif_occurrence(filter = c(finnish_occurrence_status = "rare"))
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 357479
+#> Records available: 381879
 #> A data.frame [10 x 12]
 #>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
-#> 1         …JX.1411601#9     Stegania cararia  3         61.48089  29.45853
-#> 2         …JX.1411614#3 Habrosyne pyritoides  1         61.71285  29.39905
-#> 3        …JX.1411450#36      Ancylis upupana  1         61.51447  24.0233 
-#> 4        …JX.1411450#15  Eupithecia selinata  1         61.51447  24.0233 
-#> 5        …JX.1411579#17        Pyrgus alveus  2         60.24476  22.30047
-#> 6  …HR.3211/123829199-U Korscheltellus lupu…        NA  60.98495  25.54631
-#> 7         …JX.1411456#6         Colias tyche  1         69.06191  20.82332
-#> 8         …JX.1411456#3     Euphydryas iduna  6         69.06191  20.82332
-#> 9  …HR.3211/123811818-U Ypsolopha chazariel…        NA  60.31112  25.03602
-#> 10        …JX.1411418#3      Eucosma fulvana  2         61.71372  29.39204
-#> ...with 0 more records and 7 more variables:
+#> 1         …JX.1529644#5 Acrocercops brongni…  1         60.44273  22.19863
+#> 2         …JX.1529635#7 Conistra rubiginosa…  14        60.45842  22.17798
+#> 3  …HR.3211/148388028-U Hypena rostralis (L…        NA  63.02717  27.25028
+#> 4         …JX.1528876#3 Conistra rubiginosa…  2         60.45842  22.17798
+#> 5         …JX.1525457#3 Agonopterix hyperic…  1         61.87891  28.85772
+#> 6  …HR.3211/147770103-U Acrocercops brongni…        NA  60.45174  22.26663
+#> 7  …KE.176/63d84820d5d… Semanotus undatus (…  1         60.47044  22.17258
+#> 8         …JX.1521830#3 Conistra rubiginosa…  3         60.45842  22.17798
+#> 9  …KE.176/63c6f5e2d5d… Anthrenus scrophula…  2         61.1886   28.76845
+#> 10 …KE.176/63c6f5ded5d… Anthrenus scrophula…  2         61.1818   28.84525
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```
@@ -387,29 +387,29 @@ records of that have a given occurrence status. For example, you can get
 records of bird species that are not considered to have stable populations in
 Finland with the following filter.
 
-```.language-r
+```r
 finbif_occurrence(
   "Birds",
   filter = c(finnish_occurrence_status_neg = "stable", taxon_rank = "species")
 )
 ```
 
-```{.language-r}
+```
 #> Records downloaded: 10
-#> Records available: 87286
+#> Records available: 91637
 #> A data.frame [10 x 12]
-#>               record_id    scientific_name abundance lat_wgs84 lon_wgs84
-#> 1        …JX.1411170#15    Cuculus optatus  1         65.49352  28.49518
-#> 2  …HR.3211/123944572-U Larus delawarensis        NA  60.16689  24.95329
-#> 3         …JX.1411012#9      Anser indicus  2         66.14103  23.9269 
-#> 4        …JX.1411227#42  Emberiza calandra        NA  41.8644   41.78842
-#> 5  …HR.4412/62bb91c8a5…      Porzana parva        NA  61.07488  25.42196
-#> 6  …HR.4412/62b8eeba6b…    Ciconia ciconia        NA  60.25712  24.73883
-#> 7  …HR.4412/62ba404d95…  Coturnix coturnix        NA  60.90381  26.53609
-#> 8  …HR.4412/62b8eea0c3…  Coturnix coturnix        NA  60.76706  23.41777
-#> 9  …HR.4412/62b8ee7f2a…  Coturnix coturnix        NA  59.95088  23.14806
-#> 10 …HR.4412/62b79ca842…  Coturnix coturnix        NA  65.01496  24.76885
-#> ...with 0 more records and 7 more variables:
+#>               record_id      scientific_name abundance lat_wgs84 lon_wgs84
+#> 1  …HR.4412/63d719d025… Eremophila alpestri…        NA  60.3468   24.73263
+#> 2       …JX.1518212#171 Rissa tridactyla (L…  1         60.03829  20.04897
+#> 3       …JX.1515660#173 Larus cachinnans Pa…  1         60.4916   22.33665
+#> 4        …JX.1515115#18 Regulus ignicapilla…  1         60.42676  22.20634
+#> 5  …HR.3211/142139077-U Branta bernicla (Li…        NA  60.2711   24.9525 
+#> 6         …JX.1505366#3 Oenanthe deserti (T…  1         59.82661  23.12009
+#> 7         …JX.1505318#3 Oenanthe deserti (T…  1         59.82659  23.12375
+#> 8  …HR.3211/141648812-U Anser albifrons (Sc…        NA  60.22061  25.02178
+#> 9       …JX.1504012#167 Phalaropus fulicari…  1         60.94753  22.88899
+#> 10      …JX.1502659#165 Upupa epops Linnaeu…  1         65.776    24.55344
+#> ...with 0 more record and 7 more variables:
 #> date_time, coordinates_uncertainty, any_issues, requires_verification,
 #> requires_identification, record_reliability, record_quality
 ```

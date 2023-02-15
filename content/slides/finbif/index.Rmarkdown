@@ -2,7 +2,7 @@
 title: Using the FinBIF R package
 slides:
   theme: black
-  highlight_style: atom-one-dark-reasonable
+  highlight_style: github-dark
 ---
 
 ```{r setup, include = FALSE}
@@ -44,10 +44,6 @@ cache_path <- "../../../cache/"
 opts_chunk$set(
   echo          = TRUE,
   comment       = "#>",
-  lang          = ".language-r",
-  class.output  = "language-r",
-  class.error   = "language-r",
-  class.warning = "language-r",
   frag          = TRUE,
   fig.show      = "hide",
   fig.keep      = "none",
@@ -692,7 +688,7 @@ finbif_occurrence(
 
 ```{r filter-informal-group}
 finbif_occurrence(
-  filter = list(informal_group = "Reptiles and amphibians")
+  filter = list(informal_groups = "Reptiles and amphibians")
 )
 ```
 
@@ -707,7 +703,7 @@ finbif_occurrence(
 ```{r filter-admin-status}
 finbif_occurrence(
   "birds",
-  filter = list(administrative_status = "EU_INVSV")
+  filter = list(regulatory_status = "EU_INVSV")
 )
 ```
 
@@ -858,7 +854,7 @@ polygon(finland_map$vertices, lwd = .2)
 ### Reproducibility
 
 ```{r reproducibility, eval = FALSE}
-remotes::install_version("finbif", "0.6.5")
+remotes::install_version("finbif", "0.7.2")
 options(finbif_tz = "Europe/Helsinki")
 ```
 

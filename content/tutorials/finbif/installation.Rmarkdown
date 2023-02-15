@@ -12,7 +12,7 @@ weight: 2
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
-  echo = TRUE, comment = "#>", lang = ".language-r", class.output = "language-r"
+  echo = TRUE, comment = "#>"
 )
 ```
 The `{finbif}` package can be installed from [CRAN] or [GitHub]. You can choose

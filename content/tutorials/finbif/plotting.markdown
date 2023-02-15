@@ -17,7 +17,7 @@ occurrence data from FinBIF.
 The default `plot` method for the result of a call to `finbif_occurrence` will
 display (if available) coordinates of the occurrence points in a scatter-plot.
 
-```.language-r
+```r
 recent_obs <- finbif_occurrence(filter = c(country = "Finland"), n = 1000)
 plot(recent_obs)
 ```
@@ -35,7 +35,7 @@ First you'll need to acquire some occurrence records. For example, you can use
 the following to get the latitude and longitude of all the Finnish records of
 Eurasian Jays where the coordinate uncertainty is less then 100m[^1].
 
-```.language-r
+```r
 jays <- finbif_occurrence(
   "Eurasian Jay",
   filter = c(coordinates_uncertainty_max = 100, country = "Finland"),
@@ -50,22 +50,22 @@ plot the density of occurrence records.
 
 `{finbif}` has an inbuilt Finland map object which includes its bounding box.
 
-```.language-r
+```r
 finland_map$bbox
 ```
 
-```{.language-r}
+```
 #> [1] 19 59 32 71
 ```
 
 You can use the function `breaks_xy` in combination with map bounding box to
 compute break points that a quarter of a degree in both dimensions.
 
-```.language-r
+```r
 (breaks <- breaks_xy(finland_map$bbox, size = .25))
 ```
 
-```{.language-r}
+```
 #> $x
 #>  [1] 19.00 19.25 19.50 19.75 20.00 20.25 20.50 20.75 21.00 21.25 21.50 21.75
 #> [13] 22.00 22.25 22.50 22.75 23.00 23.25 23.50 23.75 24.00 24.25 24.50 24.75
@@ -85,7 +85,7 @@ compute break points that a quarter of a degree in both dimensions.
 The function `hist_xy` can be used compute the density of occurrences in the
 grid-cells defined by a set of break points.
 
-```.language-r
+```r
 jay_density <- hist_xy(jays, breaks)
 ```
 
@@ -98,7 +98,7 @@ color palette, the axis labels and grid lines.
 
 
 
-```.language-r
+```r
 image(
   jay_density,
   asp    = 2.4,
@@ -115,7 +115,7 @@ image(
 You can add a plot legend to indicate how the image breakpoints are mapped to
 the image colors.
 
-```.language-r
+```r
 legend(
   "topright",
   inset  = c(0, .01),
@@ -133,7 +133,7 @@ legend(
 Finally, you can use `{finbif}`'s internal map to add the border of Finland to
 your plot.
 
-```.language-r
+```r
 polygon(finland_map$vertices, lwd = .2)
 ```
 

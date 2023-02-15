@@ -11,8 +11,7 @@ weight: 5
 cache_path <- "../../../cache/"
 
 knitr::opts_chunk$set(
-  echo = TRUE, comment = "#>", lang = ".language-r",
-  class.output = "language-r", cache = TRUE, cache.path = cache_path
+  echo = TRUE, comment = "#>", cache = TRUE, cache.path = cache_path
 )
 
 library(finbif)
